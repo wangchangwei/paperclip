@@ -767,6 +767,9 @@
     "step_two": "Invite team",
     "welcome": "Welcome to Paperclip"
   },
+  "orgChart": {
+    "title": "Org Chart"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "Advanced runtime JSON",
     "advancedRuntimeJsonDescription": "Paperclip derives Services and Jobs from this JSON. Prefer editing named commands first; use raw JSON for advanced lifecycle, port, readiness, or environment settings.",

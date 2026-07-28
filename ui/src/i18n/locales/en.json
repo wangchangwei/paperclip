@@ -899,5 +899,8 @@
     "noMemberships": "No user memberships found for this company yet.",
     "editMember": "Edit member",
     "removeMember": "Remove member"
+  },
+  "orgChart": {
+    "title": "Org Chart"
   }
 }
