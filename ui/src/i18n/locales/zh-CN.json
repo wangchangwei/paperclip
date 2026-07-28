@@ -1010,16 +1010,16 @@
     "workspacesTab": "工作区"
   },
   "secrets": {
-    "colActions": "Actions",
-    "colSecret": "Secret",
-    "colStatus": "Status",
-    "colUpdated": "Updated",
-    "colVersion": "Version / coverage",
-    "referencesTitle": "Secret references",
-    "searchResults": "Search results",
-    "selectCompany": "Select a company to manage secrets.",
-    "title": "Secrets",
-    "whoProvides": "Who provides the value?"
+    "colActions": "操作",
+    "colSecret": "密钥",
+    "colStatus": "状态",
+    "colUpdated": "更新时间",
+    "colVersion": "版本 / 覆盖范围",
+    "referencesTitle": "密钥引用",
+    "searchResults": "搜索结果",
+    "selectCompany": "请选择公司以管理密钥。",
+    "title": "密钥",
+    "whoProvides": "由谁提供值？"
   },
   "settings": {
     "apiKeys": "API密钥",
