@@ -10,6 +10,7 @@ import { queryKeys } from "../../lib/queryKeys";
 import { resolveSkillSummaryText } from "../../lib/company-skill-summary";
 import { adapterLabels } from "../../components/agent-config-primitives";
 import { cn } from "../../lib/utils";
+import { useTranslation } from "@/i18n";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,8 +28,9 @@ import { filterAgentSkills } from "./agent-skill-filter";
 import { buildAgentSkillSourceMeta } from "./agent-skill-source";
 import { AgentSkillReleasePicker, releaseShortLabel } from "./AgentSkillReleasePicker";
 
-const MATERIALIZATION_NOTE =
-  "Enabled skills are materialized into the stable Paperclip-managed prompt bundle on the agent's next run.";
+function materializationNote(t: ReturnType<typeof useTranslation>["t"]) {
+  return t("agents.materializationNote");
+}
 
 /** Company skill key of the Paperclip core skill that carries beta releases. */
 const PAPERCLIP_CORE_SKILL_KEY = "paperclipai/paperclip/paperclip";
@@ -59,6 +61,7 @@ function pinsFromEntries(entries: AgentDesiredSkillEntry[] | undefined): Record<
 }
 
 export function AgentSkillsTab({ agent, companyId }: { agent: Agent; companyId?: string }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const [skillDraft, setSkillDraft] = useState<string[]>([]);
   const [lastSavedSkills, setLastSavedSkills] = useState<string[]>([]);
@@ -294,15 +297,15 @@ export function AgentSkillsTab({ agent, companyId }: { agent: Agent; companyId?:
   const applicationLabel = useMemo(() => {
     switch (skillSnapshot?.mode) {
       case "persistent":
-        return "Kept in workspace";
+        return t("agents.keptInWorkspace");
       case "ephemeral":
-        return "Applied on next run";
+        return t("agents.appliedOnNextRun");
       case "unsupported":
-        return "Tracked only";
+        return t("agents.trackedOnly");
       default:
         return null;
     }
-  }, [skillSnapshot?.mode]);
+  }, [skillSnapshot?.mode, t]);
 
   const unsupportedMessage = useMemo(() => {
     if (!unsupported) return null;
@@ -311,13 +314,13 @@ export function AgentSkillsTab({ agent, companyId }: { agent: Agent; companyId?:
       typeof agent.adapterConfig.agent === "string" &&
       agent.adapterConfig.agent === "custom"
     ) {
-      return "Paperclip cannot manage skills for custom ACP commands yet.";
+      return t("agents.acpxLocalSkillUnsupported");
     }
     if (agent.adapterType === "openclaw_gateway") {
-      return "Paperclip cannot manage OpenClaw skills here. Visit your OpenClaw instance to manage this agent's skills.";
+      return t("agents.openclawSkillUnsupported");
     }
-    return "Paperclip cannot manage skills for this adapter yet. Manage them in the adapter directly.";
-  }, [agent.adapterConfig.agent, agent.adapterType, unsupported]);
+    return t("agents.adapterSkillUnsupported");
+  }, [agent.adapterConfig.agent, agent.adapterType, unsupported, t]);
 
   const hasUnsavedChanges = !sameSkillSelection(skillDraft, lastSavedSkills);
 
@@ -400,7 +403,7 @@ export function AgentSkillsTab({ agent, companyId }: { agent: Agent; companyId?:
                 </span>
               </TooltipTrigger>
               <TooltipContent side="bottom" className="max-w-xs">
-                {unsupported ? unsupportedMessage : MATERIALIZATION_NOTE}
+                {unsupported ? unsupportedMessage : materializationNote(t)}
               </TooltipContent>
             </Tooltip>
           ) : null}
