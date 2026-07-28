@@ -964,5 +964,14 @@
     "byAgent": "By agent",
     "noCostEvents": "No cost events yet.",
     "byProject": "By project"
+  },
+  "inviteLanding": {
+    "invalidToken": "Invalid invite token.",
+    "loading": "Loading invite...",
+    "checkingAccess": "Checking your access...",
+    "notAvailable": "Invite not available",
+    "openingCompany": "Opening company...",
+    "bootstrapComplete": "Bootstrap complete",
+    "joinedCompany": "You joined the company"
   }
 }

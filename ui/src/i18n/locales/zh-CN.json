@@ -656,6 +656,15 @@
     "schedulerHeartbeats": "调度器心跳",
     "title": "实例设置"
   },
+  "inviteLanding": {
+    "bootstrapComplete": "Bootstrap complete",
+    "checkingAccess": "Checking your access...",
+    "invalidToken": "Invalid invite token.",
+    "joinedCompany": "You joined the company",
+    "loading": "Loading invite...",
+    "notAvailable": "Invite not available",
+    "openingCompany": "Opening company..."
+  },
   "issues": {
     "andMore": "...以及{{count}}个更多",
     "assignee": "负责人",

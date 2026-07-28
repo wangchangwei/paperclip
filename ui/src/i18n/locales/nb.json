@@ -656,6 +656,15 @@
     "schedulerHeartbeats": "Scheduler Heartbeats",
     "title": "Instance settings"
   },
+  "inviteLanding": {
+    "bootstrapComplete": "Bootstrap complete",
+    "checkingAccess": "Checking your access...",
+    "invalidToken": "Invalid invite token.",
+    "joinedCompany": "You joined the company",
+    "loading": "Loading invite...",
+    "notAvailable": "Invite not available",
+    "openingCompany": "Opening company..."
+  },
   "issues": {
     "andMore": "... and {{count}} more",
     "assignee": "Assignee",
