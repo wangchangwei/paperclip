@@ -1,8 +1,11 @@
 {
   "agentDetail": {
+    "invalidReportingChain": "Invalid reporting chain",
     "loadingLog": "Loading log...",
     "noPersistedLogLines": "No persisted log lines.",
-    "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet."
+    "noRecentTasks": "No recent tasks.",
+    "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet.",
+    "recentTasks": "Recent Tasks"
   },
   "agents": {
     "accessProfiles": "Access profiles",
