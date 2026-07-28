@@ -449,7 +449,7 @@ function PolicySimulator({
         <div className="flex-1 space-y-4 overflow-y-auto p-4">
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <Label>Agent</Label>
+              <Label>{t("common.agent")}</Label>
               <Select value={agentId} onValueChange={setAgentId}>
                 <SelectTrigger>
                   <SelectValue placeholder={t("policiesTab.selectAgent")} />
@@ -464,7 +464,7 @@ function PolicySimulator({
               </Select>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="test-action">Action</Label>
+              <Label htmlFor="test-action">{t("common.action")}</Label>
               <Input
                 id="test-action"
                 value={toolName}
@@ -505,7 +505,7 @@ function PolicySimulator({
           ) : null}
         </div>
         <SheetFooter className="border-t border-border">
-          <Button variant="outline" onClick={() => onOpenChange(false)}>Close</Button>
+          <Button variant="outline" onClick={() => onOpenChange(false)}>{t("common.close")}</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>
@@ -537,6 +537,7 @@ function RuleBuilder({
   onCancel: () => void;
   onSave: () => void;
 }) {
+  const { t } = useTranslation();
   const sentence = formSentence(form, maps, catalogByToolName);
   const selectedTools = new Set(parseList(form.toolNames));
   const setToolNames = (next: Set<string>) => setForm({ ...form, usesMode: "actions", toolNames: [...next].sort().join(", ") });
@@ -566,7 +567,7 @@ function RuleBuilder({
           <h2 className="text-lg font-semibold text-foreground">{form.id ? "Edit rule" : "New rule"}</h2>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm" onClick={onCancel}>Cancel</Button>
+          <Button variant="outline" size="sm" onClick={onCancel}>{t("common.cancel")}</Button>
           <Button size="sm" onClick={onSave} disabled={saving}>
             {saving ? "Saving..." : "Save rule"}
           </Button>
@@ -579,7 +580,7 @@ function RuleBuilder({
 
       <div className="grid gap-4 lg:grid-cols-(--gtc-61)">
         <section className="space-y-3">
-          <h3 className="text-sm font-semibold text-foreground">When</h3>
+          <h3 className="text-sm font-semibold text-foreground">{t("policiesTab.when")}</h3>
           <div className="grid gap-2">
             {[
               ["everyone", "Everyone"],
@@ -601,7 +602,7 @@ function RuleBuilder({
             <Select value={form.agentId} onValueChange={(agentId) => setForm({ ...form, agentId })}>
               <SelectTrigger><SelectValue placeholder="Choose agent" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value={ANY_VALUE}>Choose agent</SelectItem>
+                <SelectItem value={ANY_VALUE}>{t("policiesTab.chooseAgent")}</SelectItem>
                 {agents.map((agent) => <SelectItem key={agent.id} value={agent.id}>{agent.name}</SelectItem>)}
               </SelectContent>
             </Select>
@@ -610,7 +611,7 @@ function RuleBuilder({
             <Select value={form.projectId} onValueChange={(projectId) => setForm({ ...form, projectId })}>
               <SelectTrigger><SelectValue placeholder="Choose project" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value={ANY_VALUE}>Choose project</SelectItem>
+                <SelectItem value={ANY_VALUE}>{t("policiesTab.chooseProject")}</SelectItem>
                 {projects.map((project) => <SelectItem key={project.id} value={project.id}>{project.name}</SelectItem>)}
               </SelectContent>
             </Select>
@@ -618,7 +619,7 @@ function RuleBuilder({
         </section>
 
         <section className="space-y-3">
-          <h3 className="text-sm font-semibold text-foreground">Uses</h3>
+          <h3 className="text-sm font-semibold text-foreground">{t("policiesTab.uses")}</h3>
           <div className="grid gap-2">
             {[
               ["anything", "Anything"],
@@ -641,7 +642,7 @@ function RuleBuilder({
             <Select value={form.applicationId} onValueChange={(applicationId) => setForm({ ...form, applicationId })}>
               <SelectTrigger><SelectValue placeholder="Choose app" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value={ANY_VALUE}>Choose app</SelectItem>
+                <SelectItem value={ANY_VALUE}>{t("policiesTab.chooseApp")}</SelectItem>
                 {applications.map((app) => <SelectItem key={app.id} value={app.id}>{app.name}</SelectItem>)}
               </SelectContent>
             </Select>
@@ -650,7 +651,7 @@ function RuleBuilder({
             <Select value={form.riskLevel} onValueChange={(riskLevel) => setForm({ ...form, riskLevel })}>
               <SelectTrigger><SelectValue placeholder="Choose capability" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value={ANY_VALUE}>Choose capability</SelectItem>
+                <SelectItem value={ANY_VALUE}>{t("policiesTab.chooseCapability")}</SelectItem>
                 {CAPABILITY_OPTIONS.map((option) => (
                   <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                 ))}
@@ -660,7 +661,7 @@ function RuleBuilder({
           {form.usesMode === "actions" ? (
             <div className="max-h-80 overflow-y-auto rounded-md border border-border">
               {appGroups.length === 0 ? (
-                <div className="p-3 text-sm text-muted-foreground">No app actions discovered yet.</div>
+                <div className="p-3 text-sm text-muted-foreground">{t("policiesTab.noAppActions")}</div>
               ) : (
                 appGroups.map((group) => {
                   const selectedCount = group.tools.filter((tool) => selectedTools.has(tool.toolName)).length;
@@ -691,7 +692,7 @@ function RuleBuilder({
         </section>
 
         <section className="space-y-3">
-          <h3 className="text-sm font-semibold text-foreground">Then</h3>
+          <h3 className="text-sm font-semibold text-foreground">{t("policiesTab.then")}</h3>
           <div className="grid gap-2">
             {OUTCOMES.map((outcome) => (
               <Button
@@ -708,17 +709,17 @@ function RuleBuilder({
           {form.policyType === "rate_limit" ? (
             <div className="grid grid-cols-2 gap-2">
               <div className="space-y-1.5">
-                <Label htmlFor="limit-count">Times</Label>
+                <Label htmlFor="limit-count">{t("policiesTab.times")}</Label>
                 <Input id="limit-count" inputMode="numeric" value={form.rateLimitLimit} onChange={(e) => setForm({ ...form, rateLimitLimit: e.target.value })} />
               </div>
               <div className="space-y-1.5">
-                <Label>Per</Label>
+                <Label>{t("policiesTab.per")}</Label>
                 <Select value={form.rateLimitWindowSeconds} onValueChange={(rateLimitWindowSeconds) => setForm({ ...form, rateLimitWindowSeconds })}>
                   <SelectTrigger><SelectValue /></SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="3600">Hour</SelectItem>
-                    <SelectItem value="86400">Day</SelectItem>
-                    <SelectItem value="60">Minute</SelectItem>
+                    <SelectItem value="3600">{t("policiesTab.hour")}</SelectItem>
+                    <SelectItem value="86400">{t("policiesTab.day")}</SelectItem>
+                    <SelectItem value="60">{t("policiesTab.minute")}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -734,27 +735,27 @@ function RuleBuilder({
         </summary>
         <div className="mt-3 grid gap-3 lg:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="rule-name">Rule name</Label>
+            <Label htmlFor="rule-name">{t("policiesTab.ruleName")}</Label>
             <Input id="rule-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder={sentenceText(sentence)} />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="rule-priority">Priority</Label>
+            <Label htmlFor="rule-priority">{t("policiesTab.priority")}</Label>
             <Input id="rule-priority" inputMode="numeric" value={form.priority} onChange={(e) => setForm({ ...form, priority: e.target.value })} />
           </div>
           <div className="space-y-1.5">
-            <Label>Raw connection</Label>
+            <Label>{t("policiesTab.rawConnection")}</Label>
             <Select value={form.connectionId} onValueChange={(connectionId) => setForm({ ...form, connectionId })}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
-                <SelectItem value={ANY_VALUE}>Any connection</SelectItem>
+                <SelectItem value={ANY_VALUE}>{t("policiesTab.anyConnection")}</SelectItem>
                 {[...maps.connection.entries()].map(([id, name]) => <SelectItem key={id} value={id}>{name}</SelectItem>)}
               </SelectContent>
             </Select>
           </div>
           <div className="flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2 lg:col-span-2">
             <div>
-              <p className="text-sm font-medium text-foreground">On</p>
-              <p className="text-xs text-muted-foreground">Turn this off to keep the rule saved without matching.</p>
+              <p className="text-sm font-medium text-foreground">{t("policiesTab.on")}</p>
+              <p className="text-xs text-muted-foreground">{t("policiesTab.turnOffDescription")}</p>
             </div>
             <ToggleSwitch checked={form.enabled} onCheckedChange={(enabled) => setForm({ ...form, enabled })} />
           </div>
@@ -765,20 +766,21 @@ function RuleBuilder({
 }
 
 function StarterCards({ onStart }: { onStart: (form: PolicyFormState) => void }) {
+  const { t } = useTranslation();
   const starters = [
     {
-      title: "Block destructive actions everywhere",
+      title: t("policiesTab.blockDestructiveEverywhere"),
       form: emptyPolicyForm({ policyType: "block", usesMode: "capability", riskLevel: "destructive", name: "Block destructive actions everywhere" }),
     },
     {
-      title: "Ask first before selected actions",
+      title: t("policiesTab.askFirstBeforeSelected"),
       form: emptyPolicyForm({ policyType: "require_approval", usesMode: "actions", name: "Ask first before selected actions" }),
     },
     {
-      title: "Limit a noisy action",
+      title: t("policiesTab.limitNoisyAction"),
       form: emptyPolicyForm({ policyType: "rate_limit", usesMode: "actions", rateLimitLimit: "50", name: "Limit a noisy action" }),
     },
-    { title: "Start from scratch", form: emptyPolicyForm() },
+    { title: t("policiesTab.startFromScratch"), form: emptyPolicyForm() },
   ];
   return (
     <div className="grid gap-2 sm:grid-cols-2">
@@ -1024,10 +1026,10 @@ export function PoliciesTab({ companyId }: { companyId: string }) {
                 <thead>
                   <tr className="border-b border-border text-left text-xs text-muted-foreground">
                     <th className="w-8 px-2 py-2.5 font-medium" />
-                    <th className="px-2 py-2.5 font-medium">Rule</th>
-                    <th className="px-2 py-2.5 font-medium">Outcome</th>
-                    <th className="px-2 py-2.5 text-right font-medium">Last 24h</th>
-                    <th className="px-2 py-2.5 text-center font-medium">On</th>
+                    <th className="px-2 py-2.5 font-medium">{t("policiesTab.rule")}</th>
+                    <th className="px-2 py-2.5 font-medium">{t("policiesTab.outcome")}</th>
+                    <th className="px-2 py-2.5 text-right font-medium">{t("policiesTab.last24h")}</th>
+                    <th className="px-2 py-2.5 text-center font-medium">{t("common.on")}</th>
                     <th className="w-10 px-2 py-2.5 text-right font-medium" />
                   </tr>
                 </thead>
@@ -1113,8 +1115,8 @@ export function PoliciesTab({ companyId }: { companyId: string }) {
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-sm font-semibold text-foreground">Remembered approvals</h3>
-        <p className="text-sm text-muted-foreground">When you approve an Ask-first request, Paperclip can remember the decision.</p>
+        <h3 className="text-sm font-semibold text-foreground">{t("policiesTab.rememberedApprovals")}</h3>
+        <p className="text-sm text-muted-foreground">{t("policiesTab.rememberedApprovalsDesc")}</p>
         {trustRules.isLoading ? (
           <LoadingState />
         ) : trustRules.error ? (
@@ -1175,7 +1177,7 @@ export function PoliciesTab({ companyId }: { companyId: string }) {
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
-              <Button variant="outline" onClick={() => setConfirm(null)}>Cancel</Button>
+              <Button variant="outline" onClick={() => setConfirm(null)}>{t("common.cancel")}</Button>
               <Button
                 variant="destructive"
                 disabled={deletePolicy.isPending || revoke.isPending}
