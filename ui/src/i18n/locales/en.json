@@ -418,7 +418,11 @@
     "approvalStatusNeedsAction": "Needs action",
     "approvalStatusResolved": "Resolved",
     "newTaskIn": "New task in {{group}}",
-    "agents": "Agents"
+    "agents": "Agents",
+    "emptySelectCompany": "Select a company to view inbox.",
+    "creatorBoard": "Board",
+    "creatorMe": "Me",
+    "retrySkipped": "Retry was skipped."
   },
   "agents": {
     "accessProfiles": "Access profiles",
