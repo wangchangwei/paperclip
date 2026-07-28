@@ -727,6 +727,23 @@
     "unauthorized": "您无权执行此操作。",
     "validation": "请检查输入后重试。"
   },
+  "gatewaysTab": {
+    "accessProfile": "Access profile",
+    "allowedTools": "Allowed tools",
+    "clientLabel": "Client label",
+    "clientLabelPlaceholder": "Cursor on work laptop",
+    "createProfileFirst": "Create an access profile before adding a gateway.",
+    "description": "Description",
+    "descriptionPlaceholder": "Who this endpoint is for and when it should be rotated.",
+    "gatewayName": "Gateway name",
+    "gatewayNamePlaceholder": "Engineering laptops",
+    "lastActivity": "Last activity",
+    "owner": "Owner",
+    "ownerNote": "Owner note",
+    "scope": "Scope",
+    "tokenName": "Token name",
+    "tokenNamePlaceholder": "Dotta's MacBook"
+  },
   "goals": {
     "addDescription": "添加描述...",
     "addGoal": "添加目标",

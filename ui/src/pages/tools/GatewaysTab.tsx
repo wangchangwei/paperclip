@@ -1,4 +1,5 @@
 import { type FormEvent, useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type {
   ToolMcpGatewayContextScopeType,
@@ -112,6 +113,7 @@ function buildTokenExpiresAt(value: string) {
 }
 
 export function GatewaysTab({ companyId }: { companyId: string }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const { pushToast } = useToast();
   const [creating, setCreating] = useState(false);
@@ -286,17 +288,17 @@ export function GatewaysTab({ companyId }: { companyId: string }) {
         <form className="space-y-3 rounded-md border border-border p-4" onSubmit={submitCreateGateway}>
           <div className="grid gap-3 md:grid-cols-(--gtc-60)">
             <label className="space-y-1.5 text-sm">
-              <span className="text-xs font-medium text-muted-foreground">Gateway name</span>
+              <span className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.gatewayName")}</span>
               <input
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                 value={createDraft.name}
                 onChange={(event) => setCreateDraft((current) => ({ ...current, name: event.target.value }))}
-                placeholder="Engineering laptops"
+                placeholder={t("gatewaysTab.gatewayNamePlaceholder")}
                 required
               />
             </label>
             <label className="space-y-1.5 text-sm">
-              <span className="text-xs font-medium text-muted-foreground">Access profile</span>
+              <span className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.accessProfile")}</span>
               <select
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                 value={createDraft.profileId}
@@ -316,16 +318,16 @@ export function GatewaysTab({ companyId }: { companyId: string }) {
             </label>
           </div>
           <label className="space-y-1.5 text-sm">
-            <span className="text-xs font-medium text-muted-foreground">Description</span>
+            <span className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.description")}</span>
             <textarea
               className="min-h-20 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
               value={createDraft.description}
               onChange={(event) => setCreateDraft((current) => ({ ...current, description: event.target.value }))}
-              placeholder="Who this endpoint is for and when it should be rotated."
+              placeholder={t("gatewaysTab.descriptionPlaceholder")}
             />
           </label>
           {activeProfiles.length === 0 && !profileLoading ? (
-            <p className="text-xs text-muted-foreground">Create an access profile before adding a gateway.</p>
+            <p className="text-xs text-muted-foreground">{t("gatewaysTab.createProfileFirst")}</p>
           ) : null}
           <div className="flex flex-wrap justify-end gap-2">
             <Button type="button" variant="ghost" size="sm" onClick={() => setCreating(false)}>
@@ -382,21 +384,21 @@ export function GatewaysTab({ companyId }: { companyId: string }) {
 
                 <dl className="grid gap-x-4 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
                   <div>
-                    <dt className="text-xs font-medium text-muted-foreground">Owner</dt>
+                    <dt className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.owner")}</dt>
                     <dd className="mt-0.5 text-foreground">{formatOwner(gateway, agentNames)}</dd>
                   </div>
                   <div>
-                    <dt className="text-xs font-medium text-muted-foreground">Scope</dt>
+                    <dt className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.scope")}</dt>
                     <dd className="mt-0.5 text-foreground">{formatScope(gateway, projectNames, agentNames)}</dd>
                   </div>
                   <div>
-                    <dt className="text-xs font-medium text-muted-foreground">Allowed tools</dt>
+                    <dt className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.allowedTools")}</dt>
                     <dd className="mt-0.5 text-foreground">
                       {profile ? `${formatAllowedTools(profile)} via ${profile.name}` : `Profile ${shortId(gateway.profileId)}`}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-xs font-medium text-muted-foreground">Last activity</dt>
+                    <dt className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.lastActivity")}</dt>
                     <dd className="mt-0.5 text-foreground">
                       {lastActivity ? <RelativeTime value={lastActivity} /> : "Never used"}
                     </dd>
@@ -407,7 +409,7 @@ export function GatewaysTab({ companyId }: { companyId: string }) {
                   <form className="space-y-3 rounded-md border border-border p-3" onSubmit={(event) => submitCreateToken(event, gateway.id)}>
                     <div className="grid gap-3 md:grid-cols-2">
                       <label className="space-y-1.5 text-sm">
-                        <span className="text-xs font-medium text-muted-foreground">Token name</span>
+                        <span className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.tokenName")}</span>
                         <input
                           className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                           value={tokenDraft.name}
@@ -417,12 +419,12 @@ export function GatewaysTab({ companyId }: { companyId: string }) {
                               [gateway.id]: { ...tokenDraft, name: event.target.value },
                             }))
                           }
-                          placeholder="Dotta's MacBook"
+                          placeholder={t("gatewaysTab.tokenNamePlaceholder")}
                           required
                         />
                       </label>
                       <label className="space-y-1.5 text-sm">
-                        <span className="text-xs font-medium text-muted-foreground">Client label</span>
+                        <span className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.clientLabel")}</span>
                         <input
                           className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                           value={tokenDraft.clientLabel}
@@ -432,14 +434,14 @@ export function GatewaysTab({ companyId }: { companyId: string }) {
                               [gateway.id]: { ...tokenDraft, clientLabel: event.target.value },
                             }))
                           }
-                          placeholder="Cursor on work laptop"
+                          placeholder={t("gatewaysTab.clientLabelPlaceholder")}
                           required
                         />
                       </label>
                     </div>
                     <div className="grid gap-3 md:grid-cols-[1fr_auto]">
                       <label className="space-y-1.5 text-sm">
-                        <span className="text-xs font-medium text-muted-foreground">Owner note</span>
+                        <span className="text-xs font-medium text-muted-foreground">{t("gatewaysTab.ownerNote")}</span>
                         <input
                           className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                           value={tokenDraft.ownerNote}

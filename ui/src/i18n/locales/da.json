@@ -727,6 +727,23 @@
     "unauthorized": "You are not authorized to perform this action.",
     "validation": "Please check your input and try again."
   },
+  "gatewaysTab": {
+    "accessProfile": "Access profile",
+    "allowedTools": "Allowed tools",
+    "clientLabel": "Client label",
+    "clientLabelPlaceholder": "Cursor on work laptop",
+    "createProfileFirst": "Create an access profile before adding a gateway.",
+    "description": "Description",
+    "descriptionPlaceholder": "Who this endpoint is for and when it should be rotated.",
+    "gatewayName": "Gateway name",
+    "gatewayNamePlaceholder": "Engineering laptops",
+    "lastActivity": "Last activity",
+    "owner": "Owner",
+    "ownerNote": "Owner note",
+    "scope": "Scope",
+    "tokenName": "Token name",
+    "tokenNamePlaceholder": "Dotta's MacBook"
+  },
   "goals": {
     "addDescription": "Add a description...",
     "addGoal": "Add Goal",
