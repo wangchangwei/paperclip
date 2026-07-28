@@ -1343,6 +1343,18 @@
     "signingOutComplete": "退出登录成功。",
     "updated": "更新成功。"
   },
+  "tokensPanel": {
+    "clientPlaceholder": "Cursor on work laptop",
+    "colOwner": "Owner",
+    "colToken": "Token",
+    "expires": "Expires",
+    "nameLabel": "Name",
+    "namePlaceholder": "cto-cursor",
+    "newTokenHeading": "New token — copy now",
+    "note": "Note (why it exists)",
+    "notePlaceholder": "Dotta's MacBook",
+    "ownerClient": "Owner / client"
+  },
   "training": {
     "loadError": "无法加载训练示例。",
     "loading": "正在加载训练示例…",

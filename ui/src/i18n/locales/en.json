@@ -1349,5 +1349,17 @@
     "remoteHttp": "Remote HTTP (no local process)",
     "localStdio": "Local stdio (approved template)",
     "endpointUrl": "Endpoint URL"
+  },
+  "tokensPanel": {
+    "nameLabel": "Name",
+    "namePlaceholder": "cto-cursor",
+    "ownerClient": "Owner / client",
+    "clientPlaceholder": "Cursor on work laptop",
+    "note": "Note (why it exists)",
+    "notePlaceholder": "Dotta's MacBook",
+    "expires": "Expires",
+    "newTokenHeading": "New token — copy now",
+    "colToken": "Token",
+    "colOwner": "Owner"
   }
 }

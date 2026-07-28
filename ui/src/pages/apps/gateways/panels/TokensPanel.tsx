@@ -1,4 +1,5 @@
 import { type FormEvent, type ReactNode, useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Copy, KeyRound, Plus } from "lucide-react";
 import type {
@@ -61,6 +62,7 @@ export function TokensPanel({
   gateway: ToolMcpGatewayWithTokens;
   onTokenCreated?: (token: ToolMcpGatewayTokenCreated) => void;
 }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const { pushToast } = useToast();
   const [minting, setMinting] = useState(false);
@@ -170,25 +172,25 @@ export function TokensPanel({
         <form className="space-y-3 rounded-md border border-border p-4" onSubmit={submit}>
           <div className="grid gap-3 md:grid-cols-2">
             <label className="space-y-1.5 text-sm">
-              <span className="text-xs font-medium text-muted-foreground">Name</span>
-              <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="cto-cursor" required autoFocus />
+              <span className="text-xs font-medium text-muted-foreground">{t("tokensPanel.nameLabel")}</span>
+              <Input value={name} onChange={(e) => setName(e.target.value)} placeholder={t("tokensPanel.namePlaceholder")} required autoFocus />
             </label>
             <label className="space-y-1.5 text-sm">
-              <span className="text-xs font-medium text-muted-foreground">Owner / client</span>
+              <span className="text-xs font-medium text-muted-foreground">{t("tokensPanel.ownerClient")}</span>
               <Input
                 value={clientLabel}
                 onChange={(e) => setClientLabel(e.target.value)}
-                placeholder="Cursor on work laptop"
+                placeholder={t("tokensPanel.clientPlaceholder")}
               />
             </label>
           </div>
           <div className="grid gap-3 md:grid-cols-[1fr_auto]">
             <label className="space-y-1.5 text-sm">
-              <span className="text-xs font-medium text-muted-foreground">Note (why it exists)</span>
-              <Input value={ownerNote} onChange={(e) => setOwnerNote(e.target.value)} placeholder="Dotta’s MacBook" />
+              <span className="text-xs font-medium text-muted-foreground">{t("tokensPanel.note")}</span>
+              <Input value={ownerNote} onChange={(e) => setOwnerNote(e.target.value)} placeholder={t("tokensPanel.notePlaceholder")} />
             </label>
             <label className="space-y-1.5 text-sm">
-              <span className="text-xs font-medium text-muted-foreground">Expires</span>
+              <span className="text-xs font-medium text-muted-foreground">{t("tokensPanel.expires")}</span>
               <Input type="date" value={expiresAt} onChange={(e) => setExpiresAt(e.target.value)} required />
             </label>
           </div>
@@ -207,7 +209,7 @@ export function TokensPanel({
         <div className="space-y-2 rounded-md border-2 border-foreground/80 bg-muted/40 p-4">
           <div className="flex items-center justify-between gap-2">
             <div>
-              <div className="text-sm font-semibold text-foreground">New token — copy now</div>
+              <div className="text-sm font-semibold text-foreground">{t("tokensPanel.newTokenHeading")}</div>
               <div className="text-xs text-muted-foreground">
                 You won’t see the full value again. Store it in your client’s config or your secret manager.
               </div>
@@ -245,8 +247,8 @@ export function TokensPanel({
             <table className="w-full min-w-(--sz-44rem) text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/40 text-left text-(length:--text-micro) font-semibold uppercase tracking-wide text-muted-foreground">
-                  <th className="px-4 py-2.5">Token</th>
-                  <th className="px-4 py-2.5">Owner</th>
+                  <th className="px-4 py-2.5">{t("tokensPanel.colToken")}</th>
+                  <th className="px-4 py-2.5">{t("tokensPanel.colOwner")}</th>
                   <th className="px-4 py-2.5">Created</th>
                   <th className="px-4 py-2.5">Last used</th>
                   <th className="px-4 py-2.5">Expires</th>

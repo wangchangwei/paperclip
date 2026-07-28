@@ -1343,6 +1343,18 @@
     "signingOutComplete": "Signed out successfully.",
     "updated": "Updated successfully."
   },
+  "tokensPanel": {
+    "clientPlaceholder": "Cursor on work laptop",
+    "colOwner": "Owner",
+    "colToken": "Token",
+    "expires": "Expires",
+    "nameLabel": "Name",
+    "namePlaceholder": "cto-cursor",
+    "newTokenHeading": "New token — copy now",
+    "note": "Note (why it exists)",
+    "notePlaceholder": "Dotta's MacBook",
+    "ownerClient": "Owner / client"
+  },
   "training": {
     "loadError": "Could not load training examples.",
     "loading": "Loading training examples…",
