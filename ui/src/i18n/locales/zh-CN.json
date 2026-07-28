@@ -766,15 +766,15 @@
     }
   },
   "joinRequestQueue": {
-    "inviteContext": "Invite context",
-    "loading": "Loading join requests…",
-    "requestDetails": "Request details",
-    "requestType": "Request type",
-    "selectCompany": "Select a company to review join requests.",
-    "sourceIp": "Source IP {{ip}}",
-    "status": "Status",
-    "submitted": "Submitted {{when}}",
-    "title": "Join Request Queue"
+    "inviteContext": "邀请上下文",
+    "loading": "正在加载加入请求…",
+    "requestDetails": "请求详情",
+    "requestType": "请求类型",
+    "selectCompany": "请选择公司以审核加入请求。",
+    "sourceIp": "来源 IP {{ip}}",
+    "status": "状态",
+    "submitted": "提交于 {{when}}",
+    "title": "加入请求队列"
   },
   "layout": {
     "headerBetaTag": "测试版"
