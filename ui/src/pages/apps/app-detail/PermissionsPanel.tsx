@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { Loader2, PackageCheck, RefreshCw } from "lucide-react";
 import type { Agent, ToolCatalogEntry } from "@paperclipai/shared";
 import { useSearchParams } from "@/lib/router";
@@ -94,6 +95,7 @@ function AccessSection({
   disabled: boolean;
   onSave: (next: AccessDraft) => void;
 }) {
+  const { t } = useTranslation();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<AccessDraft>(access);
   const liveAgents = agents.filter((a) => a.status !== "terminated");
@@ -113,7 +115,7 @@ function AccessSection({
     <section className="rounded-xl border border-border bg-card">
       <div className="flex items-center justify-between px-5 py-4">
         <div>
-          <h2 className="text-sm font-bold text-foreground">Who can use it</h2>
+          <h2 className="text-sm font-bold text-foreground">{t("permissionsPanel.whoCanUse")}</h2>
           <p className="mt-0.5 text-sm text-muted-foreground">{summary}</p>
         </div>
         {!editing && (
@@ -133,8 +135,8 @@ function AccessSection({
               onChange={() => setDraft({ mode: "all", agentIds: new Set() })}
             />
             <span>
-              <span className="text-sm font-semibold text-foreground">All agents</span>
-              <span className="block text-xs text-muted-foreground">Anyone you've added to Paperclip.</span>
+              <span className="text-sm font-semibold text-foreground">{t("permissionsPanel.allAgents")}</span>
+              <span className="block text-xs text-muted-foreground">{t("permissionsPanel.allAgentsHint")}</span>
             </span>
           </label>
           <label className="flex items-start gap-3">
@@ -145,8 +147,8 @@ function AccessSection({
               onChange={() => setDraft({ mode: "specific", agentIds: new Set(draft.agentIds) })}
             />
             <span>
-              <span className="text-sm font-semibold text-foreground">Only specific agents</span>
-              <span className="block text-xs text-muted-foreground">Pick who can use it.</span>
+              <span className="text-sm font-semibold text-foreground">{t("permissionsPanel.specificAgents")}</span>
+              <span className="block text-xs text-muted-foreground">{t("permissionsPanel.specificAgentsHint")}</span>
             </span>
           </label>
 
@@ -195,6 +197,7 @@ function InstalledSection({
   disabled: boolean;
   onSave: (next: InstallState) => void;
 }) {
+  const { t } = useTranslation();
   const liveAgents = agents.filter((a) => a.status !== "terminated");
   const hasAccess = (agentId: string) => access.mode === "all" || access.agentIds.has(agentId);
   // Agents that are installed but not (yet) in the access set — installing on
@@ -209,13 +212,13 @@ function InstalledSection({
     <section className="rounded-xl border border-border bg-card">
       <div className="flex items-center justify-between gap-3 px-5 py-4">
         <div>
-          <h2 className="text-sm font-bold text-foreground">Installed on agents</h2>
+          <h2 className="text-sm font-bold text-foreground">{t("permissionsPanel.installedOnAgents")}</h2>
           <p className="mt-0.5 text-sm text-muted-foreground">
             Whose harness carries {appName}'s tools on every run.
           </p>
         </div>
         <div className="flex items-center gap-2">
-          {disabled && <span className="text-xs text-muted-foreground">Saving…</span>}
+          {disabled && <span className="text-xs text-muted-foreground">{t("permissionsPanel.saving")}</span>}
           {install.onAll ? (
             <InstalledBadge label="Installed on all agents" />
           ) : install.agentIds.size > 0 ? (
@@ -270,7 +273,7 @@ function InstalledSection({
             }
           />
           <span className="text-xs text-foreground">
-            <span className="font-semibold">Install on all agents</span>
+            <span className="font-semibold">{t("permissionsPanel.installOnAll")}</span>
             <span className="mt-0.5 block text-muted-foreground">
               {INSTALL_ALL_WARNING}
             </span>
@@ -331,11 +334,12 @@ function ActionsSection({
   onTurnOnQuarantined: (ids: string[]) => void;
   onRefreshActions: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <section className="space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <h2 className="text-sm font-bold text-foreground">Action permissions</h2>
+          <h2 className="text-sm font-bold text-foreground">{t("permissionsPanel.actionPermissions")}</h2>
           <p className="mt-0.5 text-sm text-muted-foreground">
             Choose what agents can do and what needs a human first.
           </p>

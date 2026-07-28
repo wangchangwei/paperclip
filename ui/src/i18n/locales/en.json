@@ -1033,5 +1033,16 @@
     "noneYet": "None yet",
     "description": "Description",
     "attachments": "Attachments ({{count}})"
+  },
+  "permissionsPanel": {
+    "whoCanUse": "Who can use it",
+    "allAgents": "All agents",
+    "allAgentsHint": "Anyone you've added to Paperclip.",
+    "specificAgents": "Only specific agents",
+    "specificAgentsHint": "Pick who can use it.",
+    "installedOnAgents": "Installed on agents",
+    "saving": "Saving…",
+    "installOnAll": "Install on all agents",
+    "actionPermissions": "Action permissions"
   }
 }

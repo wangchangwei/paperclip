@@ -875,6 +875,17 @@
   "orgChart": {
     "title": "Org Chart"
   },
+  "permissionsPanel": {
+    "actionPermissions": "Action permissions",
+    "allAgents": "All agents",
+    "allAgentsHint": "Anyone you've added to Paperclip.",
+    "installOnAll": "Install on all agents",
+    "installedOnAgents": "Installed on agents",
+    "saving": "Saving…",
+    "specificAgents": "Only specific agents",
+    "specificAgentsHint": "Pick who can use it.",
+    "whoCanUse": "Who can use it"
+  },
   "pluginManager": {
     "alphaBanner": "Plugins are alpha.",
     "availableHeading": "Available Plugins",
