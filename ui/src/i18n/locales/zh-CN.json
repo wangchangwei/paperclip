@@ -876,15 +876,15 @@
     "title": "组织架构图"
   },
   "permissionsPanel": {
-    "actionPermissions": "Action permissions",
-    "allAgents": "All agents",
-    "allAgentsHint": "Anyone you've added to Paperclip.",
-    "installOnAll": "Install on all agents",
-    "installedOnAgents": "Installed on agents",
-    "saving": "Saving…",
-    "specificAgents": "Only specific agents",
-    "specificAgentsHint": "Pick who can use it.",
-    "whoCanUse": "Who can use it"
+    "actionPermissions": "操作权限",
+    "allAgents": "所有代理",
+    "allAgentsHint": "您已添加到 Paperclip 的任何人。",
+    "installOnAll": "为所有代理安装",
+    "installedOnAgents": "已安装到代理",
+    "saving": "保存中…",
+    "specificAgents": "仅特定代理",
+    "specificAgentsHint": "选择谁可以使用。",
+    "whoCanUse": "谁可以使用"
   },
   "pluginManager": {
     "alphaBanner": "插件处于 Alpha 阶段。",
