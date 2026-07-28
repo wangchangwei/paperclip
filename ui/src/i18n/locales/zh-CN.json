@@ -1108,14 +1108,14 @@
     "unsavedEdits": "未保存的修改"
   },
   "smokeLab": {
-    "colPath": "Path",
-    "demoCreds": "Fake OAuth demo credentials",
-    "experimentalBadge": "Experimental",
-    "fixtureServices": "Fixture services",
-    "integrationMatrix": "Integration matrix",
-    "loading": "Loading Smoke Lab…",
-    "noServices": "No services reported. Start the fixture services above.",
-    "offHeading": "Smoke Lab is turned off",
+    "colPath": "路径",
+    "demoCreds": "假 OAuth 演示凭据",
+    "experimentalBadge": "实验性",
+    "fixtureServices": "测试夹具服务",
+    "integrationMatrix": "集成矩阵",
+    "loading": "Smoke Lab 加载中…",
+    "noServices": "没有上报的服务,请先启动上面的夹具服务。",
+    "offHeading": "Smoke Lab 已关闭",
     "title": "Smoke Lab"
   },
   "testPanel": {
