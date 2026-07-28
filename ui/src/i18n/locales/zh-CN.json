@@ -487,8 +487,10 @@
     "liveRuns_other": "{{count}}个实时运行",
     "noLiveRuns": "当前没有实时运行。",
     "noStarredProjects": "暂无收藏的项目。",
+    "noTasks": "No tasks yet.",
     "quickActions": "快速操作",
     "recentActivity": "最近活动",
+    "recentTasks": "Recent Tasks",
     "starredProjects": "收藏的项目",
     "title": "仪表板"
   },

@@ -474,7 +474,9 @@
     "quickActions": "Quick Actions",
     "recentActivity": "Recent Activity",
     "starredProjects": "Starred Projects",
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "recentTasks": "Recent Tasks",
+    "noTasks": "No tasks yet."
   },
   "errors": {
     "conflict": "A conflict occurred. Please refresh and try again.",

@@ -487,8 +487,10 @@
     "liveRuns_other": "{{count}} live runs",
     "noLiveRuns": "No live runs right now.",
     "noStarredProjects": "No starred projects yet.",
+    "noTasks": "No tasks yet.",
     "quickActions": "Quick Actions",
     "recentActivity": "Recent Activity",
+    "recentTasks": "Recent Tasks",
     "starredProjects": "Starred Projects",
     "title": "Dashboard"
   },
