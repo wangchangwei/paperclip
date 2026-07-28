@@ -951,5 +951,18 @@
     "loading": "Loading training examples…",
     "loadError": "Could not load training examples.",
     "noMatches": "No training examples match these filters."
+  },
+  "costs": {
+    "title": "Costs",
+    "tabOverview": "Overview",
+    "tabBudgets": "Budgets",
+    "tabProviders": "Providers",
+    "tabBillers": "Billers",
+    "tabFinance": "Finance",
+    "selectDatesHint": "Select a start and end date to load data.",
+    "inferenceLedger": "Inference ledger",
+    "byAgent": "By agent",
+    "noCostEvents": "No cost events yet.",
+    "byProject": "By project"
   }
 }

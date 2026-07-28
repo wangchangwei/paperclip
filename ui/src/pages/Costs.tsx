@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ComponentType } from "react";
+import { useTranslation } from "../i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type {
   BudgetPolicySummary,
@@ -147,6 +148,7 @@ function FinanceSummaryCard({
 }
 
 export function Costs() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
@@ -541,7 +543,7 @@ export function Costs() {
       <div className="space-y-5">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
-                <h1 className="text-3xl font-semibold tracking-tight">Costs</h1>
+                <h1 className="text-3xl font-semibold tracking-tight">{t("costs.title")}</h1>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
                   Inference spend, platform fees, credits, and live quota windows.
                 </p>
@@ -620,16 +622,16 @@ export function Costs() {
 
       <Tabs value={mainTab} onValueChange={(value) => setMainTab(value as typeof mainTab)}>
         <TabsList variant="line" className="justify-start">
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="budgets">Budgets</TabsTrigger>
-          <TabsTrigger value="providers">Providers</TabsTrigger>
-          <TabsTrigger value="billers">Billers</TabsTrigger>
-          <TabsTrigger value="finance">Finance</TabsTrigger>
+          <TabsTrigger value="overview">{t("costs.tabOverview")}</TabsTrigger>
+          <TabsTrigger value="budgets">{t("costs.tabBudgets")}</TabsTrigger>
+          <TabsTrigger value="providers">{t("costs.tabProviders")}</TabsTrigger>
+          <TabsTrigger value="billers">{t("costs.tabBillers")}</TabsTrigger>
+          <TabsTrigger value="finance">{t("costs.tabFinance")}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="mt-4 space-y-4">
           {showCustomPrompt ? (
-            <p className="text-sm text-muted-foreground">Select a start and end date to load data.</p>
+            <p className="text-sm text-muted-foreground">{t("costs.selectDatesHint")}</p>
           ) : showOverviewLoading ? (
             <PageSkeleton variant="costs" />
           ) : overviewError ? (
@@ -658,7 +660,7 @@ export function Costs() {
               <div className="grid gap-4 xl:grid-cols-(--gtc-31)">
                 <Card>
                   <CardHeader className="px-5 pt-5 pb-2">
-                    <CardTitle className="text-base">Inference ledger</CardTitle>
+                    <CardTitle className="text-base">{t("costs.inferenceLedger")}</CardTitle>
                     <CardDescription>
                       Request-scoped inference spend for the selected period.
                     </CardDescription>
@@ -717,12 +719,12 @@ export function Costs() {
               <div className="grid gap-4 xl:grid-cols-(--gtc-32)">
                 <Card>
                   <CardHeader className="px-5 pt-5 pb-2">
-                    <CardTitle className="text-base">By agent</CardTitle>
+                    <CardTitle className="text-base">{t("costs.byAgent")}</CardTitle>
                     <CardDescription>What each agent consumed in the selected period.</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-2 px-5 pb-5 pt-2">
                     {(spendData?.byAgent.length ?? 0) === 0 ? (
-                      <p className="text-sm text-muted-foreground">No cost events yet.</p>
+                      <p className="text-sm text-muted-foreground">{t("costs.noCostEvents")}</p>
                     ) : (
                       spendData?.byAgent.map((row) => {
                         const modelRows = agentModelRows.get(row.agentId) ?? [];
@@ -805,7 +807,7 @@ export function Costs() {
                 <div className="space-y-4">
                   <Card>
                     <CardHeader className="px-5 pt-5 pb-2">
-                      <CardTitle className="text-base">By project</CardTitle>
+                      <CardTitle className="text-base">{t("costs.byProject")}</CardTitle>
                       <CardDescription>Run costs attributed through project-linked tasks.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2 px-5 pb-5 pt-2">
@@ -951,7 +953,7 @@ export function Costs() {
 
         <TabsContent value="providers" className="mt-4 space-y-4">
           {showCustomPrompt ? (
-            <p className="text-sm text-muted-foreground">Select a start and end date to load data.</p>
+            <p className="text-sm text-muted-foreground">{t("costs.selectDatesHint")}</p>
           ) : (
             <>
               <Tabs value={effectiveProvider} onValueChange={setActiveProvider}>
@@ -1006,7 +1008,7 @@ export function Costs() {
 
         <TabsContent value="billers" className="mt-4 space-y-4">
           {showCustomPrompt ? (
-            <p className="text-sm text-muted-foreground">Select a start and end date to load data.</p>
+            <p className="text-sm text-muted-foreground">{t("costs.selectDatesHint")}</p>
           ) : (
             <>
               <Tabs value={effectiveBiller} onValueChange={setActiveBiller}>
@@ -1059,7 +1061,7 @@ export function Costs() {
 
         <TabsContent value="finance" className="mt-4 space-y-4">
           {showCustomPrompt ? (
-            <p className="text-sm text-muted-foreground">Select a start and end date to load data.</p>
+            <p className="text-sm text-muted-foreground">{t("costs.selectDatesHint")}</p>
           ) : financeLoading ? (
             <PageSkeleton variant="costs" />
           ) : financeError ? (
