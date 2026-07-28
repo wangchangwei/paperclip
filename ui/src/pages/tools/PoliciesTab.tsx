@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   ChevronDown,
@@ -403,6 +404,7 @@ function PolicySimulator({
   onOpenChange: (open: boolean) => void;
   onEditPolicy: (policy: ToolPolicy) => void;
 }) {
+  const { t } = useTranslation();
   const { pushToast } = useToast();
   const [agentId, setAgentId] = useState<string>("");
   const [toolName, setToolName] = useState("");
@@ -442,7 +444,7 @@ function PolicySimulator({
             <FlaskConical className="h-4 w-4" />
             Test a rule
           </SheetTitle>
-          <SheetDescription>Pick an agent and an action to see what Paperclip would do.</SheetDescription>
+          <SheetDescription>{t("policiesTab.testSheetDesc")}</SheetDescription>
         </SheetHeader>
         <div className="flex-1 space-y-4 overflow-y-auto p-4">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -450,7 +452,7 @@ function PolicySimulator({
               <Label>Agent</Label>
               <Select value={agentId} onValueChange={setAgentId}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select an agent" />
+                  <SelectValue placeholder={t("policiesTab.selectAgent")} />
                 </SelectTrigger>
                 <SelectContent>
                   {agents.map((a) => (
@@ -467,7 +469,7 @@ function PolicySimulator({
                 id="test-action"
                 value={toolName}
                 onChange={(e) => setToolName(e.target.value)}
-                placeholder="e.g. gmail.send_email"
+                placeholder={t("policiesTab.actionPlaceholder")}
               />
             </div>
           </div>
@@ -492,7 +494,7 @@ function PolicySimulator({
                 )}
               </div>
               <details className="text-xs text-muted-foreground">
-                <summary className="cursor-pointer text-foreground">Details</summary>
+                <summary className="cursor-pointer text-foreground">{t("common.details")}</summary>
                 <div className="mt-2 space-y-1 font-mono">
                   <div>reason: {result.reasonCode}</div>
                   <div>matched rule ids: {result.matchedPolicyIds.length ? result.matchedPolicyIds.join(", ") : "none"}</div>
@@ -795,6 +797,7 @@ function StarterCards({ onStart }: { onStart: (form: PolicyFormState) => void })
 }
 
 export function PoliciesTab({ companyId }: { companyId: string }) {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const { pushToast } = useToast();
   const [form, setForm] = useState<PolicyFormState | null>(null);

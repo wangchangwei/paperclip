@@ -467,7 +467,8 @@
     "newTask": "New Task",
     "skipToMainContent": "Skip to Main Content",
     "commandPaletteHeading": "Search",
-    "none": "None"
+    "none": "None",
+    "details": "Details"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -1086,5 +1087,10 @@
     "colSource": "Source",
     "notAssigned": "Not assigned yet",
     "editTitle": "Edit profile"
+  },
+  "policiesTab": {
+    "testSheetDesc": "Pick an agent and an action to see what Paperclip would do.",
+    "selectAgent": "Select an agent",
+    "actionPlaceholder": "e.g. gmail.send_email"
   }
 }

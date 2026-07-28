@@ -414,6 +414,7 @@
     "copied": "已复制！",
     "copy": "复制",
     "create": "创建",
+    "details": "Details",
     "dismiss": "关闭",
     "empty": {
       "noCompanies": "暂无公司",
@@ -918,6 +919,11 @@
     "about": "关于",
     "loading": "正在加载插件详情...",
     "settings": "设置"
+  },
+  "policiesTab": {
+    "actionPlaceholder": "e.g. gmail.send_email",
+    "selectAgent": "Select an agent",
+    "testSheetDesc": "Pick an agent and an action to see what Paperclip would do."
   },
   "profileDetail": {
     "allowsHeading": "允许的能力",

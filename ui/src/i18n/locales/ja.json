@@ -414,6 +414,7 @@
     "copied": "Copied!",
     "copy": "Copy",
     "create": "Create",
+    "details": "Details",
     "dismiss": "Dismiss",
     "empty": {
       "noCompanies": "No companies",
@@ -918,6 +919,11 @@
     "about": "About",
     "loading": "Loading plugin details...",
     "settings": "Settings"
+  },
+  "policiesTab": {
+    "actionPlaceholder": "e.g. gmail.send_email",
+    "selectAgent": "Select an agent",
+    "testSheetDesc": "Pick an agent and an action to see what Paperclip would do."
   },
   "profileDetail": {
     "allowsHeading": "What it allows",
