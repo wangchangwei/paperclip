@@ -1096,6 +1096,15 @@
     "starterContent": "起始内容",
     "unsavedEdits": "未保存的修改"
   },
+  "testPanel": {
+    "badgeLegendHeading": "What the badges mean",
+    "goToSetup": "Go to Setup",
+    "noAgents": "No agents to test as",
+    "noAgentsMatch": "No agents match.",
+    "nothingToTest": "Nothing to test yet",
+    "running": "Running…",
+    "testAs": "Test as"
+  },
   "toast": {
     "copied": "已复制到剪贴板。",
     "created": "创建成功。",

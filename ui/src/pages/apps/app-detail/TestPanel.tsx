@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   AlertTriangle,
@@ -129,6 +130,7 @@ export function TestPanel({
   /** New, not-yet-reviewed actions — shown as Off so they're reachable to test. */
   quarantined?: ToolCatalogEntry[];
 }) {
+  const { t } = useTranslation();
   const testAgentsQuery = useQuery({
     queryKey: queryKeys.tools.testAgents(connectionId),
     queryFn: () => toolsApi.listTestAgents(connectionId),
@@ -213,7 +215,7 @@ export function TestPanel({
   if (agents.length === 0) {
     return (
       <div className="rounded-lg border border-border bg-card p-6 text-center">
-        <p className="text-sm font-medium text-foreground">No agents to test as</p>
+        <p className="text-sm font-medium text-foreground">{t("testPanel.noAgents")}</p>
         <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
           Only agents you can assign tasks to can preview {appName}. Give an agent access in{" "}
           <Link className="font-medium text-primary hover:underline" to={appTabHref(connectionId, "permissions")}>
@@ -310,14 +312,15 @@ export function TestPanel({
 // ---------------------------------------------------------------------------
 
 function EmptyState({ connectionId, appName }: { connectionId: string; appName: string }) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-lg border border-border bg-card p-8 text-center">
-      <p className="text-base font-bold text-foreground">Nothing to test yet</p>
+      <p className="text-base font-bold text-foreground">{t("testPanel.nothingToTest")}</p>
       <p className="mx-auto mt-1.5 max-w-md text-sm text-muted-foreground">
         Once {appName} is connected, the actions it offers will show up here so you can try them out.
       </p>
       <Button asChild className="mt-4" variant="outline">
-        <Link to={appTabHref(connectionId, "setup")}>Go to Setup</Link>
+        <Link to={appTabHref(connectionId, "setup")}>{t("testPanel.goToSetup")}</Link>
       </Button>
     </div>
   );
@@ -342,6 +345,7 @@ function TestAsHeader({
   connectionId: string;
   compact: boolean;
 }) {
+  const { t } = useTranslation();
   if (compact) {
     return (
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
@@ -364,7 +368,7 @@ function TestAsHeader({
     <div className="rounded-lg border border-border bg-card p-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Test as</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t("testPanel.testAs")}</p>
           <AgentPicker
             agents={agents}
             selectedAgent={selectedAgent}
@@ -397,6 +401,7 @@ function AgentPicker({
   appName: string;
   inline?: boolean;
 }) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -435,7 +440,7 @@ function AgentPicker({
         </div>
         <div className="max-h-60 overflow-y-auto p-1">
           {filtered.length === 0 ? (
-            <p className="px-3 py-4 text-center text-xs text-muted-foreground">No agents match.</p>
+            <p className="px-3 py-4 text-center text-xs text-muted-foreground">{t("testPanel.noAgentsMatch")}</p>
           ) : (
             filtered.map((agent) => {
               const summary = agent.effectiveAccess;
@@ -478,7 +483,7 @@ function AgentPicker({
           <p>Pick one to preview what they'd see in {appName}.</p>
         </div>
         <div className="border-t border-border p-3">
-          <p className="text-xs font-semibold text-foreground">What the badges mean</p>
+          <p className="text-xs font-semibold text-foreground">{t("testPanel.badgeLegendHeading")}</p>
           <ul className="mt-1.5 space-y-1 text-xs text-muted-foreground">
             <li><span className="font-medium text-foreground">Allowed</span> — runs immediately when you press Run.</li>
             <li><span className="font-medium text-foreground">Ask first</span> — Run is parked in Review for your OK.</li>
@@ -861,12 +866,13 @@ function RunningCard({
   elapsedMs: number;
   onCancel: () => void;
 }) {
+  const { t } = useTranslation();
   const verb = entry.isReadOnly ? "Reading from" : entry.isWrite ? "Writing to" : "Calling";
   return (
     <div className="rounded-md border border-border bg-muted/30 p-4">
       <div className="flex items-center gap-2">
         <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
-        <span className="text-sm font-medium text-foreground">Running…</span>
+        <span className="text-sm font-medium text-foreground">{t("testPanel.running")}</span>
       </div>
       <p className="mt-1 text-xs text-muted-foreground">
         {verb} {appName} as {agentName}.

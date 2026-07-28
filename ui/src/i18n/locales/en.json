@@ -1112,5 +1112,14 @@
     "unsavedEdits": "Unsaved edits",
     "readOnly": "Read-only",
     "starterContent": "Starter content"
+  },
+  "testPanel": {
+    "noAgents": "No agents to test as",
+    "nothingToTest": "Nothing to test yet",
+    "goToSetup": "Go to Setup",
+    "testAs": "Test as",
+    "noAgentsMatch": "No agents match.",
+    "badgeLegendHeading": "What the badges mean",
+    "running": "Running…"
   }
 }
