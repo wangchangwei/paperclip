@@ -1,11 +1,11 @@
 {
   "agentDetail": {
-    "invalidReportingChain": "Invalid reporting chain",
+    "invalidReportingChain": "汇报链无效",
     "loadingLog": "正在加载日志...",
     "noPersistedLogLines": "没有持久化日志记录。",
-    "noRecentTasks": "No recent tasks.",
+    "noRecentTasks": "暂无最近任务。",
     "pendingApprovalHint": "该代理正在等待董事会审批,暂无法调用。",
-    "recentTasks": "Recent Tasks"
+    "recentTasks": "最近任务"
   },
   "agents": {
     "accessProfiles": "访问配置文件",
