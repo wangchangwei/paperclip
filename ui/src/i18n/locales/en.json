@@ -1070,5 +1070,21 @@
     "colLastActivity": "Last activity",
     "notFound": "Pipeline not found.",
     "noStages": "No stages are set up for this pipeline yet."
+  },
+  "profileDetail": {
+    "back": "Back to profiles",
+    "archive": "Archive",
+    "updated": "Updated {{time}}",
+    "saved": "Profile saved",
+    "allowsHeading": "What it allows",
+    "whoHasIt": "Who has it",
+    "newToolsLater": "New tools that appear later",
+    "reviewToolsTitle": "Review new tools",
+    "colTool": "Tool",
+    "colApp": "App",
+    "colCapabilities": "Capabilities",
+    "colSource": "Source",
+    "notAssigned": "Not assigned yet",
+    "editTitle": "Edit profile"
   }
 }

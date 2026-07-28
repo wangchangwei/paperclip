@@ -919,6 +919,22 @@
     "loading": "Loading plugin details...",
     "settings": "Settings"
   },
+  "profileDetail": {
+    "allowsHeading": "What it allows",
+    "archive": "Archive",
+    "back": "Back to profiles",
+    "colApp": "App",
+    "colCapabilities": "Capabilities",
+    "colSource": "Source",
+    "colTool": "Tool",
+    "editTitle": "Edit profile",
+    "newToolsLater": "New tools that appear later",
+    "notAssigned": "Not assigned yet",
+    "reviewToolsTitle": "Review new tools",
+    "saved": "Profile saved",
+    "updated": "Updated {{time}}",
+    "whoHasIt": "Who has it"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "Advanced runtime JSON",
     "advancedRuntimeJsonDescription": "Paperclip derives Services and Jobs from this JSON. Prefer editing named commands first; use raw JSON for advanced lifecycle, port, readiness, or environment settings.",

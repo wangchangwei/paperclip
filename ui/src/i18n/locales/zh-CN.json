@@ -919,6 +919,22 @@
     "loading": "正在加载插件详情...",
     "settings": "设置"
   },
+  "profileDetail": {
+    "allowsHeading": "What it allows",
+    "archive": "Archive",
+    "back": "Back to profiles",
+    "colApp": "App",
+    "colCapabilities": "Capabilities",
+    "colSource": "Source",
+    "colTool": "Tool",
+    "editTitle": "Edit profile",
+    "newToolsLater": "New tools that appear later",
+    "notAssigned": "Not assigned yet",
+    "reviewToolsTitle": "Review new tools",
+    "saved": "Profile saved",
+    "updated": "Updated {{time}}",
+    "whoHasIt": "Who has it"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
     "advancedRuntimeJsonDescription": "Paperclip从此JSON派生Services和Jobs。优先编辑命名命令；对于高级生命周期、端口、就绪状态或环境设置，使用原始JSON。",

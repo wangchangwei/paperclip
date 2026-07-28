@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArchiveRestore, Copy, Pencil, PlugZap, ShieldCheck, Trash2, UserMinus } from "lucide-react";
 import type {
@@ -57,6 +58,7 @@ export function ProfileDetail({
   initialCreated?: boolean;
   initialReviewOpen?: boolean;
 }) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const queryClient = useQueryClient();
@@ -164,7 +166,7 @@ export function ProfileDetail({
     return (
       <div className="space-y-4">
         <ToolsPageHeader title="Profile not found" description="This access profile may have been deleted." />
-        <Button variant="outline" onClick={() => navigate("/apps/advanced/profiles")}>Back to profiles</Button>
+        <Button variant="outline" onClick={() => navigate("/apps/advanced/profiles")}>{t("profileDetail.back")}</Button>
       </div>
     );
   }
@@ -193,7 +195,7 @@ export function ProfileDetail({
                 Restore
               </Button>
             ) : (
-              <Button variant="outline" onClick={() => setDialog("archive")}>Archive</Button>
+              <Button variant="outline" onClick={() => setDialog("archive")}>{t("profileDetail.archive")}</Button>
             )}
             <Button variant="outline" className="text-destructive hover:text-destructive" onClick={() => setDialog("delete")}>
               <Trash2 className="mr-1.5 h-4 w-4" />
@@ -205,14 +207,14 @@ export function ProfileDetail({
 
       <div className="flex flex-wrap items-center gap-3 text-sm">
         <Badge variant={archived ? "outline" : "default"}>{STATUS_LABEL[profile.status]}</Badge>
-        <span className="text-muted-foreground">Updated <RelativeTime value={profile.updatedAt} /></span>
+        <span className="text-muted-foreground">{t("profileDetail.updated", { time: <RelativeTime value={profile.updatedAt} /> })}</span>
         <span className="text-muted-foreground">{allowsLabel(profile.summary)}</span>
       </div>
 
       {created ? (
         <div className="flex items-center justify-between gap-3 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3">
           <div>
-            <p className="text-sm font-medium text-foreground">Profile saved</p>
+            <p className="text-sm font-medium text-foreground">{t("profileDetail.saved")}</p>
             <p className="text-sm text-muted-foreground">
               {unassigned ? "Assign it to agents before it changes their access." : "Assignments are active now."}
             </p>
@@ -245,7 +247,7 @@ export function ProfileDetail({
 
       <section className="space-y-3">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="text-base font-semibold text-foreground">What it allows</h2>
+          <h2 className="text-base font-semibold text-foreground">{t("profileDetail.allowsHeading")}</h2>
           <Button variant="outline" size="sm" disabled={archived} onClick={() => navigate(`/apps/advanced/profiles/${profile.id}/edit?step=2`)}>
             Edit tools
           </Button>
@@ -255,7 +257,7 @@ export function ProfileDetail({
 
       <section className="space-y-3">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="text-base font-semibold text-foreground">Who has it</h2>
+          <h2 className="text-base font-semibold text-foreground">{t("profileDetail.whoHasIt")}</h2>
           <Button variant="outline" size="sm" disabled={archived} onClick={() => navigate(`/apps/advanced/profiles/${profile.id}/edit?step=3`)}>
             Assign
           </Button>
@@ -270,7 +272,7 @@ export function ProfileDetail({
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-base font-semibold text-foreground">New tools that appear later</h2>
+        <h2 className="text-base font-semibold text-foreground">{t("profileDetail.newToolsLater")}</h2>
         <NewToolsSetting
           value={profile.defaultAction}
           disabled={archived || updateProfile.isPending}
@@ -370,11 +372,12 @@ function NewToolsReviewDialog({
   onDecision: (catalogEntryId: string, decision: ToolProfileNewToolReviewDecision) => void;
   onSubmit: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <Dialog open={open} onOpenChange={(next) => !next && onClose()}>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Review new tools</DialogTitle>
+          <DialogTitle>{t("profileDetail.reviewToolsTitle")}</DialogTitle>
           <DialogDescription>
             Allow the tools this profile should use. Keep the rest blocked.
           </DialogDescription>
@@ -441,6 +444,7 @@ function NewToolsReviewDialog({
 }
 
 function AllowList({ rows, total }: { rows: AllowRow[]; total: number }) {
+  const { t } = useTranslation();
   if (rows.length === 0) {
     return (
       <div className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
@@ -453,10 +457,10 @@ function AllowList({ rows, total }: { rows: AllowRow[]; total: number }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border bg-muted/40 text-left text-xs font-medium text-muted-foreground">
-            <th className="px-3 py-2 font-medium">Tool</th>
-            <th className="px-3 py-2 font-medium">App</th>
-            <th className="px-3 py-2 font-medium">Capabilities</th>
-            <th className="px-3 py-2 font-medium">Source</th>
+            <th className="px-3 py-2 font-medium">{t("profileDetail.colTool")}</th>
+            <th className="px-3 py-2 font-medium">{t("profileDetail.colApp")}</th>
+            <th className="px-3 py-2 font-medium">{t("profileDetail.colCapabilities")}</th>
+            <th className="px-3 py-2 font-medium">{t("profileDetail.colSource")}</th>
           </tr>
         </thead>
         <tbody>
@@ -520,10 +524,11 @@ function Assignments({
   archived: boolean;
   onRemove: (binding: ToolProfileBinding) => void;
 }) {
+  const { t } = useTranslation();
   if (profile.bindings.length === 0) {
     return (
       <div className="rounded-lg border border-dashed border-border px-4 py-5">
-        <p className="text-sm font-medium text-foreground">Not assigned yet</p>
+        <p className="text-sm font-medium text-foreground">{t("profileDetail.notAssigned")}</p>
         <p className="text-sm text-muted-foreground">Assign this profile before it changes access.</p>
       </div>
     );
@@ -622,6 +627,8 @@ function ProfileDialogs({
   const [copyAssignments, setCopyAssignments] = useState(false);
   const [advancedOpen, setAdvancedOpen] = useState(false);
 
+  const { t } = useTranslation();
+
   const duplicateName = allProfiles.some((p) => p.id !== profile.id && p.name.trim().toLowerCase() === name.trim().toLowerCase());
   const duplicateCopyName = allProfiles.some((p) => p.name.trim().toLowerCase() === copyName.trim().toLowerCase());
 
@@ -633,7 +640,7 @@ function ProfileDialogs({
       <Dialog open={open} onOpenChange={(next) => !next && onClose()}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>{t("profileDetail.editTitle")}</DialogTitle>
             <DialogDescription>Update the profile name and description.</DialogDescription>
           </DialogHeader>
           <div className="space-y-3">
