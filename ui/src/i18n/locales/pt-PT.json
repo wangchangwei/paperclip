@@ -39,8 +39,10 @@
     "builtin": "Built-in",
     "cachedTokens": "Cached tokens",
     "canAssignTasks": "Can assign tasks",
+    "canCreateAgents": "Can create new agents",
     "canCreateNewAgents": "Can create new agents",
     "canCreateOrImportSkills": "Can create/import skills",
+    "canManageSkills": "Can create/import skills",
     "cancel": "Cancel",
     "cancelCreate": "Cancel",
     "cannotAcceptTasks": "{{agentName}} cannot accept tasks or start runs until its reporting chain is repaired.",
@@ -63,7 +65,16 @@
     "count_one": "{{count}} agent",
     "count_other": "{{count}} agents",
     "createAgent": "Create agent",
+    "createDescription": {
+      "createDescription": "API keys allow this agent to authenticate calls to the Paperclip server."
+    },
     "createFirstAgent": "Create your first agent to get started.",
+    "createTitle": {
+      "createTitle": "Create API Key"
+    },
+    "createdCopyPrompt": {
+      "createdCopyPrompt": "API key created — copy it now, it will not be shown again."
+    },
     "creating": "Creating…",
     "custom": "Custom",
     "dashboard": "Dashboard",
@@ -73,6 +84,9 @@
     "disableSkill": "Disable {{skillName}}",
     "effectiveAccess": "Effective access",
     "effectiveAccessDescription": "This is exactly the tool set Paperclip will accept for {{agentName}}. Profile and policy edits are reflected within ~5 seconds. The agent's prompt can narrow this list but cannot expand it — everything else is blocked by default.",
+    "empty": {
+      "empty": "No runs yet."
+    },
     "enableSkill": "Enable {{skillName}}",
     "enabledSkills": "Enabled on this agent",
     "environmentLoading": "Loading environment",
@@ -106,6 +120,7 @@
     "invalidReportingChain": "Invalid reporting chain",
     "invocation": "Invocation",
     "keptInWorkspace": "Kept in workspace",
+    "keys": {},
     "last14Days": "Last 14 days",
     "lastHeartbeat": "Last heartbeat",
     "leftAgentNotice": "You left this agent. It no longer appears in your sidebar.",
@@ -117,6 +132,9 @@
     "liveRun": "Live",
     "liveRunWithCount": "Live ({{count}})",
     "loadedIntoRuntime": "Loaded into this agent's runtime context.",
+    "loading": {
+      "loading": "Loading keys..."
+    },
     "loadingEnvironment": "Loading environment",
     "loadingKeys": "Loading keys...",
     "loadingPolicies": "Loading policies…",
@@ -127,7 +145,13 @@
     "modelAndAdapter": "Model / Adapter",
     "moreTasks": "+{{count}} more",
     "moreTools": "+{{count}} more",
+    "namePlaceholder": {
+      "namePlaceholder": "Key name (e.g. production)"
+    },
     "newAgent": "New Agent",
+    "noActive": {
+      "noActive": "No active API keys."
+    },
     "noActiveApiKeys": "No active API keys.",
     "noActiveProfileApplies": "No active profile applies to this agent, so it has no allowed tools.",
     "noAgents": "No agents yet.",
@@ -184,6 +208,7 @@
     "run": "Run",
     "runActivity": "Run Activity",
     "runHeartbeat": "Run Heartbeat",
+    "runs": {},
     "sandboxProvider": "sandbox provider",
     "save": "Save",
     "saved": "Saved",
@@ -336,6 +361,10 @@
       "upload": "Upload",
       "viewProfile": "View profile"
     },
+    "copied": "Copied!",
+    "copy": "Copy",
+    "create": "Create",
+    "dismiss": "Dismiss",
     "empty": {
       "noCompanies": "No companies",
       "noData": "No data",
@@ -344,6 +373,7 @@
       "noResults": "No results match your search.",
       "noTasks": "No tasks"
     },
+    "hide": "Hide",
     "labels": {
       "assignee": "Assignee",
       "category": "Category",
@@ -395,6 +425,7 @@
       "previous": "Previous",
       "showing": "Showing {{from}}–{{to}} of {{total}}"
     },
+    "show": "Show",
     "status": {
       "active": "Active",
       "archived": "Archived",

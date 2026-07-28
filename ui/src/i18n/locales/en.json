@@ -152,7 +152,13 @@
       "public": "Public",
       "private": "Private",
       "restricted": "Restricted"
-    }
+    },
+    "hide": "Hide",
+    "show": "Show",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "dismiss": "Dismiss",
+    "create": "Create"
   },
   "nav": {
     "sidebar": {
@@ -674,6 +680,31 @@
       "effectiveAccessBodyMiddle": ". Profile and policy edits are reflected within ~5 seconds. The agent’s prompt can narrow this list but ",
       "effectiveAccessBodyEmphasis": "cannot expand it",
       "effectiveAccessBodySuffix": " — everything else is blocked by default."
+    },
+    "keys": {},
+    "runs": {},
+    "canCreateAgents": "Can create new agents",
+    "canManageSkills": "Can create/import skills",
+    "createdCopyPrompt": {
+      "createdCopyPrompt": "API key created — copy it now, it will not be shown again."
+    },
+    "createTitle": {
+      "createTitle": "Create API Key"
+    },
+    "createDescription": {
+      "createDescription": "API keys allow this agent to authenticate calls to the Paperclip server."
+    },
+    "namePlaceholder": {
+      "namePlaceholder": "Key name (e.g. production)"
+    },
+    "loading": {
+      "loading": "Loading keys..."
+    },
+    "noActive": {
+      "noActive": "No active API keys."
+    },
+    "empty": {
+      "empty": "No runs yet."
     }
   },
   "settings": {
