@@ -1344,16 +1344,16 @@
     "updated": "更新成功。"
   },
   "tokensPanel": {
-    "clientPlaceholder": "Cursor on work laptop",
-    "colOwner": "Owner",
-    "colToken": "Token",
-    "expires": "Expires",
-    "nameLabel": "Name",
+    "clientPlaceholder": "工作笔记本上的 Cursor",
+    "colOwner": "所有者",
+    "colToken": "令牌",
+    "expires": "到期时间",
+    "nameLabel": "名称",
     "namePlaceholder": "cto-cursor",
-    "newTokenHeading": "New token — copy now",
-    "note": "Note (why it exists)",
-    "notePlaceholder": "Dotta's MacBook",
-    "ownerClient": "Owner / client"
+    "newTokenHeading": "新令牌 — 请立即复制",
+    "note": "备注(用途)",
+    "notePlaceholder": "Dotta 的 MacBook",
+    "ownerClient": "所有者 / 客户端"
   },
   "training": {
     "loadError": "无法加载训练示例。",
