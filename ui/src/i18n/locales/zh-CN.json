@@ -1091,16 +1091,16 @@
   "skillStudio": {
     "appearance": "外观",
     "basics": "基本信息",
-    "basicsDesc": "Name the skill and set the route-safe slug.",
-    "nameLabel": "Name",
-    "namePlaceholder": "Code review",
+    "basicsDesc": "命名技能并设置路由安全的 slug。",
+    "nameLabel": "名称",
+    "namePlaceholder": "代码评审",
     "readOnly": "只读",
     "sharing": "共享",
     "slugLabel": "Slug",
     "slugPlaceholder": "code-review",
     "starterContent": "起始内容",
-    "taglineLabel": "Tagline",
-    "taglinePlaceholder": "Review repository changes for correctness, tests, and maintainability.",
+    "taglineLabel": "简介",
+    "taglinePlaceholder": "从正确性、测试和可维护性角度评审代码变更。",
     "unsavedEdits": "未保存的修改"
   },
   "testPanel": {
