@@ -1009,6 +1009,18 @@
     "workspaceNotFound": "Workspace not found for this project.",
     "workspacesTab": "Workspaces"
   },
+  "secrets": {
+    "colActions": "Actions",
+    "colSecret": "Secret",
+    "colStatus": "Status",
+    "colUpdated": "Updated",
+    "colVersion": "Version / coverage",
+    "referencesTitle": "Secret references",
+    "searchResults": "Search results",
+    "selectCompany": "Select a company to manage secrets.",
+    "title": "Secrets",
+    "whoProvides": "Who provides the value?"
+  },
   "settings": {
     "apiKeys": "API Keys",
     "appearance": "Appearance",

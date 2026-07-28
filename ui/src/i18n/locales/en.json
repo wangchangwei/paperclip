@@ -1044,5 +1044,17 @@
     "saving": "Saving…",
     "installOnAll": "Install on all agents",
     "actionPermissions": "Action permissions"
+  },
+  "secrets": {
+    "selectCompany": "Select a company to manage secrets.",
+    "title": "Secrets",
+    "colSecret": "Secret",
+    "colStatus": "Status",
+    "colVersion": "Version / coverage",
+    "colUpdated": "Updated",
+    "colActions": "Actions",
+    "searchResults": "Search results",
+    "referencesTitle": "Secret references",
+    "whoProvides": "Who provides the value?"
   }
 }
