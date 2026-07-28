@@ -890,5 +890,14 @@
     "historyHint": "Invite history below keeps the audit trail.",
     "latestInviteLink": "Latest invite link",
     "inviteHistory": "Invite history"
+  },
+  "companyAccess": {
+    "title": "Company Members",
+    "loading": "Loading company access…",
+    "humans": "Humans",
+    "pendingHumanJoins": "Pending human joins",
+    "noMemberships": "No user memberships found for this company yet.",
+    "editMember": "Edit member",
+    "removeMember": "Remove member"
   }
 }

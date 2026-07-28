@@ -477,6 +477,15 @@
       "signedIn": "已登录"
     }
   },
+  "companyAccess": {
+    "editMember": "Edit member",
+    "humans": "Humans",
+    "loading": "Loading company access…",
+    "noMemberships": "No user memberships found for this company yet.",
+    "pendingHumanJoins": "Pending human joins",
+    "removeMember": "Remove member",
+    "title": "Company Members"
+  },
   "companyInvites": {
     "chooseRole": "Choose a role",
     "historyHint": "Invite history below keeps the audit trail.",

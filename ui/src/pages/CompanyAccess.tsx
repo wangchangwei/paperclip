@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   HUMAN_COMPANY_MEMBERSHIP_ROLE_LABELS,
@@ -30,6 +31,7 @@ const reassignmentIssueStatuses = "backlog,todo,in_progress,in_review,blocked,fa
 type EditableMemberStatus = "pending" | "active" | "suspended";
 
 export function CompanyAccess() {
+  const { t } = useTranslation();
   const { selectedCompany, selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { pushToast } = useToast();
@@ -201,11 +203,11 @@ export function CompanyAccess() {
   }, [removingMember]);
 
   if (!selectedCompanyId) {
-    return <div className="text-sm text-muted-foreground">Select a company to manage access.</div>;
+    return <div className="text-sm text-muted-foreground">{t("common.selectCompanyFirst")}</div>;
   }
 
   if (membersQuery.isLoading) {
-    return <div className="text-sm text-muted-foreground">Loading company access…</div>;
+    return <div className="text-sm text-muted-foreground">{t("companyAccess.loading")}</div>;
   }
 
   if (membersQuery.error) {
@@ -238,7 +240,7 @@ export function CompanyAccess() {
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <ShieldCheck className="h-5 w-5 text-muted-foreground" />
-          <h1 className="text-lg font-semibold">Company Members</h1>
+          <h1 className="text-lg font-semibold">{t("companyAccess.title")}</h1>
         </div>
         <p className="max-w-3xl text-sm text-muted-foreground">
           Manage the people who can work in {selectedCompany?.name}. Members can collaborate across the company by default.
@@ -258,7 +260,7 @@ export function CompanyAccess() {
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <Users className="h-4 w-4 text-muted-foreground" />
-            <h2 className="text-base font-semibold">Humans</h2>
+            <h2 className="text-base font-semibold">{t("companyAccess.humans")}</h2>
           </div>
           <p className="max-w-3xl text-sm text-muted-foreground">
             Manage human company memberships and status here.
@@ -269,7 +271,7 @@ export function CompanyAccess() {
           <div className="space-y-3 rounded-xl border border-border px-4 py-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
-                <h3 className="text-sm font-semibold">Pending human joins</h3>
+                <h3 className="text-sm font-semibold">{t("companyAccess.pendingHumanJoins")}</h3>
                 <p className="text-sm text-muted-foreground">
                   Review pending join requests before they become active company members.
                 </p>
@@ -317,7 +319,7 @@ export function CompanyAccess() {
             <div className="text-right">Action</div>
           </div>
           {members.length === 0 ? (
-            <div className="px-4 py-8 text-sm text-muted-foreground">No user memberships found for this company yet.</div>
+            <div className="px-4 py-8 text-sm text-muted-foreground">{t("companyAccess.noMemberships")}</div>
           ) : (
             members.map((member) => {
               const removalReason = member.removal?.reason ?? null;
@@ -371,7 +373,7 @@ export function CompanyAccess() {
       <Dialog open={!!editingMember} onOpenChange={(open) => !open && setEditingMemberId(null)}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>Edit member</DialogTitle>
+            <DialogTitle>{t("companyAccess.editMember")}</DialogTitle>
             <DialogDescription>
               Update company role and membership status for {editingMember?.user?.name || editingMember?.user?.email || editingMember?.principalId}.
             </DialogDescription>
@@ -437,7 +439,7 @@ export function CompanyAccess() {
       <Dialog open={!!removingMember} onOpenChange={(open) => !open && setRemovingMemberId(null)}>
         <DialogContent className="max-w-xl">
           <DialogHeader>
-            <DialogTitle>Remove member</DialogTitle>
+            <DialogTitle>{t("companyAccess.removeMember")}</DialogTitle>
             <DialogDescription>
               Archive {memberDisplayName(removingMember)} and move active assignments before hiding this user from assignment fields.
             </DialogDescription>
