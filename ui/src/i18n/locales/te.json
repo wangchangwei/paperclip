@@ -1091,9 +1091,16 @@
   "skillStudio": {
     "appearance": "Appearance",
     "basics": "Basics",
+    "basicsDesc": "Name the skill and set the route-safe slug.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Code review",
     "readOnly": "Read-only",
     "sharing": "Sharing",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "code-review",
     "starterContent": "Starter content",
+    "taglineLabel": "Tagline",
+    "taglinePlaceholder": "Review repository changes for correctness, tests, and maintainability.",
     "unsavedEdits": "Unsaved edits"
   },
   "testPanel": {

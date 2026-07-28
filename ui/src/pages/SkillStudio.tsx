@@ -540,11 +540,11 @@ function StudioNewSkillPanel({
       <section className="space-y-3">
         <div>
           <h2 className="text-sm font-medium text-foreground">{t("skillStudio.basics")}</h2>
-          <p className="text-xs text-muted-foreground">Name the skill and set the route-safe slug.</p>
+          <p className="text-xs text-muted-foreground">{t("skillStudio.basicsDesc")}</p>
         </div>
         <div className="grid gap-3 md:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="skill-name">Name</Label>
+            <Label htmlFor="skill-name">{t("skillStudio.nameLabel")}</Label>
             <Input
               id="skill-name"
               value={draft.name}
@@ -558,11 +558,11 @@ function StudioNewSkillPanel({
                     : draft.markdown,
                 });
               }}
-              placeholder="Code review"
+              placeholder={t("skillStudio.namePlaceholder")}
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="skill-slug">Slug</Label>
+            <Label htmlFor="skill-slug">{t("skillStudio.slugLabel")}</Label>
             <Input
               id="skill-slug"
               value={draft.slug}
@@ -571,13 +571,13 @@ function StudioNewSkillPanel({
                 setSlugDirty(nextSlug.length > 0);
                 patchDraft({ slug: nextSlug });
               }}
-              placeholder="code-review"
+              placeholder={t("skillStudio.slugPlaceholder")}
               className="font-mono"
             />
           </div>
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="skill-tagline">Tagline</Label>
+          <Label htmlFor="skill-tagline">{t("skillStudio.taglineLabel")}</Label>
           <Textarea
             id="skill-tagline"
             value={draft.tagline}
@@ -591,7 +591,7 @@ function StudioNewSkillPanel({
                   : draft.markdown,
               });
             }}
-            placeholder="Review repository changes for correctness, tests, and maintainability."
+            placeholder={t("skillStudio.taglinePlaceholder")}
             className="min-h-20"
           />
         </div>
