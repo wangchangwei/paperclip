@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type { DecisionTrainingExample, DecisionTrainingSourceKind, IssueComment, Project } from "@paperclipai/shared";
 import { ArrowLeft, Download, Search } from "lucide-react";
@@ -78,6 +79,7 @@ function downloadExport(companyId: string) {
 }
 
 export function TrainingLibrary() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
@@ -113,8 +115,8 @@ export function TrainingLibrary() {
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6">
       <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h1 className="text-xl font-bold">Training examples</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Human decision traces with frozen state for future eval cases.</p>
+          <h1 className="text-xl font-bold">{t("training.title")}</h1>
+          <p className="mt-1 text-sm text-muted-foreground">{t("training.subtitle")}</p>
         </div>
         <Button variant="outline" onClick={() => selectedCompanyId && downloadExport(selectedCompanyId)} disabled={!selectedCompanyId}>
           <Download className="size-4" /> Export JSONL
@@ -131,9 +133,9 @@ export function TrainingLibrary() {
         <Select value={author} onValueChange={setAuthor}><SelectTrigger aria-label="Filter by author"><SelectValue placeholder="Author: All" /></SelectTrigger><SelectContent><SelectItem value="all">Author: All</SelectItem>{authors.map((userId) => <SelectItem key={userId} value={userId}>{authorLabel(userId)}</SelectItem>)}</SelectContent></Select>
       </div>
 
-      {recordsQuery.isLoading ? <p className="text-sm text-muted-foreground">Loading training examples…</p> : null}
-      {recordsQuery.isError ? <p className="text-sm text-destructive">Could not load training examples.</p> : null}
-      {!recordsQuery.isLoading && !recordsQuery.isError && records.length === 0 ? <p className="py-12 text-center text-sm text-muted-foreground">No training examples match these filters.</p> : null}
+      {recordsQuery.isLoading ? <p className="text-sm text-muted-foreground">{t("training.loading")}</p> : null}
+      {recordsQuery.isError ? <p className="text-sm text-destructive">{t("training.loadError")}</p> : null}
+      {!recordsQuery.isLoading && !recordsQuery.isError && records.length === 0 ? <p className="py-12 text-center text-sm text-muted-foreground">{t("training.noMatches")}</p> : null}
 
       <div className="overflow-hidden rounded-lg border border-border">
         <div className="hidden grid-cols-6 gap-4 bg-muted/40 px-4 py-2 text-xs font-medium text-muted-foreground md:grid">

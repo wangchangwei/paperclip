@@ -944,5 +944,12 @@
     "signingOut": "正在退出登录...",
     "signingOutComplete": "退出登录成功。",
     "updated": "更新成功。"
+  },
+  "training": {
+    "loadError": "Could not load training examples.",
+    "loading": "Loading training examples…",
+    "noMatches": "No training examples match these filters.",
+    "subtitle": "Human decision traces with frozen state for future eval cases.",
+    "title": "Training examples"
   }
 }

@@ -944,5 +944,12 @@
     "signingOut": "Signing out...",
     "signingOutComplete": "Signed out successfully.",
     "updated": "Updated successfully."
+  },
+  "training": {
+    "loadError": "Could not load training examples.",
+    "loading": "Loading training examples…",
+    "noMatches": "No training examples match these filters.",
+    "subtitle": "Human decision traces with frozen state for future eval cases.",
+    "title": "Training examples"
   }
 }

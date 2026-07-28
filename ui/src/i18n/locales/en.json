@@ -944,5 +944,12 @@
     "recentTasks": "Recent Tasks",
     "noRecentTasks": "No recent tasks.",
     "invalidReportingChain": "Invalid reporting chain"
+  },
+  "training": {
+    "title": "Training examples",
+    "subtitle": "Human decision traces with frozen state for future eval cases.",
+    "loading": "Loading training examples…",
+    "loadError": "Could not load training examples.",
+    "noMatches": "No training examples match these filters."
   }
 }
