@@ -1,4 +1,16 @@
 {
+  "adapterManager": {
+    "builtinHeading": "Built-in Adapters",
+    "externalAlpha": "External adapters are alpha.",
+    "externalHeading": "External Adapters",
+    "installTitle": "Install External Adapter",
+    "loading": "Loading adapters...",
+    "noBuiltin": "No built-in adapters found.",
+    "noExternal": "No external adapters installed",
+    "reinstallTitle": "Reinstall Adapter",
+    "removeTitle": "Remove Adapter",
+    "title": "Adapters"
+  },
   "agentDetail": {
     "invalidReportingChain": "Invalid reporting chain",
     "loadingLog": "Loading log...",

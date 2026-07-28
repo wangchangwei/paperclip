@@ -994,5 +994,17 @@
     "requestDetails": "Request details",
     "submitted": "Submitted {{when}}",
     "sourceIp": "Source IP {{ip}}"
+  },
+  "adapterManager": {
+    "loading": "Loading adapters...",
+    "title": "Adapters",
+    "installTitle": "Install External Adapter",
+    "removeTitle": "Remove Adapter",
+    "reinstallTitle": "Reinstall Adapter",
+    "externalHeading": "External Adapters",
+    "builtinHeading": "Built-in Adapters",
+    "noBuiltin": "No built-in adapters found.",
+    "externalAlpha": "External adapters are alpha.",
+    "noExternal": "No external adapters installed"
   }
 }
