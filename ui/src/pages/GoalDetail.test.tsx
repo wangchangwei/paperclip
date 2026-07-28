@@ -7,7 +7,7 @@ import { GoalPropertiesToggleButton } from "./GoalDetail";
 describe("GoalPropertiesToggleButton", () => {
   it("shows the reopen control when the properties panel is hidden", () => {
     const html = renderToStaticMarkup(
-      <GoalPropertiesToggleButton panelVisible={false} onShowProperties={() => {}} />,
+      <GoalPropertiesToggleButton panelVisible={false} onShowProperties={() => {}} showPropertiesLabel="Show properties" />,
     );
 
     expect(html).toContain('title="Show properties"');
@@ -16,7 +16,7 @@ describe("GoalPropertiesToggleButton", () => {
 
   it("collapses the reopen control while the properties panel is already visible", () => {
     const html = renderToStaticMarkup(
-      <GoalPropertiesToggleButton panelVisible onShowProperties={() => {}} />,
+      <GoalPropertiesToggleButton panelVisible onShowProperties={() => {}} showPropertiesLabel="Show properties" />,
     );
 
     expect(html).toContain("opacity-0");
