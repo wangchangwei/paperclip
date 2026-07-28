@@ -435,6 +435,9 @@
       "previous": "Previous",
       "showing": "Showing {{from}}–{{to}} of {{total}}"
     },
+    "saveChanges": "Save changes",
+    "saved": "Saved",
+    "saving": "Saving...",
     "selectCompanyFirst": "Select a company first.",
     "show": "Show",
     "status": {
@@ -473,6 +476,10 @@
       "profile": "Profile",
       "signedIn": "Signed in"
     }
+  },
+  "companySettings": {
+    "title": "Company Settings",
+    "uploadingLogo": "Uploading logo..."
   },
   "dashboard": {
     "liveRuns": "Live Runs",

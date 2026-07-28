@@ -460,7 +460,10 @@
       "profile": "Profile",
       "signedIn": "Signed in"
     },
-    "selectCompanyFirst": "Select a company first."
+    "selectCompanyFirst": "Select a company first.",
+    "saved": "Saved",
+    "saving": "Saving...",
+    "saveChanges": "Save changes"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -855,5 +858,9 @@
     "searchPlaceholder": "Search activity…",
     "noMatches": "No activity matches these filters",
     "nothingYet": "Nothing here yet"
+  },
+  "companySettings": {
+    "title": "Company Settings",
+    "uploadingLogo": "Uploading logo..."
   }
 }
