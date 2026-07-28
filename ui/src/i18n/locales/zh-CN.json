@@ -343,16 +343,16 @@
     "workspaceName": "工作区名称"
   },
   "caseDetail": {
-    "attachments": "Attachments ({{count}})",
-    "children": "Children {{count}}",
-    "description": "Description",
-    "noLabels": "No labels yet.",
-    "noneYet": "None yet",
-    "notFound": "Case not found.",
-    "parent": "Parent",
-    "saving": "Saving...",
-    "tabOverview": "Overview",
-    "tabProperties": "Properties"
+    "attachments": "附件（{{count}}）",
+    "children": "子项 {{count}}",
+    "description": "描述",
+    "noLabels": "暂无标签。",
+    "noneYet": "暂无",
+    "notFound": "未找到案件。",
+    "parent": "父级",
+    "saving": "保存中...",
+    "tabOverview": "概览",
+    "tabProperties": "属性"
   },
   "command": {
     "paletteDescription": "搜索要运行的命令...",
