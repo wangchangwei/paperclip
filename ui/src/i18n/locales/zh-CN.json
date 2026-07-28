@@ -314,15 +314,15 @@
     "title": "审批"
   },
   "appsConnect": {
-    "linkHeading": "Connect with a link",
-    "linkNameLabel": "Name",
-    "looksLike": "This looks like {{name}}.",
-    "moreWays": "More ways to connect",
-    "noMatch": "No apps match \"{{search}}\".",
-    "notOnInstance": "Not available on this instance - ask your admin.",
-    "selectCompany": "Select a company to connect apps.",
-    "signinSoon": "Sign-in coming soon",
-    "zapierHeading": "Connect Zapier",
+    "linkHeading": "通过链接连接",
+    "linkNameLabel": "名称",
+    "looksLike": "看起来像 {{name}}。",
+    "moreWays": "更多连接方式",
+    "noMatch": "没有匹配 \"{{search}}\" 的应用。",
+    "notOnInstance": "本实例不可用 - 请联系管理员。",
+    "selectCompany": "请选择公司以连接应用。",
+    "signinSoon": "即将开放登录",
+    "zapierHeading": "连接 Zapier",
     "zapierUrlLabel": "Zapier MCP URL"
   },
   "audit": {
