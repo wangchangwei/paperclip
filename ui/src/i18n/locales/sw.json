@@ -862,6 +862,20 @@
   "orgChart": {
     "title": "Org Chart"
   },
+  "pluginManager": {
+    "alphaBanner": "Plugins are alpha.",
+    "availableHeading": "Available Plugins",
+    "bundledError": "Failed to load bundled plugins.",
+    "errorDetailsTitle": "Error Details",
+    "installTitle": "Install Plugin",
+    "installedHeading": "Installed Plugins",
+    "loadError": "Failed to load plugins.",
+    "loading": "Loading plugins...",
+    "loadingBundled": "Loading bundled plugins...",
+    "noInstalled": "No plugins installed",
+    "title": "Plugin Manager",
+    "uninstallTitle": "Uninstall Plugin"
+  },
   "pluginSettings": {
     "about": "About",
     "loading": "Loading plugin details...",

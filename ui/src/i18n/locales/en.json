@@ -1006,5 +1006,19 @@
     "noBuiltin": "No built-in adapters found.",
     "externalAlpha": "External adapters are alpha.",
     "noExternal": "No external adapters installed"
+  },
+  "pluginManager": {
+    "loading": "Loading plugins...",
+    "loadError": "Failed to load plugins.",
+    "title": "Plugin Manager",
+    "installTitle": "Install Plugin",
+    "alphaBanner": "Plugins are alpha.",
+    "availableHeading": "Available Plugins",
+    "loadingBundled": "Loading bundled plugins...",
+    "bundledError": "Failed to load bundled plugins.",
+    "installedHeading": "Installed Plugins",
+    "noInstalled": "No plugins installed",
+    "uninstallTitle": "Uninstall Plugin",
+    "errorDetailsTitle": "Error Details"
   }
 }

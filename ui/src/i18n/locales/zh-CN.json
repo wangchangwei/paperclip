@@ -862,6 +862,20 @@
   "orgChart": {
     "title": "组织架构图"
   },
+  "pluginManager": {
+    "alphaBanner": "Plugins are alpha.",
+    "availableHeading": "Available Plugins",
+    "bundledError": "Failed to load bundled plugins.",
+    "errorDetailsTitle": "Error Details",
+    "installTitle": "Install Plugin",
+    "installedHeading": "Installed Plugins",
+    "loadError": "Failed to load plugins.",
+    "loading": "Loading plugins...",
+    "loadingBundled": "Loading bundled plugins...",
+    "noInstalled": "No plugins installed",
+    "title": "Plugin Manager",
+    "uninstallTitle": "Uninstall Plugin"
+  },
   "pluginSettings": {
     "about": "关于",
     "loading": "正在加载插件详情...",
