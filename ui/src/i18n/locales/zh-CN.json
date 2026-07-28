@@ -1089,12 +1089,12 @@
     "title": "设置"
   },
   "skillStudio": {
-    "appearance": "Appearance",
-    "basics": "Basics",
-    "readOnly": "Read-only",
-    "sharing": "Sharing",
-    "starterContent": "Starter content",
-    "unsavedEdits": "Unsaved edits"
+    "appearance": "外观",
+    "basics": "基本信息",
+    "readOnly": "只读",
+    "sharing": "共享",
+    "starterContent": "起始内容",
+    "unsavedEdits": "未保存的修改"
   },
   "toast": {
     "copied": "已复制到剪贴板。",
