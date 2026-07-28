@@ -1361,5 +1361,14 @@
     "newTokenHeading": "New token — copy now",
     "colToken": "Token",
     "colOwner": "Owner"
+  },
+  "bootstrap": {
+    "preferHostSetup": "Prefer to finish setup from the host?",
+    "finishSetupHeading": "Finish setting up this Paperclip",
+    "signInOrCreate": "Sign in / Create account",
+    "claimInstance": "Claim this instance",
+    "alreadyClaimed": "Someone else has already claimed this instance.",
+    "youAreAdmin": "You're the instance admin",
+    "waitingForAdmin": "This Paperclip is waiting on its first admin"
   }
 }

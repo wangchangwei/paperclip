@@ -358,6 +358,15 @@
     "signingOutComplete": "Signed out successfully.",
     "workspaceName": "Workspace name"
   },
+  "bootstrap": {
+    "alreadyClaimed": "Someone else has already claimed this instance.",
+    "claimInstance": "Claim this instance",
+    "finishSetupHeading": "Finish setting up this Paperclip",
+    "preferHostSetup": "Prefer to finish setup from the host?",
+    "signInOrCreate": "Sign in / Create account",
+    "waitingForAdmin": "This Paperclip is waiting on its first admin",
+    "youAreAdmin": "You're the instance admin"
+  },
   "caseDetail": {
     "attachments": "Attachments ({{count}})",
     "children": "Children {{count}}",
