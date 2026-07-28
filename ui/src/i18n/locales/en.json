@@ -914,5 +914,14 @@
     "importSource": "Import source",
     "packageFiles": "Package files",
     "adapters": "Adapters"
+  },
+  "instanceGeneralSettings": {
+    "loading": "Loading general settings...",
+    "title": "General",
+    "deploymentAndAuth": "Deployment and auth",
+    "censorUsername": "Censor username in logs",
+    "keyboardShortcuts": "Keyboard shortcuts",
+    "backupRetention": "Backup retention",
+    "signOut": "Sign out"
   }
 }

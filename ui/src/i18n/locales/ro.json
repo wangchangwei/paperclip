@@ -612,6 +612,15 @@
     "selectUserToInspect": "Select a user to inspect instance access.",
     "title": "Instance Access"
   },
+  "instanceGeneralSettings": {
+    "backupRetention": "Backup retention",
+    "censorUsername": "Censor username in logs",
+    "deploymentAndAuth": "Deployment and auth",
+    "keyboardShortcuts": "Keyboard shortcuts",
+    "loading": "Loading general settings...",
+    "signOut": "Sign out",
+    "title": "General"
+  },
   "instanceSettings": {
     "heartbeats": "Heartbeats",
     "loadingHeartbeats": "Loading scheduler heartbeats...",

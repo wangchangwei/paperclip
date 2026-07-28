@@ -612,6 +612,15 @@
     "selectUserToInspect": "选择一个用户以查看其实例访问权限。",
     "title": "实例访问"
   },
+  "instanceGeneralSettings": {
+    "backupRetention": "Backup retention",
+    "censorUsername": "Censor username in logs",
+    "deploymentAndAuth": "Deployment and auth",
+    "keyboardShortcuts": "Keyboard shortcuts",
+    "loading": "Loading general settings...",
+    "signOut": "Sign out",
+    "title": "General"
+  },
   "instanceSettings": {
     "heartbeats": "心跳",
     "loadingHeartbeats": "正在加载调度器心跳...",
