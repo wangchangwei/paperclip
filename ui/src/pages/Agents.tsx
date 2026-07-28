@@ -32,6 +32,7 @@ import {
   useResourceMemberships,
 } from "../hooks/useResourceMemberships";
 import { usePublishSharedQueryData, useSharedPollingQuery } from "../hooks/useSharedPolling";
+import { useTranslation } from "../i18n";
 
 import { getAdapterLabel } from "../adapters/adapter-display-registry";
 
@@ -48,13 +49,15 @@ const ConfigureBuiltInAgentModal = lazy(() =>
 export const AGENT_FILTER_TABS = ["all", "active", "paused", "error", "builtin"] as const;
 type FilterTab = (typeof AGENT_FILTER_TABS)[number];
 
-const AGENT_FILTER_TAB_ITEMS: { value: FilterTab; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "active", label: "Active" },
-  { value: "paused", label: "Paused" },
-  { value: "error", label: "Error" },
-  { value: "builtin", label: "Built-in" },
-];
+function buildAgentFilterTabItems(t: (key: string) => string): { value: FilterTab; label: string }[] {
+  return [
+    { value: "all", label: t("agents.filterAll") },
+    { value: "active", label: t("agents.filterActive") },
+    { value: "paused", label: t("agents.filterPaused") },
+    { value: "error", label: t("agents.filterError") },
+    { value: "builtin", label: t("agents.filterBuiltin") },
+  ];
+}
 
 function isFilterTab(value: string): value is FilterTab {
   return (AGENT_FILTER_TABS as readonly string[]).includes(value);
@@ -66,17 +69,21 @@ interface EnvironmentDescriptor {
   title: string;
 }
 
-const localEnvironmentDescriptor: EnvironmentDescriptor = {
-  label: "Local",
-  detail: "Paperclip host",
-  title: "Local - Paperclip host",
-};
+function buildLocalEnvironmentDescriptor(t: (key: string) => string): EnvironmentDescriptor {
+  return {
+    label: t("agents.liveEnvironment"),
+    detail: t("agents.environmentLocal"),
+    title: `${t("agents.liveEnvironment")} - ${t("agents.environmentLocal")}`,
+  };
+}
 
-const loadingEnvironmentDescriptor: EnvironmentDescriptor = {
-  label: "—",
-  detail: "Loading environment",
-  title: "Loading environment",
-};
+function buildLoadingEnvironmentDescriptor(t: (key: string) => string): EnvironmentDescriptor {
+  return {
+    label: "—",
+    detail: t("agents.environmentLoading"),
+    title: t("agents.environmentLoading"),
+  };
+}
 
 // Agents in these states never appear in the agents list — `terminated` is
 // hidden like an archived company, and `pending_approval` is a hiring gate that
@@ -142,11 +149,11 @@ function describeEnvironment(
   };
 }
 
-function describeMissingEnvironment(environmentId: string): EnvironmentDescriptor {
+function describeMissingEnvironment(environmentId: string, t: (key: string, options?: Record<string, unknown>) => string): EnvironmentDescriptor {
   return {
-    label: "Unknown environment",
+    label: t("agents.environment.unknown"),
     detail: environmentId.slice(0, 8),
-    title: `Unknown environment - ${environmentId}`,
+    title: t("agents.environment.unknownTitle", { id: environmentId }),
   };
 }
 
@@ -154,14 +161,15 @@ function resolveAgentEnvironment(
   agent: Agent,
   environmentsById: Map<string, Environment>,
   instanceDefaultEnvironmentId: string | null,
-  capabilities?: EnvironmentCapabilities | null,
+  capabilities: EnvironmentCapabilities | null | undefined,
+  t: (key: string, options?: Record<string, unknown>) => string,
 ): EnvironmentDescriptor {
   const environmentId = agent.defaultEnvironmentId ?? instanceDefaultEnvironmentId;
-  if (!environmentId) return localEnvironmentDescriptor;
+  if (!environmentId) return describeMissingEnvironment("", t);
   const environment = environmentsById.get(environmentId);
   return environment
     ? describeEnvironment(environment, capabilities)
-    : describeMissingEnvironment(environmentId);
+    : describeMissingEnvironment(environmentId, t);
 }
 
 function filterOrgTree(nodes: OrgNode[], tab: FilterTab, builtInAgentIds: Set<string>): OrgNode[] {
@@ -186,6 +194,7 @@ function filterOrgTree(nodes: OrgNode[], tab: FilterTab, builtInAgentIds: Set<st
 }
 
 export function Agents() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { openNewAgent } = useDialogActions();
   const { setBreadcrumbs } = useBreadcrumbs();
@@ -198,6 +207,10 @@ export function Agents() {
   const forceListView = isMobile;
   const effectiveView: "list" | "org" = forceListView ? "list" : view;
 
+  const agentFilterTabItems = useMemo(() => buildAgentFilterTabItems(t), [t]);
+  const localEnvironmentDescriptor = useMemo(() => buildLocalEnvironmentDescriptor(t), [t]);
+  const loadingEnvironmentDescriptor = useMemo(() => buildLoadingEnvironmentDescriptor(t), [t]);
+
   const { data: instanceSettings } = useQuery({
     queryKey: queryKeys.instance.settings,
     queryFn: () => instanceSettingsApi.get(),
@@ -206,8 +219,8 @@ export function Agents() {
   const builtInAgentsEnabled = instanceSettings?.experimental.enableBuiltInAgents === true;
   const tab: FilterTab = requestedTab === "builtin" && !builtInAgentsEnabled ? "all" : requestedTab;
   const visibleTabItems = useMemo(
-    () => AGENT_FILTER_TAB_ITEMS.filter((item) => item.value !== "builtin" || builtInAgentsEnabled),
-    [builtInAgentsEnabled],
+    () => agentFilterTabItems.filter((item) => item.value !== "builtin" || builtInAgentsEnabled),
+    [agentFilterTabItems, builtInAgentsEnabled],
   );
 
   const { data: builtInAgents } = useQuery({
@@ -308,6 +321,7 @@ export function Agents() {
           environmentsById,
           instanceSettings?.defaultEnvironmentId ?? null,
           environmentCapabilities,
+          t,
         ),
       );
     }
@@ -315,8 +329,8 @@ export function Agents() {
   }, [agents, environmentsById, environmentCapabilities, instanceSettings?.defaultEnvironmentId]);
 
   useEffect(() => {
-    setBreadcrumbs([{ label: "Agents" }]);
-  }, [setBreadcrumbs]);
+    setBreadcrumbs([{ label: t("agents.title") }]);
+  }, [setBreadcrumbs, t]);
 
   useEffect(() => {
     if (selectedCompanyId && requestedTab === "builtin" && instanceSettings && !builtInAgentsEnabled) {
@@ -325,7 +339,7 @@ export function Agents() {
   }, [builtInAgentsEnabled, instanceSettings, navigate, requestedTab, selectedCompanyId]);
 
   if (!selectedCompanyId) {
-    return <EmptyState icon={Bot} message="Select a company to view agents." />;
+    return <EmptyState icon={Bot} message={t("agents.selectCompanyToViewAgents")} />;
   }
 
   if (isLoading) {
@@ -540,7 +554,11 @@ export function Agents() {
       </div>
 
       {filtered.length > 0 && (
-        <p className="text-xs text-muted-foreground">{filtered.length} agent{filtered.length !== 1 ? "s" : ""}</p>
+        <p className="text-xs text-muted-foreground">
+          {filtered.length === 1
+            ? t("agents.count_one", { count: filtered.length })
+            : t("agents.count_other", { count: filtered.length })}
+        </p>
       )}
 
       {error && <p className="text-sm text-destructive">{error.message}</p>}
@@ -548,8 +566,8 @@ export function Agents() {
       {agents && agents.length === 0 && (
         <EmptyState
           icon={Bot}
-          message="Create your first agent to get started."
-          action="New Agent"
+          message={t("agents.noAgentsYetDescription")}
+          action={t("agents.newAgent")}
           onAction={openNewAgent}
         />
       )}
@@ -563,7 +581,7 @@ export function Agents() {
 
       {effectiveView === "list" && agents && agents.length > 0 && filtered.length === 0 && (
         <p className="text-sm text-muted-foreground text-center py-8">
-          No agents match the selected status.
+          {t("agents.noAgentsMatchFilters")}
         </p>
       )}
 
@@ -585,6 +603,8 @@ export function Agents() {
               membershipMutation={membershipMutation}
               builtInByAgentId={builtInByAgentId}
               onConfigureBuiltIn={setConfigureState}
+              loadingEnvironmentDescriptor={loadingEnvironmentDescriptor}
+              localEnvironmentDescriptor={localEnvironmentDescriptor}
             />
           ))}
         </div>
@@ -592,7 +612,7 @@ export function Agents() {
 
       {effectiveView === "org" && orgTree && orgTree.length > 0 && filteredOrg.length === 0 && (
         <p className="text-sm text-muted-foreground text-center py-8">
-          No agents match the selected status.
+          {t("agents.noAgentsMatchFilters")}
         </p>
       )}
 
@@ -630,6 +650,8 @@ function OrgTreeNode({
   membershipMutation,
   builtInByAgentId,
   onConfigureBuiltIn,
+  loadingEnvironmentDescriptor,
+  localEnvironmentDescriptor,
 }: {
   node: OrgNode;
   depth: number;
@@ -643,6 +665,8 @@ function OrgTreeNode({
   membershipMutation: ReturnType<typeof useResourceMembershipMutation>;
   builtInByAgentId: Map<string, BuiltInAgentState>;
   onConfigureBuiltIn: (state: BuiltInAgentState) => void;
+  loadingEnvironmentDescriptor: EnvironmentDescriptor;
+  localEnvironmentDescriptor: EnvironmentDescriptor;
 }) {
   const agent = agentMap.get(node.id);
   const builtInState = builtInByAgentId.get(node.id);
@@ -788,6 +812,8 @@ function OrgTreeNode({
               membershipMutation={membershipMutation}
               builtInByAgentId={builtInByAgentId}
               onConfigureBuiltIn={onConfigureBuiltIn}
+              loadingEnvironmentDescriptor={loadingEnvironmentDescriptor}
+              localEnvironmentDescriptor={localEnvironmentDescriptor}
             />
           ))}
         </div>
