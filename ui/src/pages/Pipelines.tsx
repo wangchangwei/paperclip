@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { groupWarningsByStage, LOW_TRUST_REVIEW_PRESET } from "@paperclipai/shared";
 import type {
@@ -343,6 +344,7 @@ function retryPrimaryActionLabel(plan: PipelineAutomationRetryPlan) {
 }
 
 export function Pipelines() {
+  const { t } = useTranslation();
   const params = useParams<{ pipelineId?: string }>();
   const location = useLocation();
   const pipelineId = params.pipelineId ?? null;
@@ -617,6 +619,7 @@ export function PipelinesIndexTable({
   search,
   onSearchChange,
 }: PipelinesIndexTableProps) {
+  const { t } = useTranslation();
   const [collapsedPipelineIds, setCollapsedPipelineIds] = useState<Set<string>>(() => new Set());
   const [sortField, setSortField] = useState<PipelineSortField>("name");
   const [sortDir, setSortDir] = useState<PipelineSortDir>("asc");
@@ -661,7 +664,7 @@ export function PipelinesIndexTable({
     <div className="space-y-4">
       <div className="flex flex-col gap-3 border-y border-border py-4 lg:flex-row lg:items-center lg:justify-between">
         <label className="relative block w-full max-w-md">
-          <span className="sr-only">Search pipelines</span>
+          <span className="sr-only">{t("pipelines.searchAria")}</span>
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={search}
@@ -738,11 +741,11 @@ export function PipelinesIndexTable({
           <table className="w-full min-w-(--sz-780px) border-collapse text-sm">
             <thead>
               <tr className="border-b border-border text-left text-(length:--text-micro) font-semibold uppercase tracking-widest text-muted-foreground">
-                <th className="py-2 pl-3 pr-4">Name</th>
-                <th className="px-4 py-2">Attention</th>
-                <th className="px-4 py-2">Open items</th>
-                <th className="px-4 py-2">Status</th>
-                <th className="px-4 py-2">Last activity</th>
+                <th className="py-2 pl-3 pr-4">{t("pipelines.colName")}</th>
+                <th className="px-4 py-2">{t("pipelines.colAttention")}</th>
+                <th className="px-4 py-2">{t("pipelines.colOpenItems")}</th>
+                <th className="px-4 py-2">{t("pipelines.colStatus")}</th>
+                <th className="px-4 py-2">{t("pipelines.colLastActivity")}</th>
               </tr>
             </thead>
             <tbody>
@@ -832,6 +835,7 @@ function NewPipelineDialog({
   pending: boolean;
   error: string | null;
 }) {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -854,7 +858,7 @@ function NewPipelineDialog({
       <DialogContent>
         <form onSubmit={submit} className="space-y-4">
           <DialogHeader>
-            <DialogTitle>New pipeline</DialogTitle>
+            <DialogTitle>{t("pipelines.newTitle")}</DialogTitle>
             <DialogDescription>Name the pipeline and add a short description.</DialogDescription>
           </DialogHeader>
           <div className="space-y-3">
@@ -897,6 +901,7 @@ export function pipelineKeyFromName(name: string) {
 }
 
 function PipelinesIndex() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const navigate = useNavigate();
@@ -941,7 +946,7 @@ function PipelinesIndex() {
   });
 
   if (!selectedCompanyId) {
-    return <div className="mx-auto max-w-3xl py-10 text-sm text-muted-foreground">Select a company to view pipelines.</div>;
+    return <div className="mx-auto max-w-3xl py-10 text-sm text-muted-foreground">{t("pipelines.selectCompany")}</div>;
   }
   if (pipelinesQuery.isLoading) return <PageSkeleton />;
 
@@ -953,7 +958,7 @@ function PipelinesIndex() {
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-(--tracking-eyebrow) text-muted-foreground">Work</p>
-          <h1 className="text-2xl font-semibold text-foreground">Pipelines</h1>
+          <h1 className="text-2xl font-semibold text-foreground">{t("pipelines.title")}</h1>
           <p className="mt-1 text-sm text-muted-foreground">
             {formatNumber(pipelines.length)} pipeline{pipelines.length === 1 ? "" : "s"}. Connected ones are grouped from upstream work into downstream work.
           </p>
@@ -965,7 +970,7 @@ function PipelinesIndex() {
       </div>
 
       {pipelinesQuery.error ? (
-        <p className="mb-4 text-sm text-destructive">Could not load pipelines.</p>
+        <p className="mb-4 text-sm text-destructive">{t("pipelines.loadError")}</p>
       ) : null}
 
       {pipelines.length === 0 && !pipelinesQuery.error ? (
@@ -1422,6 +1427,7 @@ function PipelineBoardColumn({
 }
 
 function PipelineBoard({ pipelineId }: { pipelineId: string }) {
+  const { t } = useTranslation();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { pushToast } = useToastActions();
   const { selectedCompanyId } = useCompany();
@@ -1702,7 +1708,7 @@ function PipelineBoard({ pipelineId }: { pipelineId: string }) {
 
   if (pipelineQuery.isLoading || casesQuery.isLoading) return <PageSkeleton />;
   if (!pipeline) {
-    return <div className="mx-auto max-w-3xl py-10 text-sm text-muted-foreground">Pipeline not found.</div>;
+    return <div className="mx-auto max-w-3xl py-10 text-sm text-muted-foreground">{t("pipelines.notFound")}</div>;
   }
 
   if (orderedStages.length === 0) {
@@ -1711,7 +1717,7 @@ function PipelineBoard({ pipelineId }: { pipelineId: string }) {
         <div>
           <p className="text-xs font-semibold uppercase tracking-(--tracking-eyebrow) text-muted-foreground">Pipeline</p>
           <h1 className="text-2xl font-semibold text-foreground">{pipeline.name}</h1>
-          <p className="text-sm text-muted-foreground">No stages are set up for this pipeline yet.</p>
+          <p className="text-sm text-muted-foreground">{t("pipelines.noStages")}</p>
         </div>
         <EmptyState
           icon={Hexagon}
@@ -4165,6 +4171,7 @@ function formatShortDate(value: Date | string) {
 }
 
 function PipelineAddItems({ pipelineId }: { pipelineId: string }) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { pushToast } = useToastActions();
@@ -4220,7 +4227,7 @@ function PipelineAddItems({ pipelineId }: { pipelineId: string }) {
 
   if (pipeline.isLoading || intake.isLoading) return <PageSkeleton />;
   if (!pipeline.data || !intake.data) {
-    return <div className="mx-auto max-w-3xl py-10 text-sm text-muted-foreground">Pipeline not found.</div>;
+    return <div className="mx-auto max-w-3xl py-10 text-sm text-muted-foreground">{t("pipelines.notFound")}</div>;
   }
 
   const firstStageName = intake.data.stageName ?? pipeline.data.stages[0]?.name ?? "first stage";

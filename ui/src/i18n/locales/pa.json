@@ -886,6 +886,20 @@
     "specificAgentsHint": "Pick who can use it.",
     "whoCanUse": "Who can use it"
   },
+  "pipelines": {
+    "colAttention": "Attention",
+    "colLastActivity": "Last activity",
+    "colName": "Name",
+    "colOpenItems": "Open items",
+    "colStatus": "Status",
+    "loadError": "Could not load pipelines.",
+    "newTitle": "New pipeline",
+    "noStages": "No stages are set up for this pipeline yet.",
+    "notFound": "Pipeline not found.",
+    "searchAria": "Search pipelines",
+    "selectCompany": "Select a company to view pipelines.",
+    "title": "Pipelines"
+  },
   "pluginManager": {
     "alphaBanner": "Plugins are alpha.",
     "availableHeading": "Available Plugins",

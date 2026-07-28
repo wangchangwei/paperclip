@@ -1056,5 +1056,19 @@
     "searchResults": "Search results",
     "referencesTitle": "Secret references",
     "whoProvides": "Who provides the value?"
+  },
+  "pipelines": {
+    "selectCompany": "Select a company to view pipelines.",
+    "title": "Pipelines",
+    "loadError": "Could not load pipelines.",
+    "newTitle": "New pipeline",
+    "searchAria": "Search pipelines",
+    "colName": "Name",
+    "colAttention": "Attention",
+    "colOpenItems": "Open items",
+    "colStatus": "Status",
+    "colLastActivity": "Last activity",
+    "notFound": "Pipeline not found.",
+    "noStages": "No stages are set up for this pipeline yet."
   }
 }
