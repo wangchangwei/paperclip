@@ -279,6 +279,13 @@
       "title": "ਆਪਣੀ ਪਹਿਲੀ ਕੰਪਨੀ ਬਣਾਓ"
     }
   },
+  "approvals": {
+    "failedToApprove": "Failed to approve",
+    "failedToReject": "Failed to reject",
+    "filterAll": "All",
+    "filterPending": "Pending",
+    "title": "Approvals"
+  },
   "auth": {
     "accountLocked": "Your account has been locked due to too many failed attempts.",
     "agreeToTerms": "I agree to the Terms of Service and Privacy Policy.",
@@ -423,6 +430,7 @@
       "previous": "Previous",
       "showing": "Showing {{from}}–{{to}} of {{total}}"
     },
+    "selectCompanyFirst": "Select a company first.",
     "show": "Show",
     "status": {
       "active": "Active",

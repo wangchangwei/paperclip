@@ -459,7 +459,8 @@
       "localWorkspace": "Local workspace board",
       "profile": "Profile",
       "signedIn": "Signed in"
-    }
+    },
+    "selectCompanyFirst": "Select a company first."
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -842,5 +843,12 @@
     "signingOut": "Signing out...",
     "signingOutComplete": "Signed out successfully.",
     "updated": "Updated successfully."
+  },
+  "approvals": {
+    "title": "Approvals",
+    "filterPending": "Pending",
+    "filterAll": "All",
+    "failedToApprove": "Failed to approve",
+    "failedToReject": "Failed to reject"
   }
 }
