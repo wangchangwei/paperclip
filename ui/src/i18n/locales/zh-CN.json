@@ -1,15 +1,15 @@
 {
   "adapterManager": {
-    "builtinHeading": "Built-in Adapters",
-    "externalAlpha": "External adapters are alpha.",
-    "externalHeading": "External Adapters",
-    "installTitle": "Install External Adapter",
-    "loading": "Loading adapters...",
-    "noBuiltin": "No built-in adapters found.",
-    "noExternal": "No external adapters installed",
-    "reinstallTitle": "Reinstall Adapter",
-    "removeTitle": "Remove Adapter",
-    "title": "Adapters"
+    "builtinHeading": "内置适配器",
+    "externalAlpha": "外部适配器处于 Alpha 阶段。",
+    "externalHeading": "外部适配器",
+    "installTitle": "安装外部适配器",
+    "loading": "正在加载适配器...",
+    "noBuiltin": "未找到内置适配器。",
+    "noExternal": "未安装外部适配器",
+    "reinstallTitle": "重新安装适配器",
+    "removeTitle": "移除适配器",
+    "title": "适配器"
   },
   "agentDetail": {
     "invalidReportingChain": "汇报链无效",
