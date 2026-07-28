@@ -863,18 +863,18 @@
     "title": "组织架构图"
   },
   "pluginManager": {
-    "alphaBanner": "Plugins are alpha.",
-    "availableHeading": "Available Plugins",
-    "bundledError": "Failed to load bundled plugins.",
-    "errorDetailsTitle": "Error Details",
-    "installTitle": "Install Plugin",
-    "installedHeading": "Installed Plugins",
-    "loadError": "Failed to load plugins.",
-    "loading": "Loading plugins...",
-    "loadingBundled": "Loading bundled plugins...",
-    "noInstalled": "No plugins installed",
-    "title": "Plugin Manager",
-    "uninstallTitle": "Uninstall Plugin"
+    "alphaBanner": "插件处于 Alpha 阶段。",
+    "availableHeading": "可用插件",
+    "bundledError": "加载捆绑插件失败。",
+    "errorDetailsTitle": "错误详情",
+    "installTitle": "安装插件",
+    "installedHeading": "已安装插件",
+    "loadError": "加载插件失败。",
+    "loading": "正在加载插件...",
+    "loadingBundled": "正在加载捆绑插件...",
+    "noInstalled": "尚未安装插件",
+    "title": "插件管理",
+    "uninstallTitle": "卸载插件"
   },
   "pluginSettings": {
     "about": "关于",
