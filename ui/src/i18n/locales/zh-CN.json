@@ -657,13 +657,13 @@
     "title": "实例设置"
   },
   "inviteLanding": {
-    "bootstrapComplete": "Bootstrap complete",
-    "checkingAccess": "Checking your access...",
-    "invalidToken": "Invalid invite token.",
-    "joinedCompany": "You joined the company",
-    "loading": "Loading invite...",
-    "notAvailable": "Invite not available",
-    "openingCompany": "Opening company..."
+    "bootstrapComplete": "引导完成",
+    "checkingAccess": "正在检查您的访问权限...",
+    "invalidToken": "邀请令牌无效。",
+    "joinedCompany": "您已加入公司",
+    "loading": "正在加载邀请...",
+    "notAvailable": "邀请不可用",
+    "openingCompany": "正在打开公司..."
   },
   "issues": {
     "andMore": "...以及{{count}}个更多",
