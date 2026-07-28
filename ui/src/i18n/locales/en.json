@@ -923,5 +923,13 @@
     "keyboardShortcuts": "Keyboard shortcuts",
     "backupRetention": "Backup retention",
     "signOut": "Sign out"
+  },
+  "companyEnvironments": {
+    "selectCompanyContext": "Select a company context to manage environment secrets and bindings.",
+    "activeTemplate": "Active template",
+    "notConfigured": "Not configured",
+    "notFound": "Environment not found",
+    "notFoundHint": "The environment may have been removed or is not available in this company.",
+    "backToList": "Back to environments"
   }
 }

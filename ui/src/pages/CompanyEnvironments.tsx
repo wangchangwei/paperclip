@@ -4,6 +4,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTranslation } from "../i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowLeft, Check, Play, RefreshCw, RotateCcw, Terminal, Trash2, X } from "lucide-react";
 import { FitAddon } from "@xterm/addon-fit";
@@ -765,6 +766,7 @@ function EnvironmentImageTemplatePanel({
   providerCapability: EnvironmentProviderCapability | null | undefined;
   providerDisplayName: string;
 }) {
+  const { t } = useTranslation();
   const { pushToast } = useToast();
   const queryClient = useQueryClient();
   const state = capabilityState(providerCapability);
@@ -1048,7 +1050,7 @@ function EnvironmentImageTemplatePanel({
       <div className="mt-3 border-t border-border/60 pt-3" data-testid={`custom-image-template-state-${environment.id}`}>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 space-y-1">
-            <div className="text-xs font-medium">Active template</div>
+            <div className="text-xs font-medium">{t("companyEnvironments.activeTemplate")}</div>
             <div className="text-xs text-muted-foreground">
               {providerDisplayName} · {activeTemplate.templateKind}
               {" · "}
@@ -1112,7 +1114,7 @@ function EnvironmentImageTemplatePanel({
     <div className="mt-3 border-t border-border/60 pt-3" data-testid={`custom-image-template-state-${environment.id}`}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="space-y-1">
-          <div className="text-xs font-medium">Not configured</div>
+          <div className="text-xs font-medium">{t("companyEnvironments.notConfigured")}</div>
           <div className="text-xs text-muted-foreground">
             {latestSession
               ? sessionStatusCopy(latestSession.status)
@@ -1137,6 +1139,7 @@ function EnvironmentImageTemplatePanel({
 }
 
 export function CompanyEnvironments({ mode = "list" }: CompanyEnvironmentsProps) {
+  const { t } = useTranslation();
   const { environmentId: routeEnvironmentId } = useParams<{ environmentId?: string }>();
   const navigate = useNavigate();
   const { selectedCompanyId } = useCompany();
@@ -1557,7 +1560,7 @@ export function CompanyEnvironments({ mode = "list" }: CompanyEnvironmentsProps)
   );
 
   if (!selectedCompanyId) {
-    return <div className="text-sm text-muted-foreground">Select a company context to manage environment secrets and bindings.</div>;
+    return <div className="text-sm text-muted-foreground">{t("companyEnvironments.selectCompanyContext")}</div>;
   }
 
   if (!environmentsEnabled) {
@@ -1690,10 +1693,10 @@ export function CompanyEnvironments({ mode = "list" }: CompanyEnvironmentsProps)
 
       {isEnvironmentFormPage && mode === "edit" && environments !== undefined && !editingEnvironment ? (
         <div className="space-y-3 rounded-md border border-border px-4 py-4 text-sm">
-          <div className="font-medium">Environment not found</div>
-          <div className="text-muted-foreground">The environment may have been removed or is not available in this company.</div>
+          <div className="font-medium">{t("companyEnvironments.notFound")}</div>
+          <div className="text-muted-foreground">{t("companyEnvironments.notFoundHint")}</div>
           <Button size="sm" variant="outline" asChild>
-            <Link to={ENVIRONMENTS_PATH}>Back to environments</Link>
+            <Link to={ENVIRONMENTS_PATH}>{t("companyEnvironments.backToList")}</Link>
           </Button>
         </div>
       ) : null}
