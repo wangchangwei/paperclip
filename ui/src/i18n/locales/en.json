@@ -909,5 +909,10 @@
     "noSheetsConnected": "No sheets are connected yet.",
     "openSheet": "Open sheet",
     "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
+  },
+  "companyImport": {
+    "importSource": "Import source",
+    "packageFiles": "Package files",
+    "adapters": "Adapters"
   }
 }

@@ -493,6 +493,11 @@
     "removeMember": "Remove member",
     "title": "Company Members"
   },
+  "companyImport": {
+    "adapters": "Adapters",
+    "importSource": "Import source",
+    "packageFiles": "Package files"
+  },
   "companyInvites": {
     "chooseRole": "Choose a role",
     "historyHint": "Invite history below keeps the audit trail.",
