@@ -931,5 +931,10 @@
     "notFound": "Environment not found",
     "notFoundHint": "The environment may have been removed or is not available in this company.",
     "backToList": "Back to environments"
+  },
+  "pluginSettings": {
+    "loading": "Loading plugin details...",
+    "about": "About",
+    "settings": "Settings"
   }
 }

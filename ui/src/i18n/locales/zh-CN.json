@@ -799,6 +799,11 @@
   "orgChart": {
     "title": "组织架构图"
   },
+  "pluginSettings": {
+    "about": "About",
+    "loading": "Loading plugin details...",
+    "settings": "Settings"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
     "advancedRuntimeJsonDescription": "Paperclip从此JSON派生Services和Jobs。优先编辑命名命令；对于高级生命周期、端口、就绪状态或环境设置，使用原始JSON。",

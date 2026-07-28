@@ -799,6 +799,11 @@
   "orgChart": {
     "title": "Org Chart"
   },
+  "pluginSettings": {
+    "about": "About",
+    "loading": "Loading plugin details...",
+    "settings": "Settings"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "Advanced runtime JSON",
     "advancedRuntimeJsonDescription": "Paperclip derives Services and Jobs from this JSON. Prefer editing named commands first; use raw JSON for advanced lifecycle, port, readiness, or environment settings.",
