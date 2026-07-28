@@ -38,4 +38,4 @@ export const i18nextResources: Resource = Object.fromEntries(
   Object.entries(localeMessages).map(([locale, messages]) => [locale, { translation: messages }]),
 ) as Resource;
 
-export type SupportedLocale = keyof typeof localeMessages;
+export type SupportedLocale = string & { readonly __brand: "SupportedLocale" };

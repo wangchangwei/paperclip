@@ -16,6 +16,7 @@ import { NewAgentDialog } from "./NewAgentDialog";
 import { KeyboardShortcutsCheatsheet } from "./KeyboardShortcutsCheatsheet";
 import { ToastViewport } from "./ToastViewport";
 import { MobileBottomNav } from "./MobileBottomNav";
+import { LocaleSwitcher } from "./layout/LocaleSwitcher";
 import { WorktreeBanner } from "./WorktreeBanner";
 import { DevRestartBanner } from "./DevRestartBanner";
 import { StandaloneBrowserControls } from "./StandaloneBrowserControls";
@@ -613,7 +614,10 @@ export function Layout() {
             )}
           >
             <StandaloneBrowserControls mobile={isMobile} />
-            <BreadcrumbBar />
+            <div className="flex items-center gap-2">
+              <LocaleSwitcher />
+              <BreadcrumbBar />
+            </div>
             {isMobile && isCompanySettingsRoute ? (
               <div className="border-b border-border px-4 pb-3">
                 <CompanySettingsNav />
