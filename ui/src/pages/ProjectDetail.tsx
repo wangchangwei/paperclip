@@ -45,6 +45,7 @@ import {
   useResourceMembershipMutation,
   useResourceMemberships,
 } from "../hooks/useResourceMemberships";
+import { useTranslation } from "../i18n";
 
 /* ── Top-level tab types ── */
 
@@ -81,6 +82,7 @@ function OverviewContent({
   onUpdate: (data: Record<string, unknown>) => void;
   imageUploadHandler?: (file: File) => Promise<string>;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="space-y-6">
       <InlineEditor
@@ -96,14 +98,14 @@ function OverviewContent({
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div>
-          <span className="text-muted-foreground">Status</span>
+          <span className="text-muted-foreground">{t("projects.status")}</span>
           <div className="mt-1">
             <StatusBadge status={project.status} />
           </div>
         </div>
         {project.targetDate && (
           <div>
-            <span className="text-muted-foreground">Target Date</span>
+            <span className="text-muted-foreground">{t("projects.targetDate")}</span>
             <p>{project.targetDate}</p>
           </div>
         )}
@@ -129,6 +131,7 @@ function ProjectTilePicker({
 }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const { t } = useTranslation();
 
   const filteredIcons = useMemo(() => {
     const entries = PROJECT_ICON_NAMES.map((name) => [name, PROJECT_ICONS[name]] as const);
@@ -151,16 +154,16 @@ function ProjectTilePicker({
         <button
           type="button"
           className="shrink-0 rounded-lg cursor-pointer hover:ring-2 hover:ring-foreground/20 transition-(--tp-box-shadow)"
-          aria-label="Change project icon and color"
+          aria-label={t("projects.changeProjectIconAndColor")}
         >
           <ProjectTile color={color} icon={icon} size="md" />
         </button>
       </PopoverTrigger>
       <PopoverContent className="w-72 p-3" align="start">
         {/* Icon search + grid */}
-        <p className="text-xs font-medium text-muted-foreground mb-2">Icon</p>
+        <p className="text-xs font-medium text-muted-foreground mb-2">{t("projects.icon")}</p>
         <Input
-          placeholder="Search icons..."
+          placeholder={t("projects.searchIcons")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="mb-2 h-8 text-sm"
@@ -182,13 +185,13 @@ function ProjectTilePicker({
             </button>
           ))}
           {filteredIcons.length === 0 && (
-            <p className="col-span-7 text-xs text-muted-foreground text-center py-2">No icons match</p>
+            <p className="col-span-7 text-xs text-muted-foreground text-center py-2">{t("projects.noIconsMatch")}</p>
           )}
         </div>
 
         {/* Color swatches */}
         <div className="mt-3 border-t border-border pt-3">
-          <p className="text-xs font-medium text-muted-foreground mb-2">Color</p>
+          <p className="text-xs font-medium text-muted-foreground mb-2">{t("projects.color")}</p>
           <div className="grid grid-cols-5 gap-1.5">
             {/* Neutral / reset-to-gray option */}
             <button
@@ -199,8 +202,8 @@ function ProjectTilePicker({
                   ? "ring-2 ring-foreground ring-offset-1 ring-offset-background rounded-md"
                   : ""
               }`}
-              aria-label="Reset to neutral gray"
-              title="Neutral (default)"
+              aria-label={t("projects.resetToNeutralGray")}
+              title={t("projects.neutralDefault")}
             >
               <ProjectTile color={null} size="sm" />
             </button>
@@ -215,7 +218,7 @@ function ProjectTilePicker({
                     : "hover:ring-2 hover:ring-foreground/30"
                 }`}
                 style={{ backgroundColor: swatch }}
-                aria-label={`Select color ${swatch}`}
+                aria-label={t("projects.selectColor", { swatch })}
               />
             ))}
           </div>
@@ -375,6 +378,7 @@ export function ProjectDetail() {
   const { closePanel } = usePanel();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { pushToast } = useToastActions();
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const location = useLocation();
@@ -527,7 +531,7 @@ export function ProjectDetail() {
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: "Projects", href: "/projects" },
+      { label: t("nav.sidebar.projects"), href: "/projects" },
       { label: project?.name ?? routeProjectRef ?? "Project" },
     ]);
   }, [setBreadcrumbs, project, routeProjectRef]);
@@ -755,7 +759,7 @@ export function ProjectDetail() {
       {showLeftProjectNotice ? (
         <div className="flex items-center gap-3 border border-yellow-300/35 bg-yellow-300/10 px-3 py-2 text-sm text-yellow-900 dark:text-yellow-100">
           <p className="min-w-0 flex-1">
-            You left this project. It no longer appears in your sidebar.
+            {t("projects.leftProjectNotice")}
           </p>
           <MembershipAction
             compact
@@ -779,7 +783,7 @@ export function ProjectDetail() {
           <button
             type="button"
             className="h-6 w-6 shrink-0 text-yellow-900/70 hover:text-yellow-900 dark:text-yellow-100/70 dark:hover:text-yellow-100"
-            aria-label="Dismiss project membership notice"
+            aria-label={t("projects.dismissLeftNotice")}
             onClick={() => setDismissedLeftProjectIds((current) => new Set(current).add(project.id))}
           >
             ×
