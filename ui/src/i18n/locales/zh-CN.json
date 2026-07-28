@@ -800,9 +800,9 @@
     "title": "组织架构图"
   },
   "pluginSettings": {
-    "about": "About",
-    "loading": "Loading plugin details...",
-    "settings": "Settings"
+    "about": "关于",
+    "loading": "正在加载插件详情...",
+    "settings": "设置"
   },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
