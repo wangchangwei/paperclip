@@ -1,4 +1,9 @@
 {
+  "agentDetail": {
+    "loadingLog": "Loading log...",
+    "noPersistedLogLines": "No persisted log lines.",
+    "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet."
+  },
   "agents": {
     "accessProfiles": "访问配置文件",
     "acpxLocalSkillUnsupported": "本地执行不受此Skill支持",

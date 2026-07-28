@@ -1,4 +1,9 @@
 {
+  "agentDetail": {
+    "loadingLog": "Loading log...",
+    "noPersistedLogLines": "No persisted log lines.",
+    "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet."
+  },
   "agents": {
     "accessProfiles": "Access profiles",
     "acpxLocalSkillUnsupported": "Paperclip cannot manage skills for custom ACP commands yet.",

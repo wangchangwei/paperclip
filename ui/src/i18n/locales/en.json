@@ -936,5 +936,10 @@
     "loading": "Loading plugin details...",
     "about": "About",
     "settings": "Settings"
+  },
+  "agentDetail": {
+    "loadingLog": "Loading log...",
+    "noPersistedLogLines": "No persisted log lines.",
+    "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet."
   }
 }
