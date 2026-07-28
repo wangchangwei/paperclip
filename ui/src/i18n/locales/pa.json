@@ -342,6 +342,18 @@
     "signingOutComplete": "Signed out successfully.",
     "workspaceName": "Workspace name"
   },
+  "caseDetail": {
+    "attachments": "Attachments ({{count}})",
+    "children": "Children {{count}}",
+    "description": "Description",
+    "noLabels": "No labels yet.",
+    "noneYet": "None yet",
+    "notFound": "Case not found.",
+    "parent": "Parent",
+    "saving": "Saving...",
+    "tabOverview": "Overview",
+    "tabProperties": "Properties"
+  },
   "command": {
     "paletteDescription": "Search for a command to run...",
     "paletteTitle": "Command Palette"
@@ -455,6 +467,7 @@
       "unauthorized": "You are not authorized to perform this action."
     },
     "newTask": "New Task",
+    "none": "None",
     "pagination": {
       "first": "First",
       "last": "Last",

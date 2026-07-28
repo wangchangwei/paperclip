@@ -466,7 +466,8 @@
     "saveChanges": "Save changes",
     "newTask": "New Task",
     "skipToMainContent": "Skip to Main Content",
-    "commandPaletteHeading": "Search"
+    "commandPaletteHeading": "Search",
+    "none": "None"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -1020,5 +1021,17 @@
     "noInstalled": "No plugins installed",
     "uninstallTitle": "Uninstall Plugin",
     "errorDetailsTitle": "Error Details"
+  },
+  "caseDetail": {
+    "tabOverview": "Overview",
+    "tabProperties": "Properties",
+    "notFound": "Case not found.",
+    "parent": "Parent",
+    "children": "Children {{count}}",
+    "noLabels": "No labels yet.",
+    "saving": "Saving...",
+    "noneYet": "None yet",
+    "description": "Description",
+    "attachments": "Attachments ({{count}})"
   }
 }

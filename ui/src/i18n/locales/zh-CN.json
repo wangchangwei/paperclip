@@ -342,6 +342,18 @@
     "signingOutComplete": "退出登录成功。",
     "workspaceName": "工作区名称"
   },
+  "caseDetail": {
+    "attachments": "Attachments ({{count}})",
+    "children": "Children {{count}}",
+    "description": "Description",
+    "noLabels": "No labels yet.",
+    "noneYet": "None yet",
+    "notFound": "Case not found.",
+    "parent": "Parent",
+    "saving": "Saving...",
+    "tabOverview": "Overview",
+    "tabProperties": "Properties"
+  },
   "command": {
     "paletteDescription": "搜索要运行的命令...",
     "paletteTitle": "命令面板"
@@ -455,6 +467,7 @@
       "unauthorized": "您无权执行此操作。"
     },
     "newTask": "新建任务",
+    "none": "None",
     "pagination": {
       "first": "首页",
       "last": "末页",
