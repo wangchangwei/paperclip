@@ -808,7 +808,11 @@
     "workspaceFacts": "Workspace facts",
     "workspaceCommands": "Workspace commands",
     "currentState": "Current state",
-    "advancedRuntimeJson": "Advanced runtime JSON"
+    "advancedRuntimeJson": "Advanced runtime JSON",
+    "loadingWorkspace": "Loading workspace…",
+    "workspaceNotFound": "Workspace not found for this project.",
+    "noUnsavedChanges": "No unsaved changes.",
+    "servicesAndJobs": "Services and jobs"
   },
   "settings": {
     "apiKeys": "API Keys",

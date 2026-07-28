@@ -391,7 +391,7 @@ export function ProjectWorkspaceDetail() {
     },
   });
 
-  if (projectQuery.isLoading) return <p className="text-sm text-muted-foreground">Loading workspace…</p>;
+  if (projectQuery.isLoading) return <p className="text-sm text-muted-foreground">{t("projects.loadingWorkspace")}</p>;
   if (projectQuery.error) {
     return (
       <p className="text-sm text-destructive">
@@ -400,7 +400,7 @@ export function ProjectWorkspaceDetail() {
     );
   }
   if (!project || !workspace || !form || !initialState) {
-    return <p className="text-sm text-muted-foreground">Workspace not found for this project.</p>;
+    return <p className="text-sm text-muted-foreground">{t("projects.workspaceNotFound")}</p>;
   }
 
   const canRunWorkspaceCommands = Boolean(workspace.cwd);
@@ -660,7 +660,7 @@ export function ProjectWorkspaceDetail() {
               </Button>
               {errorMessage ? <p className="text-sm text-destructive">{errorMessage}</p> : null}
               {!errorMessage && runtimeActionMessage ? <p className="text-sm text-muted-foreground">{runtimeActionMessage}</p> : null}
-              {!errorMessage && !isDirty ? <p className="text-sm text-muted-foreground">No unsaved changes.</p> : null}
+              {!errorMessage && !isDirty ? <p className="text-sm text-muted-foreground">{t("projects.noUnsavedChanges")}</p> : null}
             </div>
           </Card>
         </div>
@@ -699,7 +699,7 @@ export function ProjectWorkspaceDetail() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-1">
                 <div className="text-xs font-medium uppercase tracking-(--tracking-eyebrow) text-muted-foreground">{t("projects.workspaceCommands")}</div>
-                <h2 className="text-lg font-semibold">Services and jobs</h2>
+                <h2 className="text-lg font-semibold">{t("projects.servicesAndJobs")}</h2>
                 <p className="text-sm text-muted-foreground">
                   Long-running services stay supervised here, while one-shot jobs run on demand against this workspace. Execution workspaces inherit this config unless they override it.
                 </p>

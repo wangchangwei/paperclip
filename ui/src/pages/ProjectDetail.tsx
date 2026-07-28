@@ -930,7 +930,7 @@ export function ProjectDetail() {
             />
           )
         ) : (
-          <p className="text-sm text-muted-foreground">Loading workspaces...</p>
+          <p className="text-sm text-muted-foreground">{t("projects.loadingWorkspaces")}</p>
         )
       ) : null}
 

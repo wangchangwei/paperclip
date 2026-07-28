@@ -775,6 +775,7 @@
     "dismissLeftNotice": "Dismiss project membership notice",
     "icon": "Icon",
     "leftProjectNotice": "You left this project. It no longer appears in your sidebar.",
+    "loadingWorkspace": "Loading workspace…",
     "loadingWorkspaces": "Loading workspaces...",
     "managedBy": "Managed by {{pluginDisplayName}}",
     "myProjects": "My Projects",
@@ -782,6 +783,7 @@
     "newProject": "New Project",
     "noIconsMatch": "No icons match",
     "noProjects": "No projects yet.",
+    "noUnsavedChanges": "No unsaved changes.",
     "otherProjects": "Other Projects",
     "overviewTab": "Overview",
     "pausedByBudgetHardStop": "Paused by budget hard stop",
@@ -794,6 +796,7 @@
     "searchIcons": "Search icons...",
     "selectColor": "Select color {{swatch}}",
     "selectCompany": "Select a company to view projects.",
+    "servicesAndJobs": "Services and jobs",
     "sort": "Sort",
     "sortAsc": "Asc",
     "sortBy": "Sort: {{label}}",
@@ -808,6 +811,7 @@
     "title": "Projects",
     "workspaceCommands": "Workspace commands",
     "workspaceFacts": "Workspace facts",
+    "workspaceNotFound": "Workspace not found for this project.",
     "workspacesTab": "Workspaces"
   },
   "settings": {
