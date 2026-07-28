@@ -1107,6 +1107,17 @@
     "taglinePlaceholder": "从正确性、测试和可维护性角度评审代码变更。",
     "unsavedEdits": "未保存的修改"
   },
+  "smokeLab": {
+    "colPath": "Path",
+    "demoCreds": "Fake OAuth demo credentials",
+    "experimentalBadge": "Experimental",
+    "fixtureServices": "Fixture services",
+    "integrationMatrix": "Integration matrix",
+    "loading": "Loading Smoke Lab…",
+    "noServices": "No services reported. Start the fixture services above.",
+    "offHeading": "Smoke Lab is turned off",
+    "title": "Smoke Lab"
+  },
   "testPanel": {
     "badgeLegendHeading": "徽标含义",
     "goToSetup": "前往设置",

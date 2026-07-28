@@ -1107,6 +1107,17 @@
     "taglinePlaceholder": "Review repository changes for correctness, tests, and maintainability.",
     "unsavedEdits": "Unsaved edits"
   },
+  "smokeLab": {
+    "colPath": "Path",
+    "demoCreds": "Fake OAuth demo credentials",
+    "experimentalBadge": "Experimental",
+    "fixtureServices": "Fixture services",
+    "integrationMatrix": "Integration matrix",
+    "loading": "Loading Smoke Lab…",
+    "noServices": "No services reported. Start the fixture services above.",
+    "offHeading": "Smoke Lab is turned off",
+    "title": "Smoke Lab"
+  },
   "testPanel": {
     "badgeLegendHeading": "What the badges mean",
     "goToSetup": "Go to Setup",

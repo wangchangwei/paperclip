@@ -1132,5 +1132,101 @@
   "agentSkillsTab": {
     "noDetectedMatch": "No detected skills match your search.",
     "noLibrary": "No skills in the company library"
+  },
+  "companySkills": {
+    "sourceMeta": {
+      "skillsShManaged": "skills.sh managed",
+      "githubManaged": "GitHub managed",
+      "urlManaged": "URL managed",
+      "folderManaged": "Folder managed",
+      "paperclipManaged": "Paperclip managed",
+      "catalogManaged": "Catalog managed"
+    },
+    "trustChip": {
+      "markdownOnly": "Markdown only",
+      "markdownOnlyTooltip": "Text only — no scripts, no binaries, no assets.",
+      "includesAssets": "Includes assets",
+      "includesAssetsTooltip": "Ships images, fonts, or other non-script files.",
+      "includesScripts": "Includes scripts",
+      "includesScriptsTooltip": "Ships executable scripts. Review before installing."
+    },
+    "compatChip": {
+      "unknownFormat": "Unknown format",
+      "unknownFormatTooltip": "Paperclip could not validate this skill as Agent Skills markdown. Install at your own risk.",
+      "invalid": "Invalid",
+      "invalidTooltip": "This skill cannot be installed — content is not valid Agent Skills markdown."
+    },
+    "provenanceBadge": {
+      "tooltip": "Installed from the app-shipped skills catalog. Provenance is signed by package version and content hash."
+    },
+    "discovery": {
+      "skillsStore": "Skills Store",
+      "discoverInstallForkShare": "Discover, install, fork, share",
+      "categories": "Categories",
+      "searchSkillsAuthorsCategories": "Search skills, authors, categories…",
+      "sort": "Sort",
+      "source": "Source",
+      "allSources": "All sources",
+      "studio": "Studio",
+      "new": "New",
+      "createNewSkill": "Create new skill",
+      "browseCatalog": "Browse catalog",
+      "importFromPathOrUrl": "Import from path or URL",
+      "importSkillsFromProject": "Import skills from project",
+      "newFolder": "New folder",
+      "done": "Done",
+      "select": "Select",
+      "allCategories": "All categories",
+      "allCount": "All ({{count}})",
+      "tabAll": "All",
+      "tabInstalled": "Installed",
+      "tabCatalog": "Catalog",
+      "tabBundled": "Bundled",
+      "noSkillsYetCreateOrInstall": "No skills yet. Create one or install from the catalog.",
+      "noSkillsMatchFilters": "No skills match your filters.",
+      "noSkillsInTab": "No skills in this tab yet.",
+      "clearFilters": "Clear filters",
+      "skillCount_one": "{{count}} skill",
+      "skillCount_other": "{{count}} skills",
+      "mostAgents": "Most agents",
+      "mostStars": "Most stars",
+      "mostForks": "Most forks",
+      "recentlyUpdated": "Recently updated",
+      "alphabetical": "Alphabetical"
+    },
+    "catalog": {
+      "bundledCount": "Bundled · {{count}}",
+      "optionalCount": "Optional · {{count}}",
+      "installedCount": "Installed · {{count}}"
+    },
+    "catalogDetail": {
+      "selectSkillToInspect": "Select a catalog skill to inspect.",
+      "installSkill": "Install skill",
+      "installSkillOrg": "Install skill in this organization",
+      "updateFromCatalog": "Update from catalog",
+      "installedOpenInLibrary": "Installed · Open in library",
+      "invalidInstallTooltip": "This skill cannot be installed — its content is not valid Agent Skills markdown.",
+      "hashChangedTooltip": "Catalog content hash has changed since this skill was installed.",
+      "key": "Key",
+      "hash": "Hash",
+      "copyContentHash": "Copy content hash",
+      "copiedHash": "Copied hash",
+      "preparing": "Preparing…",
+      "compatible": "Compatible",
+      "requiresNone": "none",
+      "rolesAny": "any",
+      "provenanceFallback": "—"
+    }
+  },
+  "smokeLab": {
+    "offHeading": "Smoke Lab is turned off",
+    "loading": "Loading Smoke Lab…",
+    "title": "Smoke Lab",
+    "experimentalBadge": "Experimental",
+    "fixtureServices": "Fixture services",
+    "noServices": "No services reported. Start the fixture services above.",
+    "demoCreds": "Fake OAuth demo credentials",
+    "integrationMatrix": "Integration matrix",
+    "colPath": "Path"
   }
 }
