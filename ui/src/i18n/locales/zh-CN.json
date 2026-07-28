@@ -359,13 +359,13 @@
     "workspaceName": "工作区名称"
   },
   "bootstrap": {
-    "alreadyClaimed": "Someone else has already claimed this instance.",
-    "claimInstance": "Claim this instance",
-    "finishSetupHeading": "Finish setting up this Paperclip",
-    "preferHostSetup": "Prefer to finish setup from the host?",
-    "signInOrCreate": "Sign in / Create account",
-    "waitingForAdmin": "This Paperclip is waiting on its first admin",
-    "youAreAdmin": "You're the instance admin"
+    "alreadyClaimed": "本实例已被其他人认领。",
+    "claimInstance": "认领本实例",
+    "finishSetupHeading": "完成 Paperclip 实例初始化",
+    "preferHostSetup": "想从宿主机完成设置吗?",
+    "signInOrCreate": "登录 / 创建账号",
+    "waitingForAdmin": "Paperclip 正在等待首位管理员认领",
+    "youAreAdmin": "你已成功认领本实例"
   },
   "caseDetail": {
     "attachments": "附件（{{count}}）",
