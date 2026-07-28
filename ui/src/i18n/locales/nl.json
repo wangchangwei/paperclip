@@ -279,6 +279,13 @@
       "title": "Maak uw eerste bedrijf aan"
     }
   },
+  "appDetail": {
+    "noSheetsConnected": "No sheets are connected yet.",
+    "openSheet": "Open sheet",
+    "sheetsHeading": "Sheets agents can use",
+    "sheetsHint": "Agents can only use the sheets listed here.",
+    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
+  },
   "approvals": {
     "failedToApprove": "Failed to approve",
     "failedToReject": "Failed to reject",

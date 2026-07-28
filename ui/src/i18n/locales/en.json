@@ -902,5 +902,12 @@
   },
   "orgChart": {
     "title": "Org Chart"
+  },
+  "appDetail": {
+    "sheetsHeading": "Sheets agents can use",
+    "sheetsHint": "Agents can only use the sheets listed here.",
+    "noSheetsConnected": "No sheets are connected yet.",
+    "openSheet": "Open sheet",
+    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
   }
 }
