@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { KeyRound, Stethoscope, Trash2, Vault } from "lucide-react";
 import type {
@@ -69,6 +70,7 @@ function vaultRef(secret: CompanySecret | undefined, version: number | "latest" 
 }
 
 export function CatalogDialog({ connection, onClose }: { connection: ToolConnection; onClose: () => void }) {
+  const { t } = useTranslation();
   const catalog = useQuery({
     queryKey: queryKeys.tools.catalog(connection.id),
     queryFn: () => toolsApi.listCatalog(connection.id),
@@ -77,7 +79,7 @@ export function CatalogDialog({ connection, onClose }: { connection: ToolConnect
     <Dialog open onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Tool catalog — {connection.name}</DialogTitle>
+          <DialogTitle>{t("connectionDialogs.toolCatalogTitle", { name: connection.name })}</DialogTitle>
         </DialogHeader>
         {catalog.isLoading ? (
           <LoadingState />
@@ -135,6 +137,7 @@ export function AddConnectionDialog({
   defaultApplicationId?: string | null;
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const { pushToast } = useToast();
 
@@ -279,7 +282,7 @@ export function AddConnectionDialog({
     <Dialog open onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="max-w-xl">
         <DialogHeader>
-          <DialogTitle>Add application</DialogTitle>
+          <DialogTitle>{t("connectionDialogs.addAppTitle")}</DialogTitle>
           <DialogDescription>
             Choose an existing application or create one as part of the same connection flow. Credentials stay as
             vault references and the connection is probed before activation.
@@ -296,24 +299,24 @@ export function AddConnectionDialog({
           {step === 1 && !locked ? (
             <>
               <div className="space-y-1.5">
-                <Label>Application</Label>
+                <Label>{t("connectionDialogs.application")}</Label>
                 <Select value={applicationMode} onValueChange={(v) => setApplicationMode(v as "existing" | "new")}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="existing">Use existing application</SelectItem>
-                    <SelectItem value="new">Create new application</SelectItem>
+                    <SelectItem value="existing">{t("connectionDialogs.useExisting")}</SelectItem>
+                    <SelectItem value="new">{t("connectionDialogs.createNew")}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {applicationMode === "existing" ? (
                 <div className="space-y-1.5">
-                  <Label>Existing application</Label>
+                  <Label>{t("connectionDialogs.existingApp")}</Label>
                   <Select value={applicationId} onValueChange={setApplicationId}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select an application" />
+                      <SelectValue placeholder={t("connectionDialogs.selectAnApp")} />
                     </SelectTrigger>
                     <SelectContent>
                       {(apps.data?.applications ?? []).map((a) => (
@@ -326,12 +329,12 @@ export function AddConnectionDialog({
                 </div>
               ) : (
                 <div className="space-y-1.5">
-                  <Label htmlFor="app-name">New application name</Label>
+                  <Label htmlFor="app-name">{t("connectionDialogs.newAppName")}</Label>
                   <Input
                     id="app-name"
                     value={applicationName}
                     onChange={(e) => setApplicationName(e.target.value)}
-                    placeholder="e.g. GitHub Triage"
+                    placeholder={t("connectionDialogs.appNamePlaceholder")}
                   />
                   <p className="text-xs text-muted-foreground">
                     Application type is inferred from the transport you choose next.
@@ -351,18 +354,18 @@ export function AddConnectionDialog({
               ) : null}
 
               <div className="space-y-1.5">
-                <Label htmlFor="conn-name">Connection name</Label>
+                <Label htmlFor="conn-name">{t("connectionDialogs.connectionName")}</Label>
                 <Input
                   id="conn-name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Production GitHub"
+                  placeholder={t("connectionDialogs.connectionNamePlaceholder")}
                   disabled={locked}
                 />
               </div>
 
               <div className="space-y-1.5">
-                <Label>Transport</Label>
+                <Label>{t("connectionDialogs.transport")}</Label>
                 <Select
                   value={transport}
                   onValueChange={(v) => setTransport(v as "mcp_remote" | "local_stdio")}
@@ -372,15 +375,15 @@ export function AddConnectionDialog({
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="mcp_remote">Remote HTTP (no local process)</SelectItem>
-                    <SelectItem value="local_stdio">Local stdio (approved template)</SelectItem>
+                    <SelectItem value="mcp_remote">{t("connectionDialogs.remoteHttp")}</SelectItem>
+                    <SelectItem value="local_stdio">{t("connectionDialogs.localStdio")}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {transport === "mcp_remote" ? (
                 <div className="space-y-1.5">
-                  <Label htmlFor="conn-url">Endpoint URL</Label>
+                  <Label htmlFor="conn-url">{t("connectionDialogs.endpointUrl")}</Label>
                   <Input
                     id="conn-url"
                     value={endpointUrl}

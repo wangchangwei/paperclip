@@ -657,6 +657,23 @@
       "markdownOnlyTooltip": "Text only — no scripts, no binaries, no assets."
     }
   },
+  "connectionDialogs": {
+    "addAppTitle": "Add application",
+    "appNamePlaceholder": "e.g. GitHub Triage",
+    "application": "Application",
+    "connectionName": "Connection name",
+    "connectionNamePlaceholder": "e.g. Production GitHub",
+    "createNew": "Create new application",
+    "endpointUrl": "Endpoint URL",
+    "existingApp": "Existing application",
+    "localStdio": "Local stdio (approved template)",
+    "newAppName": "New application name",
+    "remoteHttp": "Remote HTTP (no local process)",
+    "selectAnApp": "Select an application",
+    "toolCatalogTitle": "Tool catalog — {{name}}",
+    "transport": "Transport",
+    "useExisting": "Use existing application"
+  },
   "costs": {
     "byAgent": "按代理",
     "byProject": "按项目",

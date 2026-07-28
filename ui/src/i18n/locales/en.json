@@ -1332,5 +1332,22 @@
     "demoCreds": "Fake OAuth demo credentials",
     "integrationMatrix": "Integration matrix",
     "colPath": "Path"
+  },
+  "connectionDialogs": {
+    "toolCatalogTitle": "Tool catalog — {{name}}",
+    "addAppTitle": "Add application",
+    "application": "Application",
+    "useExisting": "Use existing application",
+    "createNew": "Create new application",
+    "existingApp": "Existing application",
+    "selectAnApp": "Select an application",
+    "newAppName": "New application name",
+    "appNamePlaceholder": "e.g. GitHub Triage",
+    "connectionName": "Connection name",
+    "connectionNamePlaceholder": "e.g. Production GitHub",
+    "transport": "Transport",
+    "remoteHttp": "Remote HTTP (no local process)",
+    "localStdio": "Local stdio (approved template)",
+    "endpointUrl": "Endpoint URL"
   }
 }
