@@ -887,18 +887,18 @@
     "whoCanUse": "谁可以使用"
   },
   "pipelines": {
-    "colAttention": "Attention",
-    "colLastActivity": "Last activity",
-    "colName": "Name",
-    "colOpenItems": "Open items",
-    "colStatus": "Status",
-    "loadError": "Could not load pipelines.",
-    "newTitle": "New pipeline",
-    "noStages": "No stages are set up for this pipeline yet.",
-    "notFound": "Pipeline not found.",
-    "searchAria": "Search pipelines",
-    "selectCompany": "Select a company to view pipelines.",
-    "title": "Pipelines"
+    "colAttention": "需关注",
+    "colLastActivity": "最近活动",
+    "colName": "名称",
+    "colOpenItems": "未结事项",
+    "colStatus": "状态",
+    "loadError": "加载流水线失败。",
+    "newTitle": "新建流水线",
+    "noStages": "该流水线尚未设置任何阶段。",
+    "notFound": "未找到流水线。",
+    "searchAria": "搜索流水线",
+    "selectCompany": "请选择公司以查看流水线。",
+    "title": "流水线"
   },
   "pluginManager": {
     "alphaBanner": "插件处于 Alpha 阶段。",
