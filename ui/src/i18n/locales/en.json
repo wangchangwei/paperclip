@@ -983,5 +983,16 @@
   },
   "layout": {
     "headerBetaTag": "beta"
+  },
+  "joinRequestQueue": {
+    "selectCompany": "Select a company to review join requests.",
+    "loading": "Loading join requests…",
+    "title": "Join Request Queue",
+    "status": "Status",
+    "requestType": "Request type",
+    "inviteContext": "Invite context",
+    "requestDetails": "Request details",
+    "submitted": "Submitted {{when}}",
+    "sourceIp": "Source IP {{ip}}"
   }
 }

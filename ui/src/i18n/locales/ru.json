@@ -765,6 +765,17 @@
       "list": "List view"
     }
   },
+  "joinRequestQueue": {
+    "inviteContext": "Invite context",
+    "loading": "Loading join requests…",
+    "requestDetails": "Request details",
+    "requestType": "Request type",
+    "selectCompany": "Select a company to review join requests.",
+    "sourceIp": "Source IP {{ip}}",
+    "status": "Status",
+    "submitted": "Submitted {{when}}",
+    "title": "Join Request Queue"
+  },
   "layout": {
     "headerBetaTag": "beta"
   },
