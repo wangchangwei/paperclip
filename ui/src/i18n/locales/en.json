@@ -422,7 +422,9 @@
     "emptySelectCompany": "Select a company to view inbox.",
     "creatorBoard": "Board",
     "creatorMe": "Me",
-    "retrySkipped": "Retry was skipped."
+    "retrySkipped": "Retry was skipped.",
+    "retry": "Retry",
+    "retrying": "Retrying…"
   },
   "agents": {
     "accessProfiles": "Access profiles",
