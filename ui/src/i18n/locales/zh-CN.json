@@ -528,17 +528,17 @@
     "uploadingLogo": "正在上传Logo..."
   },
   "costs": {
-    "byAgent": "By agent",
-    "byProject": "By project",
-    "inferenceLedger": "Inference ledger",
-    "noCostEvents": "No cost events yet.",
-    "selectDatesHint": "Select a start and end date to load data.",
-    "tabBillers": "Billers",
-    "tabBudgets": "Budgets",
-    "tabFinance": "Finance",
-    "tabOverview": "Overview",
-    "tabProviders": "Providers",
-    "title": "Costs"
+    "byAgent": "按代理",
+    "byProject": "按项目",
+    "inferenceLedger": "推理账本",
+    "noCostEvents": "暂无成本事件。",
+    "selectDatesHint": "请选择起止日期以加载数据。",
+    "tabBillers": "账单方",
+    "tabBudgets": "预算",
+    "tabFinance": "财务",
+    "tabOverview": "概览",
+    "tabProviders": "供应商",
+    "title": "成本"
   },
   "dashboard": {
     "liveRuns": "实时运行",
