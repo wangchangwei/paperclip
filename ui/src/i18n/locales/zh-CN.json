@@ -494,12 +494,12 @@
     "title": "公司成员"
   },
   "companyEnvironments": {
-    "activeTemplate": "Active template",
-    "backToList": "Back to environments",
-    "notConfigured": "Not configured",
-    "notFound": "Environment not found",
-    "notFoundHint": "The environment may have been removed or is not available in this company.",
-    "selectCompanyContext": "Select a company context to manage environment secrets and bindings."
+    "activeTemplate": "当前模板",
+    "backToList": "返回环境列表",
+    "notConfigured": "尚未配置",
+    "notFound": "未找到环境",
+    "notFoundHint": "此环境可能已被移除,或在当前公司中不可用。",
+    "selectCompanyContext": "请选择公司环境以管理环境密钥与绑定。"
   },
   "companyImport": {
     "adapters": "适配器",
