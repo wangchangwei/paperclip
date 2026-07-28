@@ -946,10 +946,10 @@
     "updated": "更新成功。"
   },
   "training": {
-    "loadError": "Could not load training examples.",
-    "loading": "Loading training examples…",
-    "noMatches": "No training examples match these filters.",
-    "subtitle": "Human decision traces with frozen state for future eval cases.",
-    "title": "Training examples"
+    "loadError": "无法加载训练示例。",
+    "loading": "正在加载训练示例…",
+    "noMatches": "没有匹配这些筛选条件的训练示例。",
+    "subtitle": "人工决策轨迹及其冻结状态,可用于未来的评估用例。",
+    "title": "训练示例"
   }
 }
