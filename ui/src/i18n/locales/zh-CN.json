@@ -1088,6 +1088,14 @@
     "timezone": "时区",
     "title": "设置"
   },
+  "skillStudio": {
+    "appearance": "Appearance",
+    "basics": "Basics",
+    "readOnly": "Read-only",
+    "sharing": "Sharing",
+    "starterContent": "Starter content",
+    "unsavedEdits": "Unsaved edits"
+  },
   "toast": {
     "copied": "已复制到剪贴板。",
     "created": "创建成功。",

@@ -1088,6 +1088,14 @@
     "timezone": "Timezone",
     "title": "Settings"
   },
+  "skillStudio": {
+    "appearance": "Appearance",
+    "basics": "Basics",
+    "readOnly": "Read-only",
+    "sharing": "Sharing",
+    "starterContent": "Starter content",
+    "unsavedEdits": "Unsaved edits"
+  },
   "toast": {
     "copied": "Copied to clipboard.",
     "created": "Created successfully.",

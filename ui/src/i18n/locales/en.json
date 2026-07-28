@@ -1104,5 +1104,13 @@
     "noMatch": "No apps match \"{{search}}\".",
     "looksLike": "This looks like {{name}}.",
     "moreWays": "More ways to connect"
+  },
+  "skillStudio": {
+    "basics": "Basics",
+    "appearance": "Appearance",
+    "sharing": "Sharing",
+    "unsavedEdits": "Unsaved edits",
+    "readOnly": "Read-only",
+    "starterContent": "Starter content"
   }
 }
