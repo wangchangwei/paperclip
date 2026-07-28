@@ -463,7 +463,10 @@
     "selectCompanyFirst": "Select a company first.",
     "saved": "Saved",
     "saving": "Saving...",
-    "saveChanges": "Save changes"
+    "saveChanges": "Save changes",
+    "newTask": "New Task",
+    "skipToMainContent": "Skip to Main Content",
+    "commandPaletteHeading": "Search"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -673,12 +676,15 @@
     },
     "sections": {
       "company": "Company",
-      "work": "Work"
+      "work": "Work",
+      "agents": "Agents"
     },
     "sidebar": {
       "activity": "Activity",
+      "agents": "Agents",
       "apps": "Apps",
       "artifacts": "Artifacts",
+      "board": "Board",
       "cases": "Cases",
       "company": "Company",
       "conferenceRoom": "Conference Room",
@@ -686,6 +692,7 @@
       "dashboard": "Dashboard",
       "decisions": "Decisions",
       "goals": "Goals",
+      "home": "Home",
       "inbox": "Inbox",
       "newTask": "New Task",
       "org": "Org",
@@ -973,5 +980,8 @@
     "openingCompany": "Opening company...",
     "bootstrapComplete": "Bootstrap complete",
     "joinedCompany": "You joined the company"
+  },
+  "layout": {
+    "headerBetaTag": "beta"
   }
 }

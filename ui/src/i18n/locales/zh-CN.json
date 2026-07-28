@@ -386,6 +386,7 @@
       "upload": "上传",
       "viewProfile": "查看个人资料"
     },
+    "commandPaletteHeading": "搜索",
     "copied": "已复制！",
     "copy": "复制",
     "create": "创建",
@@ -441,6 +442,7 @@
       "success": "操作成功完成。",
       "unauthorized": "您无权执行此操作。"
     },
+    "newTask": "新建任务",
     "pagination": {
       "first": "首页",
       "last": "末页",
@@ -455,6 +457,7 @@
     "saving": "保存中...",
     "selectCompanyFirst": "请先选择公司。",
     "show": "显示",
+    "skipToMainContent": "跳到主要内容",
     "status": {
       "active": "活跃",
       "archived": "已归档",
@@ -762,6 +765,9 @@
       "list": "列表视图"
     }
   },
+  "layout": {
+    "headerBetaTag": "测试版"
+  },
   "nav": {
     "badge": {
       "decisions": "个决策",
@@ -782,13 +788,16 @@
       "menu": "菜单"
     },
     "sections": {
+      "agents": "智能体",
       "company": "公司",
       "work": "工作"
     },
     "sidebar": {
       "activity": "活动",
+      "agents": "智能体",
       "apps": "应用",
       "artifacts": "制品",
+      "board": "面板",
       "cases": "案例",
       "company": "公司",
       "conferenceRoom": "会议室",
@@ -796,6 +805,7 @@
       "dashboard": "仪表板",
       "decisions": "决策",
       "goals": "目标",
+      "home": "首页",
       "inbox": "收件箱",
       "newTask": "新建任务",
       "org": "组织",

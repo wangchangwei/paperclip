@@ -94,6 +94,48 @@ vi.mock("@/plugins/launchers", () => ({
   ),
 }));
 
+// i18n mock: Sidebar reads every label via t(); existing assertions still
+// expect the English strings ("New Task", "Tasks", "Projects", "Work"...).
+// Return a flat map so the tests stay readable without booting i18next.
+vi.mock("@/i18n", () => ({
+  useTranslation: () => ({
+    t: (key: string) => {
+      const dict: Record<string, string> = {
+        "common.newTask": "New Task",
+        "common.skipToMainContent": "Skip to Main Content",
+        "nav.header.openSearch": "Open search",
+        "nav.sections.work": "Work",
+        "nav.sections.company": "Company",
+        "nav.sections.agents": "Agents",
+        "nav.sidebar.dashboard": "Dashboard",
+        "nav.sidebar.inbox": "Inbox",
+        "nav.sidebar.decisions": "Decisions",
+        "nav.sidebar.status": "Status",
+        "nav.sidebar.conferenceRoom": "Conference Room",
+        "nav.sidebar.tasks": "Tasks",
+        "nav.sidebar.cases": "Cases",
+        "nav.sidebar.routines": "Routines",
+        "nav.sidebar.pipelines": "Pipelines",
+        "nav.sidebar.goals": "Goals",
+        "nav.sidebar.artifacts": "Artifacts",
+        "nav.sidebar.skills": "Skills",
+        "nav.sidebar.workspaces": "Workspaces",
+        "nav.sidebar.projects": "Projects",
+        "nav.sidebar.org": "Org",
+        "nav.sidebar.apps": "Apps",
+        "nav.sidebar.timeline": "Timeline",
+        "nav.sidebar.costs": "Costs",
+        "nav.sidebar.activity": "Activity",
+        "nav.sidebar.settings": "Settings",
+        "nav.sidebar.agents": "Agents",
+        "nav.sidebar.board": "Board",
+        "nav.sidebar.home": "Home",
+      };
+      return dict[key] ?? key;
+    },
+  }),
+}));
+
 vi.mock("./SidebarCompanyMenu", () => ({
   SidebarCompanyMenu: () => <div>Company menu</div>,
 }));

@@ -386,6 +386,7 @@
       "upload": "Upload",
       "viewProfile": "View profile"
     },
+    "commandPaletteHeading": "Search",
     "copied": "Copied!",
     "copy": "Copy",
     "create": "Create",
@@ -441,6 +442,7 @@
       "success": "Operation completed successfully.",
       "unauthorized": "You are not authorized to perform this action."
     },
+    "newTask": "New Task",
     "pagination": {
       "first": "First",
       "last": "Last",
@@ -455,6 +457,7 @@
     "saving": "Saving...",
     "selectCompanyFirst": "Select a company first.",
     "show": "Show",
+    "skipToMainContent": "Skip to Main Content",
     "status": {
       "active": "Active",
       "archived": "Archived",
@@ -762,6 +765,9 @@
       "list": "List view"
     }
   },
+  "layout": {
+    "headerBetaTag": "beta"
+  },
   "nav": {
     "badge": {
       "decisions": "decisions",
@@ -782,13 +788,16 @@
       "menu": "Menu"
     },
     "sections": {
+      "agents": "Agents",
       "company": "Company",
       "work": "Work"
     },
     "sidebar": {
       "activity": "Activity",
+      "agents": "Agents",
       "apps": "Apps",
       "artifacts": "Artifacts",
+      "board": "Board",
       "cases": "Cases",
       "company": "Company",
       "conferenceRoom": "Conference Room",
@@ -796,6 +805,7 @@
       "dashboard": "Dashboard",
       "decisions": "Decisions",
       "goals": "Goals",
+      "home": "Home",
       "inbox": "Inbox",
       "newTask": "New Task",
       "org": "Org",
