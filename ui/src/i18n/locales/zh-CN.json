@@ -280,10 +280,10 @@
     }
   },
   "appDetail": {
-    "noSheetsConnected": "No sheets are connected yet.",
-    "openSheet": "Open sheet",
-    "sheetsHeading": "Sheets agents can use",
-    "sheetsHint": "Agents can only use the sheets listed here.",
+    "noSheetsConnected": "尚未连接任何工作表。",
+    "openSheet": "打开工作表",
+    "sheetsHeading": "代理可用的工作表",
+    "sheetsHint": "代理只能使用此处列出的工作表。",
     "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
   },
   "approvals": {
@@ -485,27 +485,27 @@
     }
   },
   "companyAccess": {
-    "editMember": "Edit member",
-    "humans": "Humans",
-    "loading": "Loading company access…",
-    "noMemberships": "No user memberships found for this company yet.",
-    "pendingHumanJoins": "Pending human joins",
-    "removeMember": "Remove member",
-    "title": "Company Members"
+    "editMember": "编辑成员",
+    "humans": "人员",
+    "loading": "正在加载公司访问…",
+    "noMemberships": "该公司尚未找到任何用户成员资格。",
+    "pendingHumanJoins": "待处理的人员加入",
+    "removeMember": "移除成员",
+    "title": "公司成员"
   },
   "companyImport": {
-    "adapters": "Adapters",
-    "importSource": "Import source",
-    "packageFiles": "Package files"
+    "adapters": "适配器",
+    "importSource": "导入源",
+    "packageFiles": "包文件"
   },
   "companyInvites": {
-    "chooseRole": "Choose a role",
-    "historyHint": "Invite history below keeps the audit trail.",
-    "inviteHistory": "Invite history",
-    "invitePerson": "Invite a person",
-    "latestInviteLink": "Latest invite link",
-    "loading": "Loading invites…",
-    "title": "Company Invites"
+    "chooseRole": "选择角色",
+    "historyHint": "邀请历史保留在下方的审计记录中。",
+    "inviteHistory": "邀请历史",
+    "invitePerson": "邀请人员",
+    "latestInviteLink": "最新邀请链接",
+    "loading": "正在加载邀请…",
+    "title": "公司邀请"
   },
   "companySettings": {
     "title": "公司设置",
@@ -517,10 +517,10 @@
     "liveRuns_other": "{{count}}个实时运行",
     "noLiveRuns": "当前没有实时运行。",
     "noStarredProjects": "暂无收藏的项目。",
-    "noTasks": "No tasks yet.",
+    "noTasks": "暂无任务。",
     "quickActions": "快速操作",
     "recentActivity": "最近活动",
-    "recentTasks": "Recent Tasks",
+    "recentTasks": "最近任务",
     "starredProjects": "收藏的项目",
     "title": "仪表板"
   },
@@ -602,21 +602,21 @@
     "updates": "更新"
   },
   "instanceAccess": {
-    "access": "Access",
-    "companyAccess": "Company access",
-    "currentMemberships": "Current memberships",
-    "loadingUserAccess": "Loading user access…",
-    "loadingUsers": "Loading instance users…",
-    "searchPlaceholder": "Search by name or email",
-    "searchUsers": "Search users",
-    "selectUserToInspect": "Select a user to inspect instance access.",
-    "title": "Instance Access"
+    "access": "访问权限",
+    "companyAccess": "公司访问",
+    "currentMemberships": "当前成员资格",
+    "loadingUserAccess": "正在加载用户访问…",
+    "loadingUsers": "正在加载实例用户…",
+    "searchPlaceholder": "按姓名或邮箱搜索",
+    "searchUsers": "搜索用户",
+    "selectUserToInspect": "选择一个用户以查看其实例访问权限。",
+    "title": "实例访问"
   },
   "instanceSettings": {
-    "heartbeats": "Heartbeats",
-    "loadingHeartbeats": "Loading scheduler heartbeats...",
-    "schedulerHeartbeats": "Scheduler Heartbeats",
-    "title": "Instance settings"
+    "heartbeats": "心跳",
+    "loadingHeartbeats": "正在加载调度器心跳...",
+    "schedulerHeartbeats": "调度器心跳",
+    "title": "实例设置"
   },
   "issues": {
     "andMore": "...以及{{count}}个更多",
@@ -780,7 +780,7 @@
     "welcome": "欢迎使用Paperclip"
   },
   "orgChart": {
-    "title": "Org Chart"
+    "title": "组织架构图"
   },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
