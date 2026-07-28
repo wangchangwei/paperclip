@@ -286,6 +286,11 @@
     "filterPending": "Pending",
     "title": "Approvals"
   },
+  "audit": {
+    "noMatches": "No activity matches these filters",
+    "nothingYet": "Nothing here yet",
+    "searchPlaceholder": "Search activity…"
+  },
   "auth": {
     "accountLocked": "Your account has been locked due to too many failed attempts.",
     "agreeToTerms": "I agree to the Terms of Service and Privacy Policy.",

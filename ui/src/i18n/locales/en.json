@@ -850,5 +850,10 @@
     "filterAll": "All",
     "failedToApprove": "Failed to approve",
     "failedToReject": "Failed to reject"
+  },
+  "audit": {
+    "searchPlaceholder": "Search activity…",
+    "noMatches": "No activity matches these filters",
+    "nothingYet": "Nothing here yet"
   }
 }
