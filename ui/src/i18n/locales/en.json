@@ -862,5 +862,11 @@
   "companySettings": {
     "title": "Company Settings",
     "uploadingLogo": "Uploading logo..."
+  },
+  "instanceSettings": {
+    "title": "Instance settings",
+    "heartbeats": "Heartbeats",
+    "schedulerHeartbeats": "Scheduler Heartbeats",
+    "loadingHeartbeats": "Loading scheduler heartbeats..."
   }
 }

@@ -569,6 +569,12 @@
     "unread": "Unread",
     "updates": "Updates"
   },
+  "instanceSettings": {
+    "heartbeats": "Heartbeats",
+    "loadingHeartbeats": "Loading scheduler heartbeats...",
+    "schedulerHeartbeats": "Scheduler Heartbeats",
+    "title": "Instance settings"
+  },
   "issues": {
     "andMore": "... and {{count}} more",
     "assignee": "Assignee",

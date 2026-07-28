@@ -569,6 +569,12 @@
     "unread": "未读",
     "updates": "更新"
   },
+  "instanceSettings": {
+    "heartbeats": "Heartbeats",
+    "loadingHeartbeats": "Loading scheduler heartbeats...",
+    "schedulerHeartbeats": "Scheduler Heartbeats",
+    "title": "Instance settings"
+  },
   "issues": {
     "andMore": "...以及{{count}}个更多",
     "assignee": "负责人",
