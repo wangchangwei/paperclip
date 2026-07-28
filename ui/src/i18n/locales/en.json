@@ -635,7 +635,21 @@
     "input": "Input",
     "output": "Output",
     "cost": "Cost",
-    "releasePickerLabel": "Skill release"
+    "releasePickerLabel": "Skill release",
+    "dashboard": "Dashboard",
+    "instructions": "Instructions",
+    "configuration": "Configuration",
+    "budget": "Budget",
+    "approveAgent": "Approve agent",
+    "builtInAgentNote": "Built-in agent",
+    "resettingBuiltIn": "Resetting…",
+    "cancel": "Cancel",
+    "save": "Save",
+    "savingConfig": "Saving…",
+    "pauseAgentTitle": "Pause the {{agentName}}?",
+    "pauseAgentDescription": "{{featureLabel}} depends on this agent. While paused, {{featureLabel}} generation is skipped and the {{featureLabel}} page shows a warning.",
+    "deleteFileConfirm": "Delete {{fileName}}?",
+    "leftAgentNotice": "You left this agent. It no longer appears in your sidebar."
   },
   "settings": {
     "title": "Settings",
