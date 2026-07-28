@@ -19,6 +19,10 @@
     "pendingApprovalHint": "该代理正在等待董事会审批,暂无法调用。",
     "recentTasks": "最近任务"
   },
+  "agentSkillsTab": {
+    "noDetectedMatch": "No detected skills match your search.",
+    "noLibrary": "No skills in the company library"
+  },
   "agents": {
     "accessProfiles": "访问配置文件",
     "acpxLocalSkillUnsupported": "本地执行不受此Skill支持",

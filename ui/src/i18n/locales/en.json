@@ -1128,5 +1128,9 @@
     "noAgentsMatch": "No agents match.",
     "badgeLegendHeading": "What the badges mean",
     "running": "Running…"
+  },
+  "agentSkillsTab": {
+    "noDetectedMatch": "No detected skills match your search.",
+    "noLibrary": "No skills in the company library"
   }
 }

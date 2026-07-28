@@ -19,6 +19,10 @@
     "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet.",
     "recentTasks": "Recent Tasks"
   },
+  "agentSkillsTab": {
+    "noDetectedMatch": "No detected skills match your search.",
+    "noLibrary": "No skills in the company library"
+  },
   "agents": {
     "accessProfiles": "Access profiles",
     "acpxLocalSkillUnsupported": "Paperclip cannot manage skills for custom ACP commands yet.",
