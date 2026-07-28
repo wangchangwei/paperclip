@@ -477,6 +477,15 @@
       "signedIn": "Signed in"
     }
   },
+  "companyInvites": {
+    "chooseRole": "Choose a role",
+    "historyHint": "Invite history below keeps the audit trail.",
+    "inviteHistory": "Invite history",
+    "invitePerson": "Invite a person",
+    "latestInviteLink": "Latest invite link",
+    "loading": "Loading invites…",
+    "title": "Company Invites"
+  },
   "companySettings": {
     "title": "Company Settings",
     "uploadingLogo": "Uploading logo..."

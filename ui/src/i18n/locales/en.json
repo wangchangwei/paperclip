@@ -881,5 +881,14 @@
     "selectUserToInspect": "Select a user to inspect instance access.",
     "companyAccess": "Company access",
     "currentMemberships": "Current memberships"
+  },
+  "companyInvites": {
+    "title": "Company Invites",
+    "loading": "Loading invites…",
+    "invitePerson": "Invite a person",
+    "chooseRole": "Choose a role",
+    "historyHint": "Invite history below keeps the audit trail.",
+    "latestInviteLink": "Latest invite link",
+    "inviteHistory": "Invite history"
   }
 }

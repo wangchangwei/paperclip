@@ -477,6 +477,15 @@
       "signedIn": "已登录"
     }
   },
+  "companyInvites": {
+    "chooseRole": "Choose a role",
+    "historyHint": "Invite history below keeps the audit trail.",
+    "inviteHistory": "Invite history",
+    "invitePerson": "Invite a person",
+    "latestInviteLink": "Latest invite link",
+    "loading": "Loading invites…",
+    "title": "Company Invites"
+  },
   "companySettings": {
     "title": "公司设置",
     "uploadingLogo": "正在上传Logo..."
