@@ -1,4 +1,5 @@
 import type { CompanySkillVersion } from "@paperclipai/shared";
+import { useTranslation } from "@/i18n";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
@@ -11,7 +12,8 @@ import {
 /** Sentinel value for the "no pin / live default" option (Radix forbids ""). */
 export const RELEASE_DEFAULT_VALUE = "default";
 
-const DEFAULT_LABEL = "Default — current (recommended)";
+const DEFAULT_LABEL_KEY = "agents.releaseDefault";
+const BETA_KEY = "common.status.beta";
 
 /**
  * Render a bundled release's calendar date. Plain `YYYY-MM-DD` strings (like the
@@ -68,10 +70,13 @@ export function AgentSkillReleasePicker({
   disabled = false,
   onChange,
 }: AgentSkillReleasePickerProps) {
+  const { t } = useTranslation();
   const selected = value ? releases.find((release) => release.id === value) ?? null : null;
   // Closed trigger shows the release name only; the `· released <date>` suffix
   // lives in the open menu, where dates are meaningful for comparing options.
-  const triggerLabel = selected ? releaseName(selected) : DEFAULT_LABEL;
+  const triggerLabel = selected ? releaseName(selected) : t(DEFAULT_LABEL_KEY);
+  const defaultLabel = t(DEFAULT_LABEL_KEY);
+  const betaLabel = t(BETA_KEY);
 
   return (
     <Select
@@ -82,18 +87,18 @@ export function AgentSkillReleasePicker({
       <SelectTrigger
         size="sm"
         className="w-full max-w-(--sz-16rem) sm:w-(--sz-16rem)"
-        aria-label="Skill release"
+        aria-label={t("agents.releasePickerLabel")}
       >
-        <SelectValue placeholder={DEFAULT_LABEL}>{triggerLabel}</SelectValue>
+        <SelectValue placeholder={defaultLabel}>{triggerLabel}</SelectValue>
       </SelectTrigger>
       <SelectContent align="end" className="max-w-(--sz-20rem)">
-        <SelectItem value={RELEASE_DEFAULT_VALUE}>{DEFAULT_LABEL}</SelectItem>
+        <SelectItem value={RELEASE_DEFAULT_VALUE}>{defaultLabel}</SelectItem>
         {releases.map((release) => (
           <SelectItem key={release.id} value={release.id}>
             <span className="flex items-center gap-2">
               <span className="truncate">{releaseOptionLabel(release)}</span>
               <Badge variant="secondary" className="shrink-0 text-(length:--text-nano)">
-                Beta
+                {betaLabel}
               </Badge>
             </span>
           </SelectItem>

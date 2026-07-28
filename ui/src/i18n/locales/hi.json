@@ -163,6 +163,7 @@
     "recentIssues": "Recent Issues",
     "recentTasks": "Recent Tasks",
     "releaseDefault": "Default — current (recommended)",
+    "releasePickerLabel": "Skill release",
     "removeSkill": "Remove",
     "repairThisAgentReportingChain": "Repair this agent's reporting chain before assigning tasks or starting runs",
     "resetToDefaults": "Reset to defaults",

@@ -361,9 +361,7 @@
     "listView": "List view",
     "searchResponsible": "Search responsible...",
     "noResponsible": "No responsible",
-    "assignee": "Assignee",
     "user": "User",
-    "noIssuesDescription": "Create your first task to get started.",
     "noTasksAssignedToYou": "No tasks assigned to you.",
     "selectCompanyToViewYourTasks": "Select a company to view your tasks.",
     "selectCompanyToViewTasks": "Select a company to view tasks.",
@@ -457,13 +455,9 @@
     "unknownEnvironment": "Unknown environment",
     "sandboxProvider": "sandbox provider",
     "selectCompanyToViewAgents": "Select a company to view agents.",
-    "newAgent": "New Agent",
     "viewMode": "View mode",
-    "listView": "List view",
-    "orgChartView": "Org chart view",
     "viewModeGroup": "View mode",
     "orgChart": "Org chart",
-    "setUp": "Set up",
     "builtInNeedsSetup": "Built-in agent needs setup",
     "builtInPendingApproval": "Built-in agent pending approval",
     "live": "Live",
@@ -640,7 +634,8 @@
     "date": "Date",
     "input": "Input",
     "output": "Output",
-    "cost": "Cost"
+    "cost": "Cost",
+    "releasePickerLabel": "Skill release"
   },
   "settings": {
     "title": "Settings",
