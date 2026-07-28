@@ -571,6 +571,17 @@
     "unread": "未读",
     "updates": "更新"
   },
+  "instanceAccess": {
+    "access": "Access",
+    "companyAccess": "Company access",
+    "currentMemberships": "Current memberships",
+    "loadingUserAccess": "Loading user access…",
+    "loadingUsers": "Loading instance users…",
+    "searchPlaceholder": "Search by name or email",
+    "searchUsers": "Search users",
+    "selectUserToInspect": "Select a user to inspect instance access.",
+    "title": "Instance Access"
+  },
   "instanceSettings": {
     "heartbeats": "Heartbeats",
     "loadingHeartbeats": "Loading scheduler heartbeats...",

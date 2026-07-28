@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Shield, ShieldCheck } from "lucide-react";
 import { accessApi } from "@/api/access";
@@ -12,6 +13,7 @@ import { useToast } from "@/context/ToastContext";
 import { queryKeys } from "@/lib/queryKeys";
 
 export function InstanceAccess() {
+  const { t } = useTranslation();
   const { companies } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { pushToast } = useToast();
@@ -22,11 +24,11 @@ export function InstanceAccess() {
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: "Settings", href: "/company/settings" },
-      { label: "Instance settings", href: "/company/settings/instance/general" },
-      { label: "Access" },
+      { label: t("nav.sidebar.settings"), href: "/company/settings" },
+      { label: t("instanceSettings.title"), href: "/company/settings/instance/general" },
+      { label: t("instanceAccess.access") },
     ]);
-  }, [setBreadcrumbs]);
+  }, [setBreadcrumbs, t]);
 
   const usersQuery = useQuery({
     queryKey: queryKeys.access.adminUsers(search),
@@ -86,7 +88,7 @@ export function InstanceAccess() {
   });
 
   if (usersQuery.isLoading) {
-    return <div className="text-sm text-muted-foreground">Loading instance users…</div>;
+    return <div className="text-sm text-muted-foreground">{t("instanceAccess.loadingUsers")}</div>;
   }
 
   if (usersQuery.error) {
@@ -104,7 +106,7 @@ export function InstanceAccess() {
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5 text-muted-foreground" />
-          <h1 className="text-lg font-semibold">Instance Access</h1>
+          <h1 className="text-lg font-semibold">{t("instanceAccess.title")}</h1>
         </div>
         <p className="max-w-3xl text-sm text-muted-foreground">
           Search users, manage instance-admin status, and control which companies they can access.
@@ -114,12 +116,12 @@ export function InstanceAccess() {
       <div className="grid gap-6 lg:grid-cols-(--gtc-34)">
         <Card className="block space-y-4 p-4">
           <label className="block space-y-2 text-sm">
-            <span className="font-medium">Search users</span>
+            <span className="font-medium">{t("instanceAccess.searchUsers")}</span>
             <input
               className="w-full rounded-md border border-border bg-background px-3 py-2"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search by name or email"
+              placeholder={t("instanceAccess.searchPlaceholder")}
             />
           </label>
           <div className="space-y-2">
@@ -153,9 +155,9 @@ export function InstanceAccess() {
 
         <Card className="block space-y-4 p-5">
           {!selectedUserId ? (
-            <div className="text-sm text-muted-foreground">Select a user to inspect instance access.</div>
+            <div className="text-sm text-muted-foreground">{t("instanceAccess.selectUserToInspect")}</div>
           ) : userAccessQuery.isLoading ? (
-            <div className="text-sm text-muted-foreground">Loading user access…</div>
+            <div className="text-sm text-muted-foreground">{t("instanceAccess.loadingUserAccess")}</div>
           ) : userAccessQuery.error ? (
             <div className="text-sm text-destructive">
               {userAccessQuery.error instanceof Error ? userAccessQuery.error.message : "Failed to load user access."}
@@ -182,7 +184,7 @@ export function InstanceAccess() {
 
               <div className="space-y-3">
                 <div>
-                  <h2 className="text-sm font-semibold">Company access</h2>
+                  <h2 className="text-sm font-semibold">{t("instanceAccess.companyAccess")}</h2>
                   <p className="text-sm text-muted-foreground">
                     Toggle company membership for this user. New access defaults to an active operator membership.
                   </p>
@@ -222,7 +224,7 @@ export function InstanceAccess() {
               </div>
 
               <div className="space-y-2">
-                <h2 className="text-sm font-semibold">Current memberships</h2>
+                <h2 className="text-sm font-semibold">{t("instanceAccess.currentMemberships")}</h2>
                 <div className="space-y-2">
                   {(userAccessQuery.data?.companyAccess ?? []).map((membership) => (
                     <div

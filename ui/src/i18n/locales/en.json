@@ -870,5 +870,16 @@
     "heartbeats": "Heartbeats",
     "schedulerHeartbeats": "Scheduler Heartbeats",
     "loadingHeartbeats": "Loading scheduler heartbeats..."
+  },
+  "instanceAccess": {
+    "access": "Access",
+    "title": "Instance Access",
+    "searchUsers": "Search users",
+    "searchPlaceholder": "Search by name or email",
+    "loadingUsers": "Loading instance users…",
+    "loadingUserAccess": "Loading user access…",
+    "selectUserToInspect": "Select a user to inspect instance access.",
+    "companyAccess": "Company access",
+    "currentMemberships": "Current memberships"
   }
 }
