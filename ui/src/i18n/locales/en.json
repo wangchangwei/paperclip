@@ -310,7 +310,79 @@
     "noIssues": "No tasks yet.",
     "noIssuesDescription": "Create your first task to get started.",
     "selectCompany": "Select a company to view tasks.",
-    "searchPlaceholder": "Search tasks..."
+    "searchPlaceholder": "Search tasks...",
+    "viewMode": {
+      "list": "List view",
+      "board": "Board view"
+    },
+    "sortBy": {
+      "workflow": "Workflow",
+      "status": "Status",
+      "priority": "Priority",
+      "title": "Title",
+      "created": "Created",
+      "updated": "Updated"
+    },
+    "groupBy": {
+      "status": "Status",
+      "priority": "Priority",
+      "assignee": "Responsible",
+      "project": "Project",
+      "workspace": "Workspace",
+      "parent": "Parent Task",
+      "none": "None"
+    },
+    "empty": {
+      "noMatch": "No tasks match the current filters or search.",
+      "noProject": "No Project",
+      "noWorkspace": "No Workspace"
+    },
+    "loadMore": {
+      "loading": "Loading more tasks...",
+      "rendering": "Rendering {{rendered}} of {{total}} tasks",
+      "scrollToLoad": "Scroll to load more tasks"
+    },
+    "subTaskProgress": {
+      "doneOfTotal": "{{doneCount}}/{{totalCount}} done",
+      "inProgress": "{{count}} in progress",
+      "blocked": "{{count}} blocked",
+      "nextUp": "Next up",
+      "waitingOnBlockers": "Waiting on blockers",
+      "noActiveSubTasks": "No active sub-tasks",
+      "allSubTasksDone": "All sub-tasks done",
+      "noActionableSubTasks": "No actionable sub-tasks"
+    },
+    "createTask": "Create Task",
+    "newTaskButton": "New Task",
+    "nestingEnabled": "Enable parent-child nesting",
+    "nestingDisabled": "Disable parent-child nesting",
+    "newTaskIn": "New task in {{groupLabel}}",
+    "boardView": "Board view",
+    "listView": "List view",
+    "searchResponsible": "Search responsible...",
+    "noResponsible": "No responsible",
+    "assignee": "Assignee",
+    "user": "User",
+    "noIssuesDescription": "Create your first task to get started.",
+    "noTasksAssignedToYou": "No tasks assigned to you.",
+    "selectCompanyToViewYourTasks": "Select a company to view your tasks.",
+    "selectCompanyToViewTasks": "Select a company to view tasks.",
+    "compactCards": "Use compact cards",
+    "comfortableCards": "Use comfortable cards",
+    "expandColdLanes": "Expand cold lanes",
+    "collapseColdLanes": "Collapse cold lanes",
+    "cardsPerColumn": "Cards per column",
+    "resetBoardDensity": "Reset board density",
+    "chooseTaskColumns": "Choose which task columns stay visible",
+    "sort": "Sort",
+    "group": "Group",
+    "showingLimitMatches": "Showing up to {{limit}} matches. Refine the search to narrow further.",
+    "boardColumnLimit": "Some board columns are showing up to {{limit}} tasks. Refine filters or search to reveal the rest.",
+    "subTaskCount": "{{count}} sub-task",
+    "subTaskCount_plural": "{{count}} sub-tasks",
+    "blockedBy": "blocked by {{label}}",
+    "step": "step {{number}}",
+    "andMore": "... and {{count}} more"
   },
   "inbox": {
     "title": "Inbox",
