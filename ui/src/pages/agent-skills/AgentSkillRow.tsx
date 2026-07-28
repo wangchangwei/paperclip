@@ -6,6 +6,7 @@ import { ToggleSwitch } from "@/components/ui/toggle-switch";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { SkillCardIcon, type SkillIconCard } from "../../components/SkillCardIcon";
 import type { AgentSkillSearchFields } from "./agent-skill-filter";
+import { useTranslation } from "@/i18n";
 
 export type AgentSkillRowVariant = "enabled" | "available" | "readonly";
 
@@ -65,6 +66,7 @@ export function AgentSkillRow({
   badge,
   accessory,
 }: AgentSkillRowProps) {
+  const { t } = useTranslation();
   const readOnly = variant === "readonly";
   const SourceIcon = data.sourceMeta?.icon;
 
@@ -128,7 +130,7 @@ export function AgentSkillRow({
           checked={checked}
           disabled={disabled}
           onCheckedChange={(next) => onCheckedChange?.(next)}
-          aria-label={`${checked ? "Disable" : "Enable"} ${data.name}`}
+          aria-label={t(checked ? "agents.disableSkill" : "agents.enableSkill", { skillName: data.name })}
         />
       );
       if (disabled && disabledReason) {
