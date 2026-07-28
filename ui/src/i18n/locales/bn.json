@@ -766,10 +766,12 @@
   },
   "projects": {
     "addProject": "Add Project",
+    "advancedRuntimeJson": "Advanced runtime JSON",
     "budgetTab": "Budget",
     "changeProjectIconAndColor": "Change project icon and color",
     "color": "Color",
     "configurationTab": "Configuration",
+    "currentState": "Current state",
     "dismissLeftNotice": "Dismiss project membership notice",
     "icon": "Icon",
     "leftProjectNotice": "You left this project. It no longer appears in your sidebar.",
@@ -804,6 +806,8 @@
     "targetDate": "Target Date",
     "tasksTab": "Tasks",
     "title": "Projects",
+    "workspaceCommands": "Workspace commands",
+    "workspaceFacts": "Workspace facts",
     "workspacesTab": "Workspaces"
   },
   "settings": {

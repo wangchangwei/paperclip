@@ -804,7 +804,11 @@
     "targetDate": "Target Date",
     "tasksTab": "Tasks",
     "title": "Projects",
-    "workspacesTab": "Workspaces"
+    "workspacesTab": "Workspaces",
+    "workspaceFacts": "Workspace facts",
+    "workspaceCommands": "Workspace commands",
+    "currentState": "Current state",
+    "advancedRuntimeJson": "Advanced runtime JSON"
   },
   "settings": {
     "apiKeys": "API Keys",
