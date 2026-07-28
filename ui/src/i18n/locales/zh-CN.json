@@ -313,6 +313,18 @@
     "filterPending": "待处理",
     "title": "审批"
   },
+  "appsConnect": {
+    "linkHeading": "Connect with a link",
+    "linkNameLabel": "Name",
+    "looksLike": "This looks like {{name}}.",
+    "moreWays": "More ways to connect",
+    "noMatch": "No apps match \"{{search}}\".",
+    "notOnInstance": "Not available on this instance - ask your admin.",
+    "selectCompany": "Select a company to connect apps.",
+    "signinSoon": "Sign-in coming soon",
+    "zapierHeading": "Connect Zapier",
+    "zapierUrlLabel": "Zapier MCP URL"
+  },
   "audit": {
     "noMatches": "没有活动匹配这些筛选条件",
     "nothingYet": "此处暂无内容",

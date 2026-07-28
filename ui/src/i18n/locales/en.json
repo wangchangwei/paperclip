@@ -1092,5 +1092,17 @@
     "testSheetDesc": "Pick an agent and an action to see what Paperclip would do.",
     "selectAgent": "Select an agent",
     "actionPlaceholder": "e.g. gmail.send_email"
+  },
+  "appsConnect": {
+    "selectCompany": "Select a company to connect apps.",
+    "zapierHeading": "Connect Zapier",
+    "zapierUrlLabel": "Zapier MCP URL",
+    "linkHeading": "Connect with a link",
+    "linkNameLabel": "Name",
+    "notOnInstance": "Not available on this instance - ask your admin.",
+    "signinSoon": "Sign-in coming soon",
+    "noMatch": "No apps match \"{{search}}\".",
+    "looksLike": "This looks like {{name}}.",
+    "moreWays": "More ways to connect"
   }
 }
