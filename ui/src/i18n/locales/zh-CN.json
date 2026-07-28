@@ -1,8 +1,8 @@
 {
   "agentDetail": {
-    "loadingLog": "Loading log...",
-    "noPersistedLogLines": "No persisted log lines.",
-    "pendingApprovalHint": "This agent is pending board approval and cannot be invoked yet."
+    "loadingLog": "正在加载日志...",
+    "noPersistedLogLines": "没有持久化日志记录。",
+    "pendingApprovalHint": "该代理正在等待董事会审批,暂无法调用。"
   },
   "agents": {
     "accessProfiles": "访问配置文件",
