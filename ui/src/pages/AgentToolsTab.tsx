@@ -1,3 +1,4 @@
+import { useTranslation } from "@/i18n";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMutation, useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
 import { HelpCircle, PackageCheck } from "lucide-react";
@@ -90,13 +91,14 @@ function InstalledAppsSection({
   error: boolean;
   onChange: (connectionId: string, installed: boolean) => void;
 }) {
+  const { t } = useTranslation();
   return (
     <section className="rounded-lg border border-border bg-card">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-3 py-2.5">
         <div>
-          <h3 className="text-sm font-semibold text-foreground">Installed apps</h3>
+          <h3 className="text-sm font-semibold text-foreground">{t("agents.tools.installedAppsTitle")}</h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            Installed apps load tools into {agentName}'s context on every run. Permitted-only apps do not add context cost.
+            {t("agents.tools.installedAppsDescription", { agentName })}
           </p>
         </div>
         <InstallSaveStatusChip pending={saving} unsaved={unsaved} error={error} />
@@ -104,12 +106,12 @@ function InstalledAppsSection({
 
       <div className="space-y-3 p-3">
         <InlineBanner tone="info" compact>
-          Has access means the app is permitted. Installed means its tools are added to this agent's runtime context.
+          {t("agents.tools.installedAppsHint")}
         </InlineBanner>
 
         {connections.length === 0 ? (
           <p className="rounded-md border border-border bg-muted/30 px-3 py-4 text-sm text-muted-foreground">
-            No permitted apps yet. Bind an access profile to make apps available here.
+            {t("agents.tools.noPermittedApps")}
           </p>
         ) : (
           <div className="divide-y divide-border rounded-md border border-border">
@@ -136,9 +138,9 @@ function InstalledAppsSection({
                       </span>
                       <span className="mt-0.5 block text-xs text-muted-foreground">
                         {installedForAll
-                          ? "Installed from the app page for every agent. Remove the all-agents install there."
+                          ? t("agents.tools.installedForAllHint")
                           : checked
-                            ? "Loaded into this agent's runtime context."
+                            ? t("agents.tools.installedForAgentHint")
                             : INSTALLED_HINT}
                       </span>
                     </span>
@@ -157,7 +159,7 @@ function InstalledAppsSection({
                         </Link>
                       )}
                     >
-                      Permitted but not installed — tools will not appear in runs.
+                      {t("agents.tools.permittedNotInstalled")}
                     </InlineBanner>
                   ) : null}
                 </div>
@@ -179,7 +181,14 @@ function InstallBadge({
   installedForAll: boolean;
   permitted: boolean;
 }) {
-  const label = installed ? (installedForAll ? "Installed for all" : "Installed") : permitted ? "Permitted only" : "Not permitted";
+  const { t } = useTranslation();
+  const label = installed
+    ? installedForAll
+      ? t("agents.tools.installedForAll")
+      : t("agents.tools.installed")
+    : permitted
+      ? t("agents.tools.permittedOnly")
+      : t("agents.tools.notPermitted");
   return (
     <span
       className={cn(
@@ -227,6 +236,7 @@ const DENIED_TOOLS_DISPLAY_LIMIT = 30;
  * which access profiles and rules shape the final list.
  */
 export function AgentToolsTab({ agent, companyId }: { agent: AgentDetailRecord; companyId: string }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const [installDraft, setInstallDraft] = useState<Record<string, boolean>>({});
   const lastSavedInstallRef = useRef<Record<string, boolean>>({});
@@ -417,7 +427,7 @@ export function AgentToolsTab({ agent, companyId }: { agent: AgentDetailRecord; 
   const profiles = effective.data?.profiles ?? [];
   const catalogLoading = catalogQueries.some((q) => q.isLoading);
 
-  if (effective.isLoading) return <ToolsLoadingState label="Resolving effective access…" />;
+  if (effective.isLoading) return <ToolsLoadingState label={t("agents.tools.resolvingEffectiveAccess")} />;
   if (effective.error) {
     return <ToolsErrorState error={effective.error} onRetry={() => effective.refetch()} />;
   }
@@ -429,14 +439,14 @@ export function AgentToolsTab({ agent, companyId }: { agent: AgentDetailRecord; 
     <div className="space-y-4">
       <EnforcementBanner
         tone="info"
-        title="Effective access"
+        title={t("agents.tools.effectiveAccess")}
         body={
           <>
-            This is exactly the tool set Paperclip will accept for{" "}
-            <span className="font-medium">{agent.name}</span>. Profile and policy edits are
-            reflected within ~5 seconds. The agent's prompt can narrow this list but{" "}
-            <span className="font-medium">cannot expand it</span> — everything else is blocked by
-            default.
+            {t("agents.tools.effectiveAccessBodyPrefix")}
+            <span className="font-medium">{agent.name}</span>
+            {t("agents.tools.effectiveAccessBodyMiddle")}
+            <span className="font-medium">{t("agents.tools.effectiveAccessBodyEmphasis")}</span>
+            {t("agents.tools.effectiveAccessBodySuffix")}
           </>
         }
       />
