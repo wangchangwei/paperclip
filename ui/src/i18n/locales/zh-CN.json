@@ -433,6 +433,13 @@
     "connected": "已连接",
     "gateways": "网关"
   },
+  "appsToolsPanel": {
+    "appHeader": "App",
+    "empty": "No apps are assigned to this gateway’s profile yet.",
+    "intro": "These apps go through this gateway. The bound profile{{profile}} decides which tools are allowed{{allowed}} Change the profile under Advanced.",
+    "statusHeader": "Status",
+    "toolsHeader": "Tools"
+  },
   "audit": {
     "noMatches": "没有活动匹配这些筛选条件",
     "notInstalled": "尚未安装",
@@ -660,6 +667,7 @@
     "needsAttention": "Needs attention",
     "newTask": "新建任务",
     "none": "None",
+    "open": "Open",
     "optional": "optional",
     "pagination": {
       "first": "首页",
@@ -708,6 +716,8 @@
       "weeksAgo_other": "{{count}}周前",
       "yesterday": "昨天"
     },
+    "tool": "tool",
+    "toolsPlural": "tools",
     "user": {
       "account": "账户",
       "localWorkspace": "本地工作区面板",
@@ -956,6 +966,19 @@
     "loading": "正在加载工作区…",
     "projects": "项目",
     "workspaces": "工作区"
+  },
+  "gatewayActivityPanel": {
+    "appFallback": "app",
+    "client": "Client",
+    "description": "Every call through this gateway in the last 7 days, with why it was allowed, blocked, or paused.",
+    "empty": "No calls have gone through this gateway yet.",
+    "outcomeAllowed": "Allowed",
+    "outcomeAskedFirst": "Ask first",
+    "outcomeBlocked": "Blocked",
+    "outcomeFailed": "Failed",
+    "outcomeUnknown": "—",
+    "outcomeWaiting": "Waiting",
+    "toolFallback": "tool"
   },
   "gatewayAdvancedPanel": {
     "archiveFailed": "无法归档该 Gateway",

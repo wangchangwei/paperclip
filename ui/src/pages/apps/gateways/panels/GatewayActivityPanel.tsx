@@ -5,15 +5,18 @@ import { toolsApi, type ToolAuditOutcome, type ToolGatewayActivityEvent } from "
 import { Skeleton } from "@/components/ui/skeleton";
 import { ErrorState, RelativeTime } from "@/pages/tools/shared";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
-const OUTCOME_LABEL: Record<ToolAuditOutcome, string> = {
-  allowed: "Allowed",
-  blocked: "Blocked",
-  asked_first: "Ask first",
-  waiting: "Waiting",
-  failed: "Failed",
-  unknown: "—",
-};
+function buildOutcomeLabels(t: (key: string) => string): Record<ToolAuditOutcome, string> {
+  return {
+    allowed: t("gatewayActivityPanel.outcomeAllowed"),
+    blocked: t("gatewayActivityPanel.outcomeBlocked"),
+    asked_first: t("gatewayActivityPanel.outcomeAskedFirst"),
+    waiting: t("gatewayActivityPanel.outcomeWaiting"),
+    failed: t("gatewayActivityPanel.outcomeFailed"),
+    unknown: t("gatewayActivityPanel.outcomeUnknown"),
+  };
+}
 
 const OUTCOME_CLASS: Record<ToolAuditOutcome, string> = {
   allowed: "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
@@ -40,6 +43,7 @@ export function GatewayActivityPanel({
   companyId: string;
   gateway: ToolMcpGatewayWithTokens;
 }) {
+  const { t } = useTranslation();
   const activityQuery = useQuery({
     queryKey: ["tools", "gateway-activity", companyId, gateway.id],
     queryFn: () => toolsApi.listActivity(companyId, { window: "7d", limit: 100 }),
@@ -49,6 +53,8 @@ export function GatewayActivityPanel({
     () => (activityQuery.data?.events ?? []).filter((event) => belongsToGateway(event, gateway)),
     [activityQuery.data, gateway],
   );
+
+  const outcomeLabels = buildOutcomeLabels(t);
 
   if (activityQuery.isLoading) {
     return (
@@ -66,19 +72,19 @@ export function GatewayActivityPanel({
   return (
     <div className="space-y-3">
       <p className="text-sm text-muted-foreground">
-        Every call through this gateway in the last 7 days, with why it was allowed, blocked, or paused.
+        {t("gatewayActivityPanel.description")}
       </p>
       {events.length === 0 ? (
         <div className="rounded-md border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
-          No calls have gone through this gateway yet.
+          {t("gatewayActivityPanel.empty")}
         </div>
       ) : (
         <ul className="divide-y divide-border rounded-lg border border-border">
           {events.map((event) => {
             const outcome = event.normalizedOutcome;
-            const tool = event.toolDisplayName ?? "tool";
-            const app = event.appDisplayName ?? event.applicationDisplayName ?? "app";
-            const actor = event.agentDisplayName ?? "Client";
+            const tool = event.toolDisplayName ?? t("gatewayActivityPanel.toolFallback");
+            const app = event.appDisplayName ?? event.applicationDisplayName ?? t("gatewayActivityPanel.appFallback");
+            const actor = event.agentDisplayName ?? t("gatewayActivityPanel.client");
             return (
               <li key={event.id} className="flex items-center justify-between gap-3 px-4 py-3">
                 <div className="min-w-0">
@@ -93,7 +99,7 @@ export function GatewayActivityPanel({
                     OUTCOME_CLASS[outcome],
                   )}
                 >
-                  {OUTCOME_LABEL[outcome]}
+                  {outcomeLabels[outcome]}
                 </span>
               </li>
             );

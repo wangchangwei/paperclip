@@ -478,7 +478,10 @@
     "copyFailedBody": "Clipboard access is unavailable.",
     "copyJson": "Copy JSON",
     "needsAttention": "Needs attention",
-    "healthy": "Healthy"
+    "healthy": "Healthy",
+    "tool": "tool",
+    "toolsPlural": "tools",
+    "open": "Open"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -1985,5 +1988,25 @@
     "declineButton": "Decline",
     "failTitle": "Couldn’t save that",
     "failBody": "Please try again."
+  },
+  "appsToolsPanel": {
+    "intro": "These apps go through this gateway. The bound profile{{profile}} decides which tools are allowed{{allowed}} Change the profile under Advanced.",
+    "empty": "No apps are assigned to this gateway’s profile yet.",
+    "appHeader": "App",
+    "toolsHeader": "Tools",
+    "statusHeader": "Status"
+  },
+  "gatewayActivityPanel": {
+    "outcomeAllowed": "Allowed",
+    "outcomeBlocked": "Blocked",
+    "outcomeAskedFirst": "Ask first",
+    "outcomeWaiting": "Waiting",
+    "outcomeFailed": "Failed",
+    "outcomeUnknown": "—",
+    "description": "Every call through this gateway in the last 7 days, with why it was allowed, blocked, or paused.",
+    "empty": "No calls have gone through this gateway yet.",
+    "toolFallback": "tool",
+    "appFallback": "app",
+    "client": "Client"
   }
 }
