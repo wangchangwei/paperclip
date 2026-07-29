@@ -1,13 +1,8 @@
 import { Link } from "@/lib/router";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
 type SubNavKey = "connected" | "gateways" | "activity";
-
-const ITEMS: { key: SubNavKey; label: string; href: string }[] = [
-  { key: "connected", label: "Connected", href: "/apps" },
-  { key: "gateways", label: "Gateways", href: "/apps/gateways" },
-  { key: "activity", label: "Activity", href: "/activity" },
-];
 
 /**
  * Shared Apps section sub-navigation (Connected · Gateways · Activity). Keeps
@@ -15,8 +10,14 @@ const ITEMS: { key: SubNavKey; label: string; href: string }[] = [
  * design of record, rather than buried under the Advanced developer door.
  */
 export function AppsSubNav({ active }: { active: SubNavKey }) {
+  const { t } = useTranslation();
+  const ITEMS: { key: SubNavKey; label: string; href: string }[] = [
+    { key: "connected", label: t("appsSubNav.connected"), href: "/apps" },
+    { key: "gateways", label: t("appsSubNav.gateways"), href: "/apps/gateways" },
+    { key: "activity", label: t("appsSubNav.activity"), href: "/activity" },
+  ];
   return (
-    <nav className="flex items-center gap-6 border-b border-border text-sm" aria-label="Apps sections">
+    <nav className="flex items-center gap-6 border-b border-border text-sm" aria-label={t("appsSubNav.ariaLabel")}>
       {ITEMS.map((item) => {
         const isActive = item.key === active;
         return (

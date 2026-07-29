@@ -412,6 +412,12 @@
     "zapierUrlHint": "Paste the complete MCP URL Zapier gives you, including its token.",
     "zapierUrlLabel": "Zapier MCP URL"
   },
+  "appsSubNav": {
+    "activity": "Activity",
+    "ariaLabel": "Apps sections",
+    "connected": "Connected",
+    "gateways": "Gateways"
+  },
   "audit": {
     "noMatches": "No activity matches these filters",
     "notInstalled": "Not installed",
@@ -1112,6 +1118,23 @@
       "timeline": "Timeline",
       "workspaces": "Workspaces"
     }
+  },
+  "newGatewayDialog": {
+    "createButton": "Create gateway",
+    "creating": "Creating…",
+    "description": "One safe MCP endpoint that exposes only the apps in its access profile. Hand it to a client like Cursor or Claude Desktop.",
+    "descriptionLabel": "Description (optional)",
+    "descriptionPlaceholder": "Who this endpoint is for and when it should be rotated.",
+    "nameLabel": "Name",
+    "namePlaceholder": "CTO agents",
+    "noProfilesWarning": "Create an access profile under Advanced before adding a gateway.",
+    "profileChoose": "Choose a profile",
+    "profileHint": "The profile decides which tools this gateway allows. You can change it later.",
+    "profileLabel": "Access profile",
+    "profileLoading": "Loading profiles…",
+    "title": "New gateway",
+    "toastCreated": "Gateway created",
+    "toastFailed": "Gateway was not created"
   },
   "onboarding": {
     "companyName": "Company name",
