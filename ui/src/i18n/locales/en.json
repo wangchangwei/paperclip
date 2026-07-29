@@ -2548,5 +2548,22 @@
     "files": "files",
     "exportedAs": "exported as {{filename}}.zip",
     "failedToBuild": "Failed to build export package."
+  },
+  "search": {
+    "breadcrumb": "Search",
+    "allScopes": "All scopes",
+    "scopeAll": "All",
+    "scopeIssues": "Tasks",
+    "scopeComments": "Comments",
+    "scopeDocuments": "Documents",
+    "scopeArtifacts": "Artifacts",
+    "scopeAgents": "Agents",
+    "scopeProjects": "Projects",
+    "subgroupIssues": "Tasks",
+    "subgroupComments": "Comments",
+    "subgroupDocuments": "Documents",
+    "subgroupArtifacts": "Artifacts",
+    "subgroupAgents": "Agents",
+    "subgroupProjects": "Projects"
   }
 }

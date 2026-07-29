@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Search as SearchIcon, AlertTriangle, FileQuestion, Plus, X } from "lucide-react";
+import { useTranslation } from "@/i18n";
 import {
   COMPANY_SEARCH_DEFAULT_LIMIT,
   COMPANY_SEARCH_SCOPES,
@@ -59,27 +60,27 @@ import type { Agent, IssueLabel, Project } from "@paperclipai/shared";
 const SEARCH_DEBOUNCE_MS = 250;
 const IDENTIFIER_PATTERN = /^[A-Z]+-\d+$/;
 
-const SCOPE_LABELS: Record<CompanySearchScope, string> = {
-  all: "All",
-  issues: "Tasks",
-  comments: "Comments",
-  documents: "Documents",
-  artifacts: "Artifacts",
-  agents: "Agents",
-  projects: "Projects",
+const SCOPE_LABEL_KEYS: Record<CompanySearchScope, string> = {
+  all: "search.scopeAll",
+  issues: "search.scopeIssues",
+  comments: "search.scopeComments",
+  documents: "search.scopeDocuments",
+  artifacts: "search.scopeArtifacts",
+  agents: "search.scopeAgents",
+  projects: "search.scopeProjects",
 };
 
 type SubGroupKey = "issues" | "comments" | "documents" | "artifacts" | "agents" | "projects";
 
 const SUBGROUP_ORDER: SubGroupKey[] = ["issues", "comments", "documents", "artifacts", "agents", "projects"];
 
-const SUBGROUP_LABELS: Record<SubGroupKey, string> = {
-  issues: "Tasks",
-  comments: "Comments",
-  documents: "Documents",
-  artifacts: "Artifacts",
-  agents: "Agents",
-  projects: "Projects",
+const SUBGROUP_LABEL_KEYS: Record<SubGroupKey, string> = {
+  issues: "search.subgroupIssues",
+  comments: "search.subgroupComments",
+  documents: "search.subgroupDocuments",
+  artifacts: "search.subgroupArtifacts",
+  agents: "search.subgroupAgents",
+  projects: "search.subgroupProjects",
 };
 
 function classifyResult(result: CompanySearchResult): SubGroupKey {
@@ -111,9 +112,9 @@ function isCompanySearchScope(value: string | null): value is CompanySearchScope
   return Boolean(value) && (COMPANY_SEARCH_SCOPES as readonly string[]).includes(value as string);
 }
 
-function describeScope(scope: CompanySearchScope) {
-  if (scope === "all") return "All scopes";
-  return SCOPE_LABELS[scope];
+function describeScope(scope: CompanySearchScope, t: (key: string) => string) {
+  if (scope === "all") return t("search.allScopes");
+  return t(SCOPE_LABEL_KEYS[scope]);
 }
 
 function totalMatchCount(counts: Partial<Record<CompanySearchCountType, number>>): number {
@@ -171,6 +172,7 @@ function shapeError(error: unknown): { message: string; status?: number } {
 }
 
 export function Search() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { openNewIssue } = useDialogActions();
@@ -196,8 +198,8 @@ export function Search() {
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
 
   useEffect(() => {
-    setBreadcrumbs([{ label: "Search" }]);
-  }, [setBreadcrumbs]);
+    setBreadcrumbs([{ label: t("search.breadcrumb") }]);
+  }, [setBreadcrumbs, t]);
 
   useEffect(() => {
     if (!selectedCompanyId) return;
@@ -521,7 +523,7 @@ export function Search() {
         value,
         label: (
           <span className="flex items-center">
-            {SCOPE_LABELS[value as CompanySearchScope]}
+            {SCOPE_LABEL_KEYS[value as CompanySearchScope] ? t(SCOPE_LABEL_KEYS[value as CompanySearchScope]) : value}
             {dashOut ? (
               <span className="ml-1.5 text-(length:--text-nano) text-muted-foreground">—</span>
             ) : count !== null ? (
@@ -801,6 +803,7 @@ function SearchTabContent({
   isFetching,
   agentsById,
 }: SearchTabContentProps) {
+  const { t } = useTranslation();
   if (showInitialState) {
     return (
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-4 px-4 py-10 sm:px-6">
@@ -904,7 +907,7 @@ function SearchTabContent({
         <FileQuestion className="h-10 w-10 text-muted-foreground" aria-hidden />
         <div className="text-base font-semibold">No results for &ldquo;{trimmedQuery}&rdquo;</div>
         <p className="text-sm text-muted-foreground">
-          We couldn’t find a match in {describeScope(scope).toLowerCase()}. Try widening the scope or rephrasing your
+          We couldn’t find a match in {describeScope(scope, t).toLowerCase()}. Try widening the scope or rephrasing your
           query.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2">
@@ -955,11 +958,11 @@ function SearchTabContent({
           subgroups.map((group, groupIndex) => (
             <section
               key={group.key}
-              aria-label={SUBGROUP_LABELS[group.key]}
+              aria-label={t(SUBGROUP_LABEL_KEYS[group.key])}
               className={cn("flex flex-col", groupIndex > 0 && "mt-6")}
             >
               <IssueGroupHeader
-                label={SUBGROUP_LABELS[group.key]}
+                label={t(SUBGROUP_LABEL_KEYS[group.key])}
                 trailing={
                   <span className="text-xs font-normal tabular-nums text-muted-foreground">
                     {group.results.length}

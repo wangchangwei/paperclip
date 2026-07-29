@@ -2108,6 +2108,23 @@
     "reviewApps": "Review apps",
     "runningApps": "Running apps"
   },
+  "search": {
+    "allScopes": "All scopes",
+    "breadcrumb": "Search",
+    "scopeAgents": "Agents",
+    "scopeAll": "All",
+    "scopeArtifacts": "Artifacts",
+    "scopeComments": "Comments",
+    "scopeDocuments": "Documents",
+    "scopeIssues": "Tasks",
+    "scopeProjects": "Projects",
+    "subgroupAgents": "Agents",
+    "subgroupArtifacts": "Artifacts",
+    "subgroupComments": "Comments",
+    "subgroupDocuments": "Documents",
+    "subgroupIssues": "Tasks",
+    "subgroupProjects": "Projects"
+  },
   "secrets": {
     "allProviders": "All providers",
     "cancel": "Cancel",
