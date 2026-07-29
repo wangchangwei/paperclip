@@ -1784,6 +1784,11 @@
     "title": "插件管理",
     "uninstallTitle": "卸载插件"
   },
+  "pluginPage": {
+    "pluginsBreadcrumb": "Plugins",
+    "routeConflict": "Multiple plugins declare the route {{path}}. Use the plugin-id route until the conflict is resolved.",
+    "selectCompany": "Select a company to view this page."
+  },
   "pluginSettings": {
     "about": "关于",
     "loading": "正在加载插件详情...",

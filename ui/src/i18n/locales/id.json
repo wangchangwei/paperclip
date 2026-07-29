@@ -1784,6 +1784,11 @@
     "title": "Plugin Manager",
     "uninstallTitle": "Uninstall Plugin"
   },
+  "pluginPage": {
+    "pluginsBreadcrumb": "Plugins",
+    "routeConflict": "Multiple plugins declare the route {{path}}. Use the plugin-id route until the conflict is resolved.",
+    "selectCompany": "Select a company to view this page."
+  },
   "pluginSettings": {
     "about": "About",
     "loading": "Loading plugin details...",

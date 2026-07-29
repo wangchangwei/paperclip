@@ -2439,5 +2439,10 @@
     "fixtureShape": "Fixture shape",
     "pending": "pending",
     "msUnit": "ms"
+  },
+  "pluginPage": {
+    "pluginsBreadcrumb": "Plugins",
+    "selectCompany": "Select a company to view this page.",
+    "routeConflict": "Multiple plugins declare the route {{path}}. Use the plugin-id route until the conflict is resolved."
   }
 }
