@@ -1785,9 +1785,9 @@
     "uninstallTitle": "卸载插件"
   },
   "pluginPage": {
-    "pluginsBreadcrumb": "Plugins",
-    "routeConflict": "Multiple plugins declare the route {{path}}. Use the plugin-id route until the conflict is resolved.",
-    "selectCompany": "Select a company to view this page."
+    "pluginsBreadcrumb": "插件",
+    "routeConflict": "多个插件声明了 {{path}} 路由。在冲突解决之前,请使用 plugin-id 路由。",
+    "selectCompany": "请选择一家公司以查看此页面。"
   },
   "pluginSettings": {
     "about": "关于",
