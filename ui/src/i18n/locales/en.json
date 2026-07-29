@@ -1568,5 +1568,10 @@
     "colStatus": "Status",
     "colActions": "Actions",
     "colLastUsed": "Last used"
+  },
+  "toolsAccess": {
+    "selectCompany": "Select a company to open advanced setup.",
+    "advancedSetup": "Advanced setup",
+    "developerTools": "Developer tools"
   }
 }

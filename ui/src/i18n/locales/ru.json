@@ -1562,6 +1562,11 @@
     "notePlaceholder": "Dotta's MacBook",
     "ownerClient": "Owner / client"
   },
+  "toolsAccess": {
+    "advancedSetup": "Advanced setup",
+    "developerTools": "Developer tools",
+    "selectCompany": "Select a company to open advanced setup."
+  },
   "training": {
     "loadError": "Could not load training examples.",
     "loading": "Loading training examples…",

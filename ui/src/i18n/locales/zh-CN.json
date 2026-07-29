@@ -1562,6 +1562,11 @@
     "notePlaceholder": "Dotta 的 MacBook",
     "ownerClient": "所有者 / 客户端"
   },
+  "toolsAccess": {
+    "advancedSetup": "高级设置",
+    "developerTools": "开发者工具",
+    "selectCompany": "请选择一个公司以打开高级设置。"
+  },
   "training": {
     "loadError": "无法加载训练示例。",
     "loading": "正在加载训练示例…",
