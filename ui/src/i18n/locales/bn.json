@@ -690,6 +690,7 @@
       "selectSkillToInspect": "Select a catalog skill to inspect.",
       "updateFromCatalog": "Update from catalog"
     },
+    "comingLater": "Coming later.",
     "compatChip": {
       "invalid": "Invalid",
       "invalidTooltip": "This skill cannot be installed — content is not valid Agent Skills markdown.",
@@ -703,6 +704,7 @@
       "alphabetical": "Alphabetical",
       "browseCatalog": "Browse catalog",
       "categories": "Categories",
+      "categoriesPlaceholder": "engineering, review, memory",
       "clearFilters": "Clear filters",
       "createNewSkill": "Create new skill",
       "discoverInstallForkShare": "Discover, install, fork, share",
@@ -717,12 +719,15 @@
       "noSkillsInTab": "No skills in this tab yet.",
       "noSkillsMatchFilters": "No skills match your filters.",
       "noSkillsYetCreateOrInstall": "No skills yet. Create one or install from the catalog.",
+      "promisePlaceholder": "One-line promise for the skill",
       "recentlyUpdated": "Recently updated",
       "searchSkillsAuthorsCategories": "Search skills, authors, categories…",
       "select": "Select",
       "skillCount_one": "{{count}} skill",
       "skillCount_other": "{{count}} skills",
+      "skillNamePlaceholder": "Skill name",
       "skillsStore": "Skills Store",
+      "slugPlaceholder": "skill-shortname",
       "sort": "Sort",
       "source": "Source",
       "studio": "Studio",
@@ -734,6 +739,13 @@
     "provenanceBadge": {
       "tooltip": "Installed from the app-shipped skills catalog. Provenance is signed by package version and content hash."
     },
+    "publicLink": "Public link",
+    "reviewRequired": "Review required",
+    "safe": "Safe",
+    "scope": "Scope",
+    "selectFileToInspect": "Select a file to inspect.",
+    "sharing": "Sharing",
+    "sourceLabel": "Source",
     "sourceMeta": {
       "catalogManaged": "Catalog managed",
       "folderManaged": "Folder managed",
@@ -742,6 +754,7 @@
       "skillsShManaged": "skills.sh managed",
       "urlManaged": "URL managed"
     },
+    "trust": "Trust",
     "trustChip": {
       "includesAssets": "Includes assets",
       "includesAssetsTooltip": "Ships images, fonts, or other non-script files.",
@@ -749,7 +762,9 @@
       "includesScriptsTooltip": "Ships executable scripts. Review before installing.",
       "markdownOnly": "Markdown only",
       "markdownOnlyTooltip": "Text only — no scripts, no binaries, no assets."
-    }
+    },
+    "typeBundled": "Bundled",
+    "typeOptional": "Optional"
   },
   "connectionDialogs": {
     "addAppTitle": "Add application",

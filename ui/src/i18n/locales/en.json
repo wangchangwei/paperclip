@@ -1449,7 +1449,11 @@
       "mostStars": "Most stars",
       "mostForks": "Most forks",
       "recentlyUpdated": "Recently updated",
-      "alphabetical": "Alphabetical"
+      "alphabetical": "Alphabetical",
+      "skillNamePlaceholder": "Skill name",
+      "slugPlaceholder": "skill-shortname",
+      "promisePlaceholder": "One-line promise for the skill",
+      "categoriesPlaceholder": "engineering, review, memory"
     },
     "catalog": {
       "bundledCount": "Bundled · {{count}}",
@@ -1473,7 +1477,18 @@
       "requiresNone": "none",
       "rolesAny": "any",
       "provenanceFallback": "—"
-    }
+    },
+    "sourceLabel": "Source",
+    "typeBundled": "Bundled",
+    "typeOptional": "Optional",
+    "scope": "Scope",
+    "sharing": "Sharing",
+    "publicLink": "Public link",
+    "comingLater": "Coming later.",
+    "selectFileToInspect": "Select a file to inspect.",
+    "trust": "Trust",
+    "safe": "Safe",
+    "reviewRequired": "Review required"
   },
   "smokeLab": {
     "offHeading": "Smoke Lab is turned off",
