@@ -468,7 +468,11 @@
     "skipToMainContent": "Skip to Main Content",
     "commandPaletteHeading": "Search",
     "none": "None",
-    "details": "Details"
+    "details": "Details",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "remove": "Remove",
+    "optional": "optional"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -1843,5 +1847,37 @@
     "saving": "Saving…",
     "updateButton": "Update value",
     "saveButton": "Save value"
+  },
+  "userSecretDefinitions": {
+    "updated": "Definition updated",
+    "created": "Definition created",
+    "saveFailed": "Failed to save",
+    "removed": "Definition removed",
+    "removeFailed": "Could not remove definition",
+    "banner": "Define credentials that each member supplies for themselves. You set the shape here; every user enters their own value under My secrets. Coverage shows how many members have set a value — never the values themselves.",
+    "new": "New user secret",
+    "loadFailed": "Failed to load definitions",
+    "empty": "No user secret definitions yet. Create one to require each member to supply their own credential.",
+    "edit": "Edit user secret",
+    "dialogDescription": "Members supply their own value for this credential. No value is entered here.",
+    "name": "Name",
+    "namePlaceholder": "Personal GitHub token",
+    "key": "Key",
+    "keyPlaceholder": "PERSONAL_GH_TOKEN",
+    "keyHelp": "Stable identifier referenced by env bindings.",
+    "keyCannotChange": "Cannot be changed.",
+    "description": "Description",
+    "descriptionPlaceholder": "What this credential is for",
+    "usageGuidance": "Usage guidance",
+    "usageGuidancePlaceholder": "Tell members how to create their token, required scopes, etc.",
+    "status": "Status",
+    "statusActive": "Active",
+    "statusDisabled": "Disabled",
+    "statusArchived": "Archived",
+    "removeTitle": "Remove user secret?",
+    "removeDesc": "This removes the definition {{key}} for the whole company. Existing member values become unreferenced. This cannot be undone.",
+    "removing": "Removing…",
+    "coverage": "Coverage: {{label}}",
+    "missingSuffix": "· {{missing}} not set"
   }
 }
