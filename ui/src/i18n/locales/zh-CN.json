@@ -497,6 +497,23 @@
     "waitingForAdmin": "Paperclip 正在等待首位管理员认领",
     "youAreAdmin": "你已成功认领本实例"
   },
+  "browse": {
+    "allApps": "All apps",
+    "apps": "Apps",
+    "browse": "Browse",
+    "comingSoon": "Coming soon",
+    "company": "Company",
+    "connect": "Connect →",
+    "emptyCompany": "Select a company to browse apps.",
+    "footnote": "Zapier connects with the MCP URL it gives you. Other listed integrations are previews.",
+    "noMatch": "No planned apps match “{{query}}”.",
+    "popular": "Popular",
+    "results": "Results ({{count}})",
+    "searchAriaLabel": "Search apps",
+    "searchPlaceholder": "Search apps…",
+    "subtitle": "Connect Zapier or your own MCP server. More integrations are coming soon.",
+    "title": "Browse"
+  },
   "caseDetail": {
     "attachments": "附件（{{count}}）",
     "children": "子项 {{count}}",
@@ -889,7 +906,7 @@
     "description": "选择将客户端指向此 Gateway 的方式。",
     "endpointUrl": "Endpoint URL",
     "noSnippets": "此 Gateway 暂无可用的客户端 snippets。",
-    "noTokenMint": "请到「{{tokensLabel}}」标签页生成 token,然后粘贴到 snippet 中的 Bearer … 处。生成后无法再次查看完整 token。",
+    "noTokenMint": "请到「Token」标签页生成 token,然后粘贴到 snippet 中的 Bearer … 处。生成后无法再次查看完整 token。",
     "rawUrl": "原始 URL",
     "show": "显示",
     "snippetConfigLabel": "{{label}} 配置",
