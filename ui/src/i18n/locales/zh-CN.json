@@ -375,11 +375,22 @@
     "yesRemoveIt": "确认移除"
   },
   "appDetail": {
+    "appFallback": "App",
+    "breadcrumbApps": "Apps",
+    "breadcrumbCompany": "Company",
     "noSheetsConnected": "尚未连接任何工作表。",
     "openSheet": "打开工作表",
     "sheetsHeading": "代理可用的工作表",
     "sheetsHint": "代理只能使用此处列出的工作表。",
-    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
+    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/...",
+    "toastAppRemoved": "App removed",
+    "toastAppRemovedBody": "{{appName}} no longer has access. You can connect it again any time.",
+    "toastRemoveFailed": "Couldn't remove the app",
+    "toastRenameFailed": "Couldn't rename the app",
+    "toastSaveFailed": "Couldn't save that",
+    "toastSaveInstallsFailed": "Couldn't save installs",
+    "toastStartSignInFailed": "Couldn't start sign-in",
+    "toastTryAgain": "Please try again."
   },
   "appNotConnected": {
     "address": "地址",

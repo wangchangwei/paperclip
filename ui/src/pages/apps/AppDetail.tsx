@@ -12,6 +12,7 @@ import {
   isToolConnectionAttentionHealth as isAttentionHealthStatus,
 } from "@paperclipai/shared";
 import { Navigate, useParams, useNavigate } from "@/lib/router";
+import { useTranslation } from "@/i18n";
 import { useCompany } from "@/context/CompanyContext";
 import { useBreadcrumbs } from "@/context/BreadcrumbContext";
 import { useToast } from "@/context/ToastContext";
@@ -51,6 +52,7 @@ import type { AccessDraft } from "./app-detail/types";
 export { DangerZone, connectionAddress, connectionTransportLabel };
 
 export function AppDetail() {
+  const { t } = useTranslation();
   const { connectionId = "", tab } = useParams<{ connectionId: string; tab?: string }>();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -113,18 +115,18 @@ export function AppDetail() {
   });
 
   const connection = connectionQuery.data;
-  const appName = connection ? humanizeConnectionDisplayName(connection) : "App";
+  const appName = connection ? humanizeConnectionDisplayName(connection) : t("appDetail.appFallback");
 
   useEffect(() => {
     if (!activeTab) return;
     setBreadcrumbs([
-      { label: selectedCompany?.name ?? "Company", href: "/dashboard" },
-      { label: "Apps", href: "/apps" },
+      { label: selectedCompany?.name ?? t("appDetail.breadcrumbCompany"), href: "/dashboard" },
+      { label: t("appDetail.breadcrumbApps"), href: "/apps" },
       { label: appName, href: appTabHref(connectionId, "setup") },
       { label: appTabLabel(activeTab) },
     ]);
     return () => setBreadcrumbs([]);
-  }, [setBreadcrumbs, selectedCompany?.name, appName, connectionId, activeTab]);
+  }, [setBreadcrumbs, selectedCompany?.name, appName, connectionId, activeTab, t]);
 
   const catalog = catalogQuery.data?.catalog ?? [];
   const profile = useMemo(
@@ -175,8 +177,8 @@ export function AppDetail() {
     },
     onError: (error) =>
       pushToast({
-        title: "Couldn't save that",
-        body: error instanceof Error ? error.message : "Please try again.",
+        title: t("appDetail.toastSaveFailed"),
+        body: error instanceof Error ? error.message : t("appDetail.toastTryAgain"),
         tone: "error",
       }),
     onSettled: () => setPending(false),
@@ -194,8 +196,8 @@ export function AppDetail() {
     },
     onError: (error) =>
       pushToast({
-        title: "Couldn't save installs",
-        body: error instanceof Error ? error.message : "Please try again.",
+        title: t("appDetail.toastSaveInstallsFailed"),
+        body: error instanceof Error ? error.message : t("appDetail.toastTryAgain"),
         tone: "error",
       }),
   });
@@ -212,8 +214,8 @@ export function AppDetail() {
     },
     onError: (error) =>
       pushToast({
-        title: "Couldn't rename the app",
-        body: error instanceof Error ? error.message : "Please try again.",
+        title: t("appDetail.toastRenameFailed"),
+        body: error instanceof Error ? error.message : t("appDetail.toastTryAgain"),
         tone: "error",
       }),
   });
@@ -230,8 +232,8 @@ export function AppDetail() {
     },
     onError: (error) =>
       pushToast({
-        title: "Couldn't save that",
-        body: error instanceof Error ? error.message : "Please try again.",
+        title: t("appDetail.toastSaveFailed"),
+        body: error instanceof Error ? error.message : t("appDetail.toastTryAgain"),
         tone: "error",
       }),
   });
@@ -243,8 +245,8 @@ export function AppDetail() {
     },
     onError: (error) =>
       pushToast({
-        title: "Couldn't start sign-in",
-        body: error instanceof Error ? error.message : "Please try again.",
+        title: t("appDetail.toastStartSignInFailed"),
+        body: error instanceof Error ? error.message : t("appDetail.toastTryAgain"),
         tone: "error",
       }),
   });
@@ -256,15 +258,15 @@ export function AppDetail() {
       queryClient.invalidateQueries({ queryKey: queryKeys.tools.applications(selectedCompanyId!) });
       queryClient.invalidateQueries({ queryKey: queryKeys.apps.attention(selectedCompanyId!) });
       pushToast({
-        title: "App removed",
-        body: `${appName} no longer has access. You can connect it again any time.`,
+        title: t("appDetail.toastAppRemoved"),
+        body: t("appDetail.toastAppRemovedBody", { appName }),
         tone: "success",
       });
       navigate("/apps");
     },
     onError: (error) =>
       pushToast({
-        title: "Couldn't remove the app",
+        title: t("appDetail.toastRemoveFailed"),
         body: error instanceof Error ? error.message : "Please try again.",
         tone: "error",
       }),

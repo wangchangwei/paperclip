@@ -942,7 +942,18 @@
     "sheetsHint": "Agents can only use the sheets listed here.",
     "noSheetsConnected": "No sheets are connected yet.",
     "openSheet": "Open sheet",
-    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
+    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/...",
+    "appFallback": "App",
+    "breadcrumbCompany": "Company",
+    "breadcrumbApps": "Apps",
+    "toastSaveFailed": "Couldn't save that",
+    "toastSaveInstallsFailed": "Couldn't save installs",
+    "toastRenameFailed": "Couldn't rename the app",
+    "toastStartSignInFailed": "Couldn't start sign-in",
+    "toastAppRemoved": "App removed",
+    "toastAppRemovedBody": "{{appName}} no longer has access. You can connect it again any time.",
+    "toastRemoveFailed": "Couldn't remove the app",
+    "toastTryAgain": "Please try again."
   },
   "companyImport": {
     "importSource": "Import source",

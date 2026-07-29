@@ -375,11 +375,22 @@
     "yesRemoveIt": "Yes, remove it"
   },
   "appDetail": {
+    "appFallback": "App",
+    "breadcrumbApps": "Apps",
+    "breadcrumbCompany": "Company",
     "noSheetsConnected": "No sheets are connected yet.",
     "openSheet": "Open sheet",
     "sheetsHeading": "Sheets agents can use",
     "sheetsHint": "Agents can only use the sheets listed here.",
-    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/..."
+    "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/...",
+    "toastAppRemoved": "App removed",
+    "toastAppRemovedBody": "{{appName}} no longer has access. You can connect it again any time.",
+    "toastRemoveFailed": "Couldn't remove the app",
+    "toastRenameFailed": "Couldn't rename the app",
+    "toastSaveFailed": "Couldn't save that",
+    "toastSaveInstallsFailed": "Couldn't save installs",
+    "toastStartSignInFailed": "Couldn't start sign-in",
+    "toastTryAgain": "Please try again."
   },
   "appNotConnected": {
     "address": "Address",
