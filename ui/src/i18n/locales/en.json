@@ -2682,5 +2682,9 @@
     "cantImportSkillsHereBody": "Your account doesn't have permission to add skills to this company. Ask an owner to grant the skills permission, then try again.",
     "scanFailed": "Scan failed",
     "tryAgain": "Try again"
+  },
+  "pipelineSettings": {
+    "breadcrumbPipelines": "Pipelines",
+    "breadcrumbSettings": "Settings"
   }
 }

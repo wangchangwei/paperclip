@@ -1721,6 +1721,10 @@
     "specificAgentsHint": "选择谁可以使用。",
     "whoCanUse": "谁可以使用"
   },
+  "pipelineSettings": {
+    "breadcrumbPipelines": "Pipelines",
+    "breadcrumbSettings": "Settings"
+  },
   "pipelines": {
     "activeWork": "active work",
     "activity": "Activity",
