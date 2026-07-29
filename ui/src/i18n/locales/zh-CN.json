@@ -902,28 +902,28 @@
     }
   },
   "companies": {
-    "actionsAria": "Company actions",
-    "agentCount": "{{count}} agent",
-    "agentCount_other": "{{count}} agents",
-    "breadcrumb": "Companies",
-    "cancelRename": "Cancel rename",
-    "created": "Created {{when}}",
-    "delete": "Delete",
-    "deleteCompany": "Delete Company",
-    "deleteConfirm": "Delete this company and all its data? This cannot be undone.",
-    "deleting": "Deleting…",
-    "loading": "Loading companies...",
-    "newCompany": "New Company",
-    "rename": "Rename",
-    "renameAria": "Rename company",
-    "saveRename": "Save rename",
+    "actionsAria": "公司操作",
+    "agentCount": "{{count}} 个 agent",
+    "agentCount_other": "{{count}} 个 agents",
+    "breadcrumb": "公司",
+    "cancelRename": "取消重命名",
+    "created": "创建于 {{when}}",
+    "delete": "删除",
+    "deleteCompany": "删除公司",
+    "deleteConfirm": "删除此公司及其全部数据?此操作不可撤销。",
+    "deleting": "删除中...",
+    "loading": "正在加载公司...",
+    "newCompany": "新建公司",
+    "rename": "重命名",
+    "renameAria": "重命名公司",
+    "saveRename": "保存重命名",
     "status": {
-      "active": "active",
-      "paused": "paused"
+      "active": "已启用",
+      "paused": "已暂停"
     },
-    "taskCount": "{{count}} task",
-    "taskCount_other": "{{count}} tasks",
-    "unlimitedBudget": "Unlimited budget"
+    "taskCount": "{{count}} 个任务",
+    "taskCount_other": "{{count}} 个任务",
+    "unlimitedBudget": "无预算上限"
   },
   "companiesPage": {
     "agentMany": "{{count}} agents",
