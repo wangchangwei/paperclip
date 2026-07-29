@@ -2458,6 +2458,10 @@
     "byoConnectDesc": "Paste the URL from a custom or self-hosted MCP server and review its actions before enabling it.",
     "developerTools": "Developer tools (advanced)"
   },
+  "teamCatalog": {
+    "breadcrumbOrgChart": "Org Chart",
+    "breadcrumbTeams": "Teams"
+  },
   "testPanel": {
     "badgeLegendHeading": "What the badges mean",
     "goToSetup": "Go to Setup",

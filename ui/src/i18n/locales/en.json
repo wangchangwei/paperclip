@@ -2689,5 +2689,9 @@
   },
   "routines": {
     "breadcrumb": "Routines"
+  },
+  "teamCatalog": {
+    "breadcrumbOrgChart": "Org Chart",
+    "breadcrumbTeams": "Teams"
   }
 }

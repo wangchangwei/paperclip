@@ -2458,6 +2458,10 @@
     "byoConnectDesc": "粘贴自定义或自托管 MCP server 的 URL,先审查其动作再启用。",
     "developerTools": "开发者工具(高级)"
   },
+  "teamCatalog": {
+    "breadcrumbOrgChart": "Org Chart",
+    "breadcrumbTeams": "Teams"
+  },
   "testPanel": {
     "badgeLegendHeading": "徽标含义",
     "goToSetup": "前往设置",
