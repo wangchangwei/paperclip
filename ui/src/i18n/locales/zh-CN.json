@@ -1523,11 +1523,11 @@
     "totalDuration": "累计耗时"
   },
   "issueChatUxLab": {
-    "eyebrow": "Chat UX Lab",
-    "headerDescription": "This page exercises the real assistant-ui issue chat with fixture-backed messages. Use it to review spacing, chronology, running states, tool rendering, activity rows, queueing, and composer behavior without needing a live issue in progress.",
-    "headerTitle": "Issue chat review surface",
-    "hideComposer": "Hide composer in primary preview",
-    "showComposer": "Show composer in primary preview"
+    "eyebrow": "聊天 UX 实验室",
+    "headerDescription": "此页面使用基于预览的留言来演练真实的 assistant-ui 问题聊天。可用于审查间距、时间顺序、运行状态、工具渲染、活动行、排队和编辑器行为，而无需运行中的实时问题。",
+    "headerTitle": "问题聊天审查页面",
+    "hideComposer": "在主预览中隐藏编辑器",
+    "showComposer": "在主预览中显示编辑器"
   },
   "issues": {
     "andMore": "...以及{{count}}个更多",
