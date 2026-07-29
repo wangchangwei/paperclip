@@ -980,7 +980,12 @@
   "pluginSettings": {
     "loading": "Loading plugin details...",
     "about": "About",
-    "settings": "Settings"
+    "settings": "Settings",
+    "breadcrumbCompany": "Company",
+    "breadcrumbSettings": "Settings",
+    "breadcrumbInstanceSettings": "Instance settings",
+    "breadcrumbPlugins": "Plugins",
+    "breadcrumbPluginDetails": "Plugin Details"
   },
   "agentDetail": {
     "loadingLog": "Loading log...",

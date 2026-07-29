@@ -1867,6 +1867,11 @@
   },
   "pluginSettings": {
     "about": "About",
+    "breadcrumbCompany": "Company",
+    "breadcrumbInstanceSettings": "Instance settings",
+    "breadcrumbPluginDetails": "Plugin Details",
+    "breadcrumbPlugins": "Plugins",
+    "breadcrumbSettings": "Settings",
     "loading": "Loading plugin details...",
     "settings": "Settings"
   },

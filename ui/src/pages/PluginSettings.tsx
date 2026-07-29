@@ -122,13 +122,13 @@ export function PluginSettings() {
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: selectedCompany?.name ?? "Company", href: "/dashboard" },
-      { label: "Settings", href: "/company/settings" },
-      { label: "Instance settings", href: "/company/settings/instance/general" },
-      { label: "Plugins", href: "/company/settings/instance/plugins" },
-      { label: plugin?.manifestJson?.displayName ?? plugin?.packageName ?? "Plugin Details" },
+      { label: selectedCompany?.name ?? t("pluginSettings.breadcrumbCompany"), href: "/dashboard" },
+      { label: t("pluginSettings.breadcrumbSettings"), href: "/company/settings" },
+      { label: t("pluginSettings.breadcrumbInstanceSettings"), href: "/company/settings/instance/general" },
+      { label: t("pluginSettings.breadcrumbPlugins"), href: "/company/settings/instance/plugins" },
+      { label: plugin?.manifestJson?.displayName ?? plugin?.packageName ?? t("pluginSettings.breadcrumbPluginDetails") },
     ]);
-  }, [selectedCompany?.name, setBreadcrumbs, companyPrefix, plugin]);
+  }, [selectedCompany?.name, setBreadcrumbs, companyPrefix, plugin, t]);
 
   useEffect(() => {
     setActiveTab("configuration");

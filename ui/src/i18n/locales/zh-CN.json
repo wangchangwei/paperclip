@@ -1867,6 +1867,11 @@
   },
   "pluginSettings": {
     "about": "关于",
+    "breadcrumbCompany": "Company",
+    "breadcrumbInstanceSettings": "Instance settings",
+    "breadcrumbPluginDetails": "Plugin Details",
+    "breadcrumbPlugins": "Plugins",
+    "breadcrumbSettings": "Settings",
     "loading": "正在加载插件详情...",
     "settings": "设置"
   },
