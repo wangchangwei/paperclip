@@ -2025,5 +2025,22 @@
     "noTokenMint": "Mint a token on the Tokens tab, then paste it where the snippet shows Bearer …. You won’t see a token’s full value again after it’s created.",
     "tokensLabel": "Tokens",
     "tokenSecurityWarning": "Treat this like a password. Anyone with the token can call exactly the tools this gateway allows. If it leaks, revoke it — the client goes silent immediately."
+  },
+  "browse": {
+    "company": "Company",
+    "apps": "Apps",
+    "browse": "Browse",
+    "emptyCompany": "Select a company to browse apps.",
+    "title": "Browse",
+    "subtitle": "Connect Zapier or your own MCP server. More integrations are coming soon.",
+    "searchPlaceholder": "Search apps…",
+    "searchAriaLabel": "Search apps",
+    "popular": "Popular",
+    "results": "Results ({{count}})",
+    "allApps": "All apps",
+    "noMatch": "No planned apps match “{{query}}”.",
+    "comingSoon": "Coming soon",
+    "connect": "Connect →",
+    "footnote": "Zapier connects with the MCP URL it gives you. Other listed integrations are previews."
   }
 }

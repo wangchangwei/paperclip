@@ -497,6 +497,23 @@
     "waitingForAdmin": "This Paperclip is waiting on its first admin",
     "youAreAdmin": "You're the instance admin"
   },
+  "browse": {
+    "allApps": "All apps",
+    "apps": "Apps",
+    "browse": "Browse",
+    "comingSoon": "Coming soon",
+    "company": "Company",
+    "connect": "Connect →",
+    "emptyCompany": "Select a company to browse apps.",
+    "footnote": "Zapier connects with the MCP URL it gives you. Other listed integrations are previews.",
+    "noMatch": "No planned apps match “{{query}}”.",
+    "popular": "Popular",
+    "results": "Results ({{count}})",
+    "searchAriaLabel": "Search apps",
+    "searchPlaceholder": "Search apps…",
+    "subtitle": "Connect Zapier or your own MCP server. More integrations are coming soon.",
+    "title": "Browse"
+  },
   "caseDetail": {
     "attachments": "Attachments ({{count}})",
     "children": "Children {{count}}",

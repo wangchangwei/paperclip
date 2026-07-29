@@ -22,6 +22,7 @@ import {
   POPULAR_KEYS,
   ZAPIER_CONNECT_HREF,
 } from "./store-cards";
+import { useTranslation } from "@/i18n";
 
 /**
  * Door 1 — Browse (the store) (PAP-13254 / U3 §4).
@@ -35,16 +36,17 @@ export function Browse() {
   const navigate = useNavigate();
   const { selectedCompany, selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
+  const { t } = useTranslation();
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: selectedCompany?.name ?? "Company", href: "/dashboard" },
-      { label: "Apps", href: "/apps" },
-      { label: "Browse" },
+      { label: selectedCompany?.name ?? t("browse.company"), href: "/dashboard" },
+      { label: t("browse.apps"), href: "/apps" },
+      { label: t("browse.browse") },
     ]);
     return () => setBreadcrumbs([]);
-  }, [setBreadcrumbs, selectedCompany?.name]);
+  }, [setBreadcrumbs, selectedCompany?.name, t]);
 
   const galleryQuery = useQuery({
     queryKey: queryKeys.apps.gallery(selectedCompanyId ?? "__none__"),
@@ -72,7 +74,7 @@ export function Browse() {
   }, [gallery, trimmed]);
 
   if (!selectedCompanyId) {
-    return <div className="p-6 text-sm text-muted-foreground">Select a company to browse apps.</div>;
+    return <div className="p-6 text-sm text-muted-foreground">{t("browse.emptyCompany")}</div>;
   }
 
   const loading = galleryQuery.isLoading;
@@ -80,9 +82,9 @@ export function Browse() {
   return (
     <div className="max-w-5xl space-y-8 pb-12">
       <header>
-        <h1 className="text-2xl font-bold tracking-tight">Browse</h1>
+        <h1 className="text-2xl font-bold tracking-tight">{t("browse.title")}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Connect Zapier or your own MCP server. More integrations are coming soon.
+          {t("browse.subtitle")}
         </p>
       </header>
 
@@ -92,8 +94,8 @@ export function Browse() {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search apps…"
-          aria-label="Search apps"
+          placeholder={t("browse.searchPlaceholder")}
+          aria-label={t("browse.searchAriaLabel")}
           className="h-10 w-full rounded-lg border border-border bg-background pl-9 pr-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/30"
         />
       </div>
@@ -109,7 +111,7 @@ export function Browse() {
           {!trimmed && popular.length > 0 && (
             <section className="space-y-3">
               <div className="text-(length:--text-micro) font-semibold uppercase tracking-wide text-muted-foreground">
-                Popular
+                {t("browse.popular")}
               </div>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
                 {popular.map((entry) => (
@@ -126,12 +128,12 @@ export function Browse() {
 
           <section className="space-y-3">
             <div className="text-(length:--text-micro) font-semibold uppercase tracking-wide text-muted-foreground">
-              {trimmed ? `Results (${filtered.length})` : "All apps"}
+              {trimmed ? t("browse.results", { count: filtered.length }) : t("browse.allApps")}
             </div>
             {filtered.length === 0 ? (
               <p className="flex items-center gap-1.5 rounded-xl border border-dashed border-border bg-card px-4 py-6 text-sm text-muted-foreground">
                 <Link2 className="h-4 w-4" />
-                No planned apps match “{query.trim()}”.
+                {t("browse.noMatch", { query: query.trim() })}
               </p>
             ) : (
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -150,7 +152,7 @@ export function Browse() {
 
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-xs text-muted-foreground">
-              Zapier connects with the MCP URL it gives you. Other listed integrations are previews.
+              {t("browse.footnote")}
             </p>
             <AdvancedToolsLink />
           </div>
@@ -169,6 +171,7 @@ function AppTile({
   onConnect?: () => void;
   compact?: boolean;
 }) {
+  const { t } = useTranslation();
   const disabled = !onConnect;
   if (compact) {
     return (
@@ -183,7 +186,7 @@ function AppTile({
         <AppLogo name={appDefinitionName(entry)} logoUrl={appDefinitionLogoUrl(entry)} size={36} />
         <span className="text-xs font-medium text-foreground">{appDefinitionName(entry)}</span>
         <span className={disabled ? "text-xs text-muted-foreground" : "text-xs font-semibold text-primary"}>
-          {disabled ? "Coming soon" : "Connect →"}
+          {disabled ? t("browse.comingSoon") : t("browse.connect")}
         </span>
       </button>
     );
@@ -203,7 +206,7 @@ function AppTile({
         <div className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">{appDefinitionDescription(entry)}</div>
       </div>
       <span className={disabled ? "shrink-0 text-xs font-semibold text-muted-foreground" : "shrink-0 text-xs font-semibold text-primary"}>
-        {disabled ? "Coming soon" : "Connect →"}
+        {disabled ? t("browse.comingSoon") : t("browse.connect")}
       </span>
     </button>
   );
