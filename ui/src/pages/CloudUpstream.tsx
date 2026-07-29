@@ -23,6 +23,7 @@ import { Input } from "@/components/ui/input";
 import { cloudUpstreamsApi } from "@/api/cloudUpstreams";
 import { instanceSettingsApi } from "@/api/instanceSettings";
 import { useBreadcrumbs } from "@/context/BreadcrumbContext";
+import { useTranslation } from "@/i18n";
 import { useCompany } from "@/context/CompanyContext";
 import { applyCompanyPrefix, extractCompanyPrefixFromPath } from "@/lib/company-routes";
 import { Link, useLocation } from "@/lib/router";
@@ -64,6 +65,7 @@ const ACTIVATION_CATEGORIES: Array<{
 ];
 
 export function CloudUpstream() {
+  const { t } = useTranslation();
   const { selectedCompany, selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
@@ -76,11 +78,11 @@ export function CloudUpstream() {
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: selectedCompany?.name ?? "Company", href: "/dashboard" },
-      { label: "Settings", href: "/company/settings" },
-      { label: "Cloud upstream" },
+      { label: selectedCompany?.name ?? t("cloudUpstream.company"), href: "/dashboard" },
+      { label: t("cloudUpstream.settings"), href: "/company/settings" },
+      { label: t("cloudUpstream.title") },
     ]);
-  }, [selectedCompany?.name, setBreadcrumbs]);
+  }, [selectedCompany?.name, setBreadcrumbs, t]);
 
   const experimentalQuery = useQuery({
     queryKey: queryKeys.instance.experimentalSettings,
@@ -204,11 +206,11 @@ export function CloudUpstream() {
   }
 
   if (!selectedCompanyId || !selectedCompany) {
-    return <div className="text-sm text-muted-foreground">Select a company to configure cloud upstream.</div>;
+    return <div className="text-sm text-muted-foreground">{t("cloudUpstream.emptyCompany")}</div>;
   }
 
   if (experimentalQuery.isLoading) {
-    return <div className="text-sm text-muted-foreground">Loading experimental settings...</div>;
+    return <div className="text-sm text-muted-foreground">{t("cloudUpstream.loading")}</div>;
   }
 
   if (!cloudSyncEnabled) {

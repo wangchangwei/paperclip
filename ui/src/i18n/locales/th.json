@@ -516,6 +516,13 @@
     "title": "Approve Paperclip CLI access",
     "titleDesc": "A local Paperclip CLI process is requesting board access to this instance."
   },
+  "cloudUpstream": {
+    "company": "Company",
+    "emptyCompany": "Select a company to configure cloud upstream.",
+    "loading": "Loading experimental settings…",
+    "settings": "Settings",
+    "title": "Cloud upstream"
+  },
   "command": {
     "paletteDescription": "Search for a command to run...",
     "paletteTitle": "Command Palette"

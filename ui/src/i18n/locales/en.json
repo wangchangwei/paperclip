@@ -1808,5 +1808,12 @@
     "approveButton": "Approve CLI access",
     "cancelling": "Cancelling…",
     "cancelButton": "Cancel"
+  },
+  "cloudUpstream": {
+    "company": "Company",
+    "settings": "Settings",
+    "title": "Cloud upstream",
+    "emptyCompany": "Select a company to configure cloud upstream.",
+    "loading": "Loading experimental settings…"
   }
 }
