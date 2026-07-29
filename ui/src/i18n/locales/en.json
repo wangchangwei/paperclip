@@ -1820,5 +1820,10 @@
     "projects": "Projects",
     "workspaces": "Workspaces",
     "loading": "Loading workspace…"
+  },
+  "missingUserSecrets": {
+    "defaultTitle": "Set your user secrets",
+    "setValue": "Set value",
+    "manageAll": "Manage all my secrets"
   }
 }

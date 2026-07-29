@@ -1150,6 +1150,11 @@
   "layout": {
     "headerBetaTag": "测试版"
   },
+  "missingUserSecrets": {
+    "defaultTitle": "Set your user secrets",
+    "manageAll": "Manage all my secrets",
+    "setValue": "Set value"
+  },
   "nav": {
     "badge": {
       "decisions": "个决策",
