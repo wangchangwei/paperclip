@@ -1867,11 +1867,11 @@
   },
   "pluginSettings": {
     "about": "关于",
-    "breadcrumbCompany": "Company",
-    "breadcrumbInstanceSettings": "Instance settings",
-    "breadcrumbPluginDetails": "Plugin Details",
-    "breadcrumbPlugins": "Plugins",
-    "breadcrumbSettings": "Settings",
+    "breadcrumbCompany": "公司",
+    "breadcrumbInstanceSettings": "实例设置",
+    "breadcrumbPluginDetails": "插件详情",
+    "breadcrumbPlugins": "插件",
+    "breadcrumbSettings": "设置",
     "loading": "正在加载插件详情...",
     "settings": "设置"
   },
