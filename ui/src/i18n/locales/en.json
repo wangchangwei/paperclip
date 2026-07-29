@@ -1675,6 +1675,15 @@
     "showArchived": "Show archived ({{count}})",
     "archivedAt": "archived",
     "lastSummary": "last summary",
-    "lifetime": "lifetime"
+    "lifetime": "lifetime",
+    "createFailed": "Could not create the card.",
+    "createErrorTitle": "Create failed",
+    "createDesc": "One message sets up the whole card: say what you want to watch and what each update should tell you. The agent builds the query from it and writes every update against it.",
+    "promptLabel": "What do you want to keep an eye on?",
+    "promptPlaceholder": "Keep an eye on the ID and Cloud projects. Tell me whether the service is live, and if not, the exact three actions needed to get it to production.",
+    "examplesLabel": "Examples",
+    "agentLabel": "Agent",
+    "agentDesc": "Runs this card's setup and updates. Leave on the default unless another agent should own it.",
+    "createButton": "Create card"
   }
 }
