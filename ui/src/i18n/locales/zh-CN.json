@@ -1204,6 +1204,11 @@
     "step_two": "邀请团队",
     "welcome": "欢迎使用Paperclip"
   },
+  "org": {
+    "breadcrumb": "Org Chart",
+    "empty": "No agents in the organization. Create agents to build your org chart.",
+    "emptyCompany": "Select a company to view org chart."
+  },
   "orgChart": {
     "title": "组织架构图"
   },

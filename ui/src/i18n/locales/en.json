@@ -1774,5 +1774,10 @@
     "summaryTitle": "Workspace summary",
     "summaryDesc": "Summarizer tracks workspace activity, live services, and follow-up needs across projects.",
     "empty": "No workspace activity yet."
+  },
+  "org": {
+    "breadcrumb": "Org Chart",
+    "emptyCompany": "Select a company to view org chart.",
+    "empty": "No agents in the organization. Create agents to build your org chart."
   }
 }
