@@ -2710,5 +2710,21 @@
     "toastImportCompletedWithErrors": "Import completed with errors",
     "toastImportComplete": "Import complete",
     "toastImportBody": "{{imported}} created · {{skipped}} skipped · {{failed}} failed"
+  },
+  "profilesTab": {
+    "toastProfileCreated": "Profile created",
+    "toastCouldNotCreateProfile": "Could not create profile",
+    "toastProfileUpdated": "Profile updated",
+    "toastCouldNotUpdateProfile": "Could not update profile",
+    "toastEntryAdded": "Entry added",
+    "toastCouldNotAddEntry": "Could not add entry",
+    "toastEntryRemoved": "Entry removed",
+    "toastCouldNotRemoveEntry": "Could not remove entry",
+    "toastProfileBound": "Profile bound",
+    "toastCouldNotBindProfile": "Could not bind profile",
+    "toastBindingRemoved": "Binding removed",
+    "toastCouldNotRemoveBinding": "Could not remove binding",
+    "toastEntryTargetRequired": "Entry target required",
+    "toastBindingTargetRequired": "Binding target required"
   }
 }

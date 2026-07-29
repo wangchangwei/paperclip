@@ -2020,6 +2020,22 @@
     "emptyTitle": "Create your first access profile",
     "rowMenuArchive": "Archive"
   },
+  "profilesTab": {
+    "toastBindingRemoved": "Binding removed",
+    "toastBindingTargetRequired": "Binding target required",
+    "toastCouldNotAddEntry": "Could not add entry",
+    "toastCouldNotBindProfile": "Could not bind profile",
+    "toastCouldNotCreateProfile": "Could not create profile",
+    "toastCouldNotRemoveBinding": "Could not remove binding",
+    "toastCouldNotRemoveEntry": "Could not remove entry",
+    "toastCouldNotUpdateProfile": "Could not update profile",
+    "toastEntryAdded": "Entry added",
+    "toastEntryRemoved": "Entry removed",
+    "toastEntryTargetRequired": "Entry target required",
+    "toastProfileBound": "Profile bound",
+    "toastProfileCreated": "Profile created",
+    "toastProfileUpdated": "Profile updated"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "Advanced runtime JSON",
     "advancedRuntimeJsonDescription": "Paperclip derives Services and Jobs from this JSON. Prefer editing named commands first; use raw JSON for advanced lifecycle, port, readiness, or environment settings.",
