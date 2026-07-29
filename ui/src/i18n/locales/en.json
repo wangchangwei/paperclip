@@ -1723,5 +1723,22 @@
     "creating": "Creating…",
     "toastCreated": "Gateway created",
     "toastFailed": "Gateway was not created"
+  },
+  "companiesPage": {
+    "title": "Companies",
+    "newCompany": "New company",
+    "loading": "Loading…",
+    "agentOne": "1 agent",
+    "agentMany": "{{count}} agents",
+    "taskOne": "1 task",
+    "taskMany": "{{count}} tasks",
+    "unlimitedBudget": "Unlimited budget",
+    "created": "Created",
+    "deleteConfirmMessage": "Delete this company?",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "rename": "Rename",
+    "deleteCompany": "Delete company"
   }
 }

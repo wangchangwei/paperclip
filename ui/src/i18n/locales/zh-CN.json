@@ -637,6 +637,23 @@
       "signedIn": "已登录"
     }
   },
+  "companiesPage": {
+    "agentMany": "{{count}} agents",
+    "agentOne": "1 agent",
+    "cancel": "Cancel",
+    "created": "Created",
+    "delete": "Delete",
+    "deleteCompany": "Delete company",
+    "deleteConfirmMessage": "Delete this company?",
+    "deleting": "Deleting…",
+    "loading": "Loading…",
+    "newCompany": "New company",
+    "rename": "Rename",
+    "taskMany": "{{count}} tasks",
+    "taskOne": "1 task",
+    "title": "Companies",
+    "unlimitedBudget": "Unlimited budget"
+  },
   "companyAccess": {
     "editMember": "编辑成员",
     "humans": "人员",
