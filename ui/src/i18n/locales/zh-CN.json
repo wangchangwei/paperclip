@@ -2459,8 +2459,8 @@
     "developerTools": "开发者工具(高级)"
   },
   "teamCatalog": {
-    "breadcrumbOrgChart": "Org Chart",
-    "breadcrumbTeams": "Teams"
+    "breadcrumbOrgChart": "组织架构",
+    "breadcrumbTeams": "团队"
   },
   "testPanel": {
     "badgeLegendHeading": "徽标含义",
