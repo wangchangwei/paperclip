@@ -1616,5 +1616,16 @@
     "deleteBody": "This permanently deletes the profile and removes {{count}} {{count, plural, one {assignment} other {assignments}}.",
     "deleteConfirm": "Delete",
     "reassignBeforeDelete": "Choose another access profile and make it the company default first."
+  },
+  "profilesIndex": {
+    "checkAgentAccessTitle": "Check an agent's access",
+    "checkAgentAccessDesc": "See exactly which tools an agent can use right now, and which profile allows each one.",
+    "colProfile": "Profile",
+    "colAllows": "Allows",
+    "colAssignedTo": "Assigned to",
+    "colUpdated": "Updated",
+    "rowMenuArchive": "Archive",
+    "emptyTitle": "Create your first access profile",
+    "emptyBody": "Pick a starting point. You can fine-tune exactly which tools it allows in the next step."
   }
 }

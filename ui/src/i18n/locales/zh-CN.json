@@ -1346,6 +1346,17 @@
     "profileDetailBreadcrumb": "配置文件详情",
     "selectCompanyAndProfile": "请选择公司和配置文件。"
   },
+  "profilesIndex": {
+    "checkAgentAccessDesc": "See exactly which tools an agent can use right now, and which profile allows each one.",
+    "checkAgentAccessTitle": "Check an agent's access",
+    "colAllows": "Allows",
+    "colAssignedTo": "Assigned to",
+    "colProfile": "Profile",
+    "colUpdated": "Updated",
+    "emptyBody": "Pick a starting point. You can fine-tune exactly which tools it allows in the next step.",
+    "emptyTitle": "Create your first access profile",
+    "rowMenuArchive": "Archive"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
     "advancedRuntimeJsonDescription": "Paperclip从此JSON派生Services和Jobs。优先编辑命名命令；对于高级生命周期、端口、就绪状态或环境设置，使用原始JSON。",

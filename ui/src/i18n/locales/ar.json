@@ -1346,6 +1346,17 @@
     "profileDetailBreadcrumb": "Profile detail",
     "selectCompanyAndProfile": "Select a company and profile."
   },
+  "profilesIndex": {
+    "checkAgentAccessDesc": "See exactly which tools an agent can use right now, and which profile allows each one.",
+    "checkAgentAccessTitle": "Check an agent's access",
+    "colAllows": "Allows",
+    "colAssignedTo": "Assigned to",
+    "colProfile": "Profile",
+    "colUpdated": "Updated",
+    "emptyBody": "Pick a starting point. You can fine-tune exactly which tools it allows in the next step.",
+    "emptyTitle": "Create your first access profile",
+    "rowMenuArchive": "Archive"
+  },
   "projectWorkspace": {
     "advancedRuntimeJson": "Advanced runtime JSON",
     "advancedRuntimeJsonDescription": "Paperclip derives Services and Jobs from this JSON. Prefer editing named commands first; use raw JSON for advanced lifecycle, port, readiness, or environment settings.",
