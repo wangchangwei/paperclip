@@ -11,6 +11,9 @@
     "removeTitle": "移除适配器",
     "title": "适配器"
   },
+  "advancedToolsRoute": {
+    "adminOnlyHeading": "Advanced setup is for administrators"
+  },
   "agentDetail": {
     "invalidReportingChain": "汇报链无效",
     "loadingLog": "正在加载日志...",

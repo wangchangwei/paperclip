@@ -11,6 +11,9 @@
     "removeTitle": "Remove Adapter",
     "title": "Adapters"
   },
+  "advancedToolsRoute": {
+    "adminOnlyHeading": "Advanced setup is for administrators"
+  },
   "agentDetail": {
     "invalidReportingChain": "Invalid reporting chain",
     "loadingLog": "Loading log...",
