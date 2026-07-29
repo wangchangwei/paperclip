@@ -1769,10 +1769,10 @@
     "title": "训练示例"
   },
   "workspaces": {
-    "breadcrumb": "Workspaces",
-    "empty": "No workspace activity yet.",
-    "summaryDesc": "Summarizer tracks workspace activity, live services, and follow-up needs across projects.",
-    "summaryTitle": "Workspace summary",
-    "title": "Workspaces"
+    "breadcrumb": "工作区",
+    "empty": "暂无工作区活动。",
+    "summaryDesc": "摘要 Agent 跨项目跟踪工作区活动、在线服务及后续跟进需求。",
+    "summaryTitle": "工作区摘要",
+    "title": "工作区"
   }
 }
