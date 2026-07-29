@@ -1591,5 +1591,30 @@
   "pasteConfigTab": {
     "replacementPlaceholder": "Paste replacement value",
     "noKeysNeeded": "No keys needed for this one."
+  },
+  "profileDetailRoute": {
+    "companyFallback": "Company",
+    "appsBreadcrumb": "Apps",
+    "accessProfilesBreadcrumb": "Access profiles",
+    "profileDetailBreadcrumb": "Profile detail",
+    "selectCompanyAndProfile": "Select a company and profile."
+  },
+  "toolsAdminGate": {
+    "heading": "Access profiles are for administrators",
+    "body": "Access profiles decide which tools your agents can use. Ask an administrator to set these up, or head back to",
+    "yourAppsLink": "your apps"
+  },
+  "profileActionDialog": {
+    "archiveTitle": "Archive profile",
+    "archiveBody": "This profile stops applying to {{count}} {{count, plural, one {agent} other {agents}}}. You can restore it later.",
+    "archiveConfirm": "Archive",
+    "restoreTitle": "Restore profile",
+    "restoreBody": "This profile will be active again and can be assigned to agents.",
+    "restoreConfirm": "Restore",
+    "deleteTitle": "Delete profile",
+    "deleteBlockedBody": "This profile is the company default. Reassign the company default to another profile before deleting it.",
+    "deleteBody": "This permanently deletes the profile and removes {{count}} {{count, plural, one {assignment} other {assignments}}.",
+    "deleteConfirm": "Delete",
+    "reassignBeforeDelete": "Choose another access profile and make it the company default first."
   }
 }

@@ -1301,6 +1301,19 @@
     "uses": "Uses",
     "when": "When"
   },
+  "profileActionDialog": {
+    "archiveBody": "This profile stops applying to {{count}} {{count, plural, one {agent} other {agents}}}. You can restore it later.",
+    "archiveConfirm": "Archive",
+    "archiveTitle": "Archive profile",
+    "deleteBlockedBody": "This profile is the company default. Reassign the company default to another profile before deleting it.",
+    "deleteBody": "This permanently deletes the profile and removes {{count}} {{count, plural, one {assignment} other {assignments}}.",
+    "deleteConfirm": "Delete",
+    "deleteTitle": "Delete profile",
+    "reassignBeforeDelete": "Choose another access profile and make it the company default first.",
+    "restoreBody": "This profile will be active again and can be assigned to agents.",
+    "restoreConfirm": "Restore",
+    "restoreTitle": "Restore profile"
+  },
   "profileDetail": {
     "allowsHeading": "允许的能力",
     "archive": "归档",
@@ -1325,6 +1338,13 @@
     "updateProfileDialogDesc": "更新此配置文件的名称与描述。",
     "updated": "更新于 {{time}}",
     "whoHasIt": "使用者"
+  },
+  "profileDetailRoute": {
+    "accessProfilesBreadcrumb": "Access profiles",
+    "appsBreadcrumb": "Apps",
+    "companyFallback": "Company",
+    "profileDetailBreadcrumb": "Profile detail",
+    "selectCompanyAndProfile": "Select a company and profile."
   },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
@@ -1584,6 +1604,11 @@
     "advancedSetup": "高级设置",
     "developerTools": "开发者工具",
     "selectCompany": "请选择一个公司以打开高级设置。"
+  },
+  "toolsAdminGate": {
+    "body": "Access profiles decide which tools your agents can use. Ask an administrator to set these up, or head back to",
+    "heading": "Access profiles are for administrators",
+    "yourAppsLink": "your apps"
   },
   "training": {
     "loadError": "无法加载训练示例。",

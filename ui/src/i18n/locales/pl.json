@@ -1301,6 +1301,19 @@
     "uses": "Uses",
     "when": "When"
   },
+  "profileActionDialog": {
+    "archiveBody": "This profile stops applying to {{count}} {{count, plural, one {agent} other {agents}}}. You can restore it later.",
+    "archiveConfirm": "Archive",
+    "archiveTitle": "Archive profile",
+    "deleteBlockedBody": "This profile is the company default. Reassign the company default to another profile before deleting it.",
+    "deleteBody": "This permanently deletes the profile and removes {{count}} {{count, plural, one {assignment} other {assignments}}.",
+    "deleteConfirm": "Delete",
+    "deleteTitle": "Delete profile",
+    "reassignBeforeDelete": "Choose another access profile and make it the company default first.",
+    "restoreBody": "This profile will be active again and can be assigned to agents.",
+    "restoreConfirm": "Restore",
+    "restoreTitle": "Restore profile"
+  },
   "profileDetail": {
     "allowsHeading": "What it allows",
     "archive": "Archive",
@@ -1325,6 +1338,13 @@
     "updateProfileDialogDesc": "Update the profile name and description.",
     "updated": "Updated {{time}}",
     "whoHasIt": "Who has it"
+  },
+  "profileDetailRoute": {
+    "accessProfilesBreadcrumb": "Access profiles",
+    "appsBreadcrumb": "Apps",
+    "companyFallback": "Company",
+    "profileDetailBreadcrumb": "Profile detail",
+    "selectCompanyAndProfile": "Select a company and profile."
   },
   "projectWorkspace": {
     "advancedRuntimeJson": "Advanced runtime JSON",
@@ -1584,6 +1604,11 @@
     "advancedSetup": "Advanced setup",
     "developerTools": "Developer tools",
     "selectCompany": "Select a company to open advanced setup."
+  },
+  "toolsAdminGate": {
+    "body": "Access profiles decide which tools your agents can use. Ask an administrator to set these up, or head back to",
+    "heading": "Access profiles are for administrators",
+    "yourAppsLink": "your apps"
   },
   "training": {
     "loadError": "Could not load training examples.",
