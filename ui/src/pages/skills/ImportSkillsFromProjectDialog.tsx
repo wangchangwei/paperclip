@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useTranslation } from "@/i18n";
 import {
   AlertCircle,
   AlertTriangle,
@@ -277,6 +278,7 @@ export function ImportSkillsFromProjectDialog({
   onImportFromPath,
 }: ImportSkillsFromProjectDialogProps) {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
   const toast = useToastActions();
 
   const [step, setStep] = useState<Step>("pick");
@@ -358,17 +360,20 @@ export function ImportSkillsFromProjectDialog({
       const importedCount = result.imported.length;
       toast.pushToast({
         tone: importedCount > 0 ? "success" : "warn",
-        title: importedCount > 0 ? "Skills imported" : "Nothing imported",
+        title: importedCount > 0 ? t("importSkills.skillsImported") : t("importSkills.nothingImported"),
         body:
           importedCount > 0
-            ? `${importedCount} skill${importedCount === 1 ? "" : "s"} imported as references from ${selectedProject?.name ?? "the project"}.`
-            : "No skills were imported.",
+            ? t("importSkills.skillsImportedBody", {
+                count: importedCount,
+                projectName: selectedProject?.name ?? t("importSkills.theProject"),
+              })
+            : t("importSkills.noSkillsImported"),
       });
     },
     onError: (error) => {
       toast.pushToast({
         tone: "error",
-        title: "Import failed",
+        title: t("importSkills.importFailed"),
         body: readableErrorMessage(error),
       });
     },
@@ -470,7 +475,7 @@ export function ImportSkillsFromProjectDialog({
             type="button"
             className="rounded-sm text-muted-foreground opacity-70 transition-opacity hover:opacity-100"
             onClick={handleClose}
-            aria-label="Close import dialog"
+            aria-label={t("importSkills.closeDialog")}
           >
             <X className="h-4 w-4" />
           </button>
@@ -599,6 +604,7 @@ function PickProjectStep({
   onFilterChange,
   onPick,
 }: PickProjectStepProps) {
+  const { t } = useTranslation();
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <div className="border-b border-border/60 px-5 py-3">
@@ -607,16 +613,16 @@ function PickProjectStep({
           <Input
             value={filter}
             onChange={(event) => onFilterChange(event.target.value)}
-            placeholder="Filter projects"
+            placeholder={t("importSkills.filterProjectsPlaceholder")}
             className="pl-7 text-xs"
-            aria-label="Filter projects"
+            aria-label={t("importSkills.filterProjectsAria")}
             data-testid="project-filter"
           />
         </div>
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto">
         {loading ? (
-          <div className="p-6 text-center text-sm text-muted-foreground">Loading projects…</div>
+          <div className="p-6 text-center text-sm text-muted-foreground">{t("importSkills.loadingProjects")}</div>
         ) : error ? (
           <div
             className="m-5 flex items-start gap-3 rounded-md border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive"
@@ -626,9 +632,9 @@ function PickProjectStep({
             <div>{readableErrorMessage(error)}</div>
           </div>
         ) : totalProjects === 0 ? (
-          <EmptyState icon={Layers} message="This company has no projects yet." />
+          <EmptyState icon={Layers} message={t("importSkills.noProjectsYet")} />
         ) : projects.length === 0 ? (
-          <EmptyState icon={Search} message={`No projects match "${filter}".`} />
+          <EmptyState icon={Search} message={t("importSkills.noProjectsMatch", { filter })} />
         ) : (
           <ul className="divide-y divide-border/60" data-testid="project-list">
             {projects.map((project) => {
@@ -681,6 +687,7 @@ function PickProjectStep({
 }
 
 function ScanningStep({ projectName }: { projectName: string }) {
+  const { t } = useTranslation();
   return (
     <div
       className="flex min-h-0 flex-1 flex-col items-center justify-center gap-4 p-8 text-center"
@@ -691,9 +698,11 @@ function ScanningStep({ projectName }: { projectName: string }) {
         <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
       </div>
       <div>
-        <p className="text-sm font-medium">Scanning {projectName || "project"} for skills…</p>
+        <p className="text-sm font-medium">
+          {projectName ? t("importSkills.scanningProject", { projectName }) : t("importSkills.scanningDefault")}
+        </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          Looking in well-known skill folders across each workspace.
+          {t("importSkills.scanningHint")}
         </p>
       </div>
       <div className="flex max-w-md flex-wrap justify-center gap-1.5">
@@ -742,6 +751,7 @@ function SelectStep({
   toggleCandidate,
   renameCandidate,
 }: SelectStepProps) {
+  const { t } = useTranslation();
   if (scanError) {
     const grant = isGrantError(scanError);
     return (
@@ -755,16 +765,16 @@ function SelectStep({
             )}
           </div>
           <p className="text-base font-semibold">
-            {grant ? "You can't import skills here" : "Scan failed"}
+            {grant ? t("importSkills.cantImportSkillsHere") : t("importSkills.scanFailed")}
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
             {grant
-              ? "Your account doesn't have permission to add skills to this company. Ask an owner to grant the skills permission, then try again."
+              ? t("importSkills.cantImportSkillsHereBody")
               : readableErrorMessage(scanError)}
           </p>
           {!grant && (
             <Button variant="outline" size="sm" className="mt-4" onClick={onRetry}>
-              Try again
+              {t("importSkills.tryAgain")}
             </Button>
           )}
         </div>

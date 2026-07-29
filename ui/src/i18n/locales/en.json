@@ -2660,5 +2660,27 @@
     "toastWebhookRotateCouldNot": "Paperclip could not rotate the webhook secret.",
     "toastWebhookTriggerRestored": "Webhook trigger restored",
     "toastWebhookTriggersRestored": "{{count}} webhook triggers restored"
+  },
+  "importSkills": {
+    "skillsImported": "Skills imported",
+    "nothingImported": "Nothing imported",
+    "skillsImportedBody_one": "{{count}} skill imported as a reference from {{projectName}}.",
+    "skillsImportedBody_other": "{{count}} skills imported as references from {{projectName}}.",
+    "theProject": "the project",
+    "noSkillsImported": "No skills were imported.",
+    "importFailed": "Import failed",
+    "closeDialog": "Close import dialog",
+    "filterProjectsPlaceholder": "Filter projects",
+    "filterProjectsAria": "Filter projects",
+    "loadingProjects": "Loading projects…",
+    "noProjectsYet": "This company has no projects yet.",
+    "noProjectsMatch": "No projects match \"{{filter}}\".",
+    "scanningProject": "Scanning {{projectName}} for skills…",
+    "scanningDefault": "Scanning project for skills…",
+    "scanningHint": "Looking in well-known skill folders across each workspace.",
+    "cantImportSkillsHere": "You can't import skills here",
+    "cantImportSkillsHereBody": "Your account doesn't have permission to add skills to this company. Ask an owner to grant the skills permission, then try again.",
+    "scanFailed": "Scan failed",
+    "tryAgain": "Try again"
   }
 }

@@ -1354,6 +1354,28 @@
     "subGoalsTab": "子目标",
     "title": "目标"
   },
+  "importSkills": {
+    "cantImportSkillsHere": "You can't import skills here",
+    "cantImportSkillsHereBody": "Your account doesn't have permission to add skills to this company. Ask an owner to grant the skills permission, then try again.",
+    "closeDialog": "Close import dialog",
+    "filterProjectsAria": "Filter projects",
+    "filterProjectsPlaceholder": "Filter projects",
+    "importFailed": "Import failed",
+    "loadingProjects": "Loading projects…",
+    "noProjectsMatch": "No projects match \"{{filter}}\".",
+    "noProjectsYet": "This company has no projects yet.",
+    "noSkillsImported": "No skills were imported.",
+    "nothingImported": "Nothing imported",
+    "scanFailed": "Scan failed",
+    "scanningDefault": "Scanning project for skills…",
+    "scanningHint": "Looking in well-known skill folders across each workspace.",
+    "scanningProject": "Scanning {{projectName}} for skills…",
+    "skillsImported": "Skills imported",
+    "skillsImportedBody_one": "{{count}} skill imported as a reference from {{projectName}}.",
+    "skillsImportedBody_other": "{{count}} skills imported as references from {{projectName}}.",
+    "theProject": "the project",
+    "tryAgain": "Try again"
+  },
   "inbox": {
     "agents": "Agents",
     "all": "全部",
