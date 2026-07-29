@@ -14,7 +14,7 @@ import { useToast } from "@/context/ToastContext";
 import { RelativeTime } from "@/pages/tools/shared";
 import { cn } from "@/lib/utils";
 import { gatewaysQueryKey } from "../NewGatewayDialog";
-import { maskedTokenLabel, TOKEN_STATUS_LABEL, tokenStatus, type TokenStatus } from "../gateway-helpers";
+import { maskedTokenLabel, tokenStatus, type TokenStatus } from "../gateway-helpers";
 
 const DEFAULT_ACTIONS: ToolMcpGatewayTokenAction[] = ["tools/list", "tools/call"];
 
@@ -31,6 +31,7 @@ const STATUS_CLASS: Record<TokenStatus, string> = {
 
 /** Token status pill, shared by the desktop table and mobile cards. */
 function StatusBadge({ status }: { status: TokenStatus }) {
+  const { t } = useTranslation();
   return (
     <span
       className={cn(
@@ -38,7 +39,7 @@ function StatusBadge({ status }: { status: TokenStatus }) {
         STATUS_CLASS[status],
       )}
     >
-      {TOKEN_STATUS_LABEL[status]}
+      {t(`tokensPanel.status.${status}`)}
     </span>
   );
 }
@@ -95,8 +96,8 @@ export function TokensPanel({
       setOwnerNote("");
       setExpiresAt(defaultExpiry());
       pushToast({
-        title: "Token minted",
-        body: "Copy it now — you won’t see the full value again.",
+        title: t("tokensPanel.tokenMinted"),
+        body: t("tokensPanel.tokenMintedBody"),
         tone: "success",
       });
       onTokenCreated?.(token);
@@ -104,7 +105,7 @@ export function TokensPanel({
     },
     onError: (error) =>
       pushToast({
-        title: "Token was not minted",
+        title: t("tokensPanel.tokenNotMinted"),
         body: error instanceof Error ? error.message : String(error),
         tone: "error",
       }),
@@ -115,12 +116,12 @@ export function TokensPanel({
     onSuccess: async (token) => {
       setConfirmToken(null);
       setRevokeName("");
-      pushToast({ title: "Token revoked", body: `${token.name} can no longer connect.`, tone: "success" });
+      pushToast({ title: t("tokensPanel.tokenRevoked"), body: t("tokensPanel.tokenRevokedBody", { name: token.name }), tone: "success" });
       await invalidate();
     },
     onError: (error) =>
       pushToast({
-        title: "Token was not revoked",
+        title: t("tokensPanel.tokenNotRevoked"),
         body: error instanceof Error ? error.message : String(error),
         tone: "error",
       }),
@@ -129,14 +130,14 @@ export function TokensPanel({
   async function copyToken(value: string) {
     try {
       if (typeof navigator === "undefined" || !navigator.clipboard?.writeText) {
-        throw new Error("Clipboard access is unavailable.");
+        throw new Error(t("tokensPanel.clipboardUnavailable"));
       }
       await navigator.clipboard.writeText(value);
-      pushToast({ title: "Copied", body: "Access token", tone: "success" });
+      pushToast({ title: t("tokensPanel.copied"), body: t("tokensPanel.accessToken"), tone: "success" });
     } catch (error) {
       pushToast({
-        title: "Copy failed",
-        body: error instanceof Error ? error.message : "Clipboard access is unavailable.",
+        title: t("tokensPanel.copyFailed"),
+        body: error instanceof Error ? error.message : t("tokensPanel.clipboardUnavailable"),
         tone: "error",
       });
     }
@@ -160,11 +161,11 @@ export function TokensPanel({
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">
-          Each token is a separate way in. Revoke any one without breaking the others.
+          {t("tokensPanel.blurb")}
         </p>
         <Button size="sm" onClick={() => setMinting((value) => !value)}>
           <Plus className="mr-1.5 h-3.5 w-3.5" />
-          Mint token
+          {t("tokensPanel.mintToken")}
         </Button>
       </div>
 
@@ -196,10 +197,10 @@ export function TokensPanel({
           </div>
           <div className="flex justify-end gap-2">
             <Button type="button" variant="ghost" size="sm" onClick={() => setMinting(false)}>
-              Cancel
+              {t("common.cancel")}
             </Button>
             <Button type="submit" size="sm" disabled={createMutation.isPending || !name.trim()}>
-              {createMutation.isPending ? "Minting…" : "Mint token"}
+              {createMutation.isPending ? t("tokensPanel.minting") : t("tokensPanel.mintToken")}
             </Button>
           </div>
         </form>
@@ -211,11 +212,11 @@ export function TokensPanel({
             <div>
               <div className="text-sm font-semibold text-foreground">{t("tokensPanel.newTokenHeading")}</div>
               <div className="text-xs text-muted-foreground">
-                You won’t see the full value again. Store it in your client’s config or your secret manager.
+                {t("tokensPanel.newTokenBlurb")}
               </div>
             </div>
-            <Button variant="ghost" size="sm" onClick={() => setCreated(null)} aria-label="Dismiss new token">
-              Dismiss
+            <Button variant="ghost" size="sm" onClick={() => setCreated(null)} aria-label={t("tokensPanel.dismissNewToken")}>
+              {t("tokensPanel.dismiss")}
             </Button>
           </div>
           <div className="flex items-center gap-2">
@@ -225,11 +226,11 @@ export function TokensPanel({
             {revealed ? (
               <Button variant="outline" size="sm" onClick={() => void copyToken(created.token)}>
                 <Copy className="mr-1 h-3.5 w-3.5" />
-                Copy
+                {t("tokensPanel.copy")}
               </Button>
             ) : (
               <Button variant="outline" size="sm" onClick={() => setRevealed(true)}>
-                Show
+                {t("tokensPanel.show")}
               </Button>
             )}
           </div>
@@ -238,7 +239,7 @@ export function TokensPanel({
 
       {tokens.length === 0 ? (
         <div className="rounded-md border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
-          No tokens yet. Mint one for the client that will connect to this gateway.
+          {t("tokensPanel.empty")}
         </div>
       ) : (
         <>
@@ -249,10 +250,10 @@ export function TokensPanel({
                 <tr className="border-b border-border bg-muted/40 text-left text-(length:--text-micro) font-semibold uppercase tracking-wide text-muted-foreground">
                   <th className="px-4 py-2.5">{t("tokensPanel.colToken")}</th>
                   <th className="px-4 py-2.5">{t("tokensPanel.colOwner")}</th>
-                  <th className="px-4 py-2.5">Created</th>
-                  <th className="px-4 py-2.5">Last used</th>
-                  <th className="px-4 py-2.5">Expires</th>
-                  <th className="px-4 py-2.5">Status</th>
+                  <th className="px-4 py-2.5">{t("tokensPanel.colCreated")}</th>
+                  <th className="px-4 py-2.5">{t("tokensPanel.colLastUsed")}</th>
+                  <th className="px-4 py-2.5">{t("tokensPanel.colExpires")}</th>
+                  <th className="px-4 py-2.5">{t("tokensPanel.colStatus")}</th>
                   <th className="px-4 py-2.5 text-right" />
                 </tr>
               </thead>
@@ -272,7 +273,7 @@ export function TokensPanel({
                         {token.lastUsedAt ? <RelativeTime value={token.lastUsedAt} /> : "—"}
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">
-                        {token.revokedAt ? "—" : token.expiresAt ? <RelativeTime value={token.expiresAt} /> : "no expiry"}
+                        {token.revokedAt ? "—" : token.expiresAt ? <RelativeTime value={token.expiresAt} /> : t("tokensPanel.noExpiry")}
                       </td>
                       <td className="px-4 py-3">
                         <StatusBadge status={status} />
@@ -288,7 +289,7 @@ export function TokensPanel({
                               setRevokeName("");
                             }}
                           >
-                            Revoke
+                            {t("tokensPanel.revoke")}
                           </Button>
                         ) : null}
                       </td>
@@ -314,16 +315,16 @@ export function TokensPanel({
                     <StatusBadge status={status} />
                   </div>
                   <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                    <TokenField label="Owner" value={token.clientLabel || token.ownerNote || "—"} />
-                    <TokenField label="Created" value={<RelativeTime value={token.createdAt} />} />
+                    <TokenField label={t("tokensPanel.colOwner")} value={token.clientLabel || token.ownerNote || "—"} />
+                    <TokenField label={t("tokensPanel.colCreated")} value={<RelativeTime value={token.createdAt} />} />
                     <TokenField
-                      label="Last used"
+                      label={t("tokensPanel.colLastUsed")}
                       value={token.lastUsedAt ? <RelativeTime value={token.lastUsedAt} /> : "—"}
                     />
                     <TokenField
-                      label="Expires"
+                      label={t("tokensPanel.colExpires")}
                       value={
-                        token.revokedAt ? "—" : token.expiresAt ? <RelativeTime value={token.expiresAt} /> : "no expiry"
+                        token.revokedAt ? "—" : token.expiresAt ? <RelativeTime value={token.expiresAt} /> : t("tokensPanel.noExpiry")
                       }
                     />
                   </dl>
@@ -337,7 +338,7 @@ export function TokensPanel({
                         setRevokeName("");
                       }}
                     >
-                      Revoke
+                      {t("tokensPanel.revoke")}
                     </Button>
                   ) : null}
                 </div>
@@ -349,24 +350,23 @@ export function TokensPanel({
 
       <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
         <KeyRound className="h-3.5 w-3.5" />
-        Every mint, reveal, and revoke is recorded in Activity.
+        {t("tokensPanel.activityHint")}
       </p>
 
       {confirmToken ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" role="dialog" aria-modal="true">
           <div className="w-full max-w-md space-y-3 rounded-lg border border-border bg-card p-5 shadow-lg">
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Revoke this token?</h3>
+              <h3 className="text-sm font-semibold text-foreground">{t("tokensPanel.revokeTitle")}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Any client using <span className="font-medium text-foreground">{confirmToken.name}</span> goes
-                silent immediately. This can’t be undone. Type the token name to confirm.
+                {t("tokensPanel.revokeBlurb", { name: confirmToken.name })}
               </p>
             </div>
             <Input
               value={revokeName}
               onChange={(e) => setRevokeName(e.target.value)}
               placeholder={confirmToken.name}
-              aria-label="Type the token name to confirm"
+              aria-label={t("tokensPanel.revokeConfirmAria")}
               autoFocus
             />
             <div className="flex justify-end gap-2">
@@ -378,7 +378,7 @@ export function TokensPanel({
                   setRevokeName("");
                 }}
               >
-                Cancel
+                {t("common.cancel")}
               </Button>
               <Button
                 variant="destructive"
@@ -386,7 +386,7 @@ export function TokensPanel({
                 disabled={revokeName.trim() !== confirmToken.name || revokeMutation.isPending}
                 onClick={() => revokeMutation.mutate(confirmToken.id)}
               >
-                {revokeMutation.isPending ? "Revoking…" : "Revoke token"}
+                {revokeMutation.isPending ? t("tokensPanel.revoking") : t("tokensPanel.revokeToken")}
               </Button>
             </div>
           </div>
