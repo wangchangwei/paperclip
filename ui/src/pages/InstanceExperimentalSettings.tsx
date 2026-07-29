@@ -8,6 +8,7 @@ import type {
   ManagedSettingMetadata,
   PatchInstanceExperimentalSettings,
 } from "@paperclipai/shared";
+import { useTranslation } from "@/i18n";
 import { instanceSettingsApi } from "@/api/instanceSettings";
 import { getWorktreeInstanceId, isWorktreeRuntime } from "../lib/worktree-branding";
 import { useBreadcrumbs } from "../context/BreadcrumbContext";
@@ -148,24 +149,24 @@ function RecoveryPreviewDialog({
   onEnableAndRun: () => void;
   isPending: boolean;
 }) {
+  const { t } = useTranslation();
   const count = preview?.recoverableFindings ?? 0;
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-3xl">
         <DialogHeader>
-          <DialogTitle>Confirm auto-recovery</DialogTitle>
+          <DialogTitle>{t("instanceExperimentalSettings.confirmAutoRecovery")}</DialogTitle>
           <DialogDescription>
             {preview
-              ? `${count} recovery ${count === 1 ? "task" : "tasks"} match the last ${preview.lookbackHours} hours.`
-              : "Checking recovery candidates before enabling."}
+              ? t("instanceExperimentalSettings.recoveryMatch", { count, hours: preview.lookbackHours })
+              : t("instanceExperimentalSettings.checkingRecoveryCandidates")}
           </DialogDescription>
         </DialogHeader>
 
         <div className="max-h-(--sz-calc-36) space-y-3 overflow-y-auto pr-1">
           {preview && preview.items.length === 0 ? (
             <div className="rounded-md border border-border bg-muted/30 px-3 py-4 text-sm text-muted-foreground">
-              No recovery tasks would be created right now. Auto-recovery can still run for future liveness incidents in
-              this window.
+              {t("instanceExperimentalSettings.noRecoveryTasks")}
             </div>
           ) : null}
 
@@ -199,21 +200,21 @@ function RecoveryPreviewDialog({
 
         {preview && preview.skippedOutsideLookback > 0 ? (
           <p className="text-xs text-muted-foreground">
-            {preview.skippedOutsideLookback} current{" "}
-            {preview.skippedOutsideLookback === 1 ? "finding is" : "findings are"} outside the configured lookback and
-            will not be touched.
+            {preview.skippedOutsideLookback} {t("instanceExperimentalSettings.skippedOutsideLookback", {
+              count: preview.skippedOutsideLookback,
+            })}
           </p>
         ) : null}
 
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)} disabled={isPending}>
-            Cancel
+            {t("common.cancel")}
           </Button>
           <Button variant="outline" onClick={onEnableOnly} disabled={isPending || !preview}>
-            Enable only
+            {t("instanceExperimentalSettings.enableOnly")}
           </Button>
           <Button onClick={onEnableAndRun} disabled={isPending || !preview}>
-            {count > 0 ? `Enable and create ${count}` : "Enable"}
+            {count > 0 ? t("instanceExperimentalSettings.enableAndCreate", { count }) : t("instanceExperimentalSettings.enable")}
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -222,6 +223,7 @@ function RecoveryPreviewDialog({
 }
 
 export function InstanceExperimentalSettings() {
+  const { t } = useTranslation();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
   const [actionError, setActionError] = useState<string | null>(null);
@@ -236,11 +238,11 @@ export function InstanceExperimentalSettings() {
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: "Settings", href: "/company/settings" },
-      { label: "Instance settings", href: "/company/settings/instance/general" },
-      { label: "Experimental" },
+      { label: t("instanceExperimentalSettings.breadcrumbSettings"), href: "/company/settings" },
+      { label: t("instanceExperimentalSettings.breadcrumbInstance"), href: "/company/settings/instance/general" },
+      { label: t("instanceExperimentalSettings.breadcrumbExperimental") },
     ]);
-  }, [setBreadcrumbs]);
+  }, [setBreadcrumbs, t]);
 
   const experimentalQuery = useQuery({
     queryKey: queryKeys.instance.experimentalSettings,

@@ -2521,5 +2521,21 @@
     "noProject": "No project",
     "workspace": "Workspace",
     "noWorkspace": "No workspace"
+  },
+  "instanceExperimentalSettings": {
+    "breadcrumbSettings": "Settings",
+    "breadcrumbInstance": "Instance settings",
+    "breadcrumbExperimental": "Experimental",
+    "confirmAutoRecovery": "Confirm auto-recovery",
+    "recoveryMatch_one": "{{count}} recovery task matches the last {{hours}} hours.",
+    "recoveryMatch_other": "{{count}} recovery tasks match the last {{hours}} hours.",
+    "checkingRecoveryCandidates": "Checking recovery candidates before enabling.",
+    "noRecoveryTasks": "No recovery tasks would be created right now. Auto-recovery can still run for future liveness incidents in this window.",
+    "skippedOutsideLookback_one": "current finding is outside the configured lookback and will not be touched.",
+    "skippedOutsideLookback_other": "current findings are outside the configured lookback and will not be touched.",
+    "enableOnly": "Enable only",
+    "enableAndCreate_one": "Enable and create {{count}}",
+    "enableAndCreate_other": "Enable and create {{count}}",
+    "enable": "Enable"
   }
 }
