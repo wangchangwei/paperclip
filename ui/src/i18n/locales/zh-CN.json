@@ -1504,6 +1504,7 @@
     "blockedBy": "被{{label}}阻塞",
     "boardColumnLimit": "某些看板列最多显示{{limit}}个任务。细化筛选或搜索以显示其余任务。",
     "boardView": "看板视图",
+    "breadcrumbDefault": "Task",
     "cancelled": "已取消",
     "cardsPerColumn": "每列卡片数",
     "chooseTaskColumns": "选择要显示的任务列",

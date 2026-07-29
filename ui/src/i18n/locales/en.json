@@ -678,7 +678,8 @@
     "viewMode": {
       "board": "Board view",
       "list": "List view"
-    }
+    },
+    "breadcrumbDefault": "Task"
   },
   "nav": {
     "badge": {

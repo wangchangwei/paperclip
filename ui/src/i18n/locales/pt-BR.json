@@ -1504,6 +1504,7 @@
     "blockedBy": "blocked by {{label}}",
     "boardColumnLimit": "Some board columns are showing up to {{limit}} tasks. Refine filters or search to reveal the rest.",
     "boardView": "Board view",
+    "breadcrumbDefault": "Task",
     "cancelled": "Cancelled",
     "cardsPerColumn": "Cards per column",
     "chooseTaskColumns": "Choose which task columns stay visible",
