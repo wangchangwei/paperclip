@@ -690,7 +690,7 @@
       "selectSkillToInspect": "Select a catalog skill to inspect.",
       "updateFromCatalog": "Update from catalog"
     },
-    "comingLater": "Coming later.",
+    "comingLater": "即将推出。",
     "compatChip": {
       "invalid": "Invalid",
       "invalidTooltip": "This skill cannot be installed — content is not valid Agent Skills markdown.",
@@ -704,7 +704,7 @@
       "alphabetical": "Alphabetical",
       "browseCatalog": "Browse catalog",
       "categories": "Categories",
-      "categoriesPlaceholder": "engineering, review, memory",
+      "categoriesPlaceholder": "工程, 审核, 记忆",
       "clearFilters": "Clear filters",
       "createNewSkill": "Create new skill",
       "discoverInstallForkShare": "Discover, install, fork, share",
@@ -719,15 +719,15 @@
       "noSkillsInTab": "No skills in this tab yet.",
       "noSkillsMatchFilters": "No skills match your filters.",
       "noSkillsYetCreateOrInstall": "No skills yet. Create one or install from the catalog.",
-      "promisePlaceholder": "One-line promise for the skill",
+      "promisePlaceholder": "一句话描述此技能的作用",
       "recentlyUpdated": "Recently updated",
       "searchSkillsAuthorsCategories": "Search skills, authors, categories…",
       "select": "Select",
       "skillCount_one": "{{count}} skill",
       "skillCount_other": "{{count}} skills",
-      "skillNamePlaceholder": "Skill name",
+      "skillNamePlaceholder": "技能名称",
       "skillsStore": "Skills Store",
-      "slugPlaceholder": "skill-shortname",
+      "slugPlaceholder": "技能短名",
       "sort": "Sort",
       "source": "Source",
       "studio": "Studio",
@@ -739,13 +739,13 @@
     "provenanceBadge": {
       "tooltip": "Installed from the app-shipped skills catalog. Provenance is signed by package version and content hash."
     },
-    "publicLink": "Public link",
-    "reviewRequired": "Review required",
-    "safe": "Safe",
-    "scope": "Scope",
-    "selectFileToInspect": "Select a file to inspect.",
-    "sharing": "Sharing",
-    "sourceLabel": "Source",
+    "publicLink": "公开链接",
+    "reviewRequired": "需要审核",
+    "safe": "安全",
+    "scope": "范围",
+    "selectFileToInspect": "请选择要查看的文件。",
+    "sharing": "共享",
+    "sourceLabel": "来源",
     "sourceMeta": {
       "catalogManaged": "Catalog managed",
       "folderManaged": "Folder managed",
@@ -754,7 +754,7 @@
       "skillsShManaged": "skills.sh managed",
       "urlManaged": "URL managed"
     },
-    "trust": "Trust",
+    "trust": "信任",
     "trustChip": {
       "includesAssets": "Includes assets",
       "includesAssetsTooltip": "Ships images, fonts, or other non-script files.",
@@ -763,8 +763,8 @@
       "markdownOnly": "Markdown only",
       "markdownOnlyTooltip": "Text only — no scripts, no binaries, no assets."
     },
-    "typeBundled": "Bundled",
-    "typeOptional": "Optional"
+    "typeBundled": "内置",
+    "typeOptional": "可选"
   },
   "connectionDialogs": {
     "addAppTitle": "添加应用",
