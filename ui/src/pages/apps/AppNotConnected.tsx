@@ -5,6 +5,7 @@ import { Navigate, useNavigate, useParams } from "@/lib/router";
 import { useCompany } from "@/context/CompanyContext";
 import { useBreadcrumbs } from "@/context/BreadcrumbContext";
 import { useToast } from "@/context/ToastContext";
+import { useTranslation } from "@/i18n";
 import { queryKeys } from "@/lib/queryKeys";
 import { timeAgo } from "@/lib/timeAgo";
 import { toolsApi } from "@/api/tools";
@@ -24,6 +25,7 @@ import { ReviewPanel } from "./app-detail/ReviewPanel";
 import { appApplicationTabHref, appTabHref, appTabLabel, isAppTabKey, type AppTabKey } from "./app-tabs";
 
 export function AppNotConnected() {
+  const { t } = useTranslation();
   const { applicationId = "", tab } = useParams<{ applicationId: string; tab?: string }>();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -69,40 +71,40 @@ export function AppNotConnected() {
     enabled: !!selectedCompanyId && activeTab === "activity",
   });
 
-  const appName = application?.name ?? "App";
+  const appName = application?.name ?? t("appNotConnected.appFallback");
   useEffect(() => {
     if (!activeTab) return;
     setBreadcrumbs([
-      { label: selectedCompany?.name ?? "Company", href: "/dashboard" },
-      { label: "Apps", href: "/apps" },
+      { label: selectedCompany?.name ?? t("appNotConnected.company"), href: "/dashboard" },
+      { label: t("appNotConnected.apps"), href: "/apps" },
       { label: appName, href: appApplicationTabHref(applicationId, "setup") },
       { label: appTabLabel(activeTab) },
     ]);
     return () => setBreadcrumbs([]);
-  }, [setBreadcrumbs, selectedCompany?.name, appName, applicationId, activeTab]);
+  }, [setBreadcrumbs, selectedCompany?.name, appName, applicationId, activeTab, t]);
 
   const remove = useMutation({
     mutationFn: () => toolsApi.updateApplication(applicationId, { status: "archived" }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.tools.applications(selectedCompanyId ?? "__none__") });
       pushToast({
-        title: "App removed",
-        body: `${appName} no longer shows in your apps. You can connect it again any time.`,
+        title: t("appNotConnected.appRemoved"),
+        body: t("appNotConnected.appRemovedBody", { appName }),
         tone: "success",
       });
       navigate("/apps");
     },
     onError: (error) => {
       pushToast({
-        title: "Couldn’t remove the app",
-        body: error instanceof Error ? error.message : "Please try again.",
+        title: t("appNotConnected.removeFailed"),
+        body: error instanceof Error ? error.message : t("appNotConnected.tryAgain"),
         tone: "error",
       });
     },
   });
 
   if (!selectedCompanyId) {
-    return <div className="p-6 text-sm text-muted-foreground">Select a company to manage apps.</div>;
+    return <div className="p-6 text-sm text-muted-foreground">{t("appNotConnected.emptyCompany")}</div>;
   }
   if (!applicationId || !activeTab) {
     return <Navigate to={applicationId ? appApplicationTabHref(applicationId, "setup") : "/apps"} replace />;
@@ -118,8 +120,10 @@ export function AppNotConnected() {
   if (!application) {
     return (
       <div className="max-w-3xl space-y-3 p-6 text-sm text-muted-foreground">
-        <p>This app doesn’t exist anymore.</p>
-        <Button variant="outline" size="sm" onClick={() => navigate("/apps")}>Back to apps</Button>
+        <p>{t("appNotConnected.appGone")}</p>
+        <Button variant="outline" size="sm" onClick={() => navigate("/apps")}>
+          {t("appNotConnected.backToApps")}
+        </Button>
       </div>
     );
   }
@@ -136,7 +140,7 @@ export function AppNotConnected() {
       gallery.find((entry) => appDefinitionName(entry).toLowerCase() === application.name.toLowerCase()),
     );
 
-  const previousAddress = previousConnection ? connectionAddress(previousConnection) : null;
+  const previousAddress = previousConnection ? connectionAddress(previousConnection, t) : null;
   const connectHref = reconnectHref({
     applicationId,
     appName: application.name,
@@ -159,8 +163,8 @@ export function AppNotConnected() {
           <ReviewPanel connectionId={previousConnection.id} />
         ) : (
           <EmptyTab
-            title="Nothing is waiting for your OK right now."
-            body="Review requests will appear here after this app is connected."
+            title={t("appNotConnected.reviewEmptyTitle")}
+            body={t("appNotConnected.reviewEmptyBody")}
           />
         )
       )}
@@ -169,8 +173,8 @@ export function AppNotConnected() {
       )}
       {activeTab === "test" && (
         <EmptyTab
-          title="Reconnect to test this app."
-          body="Testing becomes available after this app is connected again."
+          title={t("appNotConnected.testEmptyTitle")}
+          body={t("appNotConnected.testEmptyBody")}
         />
       )}
       {activeTab === "activity" && (
@@ -220,6 +224,7 @@ function ApplicationHeader({
   description: string | null;
   logoUrl: string | undefined;
 }) {
+  const { t } = useTranslation();
   return (
     <header className="flex flex-wrap items-center gap-4">
       <AppLogo name={applicationName} logoUrl={logoUrl} size={48} />
@@ -227,7 +232,7 @@ function ApplicationHeader({
         <div className="flex items-center gap-2">
           <h1 className="truncate text-2xl font-bold tracking-tight">{applicationName}</h1>
           <span className="inline-flex items-center rounded-full border border-border bg-background px-2 py-0.5 text-xs font-medium text-muted-foreground">
-            Not connected
+            {t("appNotConnected.notConnected")}
           </span>
         </div>
         {description && (
@@ -247,22 +252,23 @@ function SetupTab({
   previousAddress: string | null;
   onConnect: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="space-y-6">
       <section className="rounded-xl border border-border bg-card px-5 py-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h2 className="text-sm font-bold text-foreground">
-              {previousConnection ? "Reconnect this app" : "Connect this app"}
+              {previousConnection ? t("appNotConnected.reconnectTitle") : t("appNotConnected.connectTitle")}
             </h2>
             <p className="mt-0.5 text-sm text-muted-foreground">
               {previousConnection
-                ? "We kept the previous setup. Add a working key to bring it back online."
-                : "Agents can't use it until it's connected."}
+                ? t("appNotConnected.reconnectBlurb")
+                : t("appNotConnected.connectBlurb")}
             </p>
           </div>
           <Button onClick={onConnect}>
-            {previousConnection ? "Reconnect" : "Connect"}
+            {previousConnection ? t("appNotConnected.reconnect") : t("appNotConnected.connect")}
           </Button>
         </div>
       </section>
@@ -281,22 +287,23 @@ function PreviousSetup({
   connection: ToolConnection;
   previousAddress: string | null;
 }) {
+  const { t } = useTranslation();
   return (
     <section className="rounded-xl border border-border bg-card px-5 py-4">
-      <h2 className="text-sm font-bold text-foreground">Previous setup</h2>
+      <h2 className="text-sm font-bold text-foreground">{t("appNotConnected.previousSetup")}</h2>
       {connection.healthMessage && (
         <p className="mt-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-700 dark:text-amber-300">
-          Last error: {connection.healthMessage}
+          {t("appNotConnected.lastError", { message: connection.healthMessage })}
         </p>
       )}
       <dl className="mt-3 grid gap-2 text-xs sm:grid-cols-(--gtc-59)">
-        <dt className="text-muted-foreground">Address</dt>
+        <dt className="text-muted-foreground">{t("appNotConnected.address")}</dt>
         <dd className="break-all font-mono text-foreground">{previousAddress}</dd>
-        <dt className="text-muted-foreground">Connection type</dt>
-        <dd className="text-foreground">{connectionTransportLabel(connection.transport)}</dd>
-        <dt className="text-muted-foreground">Last used</dt>
+        <dt className="text-muted-foreground">{t("appNotConnected.connectionType")}</dt>
+        <dd className="text-foreground">{connectionTransportLabel(connection.transport, t)}</dd>
+        <dt className="text-muted-foreground">{t("appNotConnected.lastUsed")}</dt>
         <dd className="text-foreground">
-          {connection.lastUsedAt ? timeAgo(connection.lastUsedAt) : "Never"}
+          {connection.lastUsedAt ? timeAgo(connection.lastUsedAt) : t("appNotConnected.never")}
         </dd>
       </dl>
     </section>
@@ -304,15 +311,16 @@ function PreviousSetup({
 }
 
 function PermissionsTab({ previousConnection }: { previousConnection: ToolConnection | null }) {
+  const { t } = useTranslation();
   return (
     <section className="rounded-xl border border-border bg-card px-5 py-4">
-      <h2 className="text-sm font-bold text-foreground">Permissions paused</h2>
+      <h2 className="text-sm font-bold text-foreground">{t("appNotConnected.permissionsPaused")}</h2>
       <p className="mt-1 text-sm text-muted-foreground">
-        Reconnect this app to edit who can use it and which actions need a human first.
+        {t("appNotConnected.permissionsBlurb")}
       </p>
       {previousConnection && (
         <p className="mt-3 text-xs text-muted-foreground">
-          Previous setup is retained for reconnect, but access controls stay read-only until the app is online.
+          {t("appNotConnected.permissionsReadOnly")}
         </p>
       )}
     </section>
@@ -332,14 +340,15 @@ function AdvancedTab({
   removing: boolean;
   onRemove: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="space-y-6">
       {previousConnection ? (
         <PreviousSetup connection={previousConnection} previousAddress={previousAddress} />
       ) : (
         <EmptyTab
-          title="No previous connection details"
-          body="Technical details will appear here after this app is connected."
+          title={t("appNotConnected.noPreviousTitle")}
+          body={t("appNotConnected.noPreviousBody")}
         />
       )}
       <DangerZone appName={appName} removing={removing} onRemove={onRemove} />
