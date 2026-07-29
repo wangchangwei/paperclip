@@ -1346,6 +1346,17 @@
     "profileDetailBreadcrumb": "Profile detail",
     "selectCompanyAndProfile": "Select a company and profile."
   },
+  "profileWizard": {
+    "assignToAgents": "Assign to agents",
+    "companyDefault": "Make this the company default",
+    "descriptionOptional": "Description (optional)",
+    "descriptionPlaceholder": "What is this profile for?",
+    "moreTargets": "More targets",
+    "namePlaceholder": "e.g. Everyday work",
+    "noCopyProfileYet": "You don't have another profile to copy yet.",
+    "startFrom": "Start from",
+    "whichProfile": "Which profile?"
+  },
   "profilesIndex": {
     "checkAgentAccessDesc": "See exactly which tools an agent can use right now, and which profile allows each one.",
     "checkAgentAccessTitle": "Check an agent's access",

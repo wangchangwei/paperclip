@@ -1346,6 +1346,17 @@
     "profileDetailBreadcrumb": "配置文件详情",
     "selectCompanyAndProfile": "请选择公司和配置文件。"
   },
+  "profileWizard": {
+    "assignToAgents": "Assign to agents",
+    "companyDefault": "Make this the company default",
+    "descriptionOptional": "Description (optional)",
+    "descriptionPlaceholder": "What is this profile for?",
+    "moreTargets": "More targets",
+    "namePlaceholder": "e.g. Everyday work",
+    "noCopyProfileYet": "You don't have another profile to copy yet.",
+    "startFrom": "Start from",
+    "whichProfile": "Which profile?"
+  },
   "profilesIndex": {
     "checkAgentAccessDesc": "查看当前 Agent 可使用的工具,以及每个工具来自哪个配置文件。",
     "checkAgentAccessTitle": "查看 Agent 访问权限",

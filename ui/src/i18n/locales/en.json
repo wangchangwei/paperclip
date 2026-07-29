@@ -1627,5 +1627,16 @@
     "rowMenuArchive": "Archive",
     "emptyTitle": "Create your first access profile",
     "emptyBody": "Pick a starting point. You can fine-tune exactly which tools it allows in the next step."
+  },
+  "profileWizard": {
+    "startFrom": "Start from",
+    "whichProfile": "Which profile?",
+    "noCopyProfileYet": "You don't have another profile to copy yet.",
+    "namePlaceholder": "e.g. Everyday work",
+    "descriptionOptional": "Description (optional)",
+    "descriptionPlaceholder": "What is this profile for?",
+    "companyDefault": "Make this the company default",
+    "assignToAgents": "Assign to agents",
+    "moreTargets": "More targets"
   }
 }
