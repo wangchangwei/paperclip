@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useTranslation } from "@/i18n";
 import {
   AlertCircle,
   AlertTriangle,
@@ -339,6 +340,7 @@ export function ImportFromVaultDialog({
   onManageVaults,
 }: ImportFromVaultDialogProps) {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
   const toast = useToastActions();
   const awsVaults = useMemo(() => awsVaultOptions(providerConfigs), [providerConfigs]);
   const eligible = useMemo(() => eligibleVaults(providerConfigs), [providerConfigs]);
@@ -477,21 +479,25 @@ export function ImportFromVaultDialog({
         awsVaults.find((vault) => vault.id === vaultId)?.displayName ?? "AWS";
       if (result.errorCount === draftList.length && result.errorCount > 0) {
         toast.pushToast({
-          title: "Import failed",
-          body: `No secrets were imported from ${vaultName}.`,
+          title: t("importVault.toastImportFailed"),
+          body: t("importVault.toastNoSecretsImportedFrom", { vaultName }),
           tone: "error",
         });
       } else {
         toast.pushToast({
-          title: result.errorCount > 0 ? "Import completed with errors" : "Import complete",
-          body: `${result.importedCount} created · ${result.skippedCount} skipped · ${result.errorCount} failed`,
+          title: result.errorCount > 0 ? t("importVault.toastImportCompletedWithErrors") : t("importVault.toastImportComplete"),
+          body: t("importVault.toastImportBody", {
+            imported: result.importedCount,
+            skipped: result.skippedCount,
+            failed: result.errorCount,
+          }),
           tone: result.errorCount > 0 ? "warn" : "success",
         });
       }
     },
     onError: (error) => {
       toast.pushToast({
-        title: "Import failed",
+        title: t("importVault.toastImportFailed"),
         body: readableErrorMessage(error),
         tone: "error",
       });

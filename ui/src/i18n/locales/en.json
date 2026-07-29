@@ -2702,5 +2702,12 @@
   },
   "cases": {
     "breadcrumb": "Cases"
+  },
+  "importVault": {
+    "toastImportFailed": "Import failed",
+    "toastNoSecretsImportedFrom": "No secrets were imported from {{vaultName}}.",
+    "toastImportCompletedWithErrors": "Import completed with errors",
+    "toastImportComplete": "Import complete",
+    "toastImportBody": "{{imported}} created · {{skipped}} skipped · {{failed}} failed"
   }
 }

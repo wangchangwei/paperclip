@@ -1379,6 +1379,13 @@
     "theProject": "the project",
     "tryAgain": "Try again"
   },
+  "importVault": {
+    "toastImportBody": "{{imported}} created · {{skipped}} skipped · {{failed}} failed",
+    "toastImportComplete": "Import complete",
+    "toastImportCompletedWithErrors": "Import completed with errors",
+    "toastImportFailed": "Import failed",
+    "toastNoSecretsImportedFrom": "No secrets were imported from {{vaultName}}."
+  },
   "inbox": {
     "agents": "Agents",
     "all": "All",
