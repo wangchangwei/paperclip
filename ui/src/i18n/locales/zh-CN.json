@@ -1116,6 +1116,10 @@
   "orgChart": {
     "title": "组织架构图"
   },
+  "pasteConfigTab": {
+    "noKeysNeeded": "No keys needed for this one.",
+    "replacementPlaceholder": "Paste replacement value"
+  },
   "permissionsPanel": {
     "actionPermissions": "操作权限",
     "allAgents": "所有代理",

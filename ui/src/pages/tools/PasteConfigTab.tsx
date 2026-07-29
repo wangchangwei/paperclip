@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "@/i18n";
 import { useMutation } from "@tanstack/react-query";
 import { CheckCircle2, KeyRound, Loader2, ShieldCheck } from "lucide-react";
 import type {
@@ -91,6 +92,7 @@ function askFirstLevelsFrom(result: ConnectToolAppResult): string[] {
  * of the two M8 screens where "MCP" vocabulary is allowed (PAP-10827 vocab map).
  */
 export function PasteConfigTab({ companyId }: { companyId: string }) {
+  const { t } = useTranslation();
   const [draftText, setDraftText] = useState("");
   const [preview, setPreview] = useState<McpJsonImportPreview | null>(null);
   const [credentialValues, setCredentialValues] = useState<Record<string, string>>({});
@@ -288,6 +290,7 @@ function DraftCard({
   canCheck: boolean;
   onCheck?: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-lg border border-border bg-card p-4">
       <div className="flex items-center justify-between gap-3">
@@ -319,7 +322,7 @@ function DraftCard({
                   type="password"
                   value={credentialValues[credentialValueKey(draft, field.configPath)] ?? ""}
                   onChange={(event) => onCredentialChange(field.configPath, event.target.value)}
-                  placeholder="Paste replacement value"
+                  placeholder={t("pasteConfigTab.replacementPlaceholder")}
                   className="h-8 max-w-sm text-xs"
                 />
               </div>
@@ -331,7 +334,7 @@ function DraftCard({
           Keys from this config stay draft-only until an admin maps them to an approved template.
         </p>
       ) : (
-        <p className="mt-3 text-xs text-muted-foreground">No keys needed for this one.</p>
+        <p className="mt-3 text-xs text-muted-foreground">{t("pasteConfigTab.noKeysNeeded")}</p>
       )}
 
       {draft.warnings.length > 0 ? (

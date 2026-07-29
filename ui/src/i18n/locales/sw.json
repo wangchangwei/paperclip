@@ -1116,6 +1116,10 @@
   "orgChart": {
     "title": "Org Chart"
   },
+  "pasteConfigTab": {
+    "noKeysNeeded": "No keys needed for this one.",
+    "replacementPlaceholder": "Paste replacement value"
+  },
   "permissionsPanel": {
     "actionPermissions": "Action permissions",
     "allAgents": "All agents",

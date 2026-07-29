@@ -1578,5 +1578,9 @@
   },
   "advancedToolsRoute": {
     "adminOnlyHeading": "Advanced setup is for administrators"
+  },
+  "pasteConfigTab": {
+    "replacementPlaceholder": "Paste replacement value",
+    "noKeysNeeded": "No keys needed for this one."
   }
 }
