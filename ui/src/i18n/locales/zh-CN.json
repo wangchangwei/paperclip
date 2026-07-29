@@ -883,20 +883,20 @@
     "typeOptional": "可选"
   },
   "connectClientDialog": {
-    "accessToken": "Access token",
-    "authHelp": "Authenticate with Authorization: Bearer <token> over streamable HTTP.",
-    "clientsLabel": "Clients",
-    "description": "Pick how you’ll point your client at this gateway.",
+    "accessToken": "访问 token",
+    "authHelp": "使用 Authorization: Bearer <token> 通过 streamable HTTP 进行认证。",
+    "clientsLabel": "客户端",
+    "description": "选择将客户端指向此 Gateway 的方式。",
     "endpointUrl": "Endpoint URL",
-    "noSnippets": "No client snippets available for this gateway.",
-    "noTokenMint": "Mint a token on the Tokens tab, then paste it where the snippet shows Bearer …. You won’t see a token’s full value again after it’s created.",
-    "rawUrl": "Raw URL",
-    "show": "Show",
-    "snippetConfigLabel": "{{label}} config",
-    "title": "Connect a client",
+    "noSnippets": "此 Gateway 暂无可用的客户端 snippets。",
+    "noTokenMint": "请到「{{tokensLabel}}」标签页生成 token,然后粘贴到 snippet 中的 Bearer … 处。生成后无法再次查看完整 token。",
+    "rawUrl": "原始 URL",
+    "show": "显示",
+    "snippetConfigLabel": "{{label}} 配置",
+    "title": "连接客户端",
     "token": "Token",
-    "tokenSecurityWarning": "Treat this like a password. Anyone with the token can call exactly the tools this gateway allows. If it leaks, revoke it — the client goes silent immediately.",
-    "tokensLabel": "Tokens"
+    "tokenSecurityWarning": "请把 token 当密码对待。拿到 token 的人可调用此 Gateway 允许的任意工具。如泄露请立即撤销——客户端会立刻失效。",
+    "tokensLabel": "Token"
   },
   "connectionDialogs": {
     "addAppTitle": "添加应用",
