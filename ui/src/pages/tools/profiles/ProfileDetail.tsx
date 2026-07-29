@@ -433,9 +433,9 @@ function NewToolsReviewDialog({
           </div>
         )}
         <DialogFooter>
-          <Button variant="ghost" onClick={onClose}>Cancel</Button>
+          <Button variant="ghost" onClick={onClose}>{t("common.cancel")}</Button>
           <Button disabled={pending || loading || tools.length === 0} onClick={onSubmit}>
-            Submit review
+            {t("profileDetail.submitReview")}
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -529,7 +529,7 @@ function Assignments({
     return (
       <div className="rounded-lg border border-dashed border-border px-4 py-5">
         <p className="text-sm font-medium text-foreground">{t("profileDetail.notAssigned")}</p>
-        <p className="text-sm text-muted-foreground">Assign this profile before it changes access.</p>
+        <p className="text-sm text-muted-foreground">{t("profileDetail.assignBeforeChanges")}</p>
       </div>
     );
   }
@@ -565,6 +565,7 @@ function NewToolsSetting({
   disabled: boolean;
   onChange: (value: ToolProfileDefaultAction) => void;
 }) {
+  const { t } = useTranslation();
   const options: Array<{ value: ToolProfileDefaultAction; title: string; body: string }> = [
     { value: "deny", title: "Stay blocked until reviewed", body: "New tools do not become available automatically." },
     { value: "allow", title: "Allowed automatically", body: "New tools from selected apps become available right away." },
@@ -620,14 +621,13 @@ function ProfileDialogs({
   onRestore: () => void;
   onDelete: () => void;
 }) {
+  const { t } = useTranslation();
   const [name, setName] = useState(profile.name);
   const [description, setDescription] = useState(profile.description ?? "");
   const [profileKey, setProfileKey] = useState(profile.profileKey);
   const [copyName, setCopyName] = useState(`${profile.name} copy`);
   const [copyAssignments, setCopyAssignments] = useState(false);
   const [advancedOpen, setAdvancedOpen] = useState(false);
-
-  const { t } = useTranslation();
 
   const duplicateName = allProfiles.some((p) => p.id !== profile.id && p.name.trim().toLowerCase() === name.trim().toLowerCase());
   const duplicateCopyName = allProfiles.some((p) => p.name.trim().toLowerCase() === copyName.trim().toLowerCase());
@@ -641,16 +641,16 @@ function ProfileDialogs({
         <DialogContent>
           <DialogHeader>
             <DialogTitle>{t("profileDetail.editTitle")}</DialogTitle>
-            <DialogDescription>Update the profile name and description.</DialogDescription>
+            <DialogDescription>{t("profileDetail.updateProfileDialogDesc")}</DialogDescription>
           </DialogHeader>
           <div className="space-y-3">
             <div className="space-y-1.5">
-              <Label htmlFor="edit-profile-name">Name</Label>
+              <Label htmlFor="edit-profile-name">{t("common.name")}</Label>
               <Input id="edit-profile-name" value={name} onChange={(e) => setName(e.target.value)} />
-              {duplicateName ? <p className="text-xs text-destructive">Another profile already uses this name.</p> : null}
+              {duplicateName ? <p className="text-xs text-destructive">{t("profileDetail.duplicateName")}</p> : null}
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="edit-profile-description">Description</Label>
+              <Label htmlFor="edit-profile-description">{t("common.description")}</Label>
               <Textarea id="edit-profile-description" value={description} onChange={(e) => setDescription(e.target.value)} rows={3} />
             </div>
             <button type="button" className="text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setAdvancedOpen((v) => !v)}>
@@ -658,16 +658,16 @@ function ProfileDialogs({
             </button>
             {advancedOpen ? (
               <div className="space-y-1.5">
-                <Label htmlFor="edit-profile-key">Identifier</Label>
+                <Label htmlFor="edit-profile-key">{t("profileDetail.identifier")}</Label>
                 <Input id="edit-profile-key" value={profileKey} onChange={(e) => setProfileKey(e.target.value)} className="font-mono text-xs" />
               </div>
             ) : null}
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={onClose}>Cancel</Button>
+            <Button variant="ghost" onClick={onClose}>{t("common.cancel")}</Button>
             <Button disabled={!name.trim() || duplicateName || pending} onClick={() => onUpdate({ name: name.trim(), description: description.trim() || null, profileKey: profileKey.trim() })}>
-              Save
-            </Button>
+                {t("common.save")}
+              </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -679,14 +679,14 @@ function ProfileDialogs({
       <Dialog open={open} onOpenChange={(next) => !next && onClose()}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Duplicate profile</DialogTitle>
-            <DialogDescription>The copy starts unassigned unless you choose to copy assignments too.</DialogDescription>
+            <DialogTitle>{t("profileDetail.duplicateProfileDialogTitle")}</DialogTitle>
+            <DialogDescription>{t("profileDetail.duplicateProfileDialogDesc")}</DialogDescription>
           </DialogHeader>
           <div className="space-y-3">
             <div className="space-y-1.5">
-              <Label htmlFor="copy-profile-name">Name</Label>
+              <Label htmlFor="copy-profile-name">{t("common.name")}</Label>
               <Input id="copy-profile-name" value={copyName} onChange={(e) => setCopyName(e.target.value)} />
-              {duplicateCopyName ? <p className="text-xs text-destructive">Another profile already uses this name.</p> : null}
+              {duplicateCopyName ? <p className="text-xs text-destructive">{t("profileDetail.duplicateName")}</p> : null}
             </div>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={copyAssignments} onChange={(e) => setCopyAssignments(e.target.checked)} />
@@ -694,10 +694,10 @@ function ProfileDialogs({
             </label>
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={onClose}>Cancel</Button>
+            <Button variant="ghost" onClick={onClose}>{t("common.cancel")}</Button>
             <Button disabled={!copyName.trim() || duplicateCopyName || pending} onClick={() => onDuplicate({ name: copyName.trim(), includeAssignments: copyAssignments })}>
-              Duplicate
-            </Button>
+                {t("profileDetail.duplicate")}
+              </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -730,11 +730,12 @@ function RemoveAssignmentDialog({
   onClose: () => void;
   onConfirm: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <Dialog open={Boolean(binding)} onOpenChange={(next) => !next && onClose()}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Remove assignment</DialogTitle>
+          <DialogTitle>{t("profileDetail.removeAssignmentTitle")}</DialogTitle>
           <DialogDescription>
             {binding?.targetType === "company"
               ? "Removing the company default changes access for every agent that relies on it."
@@ -742,8 +743,8 @@ function RemoveAssignmentDialog({
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button variant="ghost" onClick={onClose}>Cancel</Button>
-          <Button disabled={pending} onClick={onConfirm}>Remove</Button>
+          <Button variant="ghost" onClick={onClose}>{t("common.cancel")}</Button>
+          <Button disabled={pending} onClick={onConfirm}>{t("common.remove")}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -1226,7 +1226,16 @@
     "colCapabilities": "Capabilities",
     "colSource": "Source",
     "notAssigned": "Not assigned yet",
-    "editTitle": "Edit profile"
+    "editTitle": "Edit profile",
+    "updateProfileDialogDesc": "Update the profile name and description.",
+    "duplicateName": "Another profile already uses this name.",
+    "identifier": "Identifier",
+    "duplicateProfileDialogTitle": "Duplicate profile",
+    "duplicateProfileDialogDesc": "The copy starts unassigned unless you choose to copy assignments too.",
+    "removeAssignmentTitle": "Remove assignment",
+    "submitReview": "Submit review",
+    "assignBeforeChanges": "Assign this profile before it changes access.",
+    "duplicate": "Duplicate"
   },
   "policiesTab": {
     "testSheetDesc": "Pick an agent and an action to see what Paperclip would do.",
