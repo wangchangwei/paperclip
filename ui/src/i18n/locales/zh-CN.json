@@ -1694,6 +1694,24 @@
     "valueLabel": "Value",
     "whoProvides": "由谁提供值？"
   },
+  "setMyUserSecret": {
+    "description": "This value is yours only. It is used when you are the user responsible for a run that needs {{key}}.",
+    "externalRefDesc": "Points at your own credential in the configured provider. Paperclip stores the reference, not the value.",
+    "externalRefLabel": "External reference",
+    "externalRefPlaceholder": "provider reference or ARN",
+    "noDefinition": "No definition selected",
+    "saveButton": "Save value",
+    "saveFailed": "Failed to save value",
+    "saving": "Saving…",
+    "setValue": "Set your value",
+    "updateButton": "Update value",
+    "updateValue": "Update your value",
+    "valueDesc": "Stored encrypted. Never shown back to anyone, including admins.",
+    "valueLabel": "Your value",
+    "valuePlaceholder": "Paste your token or credential",
+    "valueSaved": "Value saved",
+    "valueUpdated": "Value updated"
+  },
   "settings": {
     "apiKeys": "API密钥",
     "appearance": "外观",

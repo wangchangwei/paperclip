@@ -1825,5 +1825,23 @@
     "defaultTitle": "Set your user secrets",
     "setValue": "Set value",
     "manageAll": "Manage all my secrets"
+  },
+  "setMyUserSecret": {
+    "noDefinition": "No definition selected",
+    "valueUpdated": "Value updated",
+    "valueSaved": "Value saved",
+    "saveFailed": "Failed to save value",
+    "updateValue": "Update your value",
+    "setValue": "Set your value",
+    "description": "This value is yours only. It is used when you are the user responsible for a run that needs {{key}}.",
+    "externalRefLabel": "External reference",
+    "externalRefPlaceholder": "provider reference or ARN",
+    "externalRefDesc": "Points at your own credential in the configured provider. Paperclip stores the reference, not the value.",
+    "valueLabel": "Your value",
+    "valuePlaceholder": "Paste your token or credential",
+    "valueDesc": "Stored encrypted. Never shown back to anyone, including admins.",
+    "saving": "Saving…",
+    "updateButton": "Update value",
+    "saveButton": "Save value"
   }
 }
