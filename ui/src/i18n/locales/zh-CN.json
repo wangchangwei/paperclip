@@ -12,7 +12,7 @@
     "title": "适配器"
   },
   "advancedToolsRoute": {
-    "adminOnlyHeading": "Advanced setup is for administrators"
+    "adminOnlyHeading": "高级设置仅供管理员使用"
   },
   "agentDetail": {
     "invalidReportingChain": "汇报链无效",
