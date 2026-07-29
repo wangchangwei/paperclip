@@ -814,9 +814,18 @@
     "title": "成本"
   },
   "dashboard": {
+    "liveActiveRecentTitle": "Active / recent",
+    "liveEmptyCreateCompany": "Create a company to view live runs.",
+    "liveEmptyMessage": "No active or recent agent runs.",
+    "liveEmptySelectCompany": "Select a company to view live runs.",
+    "livePageBreadcrumb": "Live runs",
+    "livePageSubtitle": "Active runs first, followed by the most recent completed runs.",
+    "livePageTitle": "Live agent runs",
     "liveRuns": "实时运行",
     "liveRuns_one": "{{count}}个实时运行",
     "liveRuns_other": "{{count}}个实时运行",
+    "liveShowingLimit_one": "Showing up to {{count}} run",
+    "liveShowingLimit_other": "Showing up to {{count}} runs",
     "noLiveRuns": "当前没有实时运行。",
     "noStarredProjects": "暂无收藏的项目。",
     "noTasks": "暂无任务。",
@@ -1582,10 +1591,10 @@
     "updated": "Updated",
     "useSecretsByBinding": "Use secrets by binding them to runtime environment variables.",
     "userSecretPresentation": {
-      "userSecretChipLabel": "用户密钥",
-      "valueSet": "已设置",
+      "disabled": "已禁用",
       "notSet": "未设置",
-      "disabled": "已禁用"
+      "userSecretChipLabel": "用户密钥",
+      "valueSet": "已设置"
     },
     "valueLabel": "Value",
     "whoProvides": "由谁提供值？"

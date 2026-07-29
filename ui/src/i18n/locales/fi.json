@@ -814,9 +814,18 @@
     "title": "Costs"
   },
   "dashboard": {
+    "liveActiveRecentTitle": "Active / recent",
+    "liveEmptyCreateCompany": "Create a company to view live runs.",
+    "liveEmptyMessage": "No active or recent agent runs.",
+    "liveEmptySelectCompany": "Select a company to view live runs.",
+    "livePageBreadcrumb": "Live runs",
+    "livePageSubtitle": "Active runs first, followed by the most recent completed runs.",
+    "livePageTitle": "Live agent runs",
     "liveRuns": "Live Runs",
     "liveRuns_one": "{{count}} live run",
     "liveRuns_other": "{{count}} live runs",
+    "liveShowingLimit_one": "Showing up to {{count}} run",
+    "liveShowingLimit_other": "Showing up to {{count}} runs",
     "noLiveRuns": "No live runs right now.",
     "noStarredProjects": "No starred projects yet.",
     "noTasks": "No tasks yet.",
