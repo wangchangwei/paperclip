@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "@/i18n";
 
 import { agentsApi } from "@/api/agents";
 import { AgentIcon } from "@/components/AgentIconPicker";
@@ -22,6 +23,7 @@ export function SummarizerAgentSelect({
   onChange: (agentId: string) => void;
   enabled?: boolean;
 }) {
+  const { t } = useTranslation();
   const agentsQuery = useQuery({
     queryKey: companyId ? queryKeys.agents.list(companyId) : ["agents", "none"],
     queryFn: () => agentsApi.list(companyId!),
@@ -44,7 +46,7 @@ export function SummarizerAgentSelect({
   );
 
   const renderAgent = (option: InlineEntityOption | null) => {
-    if (!option || !option.id) return <span>Summarizer (default)</span>;
+    if (!option || !option.id) return <span>{t("statusCards.summarizerDefault")}</span>;
     const agent = option.id.startsWith("agent:") ? agentById.get(option.id.slice("agent:".length)) : null;
     return (
       <>
@@ -58,10 +60,10 @@ export function SummarizerAgentSelect({
     <InlineEntitySelector
       value={value ? `agent:${value}` : ""}
       options={agentOptions}
-      placeholder="Summarizer (default)"
-      noneLabel="Summarizer (default)"
-      searchPlaceholder="Search agents..."
-      emptyMessage="No agents found."
+      placeholder={t("statusCards.summarizerDefault")}
+      noneLabel={t("statusCards.summarizerDefault")}
+      searchPlaceholder={t("statusCards.searchAgentsPlaceholder")}
+      emptyMessage={t("statusCards.noAgentsFound")}
       onChange={(next) => onChange(next.startsWith("agent:") ? next.slice("agent:".length) : "")}
       className="h-8 text-sm"
       renderTriggerValue={renderAgent}

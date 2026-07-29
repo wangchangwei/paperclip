@@ -1653,5 +1653,28 @@
     "companyDefault": "Make this the company default",
     "assignToAgents": "Assign to agents",
     "moreTargets": "More targets"
+  },
+  "statusCards": {
+    "status": "Status",
+    "untitledCard": "Untitled card",
+    "restore": "Restore",
+    "summarizerDefault": "Summarizer (default)",
+    "searchAgentsPlaceholder": "Search agents...",
+    "noAgentsFound": "No agents found.",
+    "refreshError": "Could not refresh the card.",
+    "runError": "Could not run the card.",
+    "archiveError": "Could not archive the card.",
+    "restoreError": "Could not restore the card.",
+    "newCard": "New card",
+    "loadingCards": "Loading cards...",
+    "loadFailed": "Could not load status cards",
+    "tryAgain": "Try again.",
+    "emptyTitle": "No status cards yet",
+    "emptyMessage": "Create a card to keep a living summary of the issues you care about.",
+    "hideArchived": "Hide archived",
+    "showArchived": "Show archived ({{count}})",
+    "archivedAt": "archived",
+    "lastSummary": "last summary",
+    "lifetime": "lifetime"
   }
 }
