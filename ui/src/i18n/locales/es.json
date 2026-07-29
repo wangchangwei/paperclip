@@ -411,7 +411,9 @@
   },
   "audit": {
     "noMatches": "No activity matches these filters",
+    "notInstalled": "Not installed",
     "nothingYet": "Nothing here yet",
+    "parametersRedacted": "Parameters (redacted)",
     "searchPlaceholder": "Search activity…"
   },
   "auth": {

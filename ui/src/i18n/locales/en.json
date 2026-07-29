@@ -868,7 +868,9 @@
   "audit": {
     "searchPlaceholder": "Search activity…",
     "noMatches": "No activity matches these filters",
-    "nothingYet": "Nothing here yet"
+    "nothingYet": "Nothing here yet",
+    "notInstalled": "Not installed",
+    "parametersRedacted": "Parameters (redacted)"
   },
   "companySettings": {
     "title": "Company Settings",
