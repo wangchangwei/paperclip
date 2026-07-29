@@ -1522,6 +1522,13 @@
     "subIssues": "Sub-issues",
     "totalDuration": "Total duration"
   },
+  "issueChatUxLab": {
+    "eyebrow": "Chat UX Lab",
+    "headerDescription": "This page exercises the real assistant-ui issue chat with fixture-backed messages. Use it to review spacing, chronology, running states, tool rendering, activity rows, queueing, and composer behavior without needing a live issue in progress.",
+    "headerTitle": "Issue chat review surface",
+    "hideComposer": "Hide composer in primary preview",
+    "showComposer": "Show composer in primary preview"
+  },
   "issues": {
     "andMore": "... and {{count}} more",
     "assignee": "Assignee",

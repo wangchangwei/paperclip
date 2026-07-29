@@ -2760,5 +2760,12 @@
     "finishedTimeAgo": "Finished {{minutes}}m ago",
     "showSettledState": "Show settled state",
     "showStreamingState": "Show streaming state"
+  },
+  "issueChatUxLab": {
+    "eyebrow": "Chat UX Lab",
+    "headerTitle": "Issue chat review surface",
+    "headerDescription": "This page exercises the real assistant-ui issue chat with fixture-backed messages. Use it to review spacing, chronology, running states, tool rendering, activity rows, queueing, and composer behavior without needing a live issue in progress.",
+    "hideComposer": "Hide composer in primary preview",
+    "showComposer": "Show composer in primary preview"
   }
 }

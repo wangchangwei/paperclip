@@ -3,6 +3,7 @@
 // are deliberate one-off decoration, reverted from --gradient-extract-*/--shadow-extract-*
 // tokens; the file is on the check-token-gates allowlist in ui/src/index.css.
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -141,6 +142,7 @@ function RotatingReasoningDemo({ intervalMs = 2200 }: { intervalMs?: number }) {
 }
 
 export function IssueChatUxLab() {
+  const { t } = useTranslation();
   const [showComposer, setShowComposer] = useState(true);
 
   return (
@@ -150,13 +152,11 @@ export function IssueChatUxLab() {
           <div className="p-6 sm:p-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/[0.08] px-3 py-1 text-(length:--text-nano) font-semibold uppercase tracking-(--tracking-caps) text-cyan-700 dark:text-cyan-300">
               <FlaskConical className="h-3.5 w-3.5" />
-              Chat UX Lab
+              {t("issueChatUxLab.eyebrow")}
             </div>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight">Issue chat review surface</h1>
+            <h1 className="mt-4 text-3xl font-semibold tracking-tight">{t("issueChatUxLab.headerTitle")}</h1>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
-              This page exercises the real assistant-ui issue chat with fixture-backed messages. Use it to review
-              spacing, chronology, running states, tool rendering, activity rows, queueing, and composer behavior
-              without needing a live issue in progress.
+              {t("issueChatUxLab.headerDescription")}
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-2">
@@ -173,7 +173,7 @@ export function IssueChatUxLab() {
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button variant="outline" size="sm" className="rounded-full" onClick={() => setShowComposer((value) => !value)}>
-                {showComposer ? "Hide composer in primary preview" : "Show composer in primary preview"}
+                {showComposer ? t("issueChatUxLab.hideComposer") : t("issueChatUxLab.showComposer")}
               </Button>
               <a
                 href="#live-execution"
