@@ -472,7 +472,8 @@
     "cancel": "Cancel",
     "retry": "Retry",
     "remove": "Remove",
-    "optional": "optional"
+    "optional": "optional",
+    "loading": "Loading..."
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -1900,5 +1901,20 @@
     "byoConnectDesc": "Paste the URL from a custom or self-hosted MCP server and review its actions before enabling it.",
     "byoConnectAction": "Connect →",
     "developerTools": "Developer tools (advanced)"
+  },
+  "profileWizardRoute": {
+    "company": "Company",
+    "apps": "Apps",
+    "accessProfiles": "Access profiles",
+    "resumeDraft": "Resume draft",
+    "newProfile": "New profile",
+    "emptyCompany": "Select a company to create a profile.",
+    "finishProfile": "Finish your profile",
+    "newAccessProfile": "New access profile",
+    "description": "Choose which tools this profile allows, then assign it to the agents that need them."
+  },
+  "companySettingsPluginPage": {
+    "settings": "Settings",
+    "emptyCompany": "Select a company to view this page."
   }
 }

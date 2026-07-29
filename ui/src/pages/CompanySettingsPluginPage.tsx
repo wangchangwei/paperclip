@@ -4,6 +4,7 @@ import { useBreadcrumbs } from "@/context/BreadcrumbContext";
 import { useCompany } from "@/context/CompanyContext";
 import { PluginSlotMount, usePluginSlots } from "@/plugins/slots";
 import { NotFoundPage } from "./NotFound";
+import { useTranslation } from "@/i18n";
 
 export function CompanySettingsPluginPage() {
   const params = useParams<{
@@ -13,6 +14,7 @@ export function CompanySettingsPluginPage() {
   const { companyPrefix: routeCompanyPrefix, settingsRoutePath } = params;
   const { companies, selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
+  const { t } = useTranslation();
 
   const routeCompany = useMemo(() => {
     if (!routeCompanyPrefix) return null;
@@ -41,20 +43,20 @@ export function CompanySettingsPluginPage() {
   useEffect(() => {
     if (!pageSlot) return;
     setBreadcrumbs([
-      { label: "Settings", href: "/company/settings" },
+      { label: t("companySettingsPluginPage.settings"), href: "/company/settings" },
       { label: pageSlot.displayName },
     ]);
-  }, [pageSlot, setBreadcrumbs]);
+  }, [pageSlot, setBreadcrumbs, t]);
 
   if (!resolvedCompanyId) {
     if (hasInvalidCompanyPrefix) {
       return <NotFoundPage scope="invalid_company_prefix" requestedPrefix={routeCompanyPrefix} />;
     }
-    return <div className="text-sm text-muted-foreground">Select a company to view this page.</div>;
+    return <div className="text-sm text-muted-foreground">{t("companySettingsPluginPage.emptyCompany")}</div>;
   }
 
   if (!settingsRoutePath || isLoading) {
-    return <div className="text-sm text-muted-foreground">Loading...</div>;
+    return <div className="text-sm text-muted-foreground">{t("common.loading")}</div>;
   }
 
   if (errorMessage) {

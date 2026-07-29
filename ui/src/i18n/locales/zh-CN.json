@@ -638,6 +638,7 @@
       "version": "版本",
       "visibility": "可见性"
     },
+    "loading": "Loading...",
     "messages": {
       "confirmDelete": "确定要删除吗？此操作无法撤销。",
       "confirmDiscard": "确定要放弃您的更改吗？",
@@ -760,6 +761,10 @@
   "companySettings": {
     "title": "公司设置",
     "uploadingLogo": "正在上传Logo..."
+  },
+  "companySettingsPluginPage": {
+    "emptyCompany": "Select a company to view this page.",
+    "settings": "Settings"
   },
   "companySkills": {
     "catalog": {
@@ -1517,6 +1522,17 @@
     "noCopyProfileYet": "当前还没有可以复制的其他配置文件。",
     "startFrom": "从模板开始",
     "whichProfile": "复制哪个配置文件？"
+  },
+  "profileWizardRoute": {
+    "accessProfiles": "Access profiles",
+    "apps": "Apps",
+    "company": "Company",
+    "description": "Choose which tools this profile allows, then assign it to the agents that need them.",
+    "emptyCompany": "Select a company to create a profile.",
+    "finishProfile": "Finish your profile",
+    "newAccessProfile": "New access profile",
+    "newProfile": "New profile",
+    "resumeDraft": "Resume draft"
   },
   "profilesIndex": {
     "checkAgentAccessDesc": "查看当前 Agent 可使用的工具,以及每个工具来自哪个配置文件。",
