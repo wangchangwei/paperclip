@@ -413,10 +413,10 @@
     "zapierUrlLabel": "Zapier MCP URL"
   },
   "appsSubNav": {
-    "connected": "已连接",
-    "gateways": "网关",
     "activity": "活动",
-    "ariaLabel": "应用分区"
+    "ariaLabel": "应用分区",
+    "connected": "已连接",
+    "gateways": "网关"
   },
   "audit": {
     "noMatches": "没有活动匹配这些筛选条件",
@@ -1118,6 +1118,23 @@
       "timeline": "时间线",
       "workspaces": "工作区"
     }
+  },
+  "newGatewayDialog": {
+    "createButton": "Create gateway",
+    "creating": "Creating…",
+    "description": "One safe MCP endpoint that exposes only the apps in its access profile. Hand it to a client like Cursor or Claude Desktop.",
+    "descriptionLabel": "Description (optional)",
+    "descriptionPlaceholder": "Who this endpoint is for and when it should be rotated.",
+    "nameLabel": "Name",
+    "namePlaceholder": "CTO agents",
+    "noProfilesWarning": "Create an access profile under Advanced before adding a gateway.",
+    "profileChoose": "Choose a profile",
+    "profileHint": "The profile decides which tools this gateway allows. You can change it later.",
+    "profileLabel": "Access profile",
+    "profileLoading": "Loading profiles…",
+    "title": "New gateway",
+    "toastCreated": "Gateway created",
+    "toastFailed": "Gateway was not created"
   },
   "onboarding": {
     "companyName": "公司名称",

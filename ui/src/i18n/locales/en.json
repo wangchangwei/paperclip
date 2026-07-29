@@ -1691,5 +1691,22 @@
     "gateways": "Gateways",
     "activity": "Activity",
     "ariaLabel": "Apps sections"
+  },
+  "newGatewayDialog": {
+    "title": "New gateway",
+    "description": "One safe MCP endpoint that exposes only the apps in its access profile. Hand it to a client like Cursor or Claude Desktop.",
+    "nameLabel": "Name",
+    "namePlaceholder": "CTO agents",
+    "profileLabel": "Access profile",
+    "profileLoading": "Loading profiles…",
+    "profileChoose": "Choose a profile",
+    "profileHint": "The profile decides which tools this gateway allows. You can change it later.",
+    "descriptionLabel": "Description (optional)",
+    "descriptionPlaceholder": "Who this endpoint is for and when it should be rotated.",
+    "noProfilesWarning": "Create an access profile under Advanced before adding a gateway.",
+    "createButton": "Create gateway",
+    "creating": "Creating…",
+    "toastCreated": "Gateway created",
+    "toastFailed": "Gateway was not created"
   }
 }
