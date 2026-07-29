@@ -1558,6 +1558,12 @@
     "upTo": "Up to",
     "updated": "Updated",
     "useSecretsByBinding": "Use secrets by binding them to runtime environment variables.",
+    "userSecretPresentation": {
+      "userSecretChipLabel": "用户密钥",
+      "valueSet": "已设置",
+      "notSet": "未设置",
+      "disabled": "已禁用"
+    },
     "valueLabel": "Value",
     "whoProvides": "由谁提供值？"
   },
