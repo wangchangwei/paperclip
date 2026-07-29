@@ -704,6 +704,9 @@
     "tabOverview": "Overview",
     "tabProperties": "Properties"
   },
+  "cases": {
+    "breadcrumb": "Cases"
+  },
   "cliAuth": {
     "approveButton": "Approve CLI access",
     "approved": "CLI access approved",

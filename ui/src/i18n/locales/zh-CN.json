@@ -704,6 +704,9 @@
     "tabOverview": "概览",
     "tabProperties": "属性"
   },
+  "cases": {
+    "breadcrumb": "Cases"
+  },
   "cliAuth": {
     "approveButton": "批准 CLI 访问",
     "approved": "CLI 访问已批准",

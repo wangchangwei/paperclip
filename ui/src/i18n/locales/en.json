@@ -2693,5 +2693,8 @@
   "teamCatalog": {
     "breadcrumbOrgChart": "Org Chart",
     "breadcrumbTeams": "Teams"
+  },
+  "cases": {
+    "breadcrumb": "Cases"
   }
 }
