@@ -2227,13 +2227,13 @@
     "breadcrumb": "例程"
   },
   "runTranscriptUxLab": {
-    "eyebrow": "UX Lab",
-    "finishedTimeAgo": "Finished {{minutes}}m ago",
-    "headerDescription": "Built from a real Paperclip development run, then sanitized so no secrets, local paths, or environment details survive into the fixture.",
-    "headerTitle": "Run Transcript Fixtures",
-    "liveNow": "Live now",
-    "showSettledState": "Show settled state",
-    "showStreamingState": "Show streaming state"
+    "eyebrow": "UX 实验室",
+    "finishedTimeAgo": "已结束 {{minutes}} 分钟前",
+    "headerDescription": "基于真实的 Paperclip 开发运行构建，然后经过清理，确保预览中不包含任何密钥、本地路径或环境信息。",
+    "headerTitle": "运行记录预览",
+    "liveNow": "正在直播",
+    "showSettledState": "显示已稳定状态",
+    "showStreamingState": "显示正在直播状态"
   },
   "runYourOwn": {
     "colAdded": "添加时间",
