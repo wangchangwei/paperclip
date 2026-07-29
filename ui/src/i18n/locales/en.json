@@ -1815,5 +1815,10 @@
     "title": "Cloud upstream",
     "emptyCompany": "Select a company to configure cloud upstream.",
     "loading": "Loading experimental settings…"
+  },
+  "executionWorkspace": {
+    "projects": "Projects",
+    "workspaces": "Workspaces",
+    "loading": "Loading workspace…"
   }
 }

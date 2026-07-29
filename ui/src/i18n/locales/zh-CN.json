@@ -923,6 +923,11 @@
     "unauthorized": "您无权执行此操作。",
     "validation": "请检查输入后重试。"
   },
+  "executionWorkspace": {
+    "loading": "Loading workspace…",
+    "projects": "Projects",
+    "workspaces": "Workspaces"
+  },
   "gatewaysTab": {
     "accessProfile": "访问配置",
     "allowedTools": "允许的工具",

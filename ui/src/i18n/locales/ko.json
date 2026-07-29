@@ -923,6 +923,11 @@
     "unauthorized": "You are not authorized to perform this action.",
     "validation": "Please check your input and try again."
   },
+  "executionWorkspace": {
+    "loading": "Loading workspace…",
+    "projects": "Projects",
+    "workspaces": "Workspaces"
+  },
   "gatewaysTab": {
     "accessProfile": "Access profile",
     "allowedTools": "Allowed tools",
