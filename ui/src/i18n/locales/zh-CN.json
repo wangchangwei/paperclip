@@ -1347,15 +1347,15 @@
     "selectCompanyAndProfile": "请选择公司和配置文件。"
   },
   "profilesIndex": {
-    "checkAgentAccessDesc": "See exactly which tools an agent can use right now, and which profile allows each one.",
-    "checkAgentAccessTitle": "Check an agent's access",
-    "colAllows": "Allows",
-    "colAssignedTo": "Assigned to",
-    "colProfile": "Profile",
-    "colUpdated": "Updated",
-    "emptyBody": "Pick a starting point. You can fine-tune exactly which tools it allows in the next step.",
-    "emptyTitle": "Create your first access profile",
-    "rowMenuArchive": "Archive"
+    "checkAgentAccessDesc": "查看当前 Agent 可使用的工具,以及每个工具来自哪个配置文件。",
+    "checkAgentAccessTitle": "查看 Agent 访问权限",
+    "colAllows": "允许",
+    "colAssignedTo": "已分配",
+    "colProfile": "配置文件",
+    "colUpdated": "更新于",
+    "emptyBody": "选择一个起始模板,后续可细调允许使用的具体工具。",
+    "emptyTitle": "创建你的第一个访问配置文件",
+    "rowMenuArchive": "归档"
   },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
