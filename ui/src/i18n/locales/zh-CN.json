@@ -411,9 +411,9 @@
   },
   "audit": {
     "noMatches": "没有活动匹配这些筛选条件",
-    "notInstalled": "Not installed",
+    "notInstalled": "尚未安装",
     "nothingYet": "此处暂无内容",
-    "parametersRedacted": "Parameters (redacted)",
+    "parametersRedacted": "参数(已隐去敏感内容)",
     "searchPlaceholder": "搜索活动…"
   },
   "auth": {
