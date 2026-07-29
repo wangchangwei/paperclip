@@ -756,6 +756,9 @@
     "settings": "Settings",
     "title": "Cloud upstream"
   },
+  "cloudUpstreamUxLab": {
+    "navTitle": "UX lab · cloud upstream"
+  },
   "command": {
     "paletteDescription": "Search for a command to run...",
     "paletteTitle": "Command Palette"

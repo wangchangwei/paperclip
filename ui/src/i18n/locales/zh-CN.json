@@ -756,6 +756,9 @@
     "settings": "设置",
     "title": "云端 Upstream"
   },
+  "cloudUpstreamUxLab": {
+    "navTitle": "UX lab · cloud upstream"
+  },
   "command": {
     "paletteDescription": "搜索要运行的命令...",
     "paletteTitle": "命令面板"

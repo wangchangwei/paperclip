@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useTranslation } from "@/i18n";
 import {
   AlertTriangle,
   CheckCircle2,
@@ -114,9 +115,10 @@ export function CloudUpstreamUxLab() {
 }
 
 function FixtureNav({ active }: { active: FixtureStateKey }) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-md border border-dashed border-border/70 bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
-      <div className="mb-1 font-semibold uppercase tracking-wide">UX lab · cloud upstream</div>
+      <div className="mb-1 font-semibold uppercase tracking-wide">{t("cloudUpstreamUxLab.navTitle")}</div>
       <div className="flex flex-wrap gap-x-3 gap-y-1">
         {PARSE_ORDER.map((key) => (
           <a
