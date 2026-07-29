@@ -2166,6 +2166,9 @@
     "toastWebhookTriggerRestored": "Webhook 触发器已恢复",
     "toastWebhookTriggersRestored": "{{count}} 个 Webhook 触发器已恢复"
   },
+  "routines": {
+    "breadcrumb": "Routines"
+  },
   "runYourOwn": {
     "colAdded": "添加时间",
     "colCommand": "命令",

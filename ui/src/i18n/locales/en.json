@@ -2686,5 +2686,8 @@
   "pipelineSettings": {
     "breadcrumbPipelines": "Pipelines",
     "breadcrumbSettings": "Settings"
+  },
+  "routines": {
+    "breadcrumb": "Routines"
   }
 }

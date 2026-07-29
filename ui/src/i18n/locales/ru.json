@@ -2166,6 +2166,9 @@
     "toastWebhookTriggerRestored": "Webhook trigger restored",
     "toastWebhookTriggersRestored": "{{count}} webhook triggers restored"
   },
+  "routines": {
+    "breadcrumb": "Routines"
+  },
   "runYourOwn": {
     "colAdded": "Added",
     "colCommand": "Command",
