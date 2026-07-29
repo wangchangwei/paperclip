@@ -2197,25 +2197,25 @@
     "title": "Smoke Lab"
   },
   "statusCardDetailDrawer": {
-    "noSummaryYet": "No summary yet",
-    "refresh": "Refresh",
-    "refreshFailed": "Could not refresh the card.",
-    "refreshQueued": "Refresh queued — the Summarizer is updating this card.",
-    "refreshing": "Refreshing…",
-    "runFailed": "Could not run the card.",
-    "runNow": "Run now",
-    "runQueued": "Run queued — the Summarizer is updating this card.",
-    "running": "Running…",
-    "saveFailed": "Could not save settings.",
-    "settingUp": "Setting up…",
-    "untitledCard": "Untitled card",
-    "updated": "Updated"
+    "noSummaryYet": "暂无摘要",
+    "refresh": "刷新",
+    "refreshFailed": "无法刷新卡片。",
+    "refreshQueued": "已加入刷新队列 — Summarizer 正在更新此卡片。",
+    "refreshing": "刷新中...",
+    "runFailed": "无法运行此卡片。",
+    "runNow": "立即运行",
+    "runQueued": "已加入运行队列 — Summarizer 正在更新此卡片。",
+    "running": "运行中...",
+    "saveFailed": "无法保存设置。",
+    "settingUp": "正在初始化...",
+    "untitledCard": "未命名卡片",
+    "updated": "已更新"
   },
   "statusCardPolicy": {
-    "intervalDefault": "on a schedule if changed",
-    "intervalEvery": "every {{minutes}}m if changed",
-    "manualLabel": "manual",
-    "reactiveOnChange": "on change ({{debounce}}s)"
+    "intervalDefault": "按计划(如已变更)",
+    "intervalEvery": "每 {{minutes}} 分钟(如已变更)",
+    "manualLabel": "手动",
+    "reactiveOnChange": "变更时 ({{debounce}}s)"
   },
   "statusCardSettingsForm": {
     "activeHoursAria": "限定到活跃时段",
