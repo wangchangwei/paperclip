@@ -2533,9 +2533,9 @@
     "developerTools": "开发者工具(高级)"
   },
   "systemNoticeUxLab": {
-    "eyebrow": "System Notice Lab",
-    "headerDescription": "Replaces the current pattern where a Paperclip-authored warning renders inside a user-style chat bubble. The notice is one container, system-styled, with hidden-by-default operational metadata. Tone is conveyed by icon, label, and color together so it stays accessible.",
-    "headerTitle": "First-class system notice treatment"
+    "eyebrow": "系统通知实验室",
+    "headerDescription": "取代当前的模式，即由 Paperclip 生成的警告在用户样式的聊天气泡内呈现。通知是一个容器，采用系统样式，操作元数据默认隐藏。语气由图标、标签和颜色共同传达，以保持可访问性。",
+    "headerTitle": "一流的系统通知处理"
   },
   "teamCatalog": {
     "breadcrumbOrgChart": "组织架构",
