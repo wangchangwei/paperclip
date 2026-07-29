@@ -2746,5 +2746,10 @@
     "coverageTitle": "Component Coverage",
     "coverageDescription": "This page should be updated when new UI primitives or app-level patterns ship.",
     "uiPrimitives": "UI primitives"
+  },
+  "inviteUxLab": {
+    "eyebrow": "Invite UX Lab",
+    "headerTitle": "Invite and signup UX review surface",
+    "headerDescription": "This page collects the current invite landing, signup, approval-result, and company invite-management states in one place so styling changes can be reviewed without recreating each backend condition by hand."
   }
 }

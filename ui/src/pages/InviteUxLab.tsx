@@ -3,6 +3,7 @@
 // are deliberate one-off decoration, reverted from --gradient-extract-*/--shadow-extract-*
 // tokens; the file is on the check-token-gates allowlist in ui/src/index.css.
 import type { ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -700,6 +701,7 @@ function CompanyInvitesPreview() {
 }
 
 export function InviteUxLab() {
+  const { t } = useTranslation();
   return (
     <div className="space-y-6">
       <div className="overflow-hidden rounded-(--rad-32) border border-border/70 bg-[linear-gradient(135deg,rgba(8,145,178,0.10),transparent_28%),linear-gradient(180deg,rgba(245,158,11,0.10),transparent_44%),var(--background)] shadow-[0_30px_80px_rgba(15,23,42,0.10)]">
@@ -707,11 +709,11 @@ export function InviteUxLab() {
           <div className="p-6 sm:p-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/[0.08] px-3 py-1 text-(length:--text-nano) font-semibold uppercase tracking-(--tracking-caps) text-cyan-700 dark:text-cyan-300">
               <FlaskConical className="h-3.5 w-3.5" />
-              Invite UX Lab
+              {t("inviteUxLab.eyebrow")}
             </div>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight">Invite and signup UX review surface</h1>
+            <h1 className="mt-4 text-3xl font-semibold tracking-tight">{t("inviteUxLab.headerTitle")}</h1>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
-              This page collects the current invite landing, signup, approval-result, and company invite-management states in one place so styling changes can be reviewed without recreating each backend condition by hand.
+              {t("inviteUxLab.headerDescription")}
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-2">

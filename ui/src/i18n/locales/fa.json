@@ -1501,6 +1501,11 @@
     "notAvailable": "Invite not available",
     "openingCompany": "Opening company..."
   },
+  "inviteUxLab": {
+    "eyebrow": "Invite UX Lab",
+    "headerDescription": "This page collects the current invite landing, signup, approval-result, and company invite-management states in one place so styling changes can be reviewed without recreating each backend condition by hand.",
+    "headerTitle": "Invite and signup UX review surface"
+  },
   "issueChatLongThreadPerf": {
     "baselineMetrics": "Baseline metrics",
     "blurb": "Deterministic local fixture for measuring the current direct-render issue chat path with hundreds of merged thread rows, markdown-heavy assistant bodies, linked runs, documents, sub-issues, and sidebar context.",

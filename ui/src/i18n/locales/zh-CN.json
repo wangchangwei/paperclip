@@ -1501,6 +1501,11 @@
     "notAvailable": "邀请不可用",
     "openingCompany": "正在打开公司..."
   },
+  "inviteUxLab": {
+    "eyebrow": "Invite UX Lab",
+    "headerDescription": "This page collects the current invite landing, signup, approval-result, and company invite-management states in one place so styling changes can be reviewed without recreating each backend condition by hand.",
+    "headerTitle": "Invite and signup UX review surface"
+  },
   "issueChatLongThreadPerf": {
     "baselineMetrics": "基线指标",
     "blurb": "本地化确定性 fixture,用于测量当前直渲染 issue chat 路径,含数百条合并线程行、markdown 富文本助手消息、关联运行、文档、子任务与侧边栏上下文。",
