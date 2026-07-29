@@ -481,7 +481,16 @@
     "starredProjects": "Starred Projects",
     "title": "Dashboard",
     "recentTasks": "Recent Tasks",
-    "noTasks": "No tasks yet."
+    "noTasks": "No tasks yet.",
+    "livePageBreadcrumb": "Live runs",
+    "liveEmptyCreateCompany": "Create a company to view live runs.",
+    "liveEmptySelectCompany": "Select a company to view live runs.",
+    "livePageTitle": "Live agent runs",
+    "livePageSubtitle": "Active runs first, followed by the most recent completed runs.",
+    "liveShowingLimit_one": "Showing up to {{count}} run",
+    "liveShowingLimit_other": "Showing up to {{count}} runs",
+    "liveActiveRecentTitle": "Active / recent",
+    "liveEmptyMessage": "No active or recent agent runs."
   },
   "errors": {
     "conflict": "A conflict occurred. Please refresh and try again.",
