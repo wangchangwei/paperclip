@@ -959,6 +959,17 @@
     "notFoundHint": "The environment may have been removed or is not available in this company.",
     "selectCompanyContext": "Select a company context to manage environment secrets and bindings."
   },
+  "companyExport": {
+    "breadcrumbExport": "Export",
+    "breadcrumbOrgChart": "Org Chart",
+    "exportDownloaded": "Export downloaded",
+    "exportFailed": "Export failed",
+    "exportedAs": "exported as {{filename}}.zip",
+    "failedToBuild": "Failed to build export package.",
+    "failedToLoad": "Failed to load export data.",
+    "file": "file",
+    "files": "files"
+  },
   "companyImport": {
     "adapters": "Adapters",
     "importSource": "Import source",

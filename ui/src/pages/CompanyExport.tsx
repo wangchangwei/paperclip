@@ -9,6 +9,7 @@ import type {
   Project,
 } from "@paperclipai/shared";
 import { useNavigate, useLocation } from "@/lib/router";
+import { useTranslation } from "@/i18n";
 import { useCompany } from "../context/CompanyContext";
 import { useBreadcrumbs } from "../context/BreadcrumbContext";
 import { useToastActions } from "../context/ToastContext";
@@ -580,6 +581,7 @@ function expandAncestors(filePath: string): string[] {
 }
 
 export function CompanyExport() {
+  const { t } = useTranslation();
   const { selectedCompanyId, selectedCompany } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { pushToast } = useToastActions();
@@ -674,10 +676,10 @@ export function CompanyExport() {
 
   useEffect(() => {
     setBreadcrumbs([
-      { label: "Org Chart", href: "/org" },
-      { label: "Export" },
+      { label: t("companyExport.breadcrumbOrgChart"), href: "/org" },
+      { label: t("companyExport.breadcrumbExport") },
     ]);
-  }, [setBreadcrumbs]);
+  }, [setBreadcrumbs, t]);
 
   const exportPreviewMutation = useMutation({
     mutationFn: () =>
@@ -721,8 +723,8 @@ export function CompanyExport() {
     onError: (err) => {
       pushToast({
         tone: "error",
-        title: "Export failed",
-        body: err instanceof Error ? err.message : "Failed to load export data.",
+        title: t("companyExport.exportFailed"),
+        body: err instanceof Error ? err.message : t("companyExport.failedToLoad"),
       });
     },
   });
@@ -739,15 +741,15 @@ export function CompanyExport() {
       downloadZip(result, resultCheckedFiles, result.files);
       pushToast({
         tone: "success",
-        title: "Export downloaded",
-        body: `${resultCheckedFiles.size} file${resultCheckedFiles.size === 1 ? "" : "s"} exported as ${result.rootPath}.zip`,
+        title: t("companyExport.exportDownloaded"),
+        body: `${resultCheckedFiles.size} ${resultCheckedFiles.size === 1 ? t("companyExport.file") : t("companyExport.files")} ${t("companyExport.exportedAs", { filename: result.rootPath })}`,
       });
     },
     onError: (err) => {
       pushToast({
         tone: "error",
-        title: "Export failed",
-        body: err instanceof Error ? err.message : "Failed to build export package.",
+        title: t("companyExport.exportFailed"),
+        body: err instanceof Error ? err.message : t("companyExport.failedToBuild"),
       });
     },
   });

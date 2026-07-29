@@ -959,6 +959,17 @@
     "notFoundHint": "此环境可能已被移除,或在当前公司中不可用。",
     "selectCompanyContext": "请选择公司环境以管理环境密钥与绑定。"
   },
+  "companyExport": {
+    "breadcrumbExport": "Export",
+    "breadcrumbOrgChart": "Org Chart",
+    "exportDownloaded": "Export downloaded",
+    "exportFailed": "Export failed",
+    "exportedAs": "exported as {{filename}}.zip",
+    "failedToBuild": "Failed to build export package.",
+    "failedToLoad": "Failed to load export data.",
+    "file": "file",
+    "files": "files"
+  },
   "companyImport": {
     "adapters": "适配器",
     "importSource": "导入源",

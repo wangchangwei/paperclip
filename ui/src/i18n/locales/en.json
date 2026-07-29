@@ -2537,5 +2537,16 @@
     "enableAndCreate_one": "Enable and create {{count}}",
     "enableAndCreate_other": "Enable and create {{count}}",
     "enable": "Enable"
+  },
+  "companyExport": {
+    "breadcrumbOrgChart": "Org Chart",
+    "breadcrumbExport": "Export",
+    "exportFailed": "Export failed",
+    "failedToLoad": "Failed to load export data.",
+    "exportDownloaded": "Export downloaded",
+    "file": "file",
+    "files": "files",
+    "exportedAs": "exported as {{filename}}.zip",
+    "failedToBuild": "Failed to build export package."
   }
 }
