@@ -412,6 +412,12 @@
     "zapierUrlHint": "Paste the complete MCP URL Zapier gives you, including its token.",
     "zapierUrlLabel": "Zapier MCP URL"
   },
+  "appsSubNav": {
+    "activity": "Activity",
+    "ariaLabel": "Apps sections",
+    "connected": "Connected",
+    "gateways": "Gateways"
+  },
   "audit": {
     "noMatches": "No activity matches these filters",
     "notInstalled": "Not installed",

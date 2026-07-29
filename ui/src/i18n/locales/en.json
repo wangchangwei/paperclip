@@ -1685,5 +1685,11 @@
     "agentLabel": "Agent",
     "agentDesc": "Runs this card's setup and updates. Leave on the default unless another agent should own it.",
     "createButton": "Create card"
+  },
+  "appsSubNav": {
+    "connected": "Connected",
+    "gateways": "Gateways",
+    "activity": "Activity",
+    "ariaLabel": "Apps sections"
   }
 }
