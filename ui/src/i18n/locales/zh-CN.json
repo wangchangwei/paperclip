@@ -1391,20 +1391,20 @@
     "workspacesTab": "工作区"
   },
   "runYourOwn": {
-    "colAdded": "Added",
-    "colCommand": "Command",
-    "colKeys": "Keys",
-    "colName": "Name",
-    "commandHint": "The command that runs the tool. From the tool's README.",
-    "commandLabel": "Command",
+    "colAdded": "添加时间",
+    "colCommand": "命令",
+    "colKeys": "密钥",
+    "colName": "名称",
+    "commandHint": "用于启动该工具的命令,详见工具的 README。",
+    "commandLabel": "命令",
     "commandPlaceholder": "npx -y @acme/mcp-tool",
-    "empty": "You haven't added any of your own tools yet.",
+    "empty": "你还没有添加自建工具。",
     "envVarPlaceholder": "API_KEY",
-    "keysItNeeds": "Keys it needs",
-    "nameHint": "What you'll call this tool in your apps list.",
-    "nameLabel": "Name",
-    "namePlaceholder": "Acme tools",
-    "yourOwnTools": "Your own tools"
+    "keysItNeeds": "所需的密钥",
+    "nameHint": "在你的应用列表中显示的名称。",
+    "nameLabel": "名称",
+    "namePlaceholder": "Acme 工具",
+    "yourOwnTools": "自建工具"
   },
   "runtimeTab": {
     "autoRefresh": "每 15 秒自动刷新。",
