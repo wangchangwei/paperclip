@@ -3,6 +3,7 @@
 // are deliberate one-off decoration, reverted from --gradient-extract-*/--shadow-extract-*
 // tokens; the file is on the check-token-gates allowlist in ui/src/index.css.
 import type { ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -129,6 +130,7 @@ const checklist = [
 ];
 
 export function SystemNoticeUxLab() {
+  const { t } = useTranslation();
   const fixtureById = new Map(systemNoticeFixtures.map((f) => [f.id, f] as const));
 
   const warningCollapsed = fixtureById.get("warning-collapsed")!;
@@ -146,15 +148,13 @@ export function SystemNoticeUxLab() {
           <div className="p-6 sm:p-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/[0.08] px-3 py-1 text-(length:--text-nano) font-semibold uppercase tracking-(--tracking-caps) text-amber-700 dark:text-amber-300">
               <FlaskConical className="h-3.5 w-3.5" />
-              System Notice Lab
+              {t("systemNoticeUxLab.eyebrow")}
             </div>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight">
-              First-class system notice treatment
+              {t("systemNoticeUxLab.headerTitle")}
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
-              Replaces the current pattern where a Paperclip-authored warning renders inside a user-style
-              chat bubble. The notice is one container, system-styled, with hidden-by-default operational
-              metadata. Tone is conveyed by icon, label, and color together so it stays accessible.
+              {t("systemNoticeUxLab.headerDescription")}
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-2">
