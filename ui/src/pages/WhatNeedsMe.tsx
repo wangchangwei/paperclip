@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { useQuery } from "@tanstack/react-query";
 import { ArrowUpDown, Check, CheckCircle2, GraduationCap, Inbox, Layers, ListFilter } from "lucide-react";
 import type { Agent, AttentionItem } from "@paperclipai/shared";
+import { useTranslation } from "@/i18n";
 import { useNavigate } from "@/lib/router";
 import { attentionApi } from "../api/attention";
 import { agentsApi } from "../api/agents";
@@ -47,12 +48,17 @@ import { Button } from "../components/ui/button";
 import { Checkbox } from "../components/ui/checkbox";
 import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
 
-const SEVERITY_LABELS: Record<string, string> = {
-  critical: "Critical",
-  high: "High",
-  medium: "Medium",
-  low: "Low",
+const SEVERITY_KEYS: Record<string, string> = {
+  critical: "whatNeedsMe.severityCritical",
+  high: "whatNeedsMe.severityHigh",
+  medium: "whatNeedsMe.severityMedium",
+  low: "whatNeedsMe.severityLow",
 };
+
+function severityLabel(t: (key: string) => string, severity: string): string {
+  const key = SEVERITY_KEYS[severity];
+  return key ? t(key) : severity;
+}
 
 /** Curtain rows never expand; module-level so memoized rows see one identity. */
 const noopToggleExpand = () => {};
@@ -80,6 +86,7 @@ function findScrollContainer(element: HTMLElement | null): HTMLElement | null {
 }
 
 export function WhatNeedsMe() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -105,8 +112,8 @@ export function WhatNeedsMe() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setBreadcrumbs([{ label: "Decisions" }]);
-  }, [setBreadcrumbs]);
+    setBreadcrumbs([{ label: t("whatNeedsMe.breadcrumb") }]);
+  }, [setBreadcrumbs, t]);
 
   // Re-hydrate per-company preferences when the company changes.
   useEffect(() => {
@@ -334,11 +341,11 @@ export function WhatNeedsMe() {
       pushToast({
         id: `attention-dismiss-${item.id}`,
         dedupeKey: `attention-dismiss-${item.dismissalKey}`,
-        title: "Dismissed",
+        title: t("whatNeedsMe.dismissed"),
         body: item.subject.title ?? undefined,
         tone: "info",
         ttlMs: 8000,
-        action: { label: "Undo", onClick: () => handleUndoDismiss(item) },
+        action: { label: t("whatNeedsMe.undo"), onClick: () => handleUndoDismiss(item) },
       });
     },
     [dismiss, handleUndoDismiss, pushToast],
@@ -428,7 +435,7 @@ export function WhatNeedsMe() {
         <div className="flex items-center gap-2">
           {visibleCount > 0 && (
             <span className="text-sm text-muted-foreground">
-              {visibleCount} {visibleCount === 1 ? "decision" : "decisions"}
+              {visibleCount} {visibleCount === 1 ? t("whatNeedsMe.decision") : t("whatNeedsMe.decisions")}
             </span>
           )}
           {/* Filter */}
@@ -439,8 +446,8 @@ export function WhatNeedsMe() {
                 variant="outline"
                 size="icon"
                 className={cn("h-8 w-8 shrink-0", activeFilterCount > 0 && "bg-accent")}
-                title="Filter"
-                aria-label="Filter"
+                title={t("whatNeedsMe.filter")}
+                aria-label={t("whatNeedsMe.filter")}
               >
                 <ListFilter className="h-3.5 w-3.5" />
               </Button>
@@ -461,8 +468,8 @@ export function WhatNeedsMe() {
                 variant="outline"
                 size="icon"
                 className={cn("h-8 w-8 shrink-0", groupBy !== "none" && "bg-accent")}
-                title="Group"
-                aria-label="Group"
+                title={t("whatNeedsMe.group")}
+                aria-label={t("whatNeedsMe.group")}
               >
                 <Layers className="h-3.5 w-3.5" />
               </Button>
@@ -491,8 +498,8 @@ export function WhatNeedsMe() {
             variant="outline"
             size="icon"
             className="h-8 w-8 shrink-0"
-            title="Training"
-            aria-label="Training"
+            title={t("whatNeedsMe.training")}
+            aria-label={t("whatNeedsMe.training")}
             onClick={() => navigate(decisionTrainingHref())}
           >
             <GraduationCap className="h-3.5 w-3.5" />
@@ -505,8 +512,8 @@ export function WhatNeedsMe() {
                 variant="outline"
                 size="icon"
                 className="h-8 w-8 shrink-0"
-                title="Sort"
-                aria-label="Sort"
+                title={t("whatNeedsMe.sort")}
+                aria-label={t("whatNeedsMe.sort")}
               >
                 <ArrowUpDown className="h-3.5 w-3.5" />
               </Button>
@@ -584,7 +591,7 @@ export function WhatNeedsMe() {
 
           {snoozedItems.length > 0 && (
             <Curtain
-              label="Snoozed"
+              label={t("whatNeedsMe.snoozed")}
               count={snoozedItems.length}
               open={snoozedOpen}
               onToggle={() => setSnoozedOpen((prev) => !prev)}
@@ -608,7 +615,7 @@ export function WhatNeedsMe() {
 
           {dismissedItems.length > 0 && (
             <Curtain
-              label="Dismissed"
+              label={t("whatNeedsMe.dismissedCurtain")}
               count={dismissedItems.length}
               open={dismissedOpen}
               onToggle={() => setDismissedOpen((prev) => !prev)}
@@ -654,6 +661,7 @@ function FilterMenu({
   filters: AttentionFilterState;
   onChange: (next: AttentionFilterState) => void;
 }) {
+  const { t } = useTranslation();
   const toggle = (key: keyof AttentionFilterState, value: string) => {
     const list = filters[key] as string[];
     const nextList = list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
@@ -664,20 +672,20 @@ function FilterMenu({
   return (
     <div className="max-h-(--sz-70vh) overflow-y-auto">
       <div className="flex items-center justify-between px-3 py-2">
-        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Filter</span>
+        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t("whatNeedsMe.filter")}</span>
         {hasActive && (
           <button
             type="button"
             className="text-xs text-muted-foreground hover:text-foreground"
             onClick={() => onChange(defaultAttentionFilterState)}
           >
-            Clear
+            {t("whatNeedsMe.clear")}
           </button>
         )}
       </div>
 
       {options.sourceKinds.length > 1 && (
-        <FilterSection title="Type">
+        <FilterSection title={t("whatNeedsMe.type")}>
           {options.sourceKinds.map((kind) => (
             <FilterRow
               key={kind}
@@ -690,11 +698,11 @@ function FilterMenu({
       )}
 
       {options.severities.length > 1 && (
-        <FilterSection title="Severity">
+        <FilterSection title={t("whatNeedsMe.severity")}>
           {options.severities.map((severity) => (
             <FilterRow
               key={severity}
-              label={SEVERITY_LABELS[severity] ?? severity}
+              label={severityLabel(t, severity)}
               checked={filters.severities.includes(severity)}
               onToggle={() => toggle("severities", severity)}
             />
@@ -703,7 +711,7 @@ function FilterMenu({
       )}
 
       {(options.projects.length > 0 || options.hasNoProject) && (
-        <FilterSection title="Project">
+        <FilterSection title={t("whatNeedsMe.project")}>
           {options.projects.map((project) => (
             <FilterRow
               key={project.id}
@@ -714,7 +722,7 @@ function FilterMenu({
           ))}
           {options.hasNoProject && (
             <FilterRow
-              label="No project"
+              label={t("whatNeedsMe.noProject")}
               checked={filters.projectIds.includes(NO_GROUP_SENTINEL)}
               onToggle={() => toggle("projectIds", NO_GROUP_SENTINEL)}
             />
@@ -723,7 +731,7 @@ function FilterMenu({
       )}
 
       {(options.workspaces.length > 0 || options.hasNoWorkspace) && (
-        <FilterSection title="Workspace">
+        <FilterSection title={t("whatNeedsMe.workspace")}>
           {options.workspaces.map((workspace) => (
             <FilterRow
               key={workspace.id}
@@ -734,7 +742,7 @@ function FilterMenu({
           ))}
           {options.hasNoWorkspace && (
             <FilterRow
-              label="No workspace"
+              label={t("whatNeedsMe.noWorkspace")}
               checked={filters.workspaceIds.includes(NO_GROUP_SENTINEL)}
               onToggle={() => toggle("workspaceIds", NO_GROUP_SENTINEL)}
             />

@@ -2497,5 +2497,29 @@
     "intervalDefault": "on a schedule if changed",
     "intervalEvery": "every {{minutes}}m if changed",
     "reactiveOnChange": "on change ({{debounce}}s)"
+  },
+  "whatNeedsMe": {
+    "breadcrumb": "Decisions",
+    "dismissed": "Dismissed",
+    "undo": "Undo",
+    "decision": "decision",
+    "decisions": "decisions",
+    "filter": "Filter",
+    "group": "Group",
+    "training": "Training",
+    "sort": "Sort",
+    "snoozed": "Snoozed",
+    "dismissedCurtain": "Dismissed",
+    "clear": "Clear",
+    "type": "Type",
+    "severity": "Severity",
+    "severityCritical": "Critical",
+    "severityHigh": "High",
+    "severityMedium": "Medium",
+    "severityLow": "Low",
+    "project": "Project",
+    "noProject": "No project",
+    "workspace": "Workspace",
+    "noWorkspace": "No workspace"
   }
 }
