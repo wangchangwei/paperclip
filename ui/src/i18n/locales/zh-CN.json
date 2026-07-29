@@ -1380,11 +1380,11 @@
     "tryAgain": "重试"
   },
   "importVault": {
-    "toastImportBody": "{{imported}} created · {{skipped}} skipped · {{failed}} failed",
-    "toastImportComplete": "Import complete",
-    "toastImportCompletedWithErrors": "Import completed with errors",
-    "toastImportFailed": "Import failed",
-    "toastNoSecretsImportedFrom": "No secrets were imported from {{vaultName}}."
+    "toastImportBody": "已创建 {{imported}} · 已跳过 {{skipped}} · 失败 {{failed}}",
+    "toastImportComplete": "导入完成",
+    "toastImportCompletedWithErrors": "导入完成但有错误",
+    "toastImportFailed": "导入失败",
+    "toastNoSecretsImportedFrom": "未从 {{vaultName}} 导入任何密钥。"
   },
   "inbox": {
     "agents": "Agents",
