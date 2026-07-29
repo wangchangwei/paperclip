@@ -2177,8 +2177,8 @@
   },
   "responsibleUserDenialUxLab": {
     "eyebrow": "PAP-12462 · P7",
-    "headerDescription": "Before/after of the two run surfaces and the four denial-related states.",
-    "headerTitle": "Run \"on behalf of\" surfacing + denial copy"
+    "headerDescription": "两个运行页面的前后对比，以及四种与拒绝相关的状态。",
+    "headerTitle": "运行\"代表用户\"展示 + 拒绝文案"
   },
   "reviewQueue": {
     "allowOnceButton": "本次允许",
