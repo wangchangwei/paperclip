@@ -2076,5 +2076,14 @@
     "genericError": "Something went wrong.",
     "loadFailed": "Could not load this view",
     "retry": "Retry"
+  },
+  "wizardToolsStep": {
+    "loading": "Loading tools…",
+    "emptyTitle": "App connections are coming soon",
+    "emptyDesc": "Profiles will be available once app connections are ready. Browse the planned integrations in the meantime.",
+    "browse": "Browse app connections",
+    "searchPlaceholder": "Search tools…",
+    "noMatch": "No tools match \"{{search}}\".",
+    "clearSearch": "Clear search"
   }
 }

@@ -2070,6 +2070,15 @@
     "usageGuidance": "Usage guidance",
     "usageGuidancePlaceholder": "Tell members how to create their token, required scopes, etc."
   },
+  "wizardToolsStep": {
+    "browse": "Browse app connections",
+    "clearSearch": "Clear search",
+    "emptyDesc": "Profiles will be available once app connections are ready. Browse the planned integrations in the meantime.",
+    "emptyTitle": "App connections are coming soon",
+    "loading": "Loading tools…",
+    "noMatch": "No tools match \"{{search}}\".",
+    "searchPlaceholder": "Search tools…"
+  },
   "workspaces": {
     "breadcrumb": "Workspaces",
     "empty": "No workspace activity yet.",

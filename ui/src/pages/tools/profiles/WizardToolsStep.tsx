@@ -29,6 +29,7 @@ import {
   type WizardSelections,
 } from "./profile-model";
 import { LoadingState } from "../shared";
+import { useTranslation } from "@/i18n";
 
 type NewToolsAction = "deny" | "allow";
 
@@ -52,6 +53,7 @@ export interface WizardToolsStepProps {
 }
 
 export function WizardToolsStep(props: WizardToolsStepProps) {
+  const { t } = useTranslation();
   const { appGroups, catalogLoading, selections, onSelectionsChange } = props;
   const [search, setSearch] = useState("");
   const [capabilityFilter, setCapabilityFilter] = useState<ToolCapability | null>(null);
@@ -74,7 +76,7 @@ export function WizardToolsStep(props: WizardToolsStepProps) {
       .filter((entry) => entry.tools.length > 0);
   }, [appGroups, search, capabilityFilter]);
 
-  if (catalogLoading) return <LoadingState label="Loading tools…" />;
+  if (catalogLoading) return <LoadingState label={t("wizardToolsStep.loading")} />;
 
   // Cold state A (AP17): nothing connected at all.
   if (appGroups.length === 0) {
@@ -82,14 +84,13 @@ export function WizardToolsStep(props: WizardToolsStepProps) {
       <div className="flex flex-col items-center gap-3 rounded-lg border border-dashed border-border py-12 text-center">
         <Plug className="h-6 w-6 text-muted-foreground" />
         <div>
-          <p className="text-sm font-medium text-foreground">App connections are coming soon</p>
+          <p className="text-sm font-medium text-foreground">{t("wizardToolsStep.emptyTitle")}</p>
           <p className="mx-auto max-w-sm text-sm text-muted-foreground">
-            Profiles will be available once app connections are ready. Browse the planned integrations in the
-            meantime.
+            {t("wizardToolsStep.emptyDesc")}
           </p>
         </div>
         <Button asChild variant="outline">
-          <Link to="/apps/browse">Browse app connections</Link>
+          <Link to="/apps/browse">{t("wizardToolsStep.browse")}</Link>
         </Button>
       </div>
     );
@@ -103,7 +104,7 @@ export function WizardToolsStep(props: WizardToolsStepProps) {
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search tools…"
+            placeholder={t("wizardToolsStep.searchPlaceholder")}
             className="pl-8"
           />
         </div>
@@ -129,7 +130,7 @@ export function WizardToolsStep(props: WizardToolsStepProps) {
       {filteredGroups.length === 0 ? (
         // Cold state B (AP17): a search/filter that matches nothing.
         <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed border-border py-10 text-center">
-          <p className="text-sm font-medium text-foreground">No tools match “{search}”.</p>
+          <p className="text-sm font-medium text-foreground">{t("wizardToolsStep.noMatch", { search })}</p>
           <button
             type="button"
             onClick={() => {
@@ -138,7 +139,7 @@ export function WizardToolsStep(props: WizardToolsStepProps) {
             }}
             className="text-sm font-medium text-primary hover:underline"
           >
-            Clear search
+            {t("wizardToolsStep.clearSearch")}
           </button>
         </div>
       ) : (

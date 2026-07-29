@@ -2070,6 +2070,15 @@
     "usageGuidance": "使用说明",
     "usageGuidancePlaceholder": "告诉成员如何创建 token、所需 scope 等。"
   },
+  "wizardToolsStep": {
+    "browse": "Browse app connections",
+    "clearSearch": "Clear search",
+    "emptyDesc": "Profiles will be available once app connections are ready. Browse the planned integrations in the meantime.",
+    "emptyTitle": "App connections are coming soon",
+    "loading": "Loading tools…",
+    "noMatch": "No tools match \"{{search}}\".",
+    "searchPlaceholder": "Search tools…"
+  },
   "workspaces": {
     "breadcrumb": "工作区",
     "empty": "暂无工作区活动。",
