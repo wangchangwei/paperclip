@@ -1117,8 +1117,8 @@
     "title": "组织架构图"
   },
   "pasteConfigTab": {
-    "noKeysNeeded": "No keys needed for this one.",
-    "replacementPlaceholder": "Paste replacement value"
+    "noKeysNeeded": "此配置无需密钥。",
+    "replacementPlaceholder": "粘贴替换值"
   },
   "permissionsPanel": {
     "actionPermissions": "操作权限",
