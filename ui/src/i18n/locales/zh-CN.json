@@ -2071,13 +2071,13 @@
     "usageGuidancePlaceholder": "告诉成员如何创建 token、所需 scope 等。"
   },
   "wizardToolsStep": {
-    "browse": "Browse app connections",
-    "clearSearch": "Clear search",
-    "emptyDesc": "Profiles will be available once app connections are ready. Browse the planned integrations in the meantime.",
-    "emptyTitle": "App connections are coming soon",
-    "loading": "Loading tools…",
-    "noMatch": "No tools match \"{{search}}\".",
-    "searchPlaceholder": "Search tools…"
+    "browse": "浏览应用连接",
+    "clearSearch": "清除搜索",
+    "emptyDesc": "应用连接就绪后即可使用配置文件。可先浏览计划中的集成。",
+    "emptyTitle": "应用连接即将上线",
+    "loading": "正在加载工具…",
+    "noMatch": "没有工具匹配「{{search}}」。",
+    "searchPlaceholder": "搜索工具…"
   },
   "workspaces": {
     "breadcrumb": "工作区",
