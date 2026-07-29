@@ -1207,6 +1207,13 @@
     "starredProjects": "收藏的项目",
     "title": "仪表板"
   },
+  "designGuide": {
+    "coverageDescription": "This page should be updated when new UI primitives or app-level patterns ship.",
+    "coverageTitle": "Component Coverage",
+    "headerSubtitle": "Every component, style, and pattern used across Paperclip.",
+    "headerTitle": "Design Guide",
+    "uiPrimitives": "UI primitives"
+  },
   "errors": {
     "conflict": "发生冲突。请刷新后重试。",
     "forbidden": "访问此资源被禁止。",

@@ -1207,6 +1207,13 @@
     "starredProjects": "Starred Projects",
     "title": "Dashboard"
   },
+  "designGuide": {
+    "coverageDescription": "This page should be updated when new UI primitives or app-level patterns ship.",
+    "coverageTitle": "Component Coverage",
+    "headerSubtitle": "Every component, style, and pattern used across Paperclip.",
+    "headerTitle": "Design Guide",
+    "uiPrimitives": "UI primitives"
+  },
   "errors": {
     "conflict": "A conflict occurred. Please refresh and try again.",
     "forbidden": "Access to this resource is forbidden.",

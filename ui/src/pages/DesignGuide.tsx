@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "@/i18n";
 import {
   BookOpen,
   Bot,
@@ -372,6 +373,7 @@ function Swatch({ name, cssVar }: { name: string; cssVar: string }) {
 /* ------------------------------------------------------------------ */
 
 export function DesignGuide() {
+  const { t } = useTranslation();
   const [status, setStatus] = useState("todo");
   const [priority, setPriority] = useState("medium");
   const [selectValue, setSelectValue] = useState("in_progress");
@@ -394,21 +396,21 @@ export function DesignGuide() {
     <div className="space-y-10 max-w-4xl">
       {/* Page header */}
       <div>
-        <h2 className="text-xl font-bold">Design Guide</h2>
+        <h2 className="text-xl font-bold">{t("designGuide.headerTitle")}</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Every component, style, and pattern used across Paperclip.
+          {t("designGuide.headerSubtitle")}
         </p>
       </div>
 
       {/* ============================================================ */}
       {/*  COVERAGE                                                     */}
       {/* ============================================================ */}
-      <Section title="Component Coverage">
+      <Section title={t("designGuide.coverageTitle")}>
         <p className="text-sm text-muted-foreground">
-          This page should be updated when new UI primitives or app-level patterns ship.
+          {t("designGuide.coverageDescription")}
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <SubSection title="UI primitives">
+          <SubSection title={t("designGuide.uiPrimitives")}>
             <div className="flex flex-wrap gap-2">
               {[
                 "avatar", "badge", "breadcrumb", "button", "card", "checkbox", "collapsible",

@@ -2739,5 +2739,12 @@
     "toastCouldNotRemoveBinding": "Could not remove binding",
     "toastEntryTargetRequired": "Entry target required",
     "toastBindingTargetRequired": "Binding target required"
+  },
+  "designGuide": {
+    "headerTitle": "Design Guide",
+    "headerSubtitle": "Every component, style, and pattern used across Paperclip.",
+    "coverageTitle": "Component Coverage",
+    "coverageDescription": "This page should be updated when new UI primitives or app-level patterns ship.",
+    "uiPrimitives": "UI primitives"
   }
 }
