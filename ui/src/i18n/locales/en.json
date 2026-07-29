@@ -2042,5 +2042,39 @@
     "comingSoon": "Coming soon",
     "connect": "Connect →",
     "footnote": "Zapier connects with the MCP URL it gives you. Other listed integrations are previews."
+  },
+  "profileSettings": {
+    "settings": "Settings",
+    "instanceSettings": "Instance settings",
+    "profile": "Profile",
+    "subtitle": "Control how your account appears in the sidebar and other board surfaces.",
+    "boardFallback": "Board",
+    "updateFailed": "Failed to update profile.",
+    "uploadNoCompany": "Select a company before uploading a profile avatar.",
+    "uploadFailed": "Failed to upload avatar.",
+    "removeFailed": "Failed to remove avatar.",
+    "loading": "Loading profile...",
+    "loadFailed": "Failed to load profile.",
+    "uploadHintStored": "Stored in Paperclip file storage for {{company}}.",
+    "uploadHintNoCompany": "Select a company to upload an avatar into Paperclip storage.",
+    "changePhoto": "Change photo",
+    "uploadPhoto": "Upload photo",
+    "remove": "Remove",
+    "noEmail": "No email",
+    "avatarHelp": "Click the avatar to upload a new image. {{hint}}",
+    "displayName": "Display name",
+    "displayNameHelp": "Shown in the sidebar account footer and comment author surfaces.",
+    "email": "Email",
+    "emailHelp": "Email is managed by your auth session and is read-only here.",
+    "saving": "Saving...",
+    "saveProfile": "Save profile"
+  },
+  "toolsShared": {
+    "loading": "Loading…",
+    "permissionDenied": "You do not have permission to view this. Tools & Access requires board/admin access.",
+    "toolsAccessDeployment": "Tools & Access isn’t available on this server yet — try refreshing after the next deployment.",
+    "genericError": "Something went wrong.",
+    "loadFailed": "Could not load this view",
+    "retry": "Retry"
   }
 }

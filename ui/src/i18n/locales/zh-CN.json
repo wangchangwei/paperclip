@@ -1620,6 +1620,32 @@
     "profileDetailBreadcrumb": "配置文件详情",
     "selectCompanyAndProfile": "请选择公司和配置文件。"
   },
+  "profileSettings": {
+    "avatarHelp": "Click the avatar to upload a new image. {{hint}}",
+    "boardFallback": "Board",
+    "changePhoto": "Change photo",
+    "displayName": "Display name",
+    "displayNameHelp": "Shown in the sidebar account footer and comment author surfaces.",
+    "email": "Email",
+    "emailHelp": "Email is managed by your auth session and is read-only here.",
+    "instanceSettings": "Instance settings",
+    "loadFailed": "Failed to load profile.",
+    "loading": "Loading profile...",
+    "noEmail": "No email",
+    "profile": "Profile",
+    "remove": "Remove",
+    "removeFailed": "Failed to remove avatar.",
+    "saveProfile": "Save profile",
+    "saving": "Saving...",
+    "settings": "Settings",
+    "subtitle": "Control how your account appears in the sidebar and other board surfaces.",
+    "updateFailed": "Failed to update profile.",
+    "uploadFailed": "Failed to upload avatar.",
+    "uploadHintNoCompany": "Select a company to upload an avatar into Paperclip storage.",
+    "uploadHintStored": "Stored in Paperclip file storage for {{company}}.",
+    "uploadNoCompany": "Select a company before uploading a profile avatar.",
+    "uploadPhoto": "Upload photo"
+  },
   "profileWizard": {
     "assignToAgents": "分配给 Agent",
     "companyDefault": "设为公司默认配置",
@@ -1996,6 +2022,14 @@
     "body": "访问配置文件决定 Agent 可使用的工具。请联系管理员进行配置,或返回",
     "heading": "访问配置文件仅供管理员使用",
     "yourAppsLink": "应用列表"
+  },
+  "toolsShared": {
+    "genericError": "Something went wrong.",
+    "loadFailed": "Could not load this view",
+    "loading": "Loading…",
+    "permissionDenied": "You do not have permission to view this. Tools & Access requires board/admin access.",
+    "retry": "Retry",
+    "toolsAccessDeployment": "Tools & Access isn’t available on this server yet — try refreshing after the next deployment."
   },
   "training": {
     "loadError": "无法加载训练示例。",

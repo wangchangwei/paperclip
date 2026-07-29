@@ -1620,6 +1620,32 @@
     "profileDetailBreadcrumb": "Profile detail",
     "selectCompanyAndProfile": "Select a company and profile."
   },
+  "profileSettings": {
+    "avatarHelp": "Click the avatar to upload a new image. {{hint}}",
+    "boardFallback": "Board",
+    "changePhoto": "Change photo",
+    "displayName": "Display name",
+    "displayNameHelp": "Shown in the sidebar account footer and comment author surfaces.",
+    "email": "Email",
+    "emailHelp": "Email is managed by your auth session and is read-only here.",
+    "instanceSettings": "Instance settings",
+    "loadFailed": "Failed to load profile.",
+    "loading": "Loading profile...",
+    "noEmail": "No email",
+    "profile": "Profile",
+    "remove": "Remove",
+    "removeFailed": "Failed to remove avatar.",
+    "saveProfile": "Save profile",
+    "saving": "Saving...",
+    "settings": "Settings",
+    "subtitle": "Control how your account appears in the sidebar and other board surfaces.",
+    "updateFailed": "Failed to update profile.",
+    "uploadFailed": "Failed to upload avatar.",
+    "uploadHintNoCompany": "Select a company to upload an avatar into Paperclip storage.",
+    "uploadHintStored": "Stored in Paperclip file storage for {{company}}.",
+    "uploadNoCompany": "Select a company before uploading a profile avatar.",
+    "uploadPhoto": "Upload photo"
+  },
   "profileWizard": {
     "assignToAgents": "Assign to agents",
     "companyDefault": "Make this the company default",
@@ -1996,6 +2022,14 @@
     "body": "Access profiles decide which tools your agents can use. Ask an administrator to set these up, or head back to",
     "heading": "Access profiles are for administrators",
     "yourAppsLink": "your apps"
+  },
+  "toolsShared": {
+    "genericError": "Something went wrong.",
+    "loadFailed": "Could not load this view",
+    "loading": "Loading…",
+    "permissionDenied": "You do not have permission to view this. Tools & Access requires board/admin access.",
+    "retry": "Retry",
+    "toolsAccessDeployment": "Tools & Access isn’t available on this server yet — try refreshing after the next deployment."
   },
   "training": {
     "loadError": "Could not load training examples.",
