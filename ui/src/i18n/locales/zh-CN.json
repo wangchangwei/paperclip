@@ -753,15 +753,15 @@
     "useExisting": "使用现有应用"
   },
   "connections": {
-    "colActions": "Actions",
-    "colApp": "App",
-    "colLastUsed": "Last used",
-    "colStatus": "Status",
-    "connectApp": "Connect an app",
-    "fix": "Fix →",
-    "review": "Review →",
-    "selectCompany": "Select a company to manage apps.",
-    "title": "Connections"
+    "colActions": "操作",
+    "colApp": "应用",
+    "colLastUsed": "最近使用",
+    "colStatus": "状态",
+    "connectApp": "连接应用",
+    "fix": "修复 →",
+    "review": "查看 →",
+    "selectCompany": "请选择一个公司以管理应用。",
+    "title": "连接"
   },
   "costs": {
     "byAgent": "按代理",
