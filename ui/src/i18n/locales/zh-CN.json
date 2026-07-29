@@ -924,9 +924,9 @@
     "validation": "请检查输入后重试。"
   },
   "executionWorkspace": {
-    "loading": "Loading workspace…",
-    "projects": "Projects",
-    "workspaces": "Workspaces"
+    "loading": "正在加载工作区…",
+    "projects": "项目",
+    "workspaces": "工作区"
   },
   "gatewaysTab": {
     "accessProfile": "访问配置",
