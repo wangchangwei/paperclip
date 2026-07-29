@@ -1032,6 +1032,22 @@
     "transport": "Transport",
     "transportLabel": "Transport"
   },
+  "gatewayDetail": {
+    "apps": "Apps",
+    "appsLink": "Apps · Gateways",
+    "back": "Back to gateways",
+    "company": "Company",
+    "emptyCompany": "Select a company to manage gateways.",
+    "gatewayOff": "Gateway off",
+    "gatewayOffBody": "{{name}} is off — every client goes silent.",
+    "gatewayOn": "Gateway on",
+    "gatewayOnBody": "{{name}} is exposing its tools again.",
+    "gateways": "Gateways",
+    "notFound": "We couldn’t find that gateway.",
+    "showSnippet": "Show snippet",
+    "tabsLabel": "Gateway tabs",
+    "updateFailed": "Couldn’t update the gateway"
+  },
   "gatewayOverview": {
     "active": "active",
     "allGreen": "All green",

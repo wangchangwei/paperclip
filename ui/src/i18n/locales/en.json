@@ -2085,5 +2085,21 @@
     "searchPlaceholder": "Search tools…",
     "noMatch": "No tools match \"{{search}}\".",
     "clearSearch": "Clear search"
+  },
+  "gatewayDetail": {
+    "company": "Company",
+    "apps": "Apps",
+    "gateways": "Gateways",
+    "gatewayOn": "Gateway on",
+    "gatewayOff": "Gateway off",
+    "gatewayOnBody": "{{name}} is exposing its tools again.",
+    "gatewayOffBody": "{{name}} is off — every client goes silent.",
+    "updateFailed": "Couldn’t update the gateway",
+    "emptyCompany": "Select a company to manage gateways.",
+    "notFound": "We couldn’t find that gateway.",
+    "back": "Back to gateways",
+    "appsLink": "Apps · Gateways",
+    "showSnippet": "Show snippet",
+    "tabsLabel": "Gateway tabs"
   }
 }
