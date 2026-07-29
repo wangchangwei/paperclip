@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/context/ToastContext";
 import { redactUrlSecrets } from "@/lib/redact-url-secrets";
 import type { AppDetailSectionProps } from "./types";
+import { useTranslation } from "@/i18n";
 
 export function AdvancedPanel({
   connection,
@@ -40,6 +41,7 @@ function KeySection({
   galleryEntry: AppDefinition | null;
   onReplaced: () => void;
 }) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   return (
     <section className="rounded-xl border border-border bg-card">
@@ -47,15 +49,15 @@ function KeySection({
         <div className="flex items-start gap-3">
           <Lock className="mt-0.5 h-4 w-4 text-muted-foreground" />
           <div>
-            <h2 className="text-sm font-bold text-foreground">Key</h2>
+            <h2 className="text-sm font-bold text-foreground">{t("appAdvanced.key")}</h2>
             <p className="mt-0.5 text-sm text-muted-foreground">
-              Your key is stored securely. Replace it if it stopped working or you rotated it.
+              {t("appAdvanced.keyBlurb")}
             </p>
           </div>
         </div>
         {!open && (
           <Button size="sm" variant="outline" onClick={() => setOpen(true)}>
-            Replace key
+            {t("appAdvanced.replaceKey")}
           </Button>
         )}
       </div>
@@ -85,11 +87,12 @@ export function ReconnectCard({
   galleryEntry: AppDefinition | null;
   onReconnected: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-xl border border-amber-500/50 bg-amber-500/10 p-5">
-      <h2 className="text-sm font-bold text-amber-900 dark:text-amber-100">This app needs reconnecting</h2>
+      <h2 className="text-sm font-bold text-amber-900 dark:text-amber-100">{t("appAdvanced.needsReconnectTitle")}</h2>
       <p className="mt-1 text-sm text-amber-800 dark:text-amber-200">
-        {connection.healthMessage?.trim() || "The key stopped working. Paste a new one to get it back online."}
+        {connection.healthMessage?.trim() || t("appAdvanced.keyStoppedWorking")}
       </p>
       <div className="mt-3">
         <ReconnectForm connection={connection} galleryEntry={galleryEntry} onReconnected={onReconnected} />
@@ -109,6 +112,7 @@ function ReconnectForm({
   onCancel?: () => void;
   onReconnected: () => void;
 }) {
+  const { t } = useTranslation();
   const { pushToast } = useToast();
   const method = galleryEntry && Array.isArray(galleryEntry.methods)
     ? getAvailableConnectionMethod(galleryEntry)
@@ -134,23 +138,23 @@ function ReconnectForm({
         result.connection.healthStatus === "healthy" || result.connection.healthStatus === "unknown";
       if (healthy) {
         pushToast({
-          title: "Reconnected",
-          body: `${humanizeConnectionDisplayName(connection)} is back online.`,
+          title: t("appAdvanced.reconnected"),
+          body: t("appAdvanced.reconnectedBody", { name: humanizeConnectionDisplayName(connection) }),
           tone: "success",
         });
         onReconnected();
       } else {
         pushToast({
-          title: "Still not working",
-          body: result.connection.healthMessage?.trim() || "That key didn't check out. Try another.",
+          title: t("appAdvanced.stillNotWorking"),
+          body: result.connection.healthMessage?.trim() || t("appAdvanced.didntCheckOut"),
           tone: "error",
         });
       }
     },
     onError: (error) =>
       pushToast({
-        title: "That key didn't work",
-        body: error instanceof Error ? error.message : "Check the key and try again.",
+        title: t("appAdvanced.didntWorkTitle"),
+        body: error instanceof Error ? error.message : t("appAdvanced.checkKeyAndRetry"),
         tone: "error",
       }),
   });
@@ -180,7 +184,7 @@ function ReconnectForm({
                 rel="noreferrer"
                 className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-foreground underline underline-offset-2"
               >
-                Where do I find this? <ArrowUpRight className="h-3 w-3" />
+                {t("appAdvanced.whereFindThis")} <ArrowUpRight className="h-3 w-3" />
               </a>
             )}
           </div>
@@ -191,18 +195,18 @@ function ReconnectForm({
           autoComplete="off"
           value={single}
           onChange={(e) => setSingle(e.target.value)}
-          placeholder="Paste your new key"
+          placeholder={t("appAdvanced.pasteNewKey")}
           className="h-10 font-mono"
         />
       )}
       <div className="flex items-center gap-2">
         <Button size="sm" disabled={!filled || reconnect.isPending} onClick={() => reconnect.mutate()}>
           {reconnect.isPending && <Loader2 className="mr-1.5 h-3.5 w-3.5 animate-spin" />}
-          {reconnect.isPending ? "Checking..." : "Check & reconnect"}
+          {reconnect.isPending ? t("appAdvanced.checking") : t("appAdvanced.checkAndReconnect")}
         </Button>
         {onCancel && (
           <Button size="sm" variant="ghost" onClick={onCancel} disabled={reconnect.isPending}>
-            Cancel
+            {t("common.cancel")}
           </Button>
         )}
       </div>
@@ -211,14 +215,15 @@ function ReconnectForm({
 }
 
 function TechnicalDetails({ connection }: { connection: ToolConnection }) {
+  const { t } = useTranslation();
   return (
     <section className="rounded-xl border border-border bg-card px-5 py-4">
-      <h2 className="text-sm font-bold text-foreground">Technical details</h2>
+      <h2 className="text-sm font-bold text-foreground">{t("appAdvanced.technicalDetails")}</h2>
       <dl className="mt-3 grid gap-2 text-xs sm:grid-cols-(--gtc-59)">
-        <dt className="text-muted-foreground">Address</dt>
-        <dd className="break-all font-mono text-foreground">{connectionAddress(connection)}</dd>
-        <dt className="text-muted-foreground">Connection type</dt>
-        <dd className="text-foreground">{connectionTransportLabel(connection.transport)}</dd>
+        <dt className="text-muted-foreground">{t("appAdvanced.address")}</dt>
+        <dd className="break-all font-mono text-foreground">{connectionAddress(connection, t)}</dd>
+        <dt className="text-muted-foreground">{t("appAdvanced.connectionType")}</dt>
+        <dd className="text-foreground">{connectionTransportLabel(connection.transport, t)}</dd>
       </dl>
     </section>
   );
@@ -233,32 +238,33 @@ export function DangerZone({
   removing: boolean;
   onRemove: () => void;
 }) {
+  const { t } = useTranslation();
   const [confirming, setConfirming] = useState(false);
   return (
     <section className="rounded-xl border border-destructive/40 bg-card">
       <div className="border-b border-destructive/40 px-5 py-3 text-sm font-bold text-destructive">
-        Danger zone
+        {t("appAdvanced.dangerZone")}
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
         <div>
-          <p className="text-sm font-medium text-foreground">Remove this app</p>
+          <p className="text-sm font-medium text-foreground">{t("appAdvanced.removeApp")}</p>
           <p className="text-xs text-muted-foreground">
-            Agents lose access to {appName} right away. You can connect it again later.
+            {t("appAdvanced.removeAppBlurb", { appName })}
           </p>
         </div>
         {confirming ? (
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={() => setConfirming(false)} disabled={removing}>
-              Cancel
+              {t("common.cancel")}
             </Button>
             <Button variant="destructive" size="sm" onClick={onRemove} disabled={removing}>
               {removing && <Loader2 className="mr-1.5 h-3.5 w-3.5 animate-spin" />}
-              Yes, remove it
+              {t("appAdvanced.yesRemoveIt")}
             </Button>
           </div>
         ) : (
           <Button variant="destructive" size="sm" onClick={() => setConfirming(true)}>
-            Remove app
+            {t("appAdvanced.removeAppButton")}
           </Button>
         )}
       </div>
@@ -266,16 +272,25 @@ export function DangerZone({
   );
 }
 
-export function connectionAddress(connection: ToolConnection): string {
+type TFunction = (key: string, opts?: Record<string, unknown>) => string;
+
+export function connectionAddress(connection: ToolConnection, t: TFunction = identityT): string {
   const config = connection.config ?? connection.transportConfig ?? {};
   const value = config.url ?? config.endpoint ?? config.remoteUrl;
   if (typeof value === "string" && value.trim().length > 0) return redactUrlSecrets(value);
-  if (connection.transport === "local_stdio") return "Local command";
-  return "Not set";
+  if (connection.transport === "local_stdio") return t("appAdvanced.localCommand");
+  return t("appAdvanced.notSet");
 }
 
-export function connectionTransportLabel(transport: ToolConnection["transport"]): string {
-  if (transport === "mcp_remote") return "Remote HTTP";
-  if (transport === "local_stdio") return "Local command";
-  return "Unknown";
+export function connectionTransportLabel(
+  transport: ToolConnection["transport"],
+  t: TFunction = identityT,
+): string {
+  if (transport === "mcp_remote") return t("appAdvanced.remoteHttp");
+  if (transport === "local_stdio") return t("appAdvanced.localCommand");
+  return t("appAdvanced.unknown");
+}
+
+function identityT(key: string): string {
+  return key;
 }
