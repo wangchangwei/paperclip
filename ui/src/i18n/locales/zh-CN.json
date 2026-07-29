@@ -752,6 +752,17 @@
     "transport": "传输协议",
     "useExisting": "使用现有应用"
   },
+  "connections": {
+    "colActions": "Actions",
+    "colApp": "App",
+    "colLastUsed": "Last used",
+    "colStatus": "Status",
+    "connectApp": "Connect an app",
+    "fix": "Fix →",
+    "review": "Review →",
+    "selectCompany": "Select a company to manage apps.",
+    "title": "Connections"
+  },
   "costs": {
     "byAgent": "按代理",
     "byProject": "按项目",

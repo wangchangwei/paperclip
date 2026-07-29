@@ -1546,5 +1546,16 @@
     "colCommand": "Command",
     "colKeys": "Keys",
     "colAdded": "Added"
+  },
+  "connections": {
+    "selectCompany": "Select a company to manage apps.",
+    "title": "Connections",
+    "connectApp": "Connect an app",
+    "review": "Review →",
+    "fix": "Fix →",
+    "colApp": "App",
+    "colStatus": "Status",
+    "colActions": "Actions",
+    "colLastUsed": "Last used"
   }
 }

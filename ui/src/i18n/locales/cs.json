@@ -752,6 +752,17 @@
     "transport": "Transport",
     "useExisting": "Use existing application"
   },
+  "connections": {
+    "colActions": "Actions",
+    "colApp": "App",
+    "colLastUsed": "Last used",
+    "colStatus": "Status",
+    "connectApp": "Connect an app",
+    "fix": "Fix →",
+    "review": "Review →",
+    "selectCompany": "Select a company to manage apps.",
+    "title": "Connections"
+  },
   "costs": {
     "byAgent": "By agent",
     "byProject": "By project",

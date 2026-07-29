@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { useQuery } from "@tanstack/react-query";
 import { AppWindow, ShieldAlert, ShieldQuestion } from "lucide-react";
 import type {
@@ -82,6 +83,7 @@ const STATUS_CLASS: Record<AppStatus["tone"], string> = {
 };
 
 export function Connections() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { selectedCompany, selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
@@ -188,7 +190,7 @@ export function Connections() {
   const visibleRows = filter === "attention" ? rowsNeedingAttention : rows;
 
   if (!selectedCompanyId) {
-    return <div className="p-6 text-sm text-muted-foreground">Select a company to manage apps.</div>;
+    return <div className="p-6 text-sm text-muted-foreground">{t("connections.selectCompany")}</div>;
   }
 
   const loading = applicationsQuery.isLoading || connectionsQuery.isLoading || galleryQuery.isLoading;
@@ -206,12 +208,12 @@ export function Connections() {
         <div className="space-y-5">
           <header className="flex flex-wrap items-end justify-between gap-3">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">Connections</h1>
+              <h1 className="text-2xl font-bold tracking-tight">{t("connections.title")}</h1>
               <p className="mt-1 text-sm text-muted-foreground">
                 The tools you’ve connected, and whether they’re working.
               </p>
             </div>
-            <Button onClick={() => navigate(BROWSE_HREF)}>Connect an app</Button>
+            <Button onClick={() => navigate(BROWSE_HREF)}>{t("connections.connectApp")}</Button>
           </header>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -243,7 +245,7 @@ export function Connections() {
                   Your agents paused to check with you before making a change.
                 </div>
               </div>
-              <span className="shrink-0 text-xs font-semibold text-amber-800 dark:text-amber-200">Review →</span>
+              <span className="shrink-0 text-xs font-semibold text-amber-800 dark:text-amber-200">{t("connections.review")}</span>
             </button>
           )}
 
@@ -262,7 +264,7 @@ export function Connections() {
                   {floatSummary(rowsNeedingAttention)}
                 </div>
               </div>
-              <span className="shrink-0 text-xs font-semibold text-red-800 dark:text-red-200">Fix →</span>
+              <span className="shrink-0 text-xs font-semibold text-red-800 dark:text-red-200">{t("connections.fix")}</span>
             </button>
           )}
 
@@ -270,10 +272,10 @@ export function Connections() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/40 text-left text-(length:--text-micro) font-semibold uppercase tracking-wide text-muted-foreground">
-                  <th className="px-4 py-2.5">App</th>
-                  <th className="px-4 py-2.5">Status</th>
-                  <th className="px-4 py-2.5">Actions</th>
-                  <th className="px-4 py-2.5">Last used</th>
+                  <th className="px-4 py-2.5">{t("connections.colApp")}</th>
+                  <th className="px-4 py-2.5">{t("connections.colStatus")}</th>
+                  <th className="px-4 py-2.5">{t("connections.colActions")}</th>
+                  <th className="px-4 py-2.5">{t("connections.colLastUsed")}</th>
                   <th className="px-4 py-2.5" />
                 </tr>
               </thead>
@@ -420,10 +422,11 @@ function floatSummary(rows: AppRow[]): string {
 }
 
 function EmptyConnections({ onBrowse }: { onBrowse: () => void }) {
+  const { t } = useTranslation();
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold tracking-tight">Connections</h1>
+        <h1 className="text-2xl font-bold tracking-tight">{t("connections.title")}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           The tools you’ve connected, and whether they’re working.
         </p>
