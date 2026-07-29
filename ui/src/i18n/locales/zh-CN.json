@@ -1502,9 +1502,9 @@
     "openingCompany": "正在打开公司..."
   },
   "inviteUxLab": {
-    "eyebrow": "Invite UX Lab",
-    "headerDescription": "This page collects the current invite landing, signup, approval-result, and company invite-management states in one place so styling changes can be reviewed without recreating each backend condition by hand.",
-    "headerTitle": "Invite and signup UX review surface"
+    "eyebrow": "邀请 UX 实验室",
+    "headerDescription": "此页面汇集当前的邀请登录、注册、审批结果和公司邀请管理状态，以便在不手动重新创建每个后端条件的情况下审查样式更改。",
+    "headerTitle": "邀请和注册用户体验审查页面"
   },
   "issueChatLongThreadPerf": {
     "baselineMetrics": "基线指标",
