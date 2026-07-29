@@ -1391,16 +1391,16 @@
     "workspacesTab": "工作区"
   },
   "runtimeTab": {
-    "autoRefresh": "Updates automatically every 15 seconds.",
-    "clickRowHint": "Click a row to see how the connection is wired up.",
-    "colActions": "Actions",
-    "colApp": "App",
-    "colLastUsed": "Last used",
-    "colStatus": "Status",
-    "providerSide": "Runs on the provider's side",
-    "reviewActivity": "Review activity",
-    "reviewApps": "Review apps",
-    "runningApps": "Running apps"
+    "autoRefresh": "每 15 秒自动刷新。",
+    "clickRowHint": "点击行查看该连接的连接方式。",
+    "colActions": "操作",
+    "colApp": "应用",
+    "colLastUsed": "最近使用",
+    "colStatus": "状态",
+    "providerSide": "运行于服务方",
+    "reviewActivity": "查看活动",
+    "reviewApps": "查看应用",
+    "runningApps": "运行中的应用"
   },
   "secrets": {
     "allProviders": "All providers",
