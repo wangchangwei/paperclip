@@ -1302,17 +1302,17 @@
     "when": "When"
   },
   "profileActionDialog": {
-    "archiveBody": "This profile stops applying to {{count}} {{count, plural, one {agent} other {agents}}}. You can restore it later.",
-    "archiveConfirm": "Archive",
-    "archiveTitle": "Archive profile",
-    "deleteBlockedBody": "This profile is the company default. Reassign the company default to another profile before deleting it.",
-    "deleteBody": "This permanently deletes the profile and removes {{count}} {{count, plural, one {assignment} other {assignments}}.",
-    "deleteConfirm": "Delete",
-    "deleteTitle": "Delete profile",
-    "reassignBeforeDelete": "Choose another access profile and make it the company default first.",
-    "restoreBody": "This profile will be active again and can be assigned to agents.",
-    "restoreConfirm": "Restore",
-    "restoreTitle": "Restore profile"
+    "archiveBody": "此配置文件将不再应用于 {{count}} 个 Agent。后续可恢复。",
+    "archiveConfirm": "归档",
+    "archiveTitle": "归档配置文件",
+    "deleteBlockedBody": "此配置文件为公司默认配置。请先将公司默认配置切换为其他配置文件,再执行删除。",
+    "deleteBody": "此操作将永久删除配置文件,并移除 {{count}} 条分配记录。",
+    "deleteConfirm": "删除",
+    "deleteTitle": "删除配置文件",
+    "reassignBeforeDelete": "请先将其他访问配置文件设为公司默认配置。",
+    "restoreBody": "此配置文件将重新启用,可分配给 Agent。",
+    "restoreConfirm": "恢复",
+    "restoreTitle": "恢复配置文件"
   },
   "profileDetail": {
     "allowsHeading": "允许的能力",
@@ -1340,11 +1340,11 @@
     "whoHasIt": "使用者"
   },
   "profileDetailRoute": {
-    "accessProfilesBreadcrumb": "Access profiles",
-    "appsBreadcrumb": "Apps",
-    "companyFallback": "Company",
-    "profileDetailBreadcrumb": "Profile detail",
-    "selectCompanyAndProfile": "Select a company and profile."
+    "accessProfilesBreadcrumb": "访问配置文件",
+    "appsBreadcrumb": "应用",
+    "companyFallback": "公司",
+    "profileDetailBreadcrumb": "配置文件详情",
+    "selectCompanyAndProfile": "请选择公司和配置文件。"
   },
   "projectWorkspace": {
     "advancedRuntimeJson": "高级运行时JSON",
@@ -1606,9 +1606,9 @@
     "selectCompany": "请选择一个公司以打开高级设置。"
   },
   "toolsAdminGate": {
-    "body": "Access profiles decide which tools your agents can use. Ask an administrator to set these up, or head back to",
-    "heading": "Access profiles are for administrators",
-    "yourAppsLink": "your apps"
+    "body": "访问配置文件决定 Agent 可使用的工具。请联系管理员进行配置,或返回",
+    "heading": "访问配置文件仅供管理员使用",
+    "yourAppsLink": "应用列表"
   },
   "training": {
     "loadError": "无法加载训练示例。",
