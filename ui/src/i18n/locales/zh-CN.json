@@ -375,22 +375,22 @@
     "yesRemoveIt": "确认移除"
   },
   "appDetail": {
-    "appFallback": "App",
-    "breadcrumbApps": "Apps",
-    "breadcrumbCompany": "Company",
+    "appFallback": "应用",
+    "breadcrumbApps": "应用",
+    "breadcrumbCompany": "公司",
     "noSheetsConnected": "尚未连接任何工作表。",
     "openSheet": "打开工作表",
     "sheetsHeading": "代理可用的工作表",
     "sheetsHint": "代理只能使用此处列出的工作表。",
     "sheetsUrlPlaceholder": "https://docs.google.com/spreadsheets/d/...",
-    "toastAppRemoved": "App removed",
-    "toastAppRemovedBody": "{{appName}} no longer has access. You can connect it again any time.",
-    "toastRemoveFailed": "Couldn't remove the app",
-    "toastRenameFailed": "Couldn't rename the app",
-    "toastSaveFailed": "Couldn't save that",
-    "toastSaveInstallsFailed": "Couldn't save installs",
-    "toastStartSignInFailed": "Couldn't start sign-in",
-    "toastTryAgain": "Please try again."
+    "toastAppRemoved": "应用已移除",
+    "toastAppRemovedBody": "{{appName}} 不再具有访问权限。你可以随时重新连接。",
+    "toastRemoveFailed": "无法移除应用",
+    "toastRenameFailed": "无法重命名应用",
+    "toastSaveFailed": "保存失败",
+    "toastSaveInstallsFailed": "无法保存安装",
+    "toastStartSignInFailed": "无法启动登录",
+    "toastTryAgain": "请重试。"
   },
   "appNotConnected": {
     "address": "地址",
