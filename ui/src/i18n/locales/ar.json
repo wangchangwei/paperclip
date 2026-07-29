@@ -1390,6 +1390,18 @@
     "workspaceNotFound": "Workspace not found for this project.",
     "workspacesTab": "Workspaces"
   },
+  "runtimeTab": {
+    "autoRefresh": "Updates automatically every 15 seconds.",
+    "clickRowHint": "Click a row to see how the connection is wired up.",
+    "colActions": "Actions",
+    "colApp": "App",
+    "colLastUsed": "Last used",
+    "colStatus": "Status",
+    "providerSide": "Runs on the provider's side",
+    "reviewActivity": "Review activity",
+    "reviewApps": "Review apps",
+    "runningApps": "Running apps"
+  },
   "secrets": {
     "allProviders": "All providers",
     "cancel": "Cancel",

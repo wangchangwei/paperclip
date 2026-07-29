@@ -1,4 +1,5 @@
 import { useMemo, useState, type ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ChevronRight, Loader2, RotateCw, Server, Square } from "lucide-react";
 import type {
@@ -226,6 +227,7 @@ function SummaryCard({
 }
 
 function LivePill() {
+  const { t } = useTranslation();
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -234,7 +236,7 @@ function LivePill() {
           Live
         </span>
       </TooltipTrigger>
-      <TooltipContent>Updates automatically every 15 seconds.</TooltipContent>
+      <TooltipContent>{t("runtimeTab.autoRefresh")}</TooltipContent>
     </Tooltip>
   );
 }
@@ -250,6 +252,7 @@ function Disclosure({ open, label }: { open: boolean; label: string }) {
 }
 
 export function RuntimeTab({ companyId }: { companyId: string }) {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const { pushToast } = useToast();
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -403,11 +406,11 @@ export function RuntimeTab({ companyId }: { companyId: string }) {
                   </Button>
                 ) : action === "reviewApps" ? (
                   <Button size="sm" asChild>
-                    <Link to="/apps/attention">Review apps</Link>
+                    <Link to="/apps/attention">{t("runtimeTab.reviewApps")}</Link>
                   </Button>
                 ) : (
                   <Button size="sm" asChild>
-                    <Link to="/apps/advanced/audit">Review activity</Link>
+                    <Link to="/apps/advanced/audit">{t("runtimeTab.reviewActivity")}</Link>
                   </Button>
                 )}
                 <button
@@ -444,16 +447,16 @@ export function RuntimeTab({ companyId }: { companyId: string }) {
         <Card className="py-0">
           <CardContent className="px-0 py-0">
             <div className="px-5 pb-1 pt-4">
-              <h3 className="text-base font-bold text-foreground">Running apps</h3>
-              <p className="text-xs text-muted-foreground">Click a row to see how the connection is wired up.</p>
+              <h3 className="text-base font-bold text-foreground">{t("runtimeTab.runningApps")}</h3>
+              <p className="text-xs text-muted-foreground">{t("runtimeTab.clickRowHint")}</p>
             </div>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-xs font-medium text-muted-foreground">
-                  <th className="px-5 py-2.5">App</th>
-                  <th className="px-3 py-2.5">Status</th>
-                  <th className="px-3 py-2.5">Last used</th>
-                  <th className="px-5 py-2.5 text-right">Actions</th>
+                  <th className="px-5 py-2.5">{t("runtimeTab.colApp")}</th>
+                  <th className="px-3 py-2.5">{t("runtimeTab.colStatus")}</th>
+                  <th className="px-3 py-2.5">{t("runtimeTab.colLastUsed")}</th>
+                  <th className="px-5 py-2.5 text-right">{t("runtimeTab.colActions")}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -523,6 +526,7 @@ function RuntimeRowView({
   onRestart: () => void;
   onStop: () => void;
 }) {
+  const { t } = useTranslation();
   const { slot, connection, name, isLocal, status } = row;
   const canControl = isLocal && status !== "off";
   return (
@@ -560,7 +564,7 @@ function RuntimeRowView({
               Restart
             </Button>
           ) : (
-            <span className="text-xs text-muted-foreground">Runs on the provider's side</span>
+            <span className="text-xs text-muted-foreground">{t("runtimeTab.providerSide")}</span>
           )}
         </td>
       </tr>

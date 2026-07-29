@@ -1518,5 +1518,17 @@
     "clientLabel": "Client label",
     "clientLabelPlaceholder": "Cursor on work laptop",
     "ownerNote": "Owner note"
+  },
+  "runtimeTab": {
+    "autoRefresh": "Updates automatically every 15 seconds.",
+    "reviewApps": "Review apps",
+    "reviewActivity": "Review activity",
+    "runningApps": "Running apps",
+    "clickRowHint": "Click a row to see how the connection is wired up.",
+    "colApp": "App",
+    "colStatus": "Status",
+    "colLastUsed": "Last used",
+    "colActions": "Actions",
+    "providerSide": "Runs on the provider's side"
   }
 }
