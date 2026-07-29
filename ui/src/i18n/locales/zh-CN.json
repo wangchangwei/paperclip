@@ -2226,6 +2226,15 @@
   "routines": {
     "breadcrumb": "例程"
   },
+  "runTranscriptUxLab": {
+    "eyebrow": "UX Lab",
+    "finishedTimeAgo": "Finished {{minutes}}m ago",
+    "headerDescription": "Built from a real Paperclip development run, then sanitized so no secrets, local paths, or environment details survive into the fixture.",
+    "headerTitle": "Run Transcript Fixtures",
+    "liveNow": "Live now",
+    "showSettledState": "Show settled state",
+    "showStreamingState": "Show streaming state"
+  },
   "runYourOwn": {
     "colAdded": "添加时间",
     "colCommand": "命令",

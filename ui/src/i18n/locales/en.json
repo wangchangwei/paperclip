@@ -2751,5 +2751,14 @@
     "eyebrow": "Invite UX Lab",
     "headerTitle": "Invite and signup UX review surface",
     "headerDescription": "This page collects the current invite landing, signup, approval-result, and company invite-management states in one place so styling changes can be reviewed without recreating each backend condition by hand."
+  },
+  "runTranscriptUxLab": {
+    "eyebrow": "UX Lab",
+    "headerTitle": "Run Transcript Fixtures",
+    "headerDescription": "Built from a real Paperclip development run, then sanitized so no secrets, local paths, or environment details survive into the fixture.",
+    "liveNow": "Live now",
+    "finishedTimeAgo": "Finished {{minutes}}m ago",
+    "showSettledState": "Show settled state",
+    "showStreamingState": "Show streaming state"
   }
 }
