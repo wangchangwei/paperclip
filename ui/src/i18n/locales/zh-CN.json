@@ -1347,15 +1347,15 @@
     "selectCompanyAndProfile": "请选择公司和配置文件。"
   },
   "profileWizard": {
-    "assignToAgents": "Assign to agents",
-    "companyDefault": "Make this the company default",
-    "descriptionOptional": "Description (optional)",
-    "descriptionPlaceholder": "What is this profile for?",
-    "moreTargets": "More targets",
-    "namePlaceholder": "e.g. Everyday work",
-    "noCopyProfileYet": "You don't have another profile to copy yet.",
-    "startFrom": "Start from",
-    "whichProfile": "Which profile?"
+    "assignToAgents": "分配给 Agent",
+    "companyDefault": "设为公司默认配置",
+    "descriptionOptional": "描述(可选)",
+    "descriptionPlaceholder": "这个配置文件的用途是什么？",
+    "moreTargets": "更多分配目标",
+    "namePlaceholder": "例如:日常工作",
+    "noCopyProfileYet": "当前还没有可以复制的其他配置文件。",
+    "startFrom": "从模板开始",
+    "whichProfile": "复制哪个配置文件？"
   },
   "profilesIndex": {
     "checkAgentAccessDesc": "查看当前 Agent 可使用的工具,以及每个工具来自哪个配置文件。",
