@@ -2362,5 +2362,29 @@
     "permissionsReadOnly": "Previous setup is retained for reconnect, but access controls stay read-only until the app is online.",
     "noPreviousTitle": "No previous connection details",
     "noPreviousBody": "Technical details will appear here after this app is connected."
+  },
+  "companies": {
+    "breadcrumb": "Companies",
+    "newCompany": "New Company",
+    "loading": "Loading companies...",
+    "saveRename": "Save rename",
+    "cancelRename": "Cancel rename",
+    "renameAria": "Rename company",
+    "actionsAria": "Company actions",
+    "rename": "Rename",
+    "deleteCompany": "Delete Company",
+    "deleteConfirm": "Delete this company and all its data? This cannot be undone.",
+    "deleting": "Deleting…",
+    "delete": "Delete",
+    "unlimitedBudget": "Unlimited budget",
+    "status": {
+      "active": "active",
+      "paused": "paused"
+    },
+    "agentCount": "{{count}} agent",
+    "agentCount_other": "{{count}} agents",
+    "taskCount": "{{count}} task",
+    "taskCount_other": "{{count}} tasks",
+    "created": "Created {{when}}"
   }
 }

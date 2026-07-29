@@ -901,6 +901,30 @@
       "signedIn": "Signed in"
     }
   },
+  "companies": {
+    "actionsAria": "Company actions",
+    "agentCount": "{{count}} agent",
+    "agentCount_other": "{{count}} agents",
+    "breadcrumb": "Companies",
+    "cancelRename": "Cancel rename",
+    "created": "Created {{when}}",
+    "delete": "Delete",
+    "deleteCompany": "Delete Company",
+    "deleteConfirm": "Delete this company and all its data? This cannot be undone.",
+    "deleting": "Deleting…",
+    "loading": "Loading companies...",
+    "newCompany": "New Company",
+    "rename": "Rename",
+    "renameAria": "Rename company",
+    "saveRename": "Save rename",
+    "status": {
+      "active": "active",
+      "paused": "paused"
+    },
+    "taskCount": "{{count}} task",
+    "taskCount_other": "{{count}} tasks",
+    "unlimitedBudget": "Unlimited budget"
+  },
   "companiesPage": {
     "agentMany": "{{count}} agents",
     "agentOne": "1 agent",
