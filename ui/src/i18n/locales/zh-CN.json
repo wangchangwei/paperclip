@@ -640,6 +640,15 @@
     "signingOutComplete": "退出登录成功。",
     "workspaceName": "工作区名称"
   },
+  "boardChat": {
+    "assistantDidNotRespond": "The board assistant couldn't respond. Please try again.",
+    "assistantUnavailable": "The board assistant is unavailable right now. Please try again in a moment.",
+    "breadcrumb": "Conference Room",
+    "connecting": "Connecting...",
+    "jumpToLatest": "Jump to latest messages",
+    "thinking": "Thinking...",
+    "yourCompany": "Your company"
+  },
   "boardClaim": {
     "challengeInvalid": "校验已失效或已过期。",
     "challengeUnavailable": "领取校验不可用",

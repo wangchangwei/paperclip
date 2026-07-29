@@ -7,6 +7,7 @@ import {
   useMemo,
 } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useTranslation } from "@/i18n";
 import { useCompany } from "../context/CompanyContext";
 import { useBreadcrumbs } from "../context/BreadcrumbContext";
 import { useDialogState } from "../context/DialogContext";
@@ -101,13 +102,14 @@ function TypingBubble() {
 }
 
 export function BoardChat() {
+  const { t } = useTranslation();
   const { selectedCompanyId, selectedCompany } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    setBreadcrumbs([{ label: "Conference Room" }]);
-  }, [setBreadcrumbs]);
+    setBreadcrumbs([{ label: t("boardChat.breadcrumb") }]);
+  }, [setBreadcrumbs, t]);
 
   const splitContainerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -555,7 +557,7 @@ export function BoardChat() {
       setInput("");
       setStreamingText("");
       setErrorText("");
-      setStatusText("Connecting...");
+      setStatusText(t("boardChat.connecting"));
 
       try {
         const controller = new AbortController();
@@ -576,7 +578,7 @@ export function BoardChat() {
           throw new Error("Board chat stream not available");
         }
 
-        setStatusText("Thinking...");
+        setStatusText(t("boardChat.thinking"));
 
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
@@ -606,7 +608,7 @@ export function BoardChat() {
               } else if (event.type === "error") {
                 setErrorText(
                   event.message ||
-                    "The board assistant couldn't respond. Please try again.",
+                    t("boardChat.assistantDidNotRespond"),
                 );
                 setStatusText("");
               } else if (event.type === "done") {
@@ -634,7 +636,7 @@ export function BoardChat() {
         console.error("Board chat error:", err);
         setStatusText("");
         setErrorText(
-          "The board assistant is unavailable right now. Please try again in a moment.",
+          t("boardChat.assistantUnavailable"),
         );
       } finally {
         setSending(false);
@@ -689,10 +691,10 @@ export function BoardChat() {
             />
             <div className="min-w-0 flex-1">
               <h3 className="text-sm font-semibold">
-                {ceoAgent?.name ?? "Conference Room"}
+                {ceoAgent?.name ?? t("boardChat.breadcrumb")}
               </h3>
               <p className="text-xs text-muted-foreground">
-                {selectedCompany?.name ?? "Your company"}
+                {selectedCompany?.name ?? t("boardChat.yourCompany")}
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-0.5">
@@ -906,7 +908,7 @@ export function BoardChat() {
               {sending && (
                 <div className="flex items-center gap-2 pl-1 text-xs text-muted-foreground">
                   <img src="/paperclip-thinking.svg" alt="" className="inline-block shrink-0" style={{ width: 14, height: 14 }} />
-                  <span>{statusText || "Thinking..."}</span>
+                  <span>{statusText || t("boardChat.thinking")}</span>
                   {elapsedSec > 0 && (
                     <span className="opacity-50">{elapsedSec.toFixed(1)}s</span>
                   )}
@@ -941,7 +943,7 @@ export function BoardChat() {
             <button
               type="button"
               onClick={() => scrollToLatest("smooth")}
-              aria-label="Jump to latest messages"
+              aria-label={t("boardChat.jumpToLatest")}
               // design-allow(card-pattern): floating scroll-to-bottom <button>, not a content card (C5a Run 3)
               className="absolute bottom-24 left-1/2 z-20 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full border border-border bg-card text-foreground shadow-md transition-colors duration-150 hover:bg-accent hover:border-muted-foreground/30"
             >
