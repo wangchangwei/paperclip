@@ -434,11 +434,11 @@
     "gateways": "网关"
   },
   "appsToolsPanel": {
-    "appHeader": "App",
-    "empty": "No apps are assigned to this gateway’s profile yet.",
-    "intro": "These apps go through this gateway. The bound profile{{profile}} decides which tools are allowed{{allowed}} Change the profile under Advanced.",
-    "statusHeader": "Status",
-    "toolsHeader": "Tools"
+    "appHeader": "应用",
+    "empty": "此 Gateway 的配置文件尚未分配任何应用。",
+    "intro": "这些应用通过此 Gateway,绑定的配置文件{{profile}}决定允许哪些工具{{allowed}} 切换配置文件请到「高级」。",
+    "statusHeader": "状态",
+    "toolsHeader": "工具"
   },
   "audit": {
     "noMatches": "没有活动匹配这些筛选条件",
@@ -968,17 +968,17 @@
     "workspaces": "工作区"
   },
   "gatewayActivityPanel": {
-    "appFallback": "app",
-    "client": "Client",
-    "description": "Every call through this gateway in the last 7 days, with why it was allowed, blocked, or paused.",
-    "empty": "No calls have gone through this gateway yet.",
-    "outcomeAllowed": "Allowed",
-    "outcomeAskedFirst": "Ask first",
-    "outcomeBlocked": "Blocked",
-    "outcomeFailed": "Failed",
+    "appFallback": "应用",
+    "client": "客户端",
+    "description": "此 Gateway 过去 7 天内的所有调用,记录其允许/拦截/暂停原因。",
+    "empty": "此 Gateway 还没有调用记录。",
+    "outcomeAllowed": "已放行",
+    "outcomeAskedFirst": "先询问",
+    "outcomeBlocked": "已拦截",
+    "outcomeFailed": "失败",
     "outcomeUnknown": "—",
-    "outcomeWaiting": "Waiting",
-    "toolFallback": "tool"
+    "outcomeWaiting": "等待中",
+    "toolFallback": "工具"
   },
   "gatewayAdvancedPanel": {
     "archiveFailed": "无法归档该 Gateway",
