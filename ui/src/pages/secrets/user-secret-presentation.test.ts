@@ -67,7 +67,7 @@ describe("coverageSummaryLabel", () => {
 describe("myValueState", () => {
   it("is not_set when the user has no value", () => {
     expect(myValueState(definition, null)).toBe("not_set");
-    expect(myValueLabel(myValueState(definition, null))).toBe("Not set");
+    expect(myValueLabel(myValueState(definition, null), (k) => k)).toBe("secrets.userSecretPresentation.notSet");
   });
 
   it("is set when an active value exists", () => {

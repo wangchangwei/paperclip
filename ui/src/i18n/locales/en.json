@@ -1101,7 +1101,13 @@
     "filters": "Filters",
     "providedBy": "Provided by",
     "allProviders": "All providers",
-    "healthNotChecked": "Health not checked"
+    "healthNotChecked": "Health not checked",
+    "userSecretPresentation": {
+      "userSecretChipLabel": "User secret",
+      "valueSet": "Value set",
+      "notSet": "Not set",
+      "disabled": "Disabled"
+    }
   },
   "pipelines": {
     "selectCompany": "Select a company to view pipelines.",

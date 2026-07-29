@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type { CompanySecret } from "@paperclipai/shared";
 import { AlertCircle, KeyRound, Trash2, UserRound } from "lucide-react";
@@ -24,6 +25,7 @@ import {
  * "User secret definitions" tab.
  */
 export function MyUserSecretsTab({ companyId }: { companyId: string }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const { pushToast } = useToastActions();
   const [dialogFor, setDialogFor] = useState<MyUserSecretEntry | null>(null);
@@ -122,6 +124,7 @@ function MyUserSecretRow({
   onClear: () => void;
   clearing: boolean;
 }) {
+  const { t } = useTranslation();
   const { definition, secret } = entry;
   const state = myValueState(definition, secret);
   const disabledDefinition = definition.status !== "active";
@@ -157,7 +160,7 @@ function MyUserSecretRow({
 
       <div className="flex shrink-0 items-center gap-2">
         <Badge variant="outline" className={cn("text-(length:--text-micro)", myValueTone(state))}>
-          {myValueLabel(state)}
+          {myValueLabel(state, t)}
         </Badge>
         {!disabledDefinition ? (
           <Button size="sm" variant={secret ? "outline" : "default"} onClick={onSet}>

@@ -1581,6 +1581,12 @@
     "upTo": "Up to",
     "updated": "Updated",
     "useSecretsByBinding": "Use secrets by binding them to runtime environment variables.",
+    "userSecretPresentation": {
+      "disabled": "Disabled",
+      "notSet": "Not set",
+      "userSecretChipLabel": "User secret",
+      "valueSet": "Value set"
+    },
     "valueLabel": "Value",
     "whoProvides": "Who provides the value?"
   },
