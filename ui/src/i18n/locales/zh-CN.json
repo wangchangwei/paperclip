@@ -1205,9 +1205,9 @@
     "welcome": "欢迎使用Paperclip"
   },
   "org": {
-    "breadcrumb": "Org Chart",
-    "empty": "No agents in the organization. Create agents to build your org chart.",
-    "emptyCompany": "Select a company to view org chart."
+    "breadcrumb": "组织架构",
+    "empty": "组织内暂无 Agent,创建 Agent 以构建组织架构。",
+    "emptyCompany": "请选择一家公司以查看组织架构。"
   },
   "orgChart": {
     "title": "组织架构图"
