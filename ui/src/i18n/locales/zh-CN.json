@@ -1208,11 +1208,11 @@
     "title": "仪表板"
   },
   "designGuide": {
-    "coverageDescription": "This page should be updated when new UI primitives or app-level patterns ship.",
-    "coverageTitle": "Component Coverage",
-    "headerSubtitle": "Every component, style, and pattern used across Paperclip.",
-    "headerTitle": "Design Guide",
-    "uiPrimitives": "UI primitives"
+    "coverageDescription": "当新的 UI 基础组件或应用级模式发布时应更新此页面。",
+    "coverageTitle": "组件覆盖",
+    "headerSubtitle": "Paperclip 中使用的每个组件、样式和模式。",
+    "headerTitle": "设计指南",
+    "uiPrimitives": "UI 基础组件"
   },
   "errors": {
     "conflict": "发生冲突。请刷新后重试。",
