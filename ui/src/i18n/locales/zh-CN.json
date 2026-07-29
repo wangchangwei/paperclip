@@ -960,15 +960,15 @@
     "selectCompanyContext": "请选择公司环境以管理环境密钥与绑定。"
   },
   "companyExport": {
-    "breadcrumbExport": "Export",
-    "breadcrumbOrgChart": "Org Chart",
-    "exportDownloaded": "Export downloaded",
-    "exportFailed": "Export failed",
-    "exportedAs": "exported as {{filename}}.zip",
-    "failedToBuild": "Failed to build export package.",
-    "failedToLoad": "Failed to load export data.",
-    "file": "file",
-    "files": "files"
+    "breadcrumbExport": "导出",
+    "breadcrumbOrgChart": "组织架构",
+    "exportDownloaded": "导出完成",
+    "exportFailed": "导出失败",
+    "exportedAs": "已导出为 {{filename}}.zip",
+    "failedToBuild": "构建导出包失败。",
+    "failedToLoad": "加载导出数据失败。",
+    "file": "个文件",
+    "files": "个文件"
   },
   "companyImport": {
     "adapters": "适配器",
