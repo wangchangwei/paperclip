@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useTranslation } from "@/i18n";
 import { ResponsibleUserDenialNotice } from "@/components/ResponsibleUserDenialNotice";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
@@ -107,18 +108,19 @@ function RunDetailHeader({ onBehalfOf, denial }: { onBehalfOf?: string | null; d
 }
 
 export function ResponsibleUserDenialUxLab() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-muted/20 p-6">
       <div className="mx-auto max-w-5xl space-y-6">
         <header>
           <div className="text-(length:--text-micro) font-semibold uppercase tracking-(--tracking-caps) text-muted-foreground">
-            PAP-12462 · P7
+            {t("responsibleUserDenialUxLab.eyebrow")}
           </div>
           <h1 className="mt-1 text-xl font-semibold text-foreground">
-            Run "on behalf of" surfacing + denial copy
+            {t("responsibleUserDenialUxLab.headerTitle")}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Before/after of the two run surfaces and the four denial-related states.
+            {t("responsibleUserDenialUxLab.headerDescription")}
           </p>
         </header>
 

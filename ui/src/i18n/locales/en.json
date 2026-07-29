@@ -2775,5 +2775,10 @@
   },
   "cloudUpstreamUxLab": {
     "navTitle": "UX lab · cloud upstream"
+  },
+  "responsibleUserDenialUxLab": {
+    "eyebrow": "PAP-12462 · P7",
+    "headerTitle": "Run \"on behalf of\" surfacing + denial copy",
+    "headerDescription": "Before/after of the two run surfaces and the four denial-related states."
   }
 }

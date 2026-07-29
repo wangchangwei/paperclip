@@ -2175,6 +2175,11 @@
     "workspaceNotFound": "未找到此项目的工作区。",
     "workspacesTab": "工作区"
   },
+  "responsibleUserDenialUxLab": {
+    "eyebrow": "PAP-12462 · P7",
+    "headerDescription": "Before/after of the two run surfaces and the four denial-related states.",
+    "headerTitle": "Run \"on behalf of\" surfacing + denial copy"
+  },
   "reviewQueue": {
     "allowOnceButton": "本次允许",
     "allowedOnce": "已批准一次",
