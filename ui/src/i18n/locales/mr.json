@@ -449,6 +449,23 @@
     "signingOutComplete": "Signed out successfully.",
     "workspaceName": "Workspace name"
   },
+  "boardClaim": {
+    "challengeInvalid": "Challenge is invalid or expired.",
+    "challengeUnavailable": "Claim challenge unavailable",
+    "claimButton": "Claim ownership",
+    "claimed": "Board ownership claimed",
+    "claimedDesc": "This instance is now linked to your authenticated user.",
+    "claiming": "Claiming…",
+    "failed": "Failed to claim board ownership",
+    "invalidUrl": "Invalid board claim URL.",
+    "loading": "Loading claim challenge…",
+    "openBoard": "Open board",
+    "signIn": "Sign in / Create account",
+    "signInRequired": "Sign in required",
+    "signInRequiredDesc": "Sign in or create an account, then return to this page to claim Board ownership.",
+    "title": "Claim Board ownership",
+    "titleDesc": "This will promote your user to instance admin and migrate company ownership access from local trusted mode."
+  },
   "bootstrap": {
     "alreadyClaimed": "Someone else has already claimed this instance.",
     "claimInstance": "Claim this instance",

@@ -1750,5 +1750,22 @@
     "requestedPath": "Requested path",
     "openDashboard": "Open dashboard",
     "goHome": "Go home"
+  },
+  "boardClaim": {
+    "invalidUrl": "Invalid board claim URL.",
+    "loading": "Loading claim challenge…",
+    "challengeUnavailable": "Claim challenge unavailable",
+    "challengeInvalid": "Challenge is invalid or expired.",
+    "claimed": "Board ownership claimed",
+    "claimedDesc": "This instance is now linked to your authenticated user.",
+    "openBoard": "Open board",
+    "signInRequired": "Sign in required",
+    "signInRequiredDesc": "Sign in or create an account, then return to this page to claim Board ownership.",
+    "signIn": "Sign in / Create account",
+    "title": "Claim Board ownership",
+    "titleDesc": "This will promote your user to instance admin and migrate company ownership access from local trusted mode.",
+    "failed": "Failed to claim board ownership",
+    "claiming": "Claiming…",
+    "claimButton": "Claim ownership"
   }
 }
