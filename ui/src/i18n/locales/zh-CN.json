@@ -517,11 +517,11 @@
     "titleDesc": "本地 Paperclip CLI 进程正在请求 Board 访问本实例。"
   },
   "cloudUpstream": {
-    "company": "Company",
-    "emptyCompany": "Select a company to configure cloud upstream.",
-    "loading": "Loading experimental settings…",
-    "settings": "Settings",
-    "title": "Cloud upstream"
+    "company": "公司",
+    "emptyCompany": "请选择一家公司以配置云端 upstream。",
+    "loading": "正在加载实验性设置…",
+    "settings": "设置",
+    "title": "云端 Upstream"
   },
   "command": {
     "paletteDescription": "搜索要运行的命令...",
