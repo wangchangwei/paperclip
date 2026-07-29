@@ -1,4 +1,11 @@
 {
+  "activity": {
+    "allTypes": "All types",
+    "breadcrumb": "Activity",
+    "empty": "No activity yet.",
+    "emptyCompany": "Select a company to view activity.",
+    "filterPlaceholder": "Filter by type"
+  },
   "adapterManager": {
     "builtinHeading": "Built-in Adapters",
     "externalAlpha": "External adapters are alpha.",
@@ -411,6 +418,14 @@
     "zapierHeading": "Connect Zapier",
     "zapierUrlHint": "Paste the complete MCP URL Zapier gives you, including its token.",
     "zapierUrlLabel": "Zapier MCP URL"
+  },
+  "appsReview": {
+    "apps": "Apps",
+    "company": "Company",
+    "description": "Actions your agents want to run that need your OK first. Approve, always-allow, or decline.",
+    "emptyCompany": "Select a company to review approvals.",
+    "review": "Review",
+    "waitingForOK": "Waiting for your OK"
   },
   "appsSubNav": {
     "activity": "Activity",
@@ -1792,6 +1807,12 @@
     "summarizerDefault": "Summarizer (default)",
     "tryAgain": "Try again.",
     "untitledCard": "Untitled card"
+  },
+  "storeCards": {
+    "byoConnect": "Connect your own tool",
+    "byoConnectAction": "Connect →",
+    "byoConnectDesc": "Paste the URL from a custom or self-hosted MCP server and review its actions before enabling it.",
+    "developerTools": "Developer tools (advanced)"
   },
   "testPanel": {
     "badgeLegendHeading": "What the badges mean",

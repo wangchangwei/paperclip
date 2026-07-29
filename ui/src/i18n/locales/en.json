@@ -1879,5 +1879,26 @@
     "removing": "Removing…",
     "coverage": "Coverage: {{label}}",
     "missingSuffix": "· {{missing}} not set"
+  },
+  "activity": {
+    "breadcrumb": "Activity",
+    "emptyCompany": "Select a company to view activity.",
+    "filterPlaceholder": "Filter by type",
+    "allTypes": "All types",
+    "empty": "No activity yet."
+  },
+  "appsReview": {
+    "company": "Company",
+    "apps": "Apps",
+    "review": "Review",
+    "emptyCompany": "Select a company to review approvals.",
+    "description": "Actions your agents want to run that need your OK first. Approve, always-allow, or decline.",
+    "waitingForOK": "Waiting for your OK"
+  },
+  "storeCards": {
+    "byoConnect": "Connect your own tool",
+    "byoConnectDesc": "Paste the URL from a custom or self-hosted MCP server and review its actions before enabling it.",
+    "byoConnectAction": "Connect →",
+    "developerTools": "Developer tools (advanced)"
   }
 }

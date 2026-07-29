@@ -1,4 +1,11 @@
 {
+  "activity": {
+    "allTypes": "All types",
+    "breadcrumb": "Activity",
+    "empty": "No activity yet.",
+    "emptyCompany": "Select a company to view activity.",
+    "filterPlaceholder": "Filter by type"
+  },
   "adapterManager": {
     "builtinHeading": "内置适配器",
     "externalAlpha": "外部适配器处于 Alpha 阶段。",
@@ -411,6 +418,14 @@
     "zapierHeading": "连接 Zapier",
     "zapierUrlHint": "Paste the complete MCP URL Zapier gives you, including its token.",
     "zapierUrlLabel": "Zapier MCP URL"
+  },
+  "appsReview": {
+    "apps": "Apps",
+    "company": "Company",
+    "description": "Actions your agents want to run that need your OK first. Approve, always-allow, or decline.",
+    "emptyCompany": "Select a company to review approvals.",
+    "review": "Review",
+    "waitingForOK": "Waiting for your OK"
   },
   "appsSubNav": {
     "activity": "活动",
@@ -1792,6 +1807,12 @@
     "summarizerDefault": "默认 Summarizer",
     "tryAgain": "请重试。",
     "untitledCard": "未命名卡片"
+  },
+  "storeCards": {
+    "byoConnect": "Connect your own tool",
+    "byoConnectAction": "Connect →",
+    "byoConnectDesc": "Paste the URL from a custom or self-hosted MCP server and review its actions before enabling it.",
+    "developerTools": "Developer tools (advanced)"
   },
   "testPanel": {
     "badgeLegendHeading": "徽标含义",

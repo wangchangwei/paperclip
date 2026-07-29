@@ -1,6 +1,7 @@
 import { ServerCog, Wrench } from "lucide-react";
 import { Link } from "@/lib/router";
 import { advancedTabHref } from "@/pages/tools/tool-tabs";
+import { useTranslation } from "@/i18n";
 
 /** Popular gallery keys surfaced first in the Browse store (PAP-13254, door 1). */
 export const POPULAR_KEYS = ["zapier", "github", "slack", "notion", "linear"];
@@ -16,6 +17,7 @@ export const ZAPIER_CONNECT_HREF = "/apps/connect?byo=1&source=zapier";
  * Lives in Browse as a persistent row and launches the guided URL flow.
  */
 export function ByoConnectCard({ onConnect }: { onConnect: () => void }) {
+  const { t } = useTranslation();
   return (
     <button
       type="button"
@@ -26,25 +28,26 @@ export function ByoConnectCard({ onConnect }: { onConnect: () => void }) {
         <ServerCog className="h-5 w-5 text-muted-foreground" />
       </span>
       <div className="min-w-0 flex-1">
-        <div className="text-sm font-semibold text-foreground">Connect your own tool</div>
+        <div className="text-sm font-semibold text-foreground">{t("storeCards.byoConnect")}</div>
         <div className="text-xs text-muted-foreground">
-          Paste the URL from a custom or self-hosted MCP server and review its actions before enabling it.
+          {t("storeCards.byoConnectDesc")}
         </div>
       </div>
-      <span className="shrink-0 text-xs font-semibold text-primary">Connect →</span>
+      <span className="shrink-0 text-xs font-semibold text-primary">{t("storeCards.byoConnectAction")}</span>
     </button>
   );
 }
 
 /** Labeled door to the developer control-plane (PAP-12371, Finding A cross-link). */
 export function AdvancedToolsLink() {
+  const { t } = useTranslation();
   return (
     <Link
       to={advancedTabHref("run-your-own")}
       className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
     >
       <Wrench className="h-3.5 w-3.5" />
-      Developer tools (advanced)
+      {t("storeCards.developerTools")}
     </Link>
   );
 }
