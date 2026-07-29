@@ -1767,5 +1767,12 @@
     "noMatches": "No training examples match these filters.",
     "subtitle": "Human decision traces with frozen state for future eval cases.",
     "title": "Training examples"
+  },
+  "workspaces": {
+    "breadcrumb": "Workspaces",
+    "empty": "No workspace activity yet.",
+    "summaryDesc": "Summarizer tracks workspace activity, live services, and follow-up needs across projects.",
+    "summaryTitle": "Workspace summary",
+    "title": "Workspaces"
   }
 }

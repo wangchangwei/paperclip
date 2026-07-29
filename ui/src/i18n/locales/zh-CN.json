@@ -1767,5 +1767,12 @@
     "noMatches": "没有匹配这些筛选条件的训练示例。",
     "subtitle": "人工决策轨迹及其冻结状态,可用于未来的评估用例。",
     "title": "训练示例"
+  },
+  "workspaces": {
+    "breadcrumb": "Workspaces",
+    "empty": "No workspace activity yet.",
+    "summaryDesc": "Summarizer tracks workspace activity, live services, and follow-up needs across projects.",
+    "summaryTitle": "Workspace summary",
+    "title": "Workspaces"
   }
 }

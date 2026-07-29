@@ -1767,5 +1767,12 @@
     "failed": "Failed to claim board ownership",
     "claiming": "Claiming…",
     "claimButton": "Claim ownership"
+  },
+  "workspaces": {
+    "breadcrumb": "Workspaces",
+    "title": "Workspaces",
+    "summaryTitle": "Workspace summary",
+    "summaryDesc": "Summarizer tracks workspace activity, live services, and follow-up needs across projects.",
+    "empty": "No workspace activity yet."
   }
 }
