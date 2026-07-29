@@ -481,7 +481,8 @@
     "healthy": "Healthy",
     "tool": "tool",
     "toolsPlural": "tools",
-    "open": "Open"
+    "open": "Open",
+    "done": "Done"
   },
   "dashboard": {
     "liveRuns": "Live Runs",
@@ -2008,5 +2009,21 @@
     "toolFallback": "tool",
     "appFallback": "app",
     "client": "Client"
+  },
+  "connectClientDialog": {
+    "title": "Connect a client",
+    "description": "Pick how you’ll point your client at this gateway.",
+    "clientsLabel": "Clients",
+    "rawUrl": "Raw URL",
+    "endpointUrl": "Endpoint URL",
+    "authHelp": "Authenticate with Authorization: Bearer <token> over streamable HTTP.",
+    "snippetConfigLabel": "{{label}} config",
+    "noSnippets": "No client snippets available for this gateway.",
+    "token": "Token",
+    "accessToken": "Access token",
+    "show": "Show",
+    "noTokenMint": "Mint a token on the Tokens tab, then paste it where the snippet shows Bearer …. You won’t see a token’s full value again after it’s created.",
+    "tokensLabel": "Tokens",
+    "tokenSecurityWarning": "Treat this like a password. Anyone with the token can call exactly the tools this gateway allows. If it leaks, revoke it — the client goes silent immediately."
   }
 }

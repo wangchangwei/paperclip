@@ -1,6 +1,7 @@
 import { ReviewQueueCard } from "../ReviewQueueCard";
 import { QuarantinePill } from "./SetupPanel";
 import type { AppDetailSectionProps } from "./types";
+import { useTranslation } from "@/i18n";
 
 export function ReviewPanel({
   connectionId,
@@ -11,6 +12,7 @@ export function ReviewPanel({
   Partial<Pick<AppDetailSectionProps, "quarantined" | "pending">> & {
     onTurnOnQuarantined?: (ids: string[]) => void;
   }) {
+  const { t } = useTranslation();
   const showsQuarantinedActions = quarantined.length > 0 && !!onTurnOnQuarantined;
 
   return (
@@ -25,7 +27,7 @@ export function ReviewPanel({
       ) : null}
       <ReviewQueueCard
         connectionId={connectionId}
-        heading="Waiting for your OK"
+        heading={t("reviewQueue.defaultHeading")}
         emptyState={showsQuarantinedActions ? "hidden" : "reassure"}
       />
     </div>

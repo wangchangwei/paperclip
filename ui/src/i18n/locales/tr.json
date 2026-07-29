@@ -611,6 +611,7 @@
     "create": "Create",
     "details": "Details",
     "dismiss": "Dismiss",
+    "done": "Done",
     "empty": {
       "noCompanies": "No companies",
       "noData": "No data",
@@ -880,6 +881,22 @@
     },
     "typeBundled": "Bundled",
     "typeOptional": "Optional"
+  },
+  "connectClientDialog": {
+    "accessToken": "Access token",
+    "authHelp": "Authenticate with Authorization: Bearer <token> over streamable HTTP.",
+    "clientsLabel": "Clients",
+    "description": "Pick how you’ll point your client at this gateway.",
+    "endpointUrl": "Endpoint URL",
+    "noSnippets": "No client snippets available for this gateway.",
+    "noTokenMint": "Mint a token on the Tokens tab, then paste it where the snippet shows Bearer …. You won’t see a token’s full value again after it’s created.",
+    "rawUrl": "Raw URL",
+    "show": "Show",
+    "snippetConfigLabel": "{{label}} config",
+    "title": "Connect a client",
+    "token": "Token",
+    "tokenSecurityWarning": "Treat this like a password. Anyone with the token can call exactly the tools this gateway allows. If it leaks, revoke it — the client goes silent immediately.",
+    "tokensLabel": "Tokens"
   },
   "connectionDialogs": {
     "addAppTitle": "Add application",

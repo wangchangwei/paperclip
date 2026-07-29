@@ -13,6 +13,7 @@ import {
 import { useToast } from "@/context/ToastContext";
 import { cn } from "@/lib/utils";
 import { formatSnippetConfig, maskedTokenLabel, orderedSnippets } from "./gateway-helpers";
+import { useTranslation } from "@/i18n";
 
 type PanelKey = string; // snippet client key, or "raw_url"
 
@@ -34,6 +35,7 @@ export function ConnectClientDialog({
   createdToken?: ToolMcpGatewayTokenCreated | null;
 }) {
   const { pushToast } = useToast();
+  const { t } = useTranslation();
   const snippets = useMemo(() => orderedSnippets(gateway.clientSnippets ?? []), [gateway.clientSnippets]);
   const endpoint = useMemo(() => {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
@@ -53,14 +55,14 @@ export function ConnectClientDialog({
   async function copyText(value: string, label: string) {
     try {
       if (typeof navigator === "undefined" || !navigator.clipboard?.writeText) {
-        throw new Error("Clipboard access is unavailable.");
+        throw new Error(t("common.copyFailedBody"));
       }
       await navigator.clipboard.writeText(value);
-      pushToast({ title: "Copied", body: label, tone: "success" });
+      pushToast({ title: t("common.copied"), body: label, tone: "success" });
     } catch (error) {
       pushToast({
-        title: "Copy failed",
-        body: error instanceof Error ? error.message : "Clipboard access is unavailable.",
+        title: t("common.copyFailed"),
+        body: error instanceof Error ? error.message : t("common.copyFailedBody"),
         tone: "error",
       });
     }
@@ -73,14 +75,14 @@ export function ConnectClientDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Connect a client</DialogTitle>
+          <DialogTitle>{t("connectClientDialog.title")}</DialogTitle>
           <DialogDescription>
-            Pick how you’ll point your client at this gateway.
+            {t("connectClientDialog.description")}
           </DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-4 sm:grid-cols-(--gtc-10)">
-          <nav className="flex gap-1 overflow-x-auto sm:flex-col" aria-label="Clients">
+          <nav className="flex gap-1 overflow-x-auto sm:flex-col" aria-label={t("connectClientDialog.clientsLabel")}>
             {snippets.map((snippet) => (
               <button
                 key={snippet.client}
@@ -106,25 +108,25 @@ export function ConnectClientDialog({
                   : "text-muted-foreground hover:bg-muted/60",
               )}
             >
-              Raw URL
+              {t("connectClientDialog.rawUrl")}
             </button>
           </nav>
 
           <div className="min-w-0 space-y-3">
             {active === "raw_url" ? (
               <div className="space-y-1.5">
-                <div className="text-sm font-medium text-foreground">Endpoint URL</div>
+                <div className="text-sm font-medium text-foreground">{t("connectClientDialog.endpointUrl")}</div>
                 <div className="flex items-center gap-2">
                   <code className="min-w-0 flex-1 truncate rounded-md bg-muted px-3 py-2 font-mono text-xs text-muted-foreground">
                     {endpoint}
                   </code>
-                  <Button variant="outline" size="sm" onClick={() => void copyText(endpoint, "Endpoint URL")}>
+                  <Button variant="outline" size="sm" onClick={() => void copyText(endpoint, t("connectClientDialog.endpointUrl"))}>
                     <Copy className="mr-1 h-3.5 w-3.5" />
-                    Copy
+                    {t("common.copy")}
                   </Button>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Authenticate with <code>Authorization: Bearer &lt;token&gt;</code> over streamable HTTP.
+                  {t("connectClientDialog.authHelp")}
                 </p>
               </div>
             ) : activeSnippet ? (
@@ -134,10 +136,10 @@ export function ConnectClientDialog({
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => void copyText(configText, `${activeSnippet.label} config`)}
+                    onClick={() => void copyText(configText, t("connectClientDialog.snippetConfigLabel", { label: activeSnippet.label }))}
                   >
                     <Copy className="mr-1 h-3.5 w-3.5" />
-                    Copy
+                    {t("common.copy")}
                   </Button>
                 </div>
                 <pre className="max-h-64 overflow-auto whitespace-pre-wrap break-words rounded-md bg-muted p-3 font-mono text-xs text-muted-foreground">
@@ -152,11 +154,11 @@ export function ConnectClientDialog({
                 ) : null}
               </div>
             ) : (
-              <p className="text-sm text-muted-foreground">No client snippets available for this gateway.</p>
+              <p className="text-sm text-muted-foreground">{t("connectClientDialog.noSnippets")}</p>
             )}
 
             <div className="space-y-1.5 rounded-md border border-border p-3">
-              <div className="text-xs font-medium text-muted-foreground">Token</div>
+              <div className="text-xs font-medium text-muted-foreground">{t("connectClientDialog.token")}</div>
               {createdToken ? (
                 <div className="flex items-center gap-2">
                   <code className="min-w-0 flex-1 truncate rounded bg-background px-2 py-1.5 font-mono text-xs text-foreground">
@@ -166,27 +168,24 @@ export function ConnectClientDialog({
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => void copyText(createdToken.token, "Access token")}
+                      onClick={() => void copyText(createdToken.token, t("connectClientDialog.accessToken"))}
                     >
                       <Copy className="mr-1 h-3.5 w-3.5" />
-                      Copy
+                      {t("common.copy")}
                     </Button>
                   ) : (
                     <Button variant="outline" size="sm" onClick={() => setRevealed(true)}>
-                      Show
+                      {t("connectClientDialog.show")}
                     </Button>
                   )}
                 </div>
               ) : (
                 <p className="text-xs text-muted-foreground">
-                  Mint a token on the <span className="font-medium">Tokens</span> tab, then paste it where the
-                  snippet shows <code>Bearer …</code>. You won’t see a token’s full value again after it’s
-                  created.
+                  {t("connectClientDialog.noTokenMint", { tokensLabel: t("connectClientDialog.tokensLabel") })}
                 </p>
               )}
               <p className="text-xs text-muted-foreground">
-                Treat this like a password. Anyone with the token can call exactly the tools this gateway
-                allows. If it leaks, revoke it — the client goes silent immediately.
+                {t("connectClientDialog.tokenSecurityWarning")}
               </p>
             </div>
           </div>
@@ -195,7 +194,7 @@ export function ConnectClientDialog({
         <DialogFooter>
           <Button onClick={() => onOpenChange(false)}>
             <Check className="mr-1.5 h-4 w-4" />
-            Done
+            {t("common.done")}
           </Button>
         </DialogFooter>
       </DialogContent>
