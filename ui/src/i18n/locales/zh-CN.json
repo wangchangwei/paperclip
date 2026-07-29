@@ -763,8 +763,8 @@
     "uploadingLogo": "正在上传Logo..."
   },
   "companySettingsPluginPage": {
-    "emptyCompany": "Select a company to view this page.",
-    "settings": "Settings"
+    "emptyCompany": "请选择一家公司以查看此页面。",
+    "settings": "设置"
   },
   "companySkills": {
     "catalog": {
@@ -1524,15 +1524,15 @@
     "whichProfile": "复制哪个配置文件？"
   },
   "profileWizardRoute": {
-    "accessProfiles": "Access profiles",
-    "apps": "Apps",
-    "company": "Company",
-    "description": "Choose which tools this profile allows, then assign it to the agents that need them.",
-    "emptyCompany": "Select a company to create a profile.",
-    "finishProfile": "Finish your profile",
-    "newAccessProfile": "New access profile",
-    "newProfile": "New profile",
-    "resumeDraft": "Resume draft"
+    "accessProfiles": "访问配置文件",
+    "apps": "应用",
+    "company": "公司",
+    "description": "选择该配置文件允许的工具,然后分配给需要的 Agent。",
+    "emptyCompany": "请选择一家公司以创建访问配置文件。",
+    "finishProfile": "完成配置文件",
+    "newAccessProfile": "新建访问配置文件",
+    "newProfile": "新建配置文件",
+    "resumeDraft": "恢复草稿"
   },
   "profilesIndex": {
     "checkAgentAccessDesc": "查看当前 Agent 可使用的工具,以及每个工具来自哪个配置文件。",
