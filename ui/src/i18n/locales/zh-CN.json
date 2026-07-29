@@ -1163,14 +1163,14 @@
     "toastFailed": "Gateway was not created"
   },
   "notFound": {
-    "breadcrumb": "Not Found",
-    "companyNotFound": "Company not found",
-    "companyNotFoundDesc": "No company matches prefix \"{{prefix}}\".",
-    "goHome": "Go home",
-    "openDashboard": "Open dashboard",
-    "pageNotFound": "Page not found",
-    "pageNotFoundDesc": "This route does not exist.",
-    "requestedPath": "Requested path"
+    "breadcrumb": "未找到",
+    "companyNotFound": "未找到公司",
+    "companyNotFoundDesc": "没有匹配前缀 \"{{prefix}}\" 的公司。",
+    "goHome": "回到首页",
+    "openDashboard": "打开面板",
+    "pageNotFound": "页面不存在",
+    "pageNotFoundDesc": "该路由不存在。",
+    "requestedPath": "请求路径"
   },
   "onboarding": {
     "companyName": "公司名称",
