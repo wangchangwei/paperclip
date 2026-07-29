@@ -1740,5 +1740,15 @@
     "deleting": "Deleting…",
     "rename": "Rename",
     "deleteCompany": "Delete company"
+  },
+  "notFound": {
+    "breadcrumb": "Not Found",
+    "companyNotFound": "Company not found",
+    "pageNotFound": "Page not found",
+    "companyNotFoundDesc": "No company matches prefix \"{{prefix}}\".",
+    "pageNotFoundDesc": "This route does not exist.",
+    "requestedPath": "Requested path",
+    "openDashboard": "Open dashboard",
+    "goHome": "Go home"
   }
 }

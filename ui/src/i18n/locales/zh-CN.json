@@ -1162,6 +1162,16 @@
     "toastCreated": "Gateway created",
     "toastFailed": "Gateway was not created"
   },
+  "notFound": {
+    "breadcrumb": "Not Found",
+    "companyNotFound": "Company not found",
+    "companyNotFoundDesc": "No company matches prefix \"{{prefix}}\".",
+    "goHome": "Go home",
+    "openDashboard": "Open dashboard",
+    "pageNotFound": "Page not found",
+    "pageNotFoundDesc": "This route does not exist.",
+    "requestedPath": "Requested path"
+  },
   "onboarding": {
     "companyName": "公司名称",
     "companyNamePlaceholder": "例如：Acme Corp",
