@@ -125,19 +125,25 @@ export function formatUsdFromCents(cents: number): string {
 }
 
 /** A one-line, human summary of a card's refresh policy for chips and footers. */
-export function describeRefreshPolicy(policy: StatusCardRefreshPolicy): string {
+export function describeRefreshPolicy(policy: StatusCardRefreshPolicy, t?: (key: string) => string): string {
+  const fallbacks: Record<string, string> = {
+    manualLabel: "manual",
+    intervalDefault: "on a schedule if changed",
+    reactiveDefault: "on change ({{debounce}}s)",
+  };
+  const localize = (key: string, fallback: string): string => (t ? t(`statusCardPolicy.${key}`) : fallback);
   switch (policy.mode) {
     case "manual":
-      return "manual";
+      return localize("manualLabel", fallbacks.manualLabel);
     case "interval":
       return policy.intervalMinutes
-        ? `every ${policy.intervalMinutes}m if changed`
-        : "on a schedule if changed";
+        ? localize("intervalEvery", "every {{minutes}}m if changed").replace("{{minutes}}", String(policy.intervalMinutes))
+        : localize("intervalDefault", fallbacks.intervalDefault);
     case "reactive": {
       const debounce = policy.debounceSeconds ?? 60;
-      return `on change (${debounce}s)`;
+      return localize("reactiveOnChange", fallbacks.reactiveDefault).replace("{{debounce}}", String(debounce));
     }
     default:
-      return "manual";
+      return localize("manualLabel", fallbacks.manualLabel);
   }
 }

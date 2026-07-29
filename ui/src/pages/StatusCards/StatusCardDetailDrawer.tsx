@@ -7,6 +7,7 @@ import { AlertTriangle, ChevronDown, ExternalLink, History, Loader2, RefreshCw, 
 import { statusCardsApi, type StatusCardDryRun } from "@/api/statusCards";
 import { MarkdownBody } from "@/components/MarkdownBody";
 import { useSummaryDraftStream } from "@/components/useSummaryDraftStream";
+import { useTranslation } from "@/i18n";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,6 +54,7 @@ export function StatusCardDetailDrawer({
   initialTab?: string;
 }) {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
   const [tab, setTab] = useState("summary");
   const [settings, setSettings] = useState<StatusCardSettingsValue>(defaultSettingsValue());
   // Rename + interest ("query") are edited in Settings alongside the policy.
@@ -126,9 +128,9 @@ export function StatusCardDetailDrawer({
     },
     onSuccess: async () => {
       await invalidateCard();
-      setActionNote("Refresh queued — the Summarizer is updating this card.");
+      setActionNote(t("statusCardDetailDrawer.refreshQueued"));
     },
-    onError: (err) => setActionError(err instanceof Error ? err.message : "Could not refresh the card."),
+    onError: (err) => setActionError(err instanceof Error ? err.message : t("statusCardDetailDrawer.refreshFailed")),
   });
 
   const recompileMutation = useMutation({
@@ -139,9 +141,9 @@ export function StatusCardDetailDrawer({
     },
     onSuccess: async () => {
       await invalidateCard();
-      setActionNote("Run queued — the Summarizer is updating this card.");
+      setActionNote(t("statusCardDetailDrawer.runQueued"));
     },
-    onError: (err) => setActionError(err instanceof Error ? err.message : "Could not run the card."),
+    onError: (err) => setActionError(err instanceof Error ? err.message : t("statusCardDetailDrawer.runFailed")),
   });
 
   const saveSettingsMutation = useMutation({
@@ -168,7 +170,7 @@ export function StatusCardDetailDrawer({
         queryClient.invalidateQueries({ queryKey: queryKeys.statusCards.detail(card.id) }),
       ]);
     },
-    onError: (err) => setActionError(err instanceof Error ? err.message : "Could not save settings."),
+    onError: (err) => setActionError(err instanceof Error ? err.message : t("statusCardDetailDrawer.saveFailed")),
   });
 
   if (!card) return null;
@@ -210,7 +212,7 @@ export function StatusCardDetailDrawer({
         <SheetHeader className="border-b border-border p-4">
           <div className="flex items-center gap-2 pr-8">
             <span className={cn("inline-block h-2.5 w-2.5 shrink-0 rounded-full", presentation.dotClassName)} aria-hidden="true" />
-            <SheetTitle className="min-w-0 flex-1 truncate text-lg">{card.title ?? "Untitled card"}</SheetTitle>
+            <SheetTitle className="min-w-0 flex-1 truncate text-lg">{card.title ?? t("statusCardDetailDrawer.untitledCard")}</SheetTitle>
             <Badge variant="outline">{presentation.label}</Badge>
             {lifecycle === "compiling" ? (
               <Button
@@ -226,7 +228,7 @@ export function StatusCardDetailDrawer({
                 ) : (
                   <Wand2 className="h-3.5 w-3.5" />
                 )}
-                {setupRunning ? "Setting up…" : recompileMutation.isPending ? "Running…" : "Run now"}
+                {setupRunning ? t("statusCardDetailDrawer.settingUp") : recompileMutation.isPending ? t("statusCardDetailDrawer.running") : t("statusCardDetailDrawer.runNow")}
               </Button>
             ) : (
               <Button
@@ -236,13 +238,13 @@ export function StatusCardDetailDrawer({
                 disabled={refreshMutation.isPending || lifecycle === "updating"}
               >
                 <RefreshCw className={cn("h-3.5 w-3.5", refreshMutation.isPending && "animate-spin")} />
-                {refreshMutation.isPending ? "Refreshing…" : "Refresh"}
+                {refreshMutation.isPending ? t("statusCardDetailDrawer.refreshing") : t("statusCardDetailDrawer.refresh")}
               </Button>
             )}
           </div>
           <p className="text-xs text-muted-foreground">
-            {card.lastGeneratedAt ? `Updated ${relativeTime(card.lastGeneratedAt)}` : "No summary yet"} ·{" "}
-            {describeRefreshPolicy(card.refreshPolicy)}
+            {card.lastGeneratedAt ? `${t("statusCardDetailDrawer.updated")} ${relativeTime(card.lastGeneratedAt)}` : t("statusCardDetailDrawer.noSummaryYet")} ·{" "}
+            {describeRefreshPolicy(card.refreshPolicy, t)}
           </p>
         </SheetHeader>
 

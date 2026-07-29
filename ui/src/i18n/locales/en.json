@@ -2476,5 +2476,26 @@
     "runsCount": "{{count}} run",
     "runsCount_other": "{{count}} runs",
     "windowCapped": "· window capped"
+  },
+  "statusCardDetailDrawer": {
+    "refreshQueued": "Refresh queued — the Summarizer is updating this card.",
+    "refreshFailed": "Could not refresh the card.",
+    "runQueued": "Run queued — the Summarizer is updating this card.",
+    "runFailed": "Could not run the card.",
+    "saveFailed": "Could not save settings.",
+    "untitledCard": "Untitled card",
+    "settingUp": "Setting up…",
+    "running": "Running…",
+    "runNow": "Run now",
+    "refreshing": "Refreshing…",
+    "refresh": "Refresh",
+    "updated": "Updated",
+    "noSummaryYet": "No summary yet"
+  },
+  "statusCardPolicy": {
+    "manualLabel": "manual",
+    "intervalDefault": "on a schedule if changed",
+    "intervalEvery": "every {{minutes}}m if changed",
+    "reactiveOnChange": "on change ({{debounce}}s)"
   }
 }

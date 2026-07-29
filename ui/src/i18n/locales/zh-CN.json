@@ -2196,6 +2196,27 @@
     "offHeading": "Smoke Lab 已关闭",
     "title": "Smoke Lab"
   },
+  "statusCardDetailDrawer": {
+    "noSummaryYet": "No summary yet",
+    "refresh": "Refresh",
+    "refreshFailed": "Could not refresh the card.",
+    "refreshQueued": "Refresh queued — the Summarizer is updating this card.",
+    "refreshing": "Refreshing…",
+    "runFailed": "Could not run the card.",
+    "runNow": "Run now",
+    "runQueued": "Run queued — the Summarizer is updating this card.",
+    "running": "Running…",
+    "saveFailed": "Could not save settings.",
+    "settingUp": "Setting up…",
+    "untitledCard": "Untitled card",
+    "updated": "Updated"
+  },
+  "statusCardPolicy": {
+    "intervalDefault": "on a schedule if changed",
+    "intervalEvery": "every {{minutes}}m if changed",
+    "manualLabel": "manual",
+    "reactiveOnChange": "on change ({{debounce}}s)"
+  },
   "statusCardSettingsForm": {
     "activeHoursAria": "限定到活跃时段",
     "activeHoursEndAria": "活跃时段结束时间",
