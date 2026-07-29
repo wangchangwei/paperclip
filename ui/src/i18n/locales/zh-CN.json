@@ -641,13 +641,13 @@
     "workspaceName": "工作区名称"
   },
   "boardChat": {
-    "assistantDidNotRespond": "The board assistant couldn't respond. Please try again.",
-    "assistantUnavailable": "The board assistant is unavailable right now. Please try again in a moment.",
-    "breadcrumb": "Conference Room",
-    "connecting": "Connecting...",
-    "jumpToLatest": "Jump to latest messages",
-    "thinking": "Thinking...",
-    "yourCompany": "Your company"
+    "assistantDidNotRespond": "董事会助理未能响应,请重试。",
+    "assistantUnavailable": "董事会助理当前不可用,请稍候重试。",
+    "breadcrumb": "会议室",
+    "connecting": "正在连接...",
+    "jumpToLatest": "跳到最新消息",
+    "thinking": "正在思考...",
+    "yourCompany": "你的公司"
   },
   "boardClaim": {
     "challengeInvalid": "校验已失效或已过期。",
