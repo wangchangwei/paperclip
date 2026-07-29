@@ -1338,7 +1338,18 @@
     "continueWithActions": "Continue with {{enabledCount}} {{action}} on",
     "googleSheetsShareInstructions": "In Google Sheets, click Share and add this email as an Editor. Then paste the sheet links below.",
     "googleSheetsNotAvailable": "Google Sheets is not available on this instance yet.",
-    "pasteSheetLinks": "Paste links to the sheets you shared"
+    "pasteSheetLinks": "Paste links to the sheets you shared",
+    "namePlaceholder": "My app",
+    "nameHintLink": "We filled this in from the link. Change it if you’d like.",
+    "nameHintField": "We filled this in from the app. Change it to tell connections apart.",
+    "secretPlaceholder": "••••••••••••••••",
+    "sheetLinkPlaceholder": "https://docs.google.com/spreadsheets/d/...",
+    "sheetReady_one": "1 sheet ready to connect.",
+    "sheetReady_other": "{{count}} sheets ready to connect.",
+    "sheetReady_zero": "Paste one link per line. Both .../edit and .../edit#gid=... links work.",
+    "connect": "Connect",
+    "wellCheckKey": "We’ll check the key before turning anything on.",
+    "whereDoIFindThis": "Where do I find this?"
   },
   "skillStudio": {
     "basics": "Basics",

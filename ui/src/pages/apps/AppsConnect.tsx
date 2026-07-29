@@ -903,15 +903,15 @@ function LinkConnectStep({
 
       <div className="mt-8 space-y-6">
         <div>
-          <label className="text-sm font-medium text-foreground">Name</label>
+          <label className="text-sm font-medium text-foreground">{t("common.name")}</label>
           <Input
             value={name}
             onChange={(e) => onNameChange(e.target.value)}
-            placeholder="My app"
+            placeholder={t("appsConnect.namePlaceholder")}
             className="mt-2 h-11"
           />
           <p className="mt-2 text-xs text-muted-foreground">
-            We filled this in from the link. Change it if you’d like.
+            {t("appsConnect.nameHintLink")}
           </p>
         </div>
 
@@ -945,7 +945,7 @@ function LinkConnectStep({
                 autoComplete="off"
                 value={keyValue}
                 onChange={(e) => onKeyChange(e.target.value)}
-                placeholder="••••••••••••••••"
+                placeholder={t("appsConnect.secretPlaceholder")}
                 className="mt-2 h-11 font-mono"
               />
             </div>
@@ -973,7 +973,7 @@ function LinkConnectStep({
           </span>
           <Button onClick={onConnect} disabled={submitting || (needsKey && keyValue.trim().length === 0)}>
             {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {submitting ? "Checking…" : "Check link"}
+            {submitting ? t("appsConnect.checking") : t("appsConnect.checkLink")}
           </Button>
         </div>
       </div>
@@ -1121,13 +1121,11 @@ function KeyStep({
             <Textarea
               value={googleSheetsLinks}
               onChange={(e) => onGoogleSheetsLinksChange(e.target.value)}
-              placeholder="https://docs.google.com/spreadsheets/d/..."
+              placeholder={t("appsConnect.sheetLinkPlaceholder")}
               className="mt-2 min-h-28"
             />
             <div className="mt-2 text-xs text-muted-foreground">
-              {parsed.ids.length > 0
-                ? `${parsed.ids.length} ${parsed.ids.length === 1 ? "sheet" : "sheets"} ready to connect.`
-                : "Paste one link per line. Both .../edit and .../edit#gid=... links work."}
+              {t("appsConnect.sheetReady", { count: parsed.ids.length })}
             </div>
             {googleSheetsError && <div className="mt-2 text-xs text-destructive">{googleSheetsError}</div>}
           </div>
@@ -1135,11 +1133,11 @@ function KeyStep({
 
         <div className="mt-8 flex items-center justify-between">
           <Button variant="ghost" onClick={onBack} disabled={submitting}>
-            Back
+            {t("common.back")}
           </Button>
           <Button onClick={onConnect} disabled={submitting || !canConnect}>
             {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {submitting ? "Checking…" : "Connect"}
+            {submitting ? t("appsConnect.checking") : t("appsConnect.connect")}
           </Button>
         </div>
       </div>
@@ -1174,7 +1172,7 @@ function KeyStep({
                 autoComplete="off"
                 value={values[field.configPath] ?? ""}
                 onChange={(e) => onChange({ ...values, [field.configPath]: e.target.value })}
-                placeholder="••••••••••••••••"
+                placeholder={t("appsConnect.secretPlaceholder")}
                 className="mt-2 h-11 font-mono"
               />
               {field.helpUrl && (
@@ -1184,7 +1182,7 @@ function KeyStep({
                   rel="noreferrer"
                   className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-foreground underline underline-offset-2"
                 >
-                  Where do I find this?
+                  {t("appsConnect.whereDoIFindThis")}
                   <ArrowUpRight className="h-3 w-3" />
                 </a>
               )}
@@ -1195,9 +1193,9 @@ function KeyStep({
         <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-4">
           <Lock className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
           <div>
-            <div className="text-sm font-medium text-foreground">Your key is stored securely.</div>
+            <div className="text-sm font-medium text-foreground">{t("appsConnect.keyStoredSecurely")}</div>
             <div className="text-xs text-muted-foreground">
-              You can replace it anytime from this app’s page.
+              {t("appsConnect.replaceKeyAnytime")}
             </div>
           </div>
         </div>
@@ -1209,11 +1207,11 @@ function KeyStep({
         </Button>
         <div className="flex items-center gap-3">
           <span className="hidden text-xs text-muted-foreground sm:inline">
-            We’ll check the key before turning anything on.
+            {t("appsConnect.wellCheckKey")}
           </span>
           <Button onClick={onConnect} disabled={submitting || !allFilled}>
             {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {submitting ? "Checking…" : "Connect"}
+            {submitting ? t("appsConnect.checking") : t("appsConnect.connect")}
           </Button>
         </div>
       </div>
