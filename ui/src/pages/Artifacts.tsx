@@ -9,6 +9,7 @@ import {
 } from "../api/artifacts";
 import { useCompany } from "../context/CompanyContext";
 import { useBreadcrumbs } from "../context/BreadcrumbContext";
+import { useTranslation } from "../i18n";
 import { queryKeys } from "../lib/queryKeys";
 import { EmptyState } from "../components/EmptyState";
 import { PageSkeleton } from "../components/PageSkeleton";
@@ -29,22 +30,34 @@ import { Button } from "@/components/ui/button";
 const ARTIFACTS_PAGE_SIZE = 30;
 const SEARCH_DEBOUNCE_MS = 250;
 
-export const ARTIFACT_KIND_FILTERS: { value: ArtifactKindFilter; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "image", label: "Images" },
-  { value: "video", label: "Videos" },
-  { value: "document", label: "Documents" },
-  { value: "text", label: "Text" },
-  { value: "file", label: "Files" },
+const ARTIFACT_KIND_VALUES: { value: ArtifactKindFilter; key: string }[] = [
+  { value: "all", key: "kindAll" },
+  { value: "image", key: "kindImage" },
+  { value: "video", key: "kindVideo" },
+  { value: "document", key: "kindDocument" },
+  { value: "text", key: "kindText" },
+  { value: "file", key: "kindFile" },
 ];
 
-export const ARTIFACT_GROUP_OPTIONS: { value: ArtifactGroupBy; label: string }[] = [
-  { value: "none", label: "None" },
-  { value: "task", label: "Task" },
-  { value: "parent_task", label: "Parent task" },
+const ARTIFACT_GROUP_VALUES: { value: ArtifactGroupBy; key: string }[] = [
+  { value: "none", key: "groupNone" },
+  { value: "task", key: "groupTask" },
+  { value: "parent_task", key: "groupParentTask" },
 ];
 
-const KIND_VALUES = new Set(ARTIFACT_KIND_FILTERS.map((filter) => filter.value));
+/** Public export for storybook/tests; `label` carries the localisation key for rendering. */
+export const ARTIFACT_KIND_FILTERS: { value: ArtifactKindFilter; label: string }[] = ARTIFACT_KIND_VALUES.map((entry) => ({
+  value: entry.value,
+  label: entry.key,
+}));
+
+/** Public export for storybook/tests; `label` carries the localisation key for rendering. */
+export const ARTIFACT_GROUP_OPTIONS: { value: ArtifactGroupBy; label: string }[] = ARTIFACT_GROUP_VALUES.map((entry) => ({
+  value: entry.value,
+  label: entry.key,
+}));
+
+const KIND_VALUES = new Set(ARTIFACT_KIND_VALUES.map((filter) => filter.value));
 
 function parseGroupBy(value: string | null): ArtifactGroupBy {
   if (value === "none" || value === "task" || value === "parent_task") return value;
@@ -57,11 +70,14 @@ function parseKind(value: string | null): ArtifactKindFilter {
     : "all";
 }
 
-export function artifactGroupByLabel(value: ArtifactGroupBy): string {
-  return ARTIFACT_GROUP_OPTIONS.find((option) => option.value === value)?.label ?? "None";
+export function artifactGroupByLabel(value: ArtifactGroupBy, t?: (key: string) => string): string {
+  const found = ARTIFACT_GROUP_VALUES.find((option) => option.value === value);
+  const key = found ? found.key : "groupNone";
+  return t ? t(`artifacts.${key}`) : key;
 }
 
 export function Artifacts() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -78,14 +94,10 @@ export function Artifacts() {
   const viewingStackList = grouping && !groupIssueId;
   const viewingSelectedStack = grouping && !!groupIssueId;
 
-  // Keep the search box in sync when the committed query changes from outside
-  // (e.g. back/forward navigation or a shared URL), without clobbering in-flight
-  // typing (which leaves `query` unchanged until the debounce commits).
   useEffect(() => {
     setDraftQuery((prev) => (prev.trim() === query ? prev : query));
   }, [query]);
 
-  // Debounce the search box into the `q` URL param so searches are shareable.
   useEffect(() => {
     const trimmed = draftQuery.trim();
     if (trimmed === query) return;
@@ -127,7 +139,6 @@ export function Artifacts() {
   const selectGroupBy = useCallback(
     (value: ArtifactGroupBy) => {
       updateParams((next) => {
-        // Switching the grouping mode always returns to the stack list.
         next.delete("groupIssueId");
         if (value === "task") next.delete("groupBy");
         else next.set("groupBy", value);
@@ -136,9 +147,6 @@ export function Artifacts() {
     [updateParams],
   );
 
-  // Build a relative `To` that preserves the active filters/search while
-  // changing only the grouping selection. A bare query string keeps the current
-  // pathname (the company-prefixed /artifacts route) and stays linkable.
   const buildTo = useCallback(
     (mutate: (next: URLSearchParams) => void): To => {
       const next = new URLSearchParams(searchParams);
@@ -218,16 +226,16 @@ export function Artifacts() {
   useEffect(() => {
     if (viewingSelectedStack && selectedGroup) {
       setBreadcrumbs([
-        { label: "Artifacts", href: "/artifacts" },
+        { label: t("artifacts.breadcrumb"), href: "/artifacts" },
         { label: `${selectedGroup.issue.identifier} · ${selectedGroup.title}` },
       ]);
     } else {
-      setBreadcrumbs([{ label: "Artifacts" }]);
+      setBreadcrumbs([{ label: t("artifacts.breadcrumb") }]);
     }
-  }, [setBreadcrumbs, viewingSelectedStack, selectedGroup]);
+  }, [setBreadcrumbs, viewingSelectedStack, selectedGroup, t]);
 
   if (!selectedCompanyId) {
-    return <EmptyState icon={Package} message="Select a company to view artifacts." />;
+    return <EmptyState icon={Package} message={t("artifacts.emptyCompany")} />;
   }
 
   const showGroupCards = viewingStackList;
@@ -235,15 +243,15 @@ export function Artifacts() {
 
   const emptyMessage = showGroupCards
     ? searching
-      ? "No artifact stacks match this search."
-      : "No artifact stacks yet."
+      ? t("artifacts.emptyGroupSearch")
+      : t("artifacts.emptyGroup")
     : searching
-      ? "No artifacts match this search."
+      ? t("artifacts.emptySearch")
       : viewingSelectedStack
-        ? "No artifacts in this stack match the current filters."
+        ? t("artifacts.emptyStack")
         : kind === "all"
-          ? "No artifacts yet. Outputs attached to issues will appear here."
-          : "No artifacts of this type yet.";
+          ? t("artifacts.emptyAll")
+          : t("artifacts.emptyKind");
 
   return (
     <div className="w-full max-w-6xl space-y-5">
@@ -253,15 +261,15 @@ export function Artifacts() {
           <Input
             value={draftQuery}
             onChange={(event) => setDraftQuery(event.currentTarget.value)}
-            placeholder="Search artifacts..."
-            aria-label="Search artifacts"
+            placeholder={t("artifacts.searchPlaceholder")}
+            aria-label={t("artifacts.searchAriaLabel")}
             className="h-9 pl-9 pr-9 text-sm"
           />
           {draftQuery.length > 0 ? (
             <button
               type="button"
               onClick={() => setDraftQuery("")}
-              aria-label="Clear artifact search"
+              aria-label={t("artifacts.searchClear")}
               className="absolute right-2 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
             >
               <X className="h-3.5 w-3.5" />
@@ -276,8 +284,8 @@ export function Artifacts() {
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label={`Group artifacts (currently ${artifactGroupByLabel(groupBy)})`}
-                title="Group artifacts"
+                aria-label={t("artifacts.groupButtonAria", { group: artifactGroupByLabel(groupBy, t) })}
+                title={t("artifacts.groupButtonTitle")}
                 data-testid="artifact-group-control"
                 data-group-by={groupBy}
                 className={cn("h-8 w-8 shrink-0", grouping && "bg-accent")}
@@ -286,8 +294,8 @@ export function Artifacts() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-44">
-              <DropdownMenuLabel>Group by</DropdownMenuLabel>
-              {ARTIFACT_GROUP_OPTIONS.map((option) => (
+              <DropdownMenuLabel>{t("artifacts.groupBy")}</DropdownMenuLabel>
+              {ARTIFACT_GROUP_VALUES.map((option) => (
                 <DropdownMenuItem
                   key={option.value}
                   data-testid={`artifact-group-option-${option.value}`}
@@ -295,15 +303,15 @@ export function Artifacts() {
                   onSelect={() => selectGroupBy(option.value)}
                   className="justify-between"
                 >
-                  {option.label}
+                  {t(`artifacts.${option.key}`)}
                   {groupBy === option.value ? <Check className="h-3.5 w-3.5" /> : null}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <div className="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Filter artifacts by type">
-            {ARTIFACT_KIND_FILTERS.map((filter) => (
+          <div className="flex flex-wrap items-center gap-1.5" role="tablist" aria-label={t("artifacts.kindTablistAria")}>
+            {ARTIFACT_KIND_VALUES.map((filter) => (
               <button
                 key={filter.value}
                 type="button"
@@ -317,7 +325,7 @@ export function Artifacts() {
                     : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
                 )}
               >
-                {filter.label}
+                {t(`artifacts.${filter.key}`)}
               </button>
             ))}
           </div>
@@ -332,7 +340,7 @@ export function Artifacts() {
             className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
-            All stacks
+            {t("artifacts.allStacks")}
           </Link>
           {selectedGroup ? (
             <span className="truncate text-muted-foreground">
@@ -362,11 +370,11 @@ export function Artifacts() {
           </div>
           <div ref={loadMoreRef} className="flex min-h-10 items-center justify-center pb-2 text-xs text-muted-foreground">
             {isFetchingNextPage
-              ? "Loading more artifacts..."
+              ? t("artifacts.loadingMore")
               : hasNextPage
                 ? null
                 : isFetching
-                  ? "Updating artifacts..."
+                  ? t("artifacts.updating")
                   : null}
           </div>
         </>
