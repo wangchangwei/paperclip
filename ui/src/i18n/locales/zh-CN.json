@@ -1722,8 +1722,8 @@
     "whoCanUse": "谁可以使用"
   },
   "pipelineSettings": {
-    "breadcrumbPipelines": "Pipelines",
-    "breadcrumbSettings": "Settings"
+    "breadcrumbPipelines": "流水线",
+    "breadcrumbSettings": "设置"
   },
   "pipelines": {
     "activeWork": "active work",
