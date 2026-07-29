@@ -2219,6 +2219,7 @@
   },
   "secrets": {
     "allProviders": "All providers",
+    "breadcrumb": "Secrets",
     "cancel": "Cancel",
     "colActions": "Actions",
     "colSecret": "Secret",

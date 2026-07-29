@@ -1132,7 +1132,8 @@
       "valueSet": "Value set",
       "notSet": "Not set",
       "disabled": "Disabled"
-    }
+    },
+    "breadcrumb": "Secrets"
   },
   "pipelines": {
     "selectCompany": "Select a company to view pipelines.",
