@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "@/i18n";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Lock, Plus, ShieldCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,6 +41,7 @@ type KeyRow = { id: number; value: string };
  * expects. One of the two M8 screens where "MCP" vocabulary is allowed.
  */
 export function RunYourOwnTab({ companyId }: { companyId: string }) {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const { pushToast } = useToast();
 
@@ -100,33 +102,33 @@ export function RunYourOwnTab({ companyId }: { companyId: string }) {
 
       <div className="space-y-5 rounded-lg border border-border bg-card p-5">
         <div className="space-y-1.5">
-          <Label htmlFor="ryo-name">Name</Label>
+          <Label htmlFor="ryo-name">{t("runYourOwn.nameLabel")}</Label>
           <Input
             id="ryo-name"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            placeholder="Acme tools"
+            placeholder={t("runYourOwn.namePlaceholder")}
             maxLength={160}
           />
-          <p className="text-xs text-muted-foreground">What you'll call this tool in your apps list.</p>
+          <p className="text-xs text-muted-foreground">{t("runYourOwn.nameHint")}</p>
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="ryo-command">Command</Label>
+          <Label htmlFor="ryo-command">{t("runYourOwn.commandLabel")}</Label>
           <Input
             id="ryo-command"
             value={command}
             onChange={(event) => setCommand(event.target.value)}
-            placeholder="npx -y @acme/mcp-tool"
+            placeholder={t("runYourOwn.commandPlaceholder")}
             spellCheck={false}
             className="bg-slate-900 font-mono text-(length:--text-compact) text-slate-100 placeholder:text-slate-500 focus-visible:ring-slate-400"
           />
-          <p className="text-xs text-muted-foreground">The command that runs the tool. From the tool's README.</p>
+          <p className="text-xs text-muted-foreground">{t("runYourOwn.commandHint")}</p>
         </div>
 
         <div className="space-y-2">
           <div className="flex items-baseline gap-2">
-            <Label>Keys it needs</Label>
+            <Label>{t("runYourOwn.keysItNeeds")}</Label>
             <span className="text-xs text-muted-foreground">· optional, depends on the tool</span>
           </div>
           {keyRows.length > 0 ? (
@@ -144,7 +146,7 @@ export function RunYourOwnTab({ companyId }: { companyId: string }) {
                             rows.map((r) => (r.id === row.id ? { ...r, value: event.target.value } : r)),
                           )
                         }
-                        placeholder="API_KEY"
+                        placeholder={t("runYourOwn.envVarPlaceholder")}
                         spellCheck={false}
                         className={`font-mono text-(length:--text-compact) ${invalid ? "border-destructive" : ""}`}
                       />
@@ -200,22 +202,22 @@ export function RunYourOwnTab({ companyId }: { companyId: string }) {
       </div>
 
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-foreground">Your own tools</h3>
+        <h3 className="text-sm font-semibold text-foreground">{t("runYourOwn.yourOwnTools")}</h3>
         {templates.isLoading ? (
           <LoadingState />
         ) : templates.isError ? (
           <ErrorState error={templates.error} onRetry={() => templates.refetch()} />
         ) : adminTemplates.length === 0 ? (
-          <p className="text-sm text-muted-foreground">You haven't added any of your own tools yet.</p>
+          <p className="text-sm text-muted-foreground">{t("runYourOwn.empty")}</p>
         ) : (
           <div className="overflow-hidden rounded-lg border border-border">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/40 text-left text-(length:--text-micro) font-semibold uppercase tracking-wide text-muted-foreground">
-                  <th className="px-4 py-2.5">Name</th>
-                  <th className="px-4 py-2.5">Command</th>
-                  <th className="px-4 py-2.5">Keys</th>
-                  <th className="px-4 py-2.5">Added</th>
+                  <th className="px-4 py-2.5">{t("runYourOwn.colName")}</th>
+                  <th className="px-4 py-2.5">{t("runYourOwn.colCommand")}</th>
+                  <th className="px-4 py-2.5">{t("runYourOwn.colKeys")}</th>
+                  <th className="px-4 py-2.5">{t("runYourOwn.colAdded")}</th>
                   <th className="px-4 py-2.5" />
                 </tr>
               </thead>

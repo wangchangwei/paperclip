@@ -1530,5 +1530,21 @@
     "colLastUsed": "Last used",
     "colActions": "Actions",
     "providerSide": "Runs on the provider's side"
+  },
+  "runYourOwn": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Acme tools",
+    "nameHint": "What you'll call this tool in your apps list.",
+    "commandLabel": "Command",
+    "commandPlaceholder": "npx -y @acme/mcp-tool",
+    "commandHint": "The command that runs the tool. From the tool's README.",
+    "keysItNeeds": "Keys it needs",
+    "envVarPlaceholder": "API_KEY",
+    "yourOwnTools": "Your own tools",
+    "empty": "You haven't added any of your own tools yet.",
+    "colName": "Name",
+    "colCommand": "Command",
+    "colKeys": "Keys",
+    "colAdded": "Added"
   }
 }

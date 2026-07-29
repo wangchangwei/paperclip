@@ -1390,6 +1390,22 @@
     "workspaceNotFound": "Workspace not found for this project.",
     "workspacesTab": "Workspaces"
   },
+  "runYourOwn": {
+    "colAdded": "Added",
+    "colCommand": "Command",
+    "colKeys": "Keys",
+    "colName": "Name",
+    "commandHint": "The command that runs the tool. From the tool's README.",
+    "commandLabel": "Command",
+    "commandPlaceholder": "npx -y @acme/mcp-tool",
+    "empty": "You haven't added any of your own tools yet.",
+    "envVarPlaceholder": "API_KEY",
+    "keysItNeeds": "Keys it needs",
+    "nameHint": "What you'll call this tool in your apps list.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Acme tools",
+    "yourOwnTools": "Your own tools"
+  },
   "runtimeTab": {
     "autoRefresh": "Updates automatically every 15 seconds.",
     "clickRowHint": "Click a row to see how the connection is wired up.",

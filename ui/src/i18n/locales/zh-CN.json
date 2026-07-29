@@ -1390,6 +1390,22 @@
     "workspaceNotFound": "未找到此项目的工作区。",
     "workspacesTab": "工作区"
   },
+  "runYourOwn": {
+    "colAdded": "Added",
+    "colCommand": "Command",
+    "colKeys": "Keys",
+    "colName": "Name",
+    "commandHint": "The command that runs the tool. From the tool's README.",
+    "commandLabel": "Command",
+    "commandPlaceholder": "npx -y @acme/mcp-tool",
+    "empty": "You haven't added any of your own tools yet.",
+    "envVarPlaceholder": "API_KEY",
+    "keysItNeeds": "Keys it needs",
+    "nameHint": "What you'll call this tool in your apps list.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Acme tools",
+    "yourOwnTools": "Your own tools"
+  },
   "runtimeTab": {
     "autoRefresh": "每 15 秒自动刷新。",
     "clickRowHint": "点击行查看该连接的连接方式。",
