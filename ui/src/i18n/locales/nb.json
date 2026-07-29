@@ -1402,6 +1402,22 @@
     "notAvailable": "Invite not available",
     "openingCompany": "Opening company..."
   },
+  "issueChatLongThreadPerf": {
+    "baselineMetrics": "Baseline metrics",
+    "blurb": "Deterministic local fixture for measuring the current direct-render issue chat path with hundreds of merged thread rows, markdown-heavy assistant bodies, linked runs, documents, sub-issues, and sidebar context.",
+    "fixtureRows": "Fixture rows",
+    "fixtureShape": "Fixture shape",
+    "issueDocuments": "Issue documents",
+    "latestDuration": "Latest duration",
+    "markdownRows": "Markdown rows",
+    "maxDuration": "Max duration",
+    "mountDuration": "Mount duration",
+    "msUnit": "ms",
+    "pending": "pending",
+    "profilerCommits": "Profiler commits",
+    "subIssues": "Sub-issues",
+    "totalDuration": "Total duration"
+  },
   "issues": {
     "andMore": "... and {{count}} more",
     "assignee": "Assignee",

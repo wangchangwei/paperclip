@@ -2423,5 +2423,21 @@
     "taskCount": "{{count}} task",
     "taskCount_other": "{{count}} tasks",
     "created": "Created {{when}}"
+  },
+  "issueChatLongThreadPerf": {
+    "blurb": "Deterministic local fixture for measuring the current direct-render issue chat path with hundreds of merged thread rows, markdown-heavy assistant bodies, linked runs, documents, sub-issues, and sidebar context.",
+    "fixtureRows": "Fixture rows",
+    "markdownRows": "Markdown rows",
+    "issueDocuments": "Issue documents",
+    "subIssues": "Sub-issues",
+    "baselineMetrics": "Baseline metrics",
+    "profilerCommits": "Profiler commits",
+    "mountDuration": "Mount duration",
+    "latestDuration": "Latest duration",
+    "maxDuration": "Max duration",
+    "totalDuration": "Total duration",
+    "fixtureShape": "Fixture shape",
+    "pending": "pending",
+    "msUnit": "ms"
   }
 }
