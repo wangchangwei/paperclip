@@ -2219,7 +2219,7 @@
   },
   "secrets": {
     "allProviders": "All providers",
-    "breadcrumb": "Secrets",
+    "breadcrumb": "密钥",
     "cancel": "Cancel",
     "colActions": "操作",
     "colSecret": "密钥",
