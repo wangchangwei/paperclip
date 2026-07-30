@@ -36,6 +36,7 @@ import { boardChatRoutes } from "./routes/board-chat.js";
 import { approvalRoutes } from "./routes/approvals.js";
 import { secretRoutes } from "./routes/secrets.js";
 import { toolAccessRoutes } from "./routes/tool-access.js";
+import { planeIntegrationRoutes } from "./routes/plane-integration.js";
 import { smokeLabRoutes } from "./routes/smoke-lab.js";
 import { costRoutes } from "./routes/costs.js";
 import { activityRoutes } from "./routes/activity.js";
@@ -331,6 +332,7 @@ export async function createApp(
     trustedLocalStdioRuntimeHost,
     toolGateway,
   }));
+  api.use(planeIntegrationRoutes(db, { toolGateway }));
   api.use(smokeLabRoutes(db, {
     deploymentMode: opts.deploymentMode,
     deploymentExposure: opts.deploymentExposure,

@@ -378,6 +378,10 @@ const issueRequestDepthInputSchema = z
   .nonnegative()
   .transform((value) => clampIssueRequestDepth(value));
 
+const issueOriginKindSchema = z.string().trim().min(1).max(160).regex(/^[a-z0-9][a-z0-9._:-]*$/i);
+const issueOriginIdSchema = z.string().trim().min(1).max(512);
+const issueOriginFingerprintSchema = z.string().trim().min(1).max(512);
+
 type IssueCreateStatusDefaultInput = {
   status?: unknown;
   assigneeAgentId?: unknown;
@@ -445,6 +449,9 @@ const createIssueBaseSchema = z.object({
   requestDepth: issueRequestDepthInputSchema.optional().default(0),
   createdByUserId: z.string().optional().nullable(),
   responsibleUserId: z.string().optional().nullable(),
+  originKind: issueOriginKindSchema.optional(),
+  originId: issueOriginIdSchema.optional().nullable(),
+  originFingerprint: issueOriginFingerprintSchema.optional(),
   billingCode: z.string().optional().nullable(),
   assigneeAdapterOverrides: issueAssigneeAdapterOverridesSchema.optional().nullable(),
   executionPolicy: issueExecutionPolicySchema.optional().nullable(),
@@ -531,6 +538,9 @@ export type CreateIssueLabel = z.infer<typeof createIssueLabelSchema>;
 export const updateIssueSchema = createIssueBaseSchema.omit({
   createdByUserId: true,
   responsibleUserId: true,
+  originKind: true,
+  originId: true,
+  originFingerprint: true,
   watchdog: true,
 }).partial().extend({
   requestDepth: issueRequestDepthInputSchema.optional(),

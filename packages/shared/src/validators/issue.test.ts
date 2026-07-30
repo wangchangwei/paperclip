@@ -117,6 +117,36 @@ describe("issue validators", () => {
     expect(updated).not.toHaveProperty("responsibleUserId");
   });
 
+  it("accepts external origin fields on create but keeps them immutable on update", () => {
+    const created = createIssueSchema.parse({
+      title: "Publish Plane task",
+      originKind: "plane_work_item",
+      originId: "00463a71-0596-4177-a8eb-cace9a4a332c",
+      originFingerprint: "plane:local-plane:00463a71-0596-4177-a8eb-cace9a4a332c",
+    });
+    const updated = updateIssueSchema.parse({
+      title: "Retitle Plane task",
+      originKind: "manual",
+      originId: "other",
+      originFingerprint: "other",
+    });
+
+    expect(created.originKind).toBe("plane_work_item");
+    expect(created.originId).toBe("00463a71-0596-4177-a8eb-cace9a4a332c");
+    expect(created.originFingerprint).toBe("plane:local-plane:00463a71-0596-4177-a8eb-cace9a4a332c");
+    expect(updated).not.toHaveProperty("originKind");
+    expect(updated).not.toHaveProperty("originId");
+    expect(updated).not.toHaveProperty("originFingerprint");
+  });
+
+  it("rejects unsafe external origin kinds", () => {
+    expect(createIssueSchema.safeParse({
+      title: "Bad origin",
+      originKind: "../plane",
+      originId: "plane-1",
+    }).success).toBe(false);
+  });
+
   it("allows false-positive recovery resolutions to atomically restore the source issue status", () => {
     expect(
       resolveIssueRecoveryActionSchema.parse({
